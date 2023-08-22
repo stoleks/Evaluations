@@ -1,0 +1,148 @@
+\input{sommative/2nd_Atome/3_evaluation}
+
+%%%%
+\titreSection{Atome et élément chimique}
+
+\numeroQuestion
+  Dans la notation symbolique d'un atome \isotope{A}{Z}{X}
+  \begin{listePoints}
+    \item $Z$ est \texteTrouLigneComplete{le nombre de protons, appelé numéro atomique.}
+    \item $A$ est \texteTrouLigneComplete{le nombre de nucléons, appelé nombre de masse.}
+  \end{listePoints}
+
+\question{
+  \variationSujet
+  {Dans les batteries on trouve du silicium \isotope{28}{14}{Si}.}
+  {Le magnésium \isotope{25}{12}{Mg} est un réactif très présent en chimie.}
+  Donner la composition du noyau de cet atome.\competence{APP, REA}
+}{
+  L'atome de silicium \isotope{28}{14}{Si} possède 14 protons et $28 - 14 = 14$ neutrons.
+}{2}
+
+\question{
+  Indiquer en justifiant le nombre d'électrons que possède l'atome
+  \variationSujet
+  {de silicium.}
+  {de magnésium.}
+  \competence{APP, ANA/RAI}
+}{
+  L'atome est neutre électriquement, sa charge électrique totale est nulle.
+  Les protons ont une charge positive, les électrons une charge négative.
+  L'atome doit donc avoir autant de protons que d'électrons, soit 14 électrons.
+}{2}
+
+\question{
+  La masse d'un électron est de l'ordre de $10^{-30} \unit{kg}$.
+  Un proton est mille fois plus lourd.
+  Donner l'ordre de grandeur de la masse d'un proton en kilogramme, en détaillant le calcul.\competence{REA, ANA/RAI}
+}{
+  $m_\text{proton} 
+  = 1000 \times m_\text{électron} 
+  = 10^3 \times 10^{-30} \unit{kg} 
+  = 10^{-27} \unit{kg}$
+}{3}
+
+
+Certains élément chimiques peuvent exister sous plusieurs formes appelée isotope, comme par exemple
+\variationSujet
+{le carbone : \isotope{13}{6}{C}, \isotope{14}{6}{C}.}
+{l'oxygène : \isotope{17}{8}{O}, \isotope{18}{8}{O}.}
+
+
+\question{
+  Le troisième isotope stable
+  \variationSujet
+  {du carbone possède 6 protons et 6 neutrons.}
+  {de l'oxygène possède 8 protons et 8 neutrons.}
+  Écrire sa représentation symbolique \isotope{A}{Z}{C}.\competence{REA}
+}{
+  L'atome de carbone a $6 + 6 = 12$ nucléons, on le note \isotope{12}{6}{C}.
+}{1}
+
+\question{
+  Calculer la masse de l'atome
+  \variationSujet
+  {de carbone \isotope{13}{6}{C},}
+  {d'oxygène \isotope{16}{8}{O},}
+  en détaillant les calculs.\competence{APP, REA}
+  
+  \textbf{Données :} $m_\text{nucléon} = 1,\!67 \times 10^{-27} \unit{kg}$, $m_\text{électron} = 9,\!11 \times 10^{-31} \unit{kg}$
+}{
+  Les électrons étant 1000 fois plus léger que les nucléons, leurs masses est négligeable et la masse de l'atome est simplement le nombre de nucléons multiplié par la masse d'un nucléon
+  \begin{equation*}
+    m_{\chemfig{C}} 
+    = 13 \times m_\text{nucléon} 
+    = 13 \times 1,\!67 \cdot 10^{-27} \unit{kg}
+    = 21,\!7 \cdot 10^{-27} \unit{kg}
+  \end{equation*}
+}{3}
+
+\question{
+  Le cuivre \isotope{63}{29}{Cu} peut devenir l'ion \chemfig{Cu^{2+}}.
+  Donner le nombre de protons, neutrons et électrons de l'ion \chemfig{Cu^{2+}}. Justifier.\competence{APP, ANA/RAI}
+}{
+  L'ion \chemfig{Cu^{2+}} possède deux charges positives : 2 électrons ont donc été arrachés à l'atome de cuivre \isotope{63}{29}{Cu}.
+  Cet atome possède 29 proton, $63 - 29 = 34$ neutrons et comme l'atome est neutre, il possède 29 électrons.
+  L'ion \chemfig{Cu^{2+}} a donc 29 protons, 34 neutrons et $29 - 2 = 27$ électrons.
+}{3}
+
+
+%%%%
+\titreSection{Ordre de grandeur et écologie}
+
+On va chercher à estimer l'impact de notre alimentation sur le climat, en comparant avec l'impact du secteur automobile.
+Pour cela on va estimer l'ordre de grandeur des émissions de gaz à effet de serre rejetés lors de la production de nos aliments.
+
+Pour mesurer l'impact sur le climat d'un produit, on utilise le kilogramme de dioxyde de carbone équivalent (noté \COeq\!).
+\textbf{Plus ce nombre est élevé et plus un produit a un impact important sur le dérèglement climatique.}
+
+Par exemple, produire 1 kg de viande de mouton équivaut à l'émission de 39,72 kg de \chemfig{CO_2}, soit 39,72 \COeq (voir tableau).
+Cette émission correspond à l'émission d'une voiture qui parcours 400 km.
+
+\newpage
+\vspace*{-30pt}
+\question{
+  Donner un ordre de grandeur du nombre de repas (déjeuner et dîner) par an. \textbf{Rappel :} 1 an = 365 jours\competence{REA}
+}{
+  Avec 2 repas par jour en moyenne, on a $2 \times 365 = 730 \sim 1000$ repas par an en ordre de grandeur.
+}{1}
+
+\question{
+  \label{exo:ordre_alimentation}
+  À l'aide du graphique ci-dessous, calculer en ordre de grandeur le \COeq annuel d'un régime à base de viande. On considère qu'un-e français-e mange en moyenne $0,\!1 \unit{kg}$ de viande par repas.\competence{APP, REA, ANA/RAI}
+}{
+  En ordre de grandeur, la production de $1\unit{kg}$ de mouton ou de poulet émet $10 \unit{\COeq}$.
+  Par an, un-e français-e mange en moyenne $0,1 \unit{kg} \times 1000 = 100 \unit{kg}$ de viande par an.
+  Par an, les émissions d'un-e français-e sera donc en moyenne les émissions pour $1\unit{kg}$ multipliée par la masse de viande mangée, soit
+  \begin{equation*}
+    100 \unit{kg} \times 10 \unit{\COeq / kg} = 10^3 \unit{\COeq}
+  \end{equation*}
+  On notera qu'un régime végétarien permet de diviser par 10 ses émissions liées à l'alimentation en ordre de grandeur !
+}{3}
+
+\begin{center}
+  \vspace{-12pt}
+  \image{0.75}{sommative/2nd_Atome/emission_CO2_alimentation}
+\end{center}
+\vspace{-12pt}
+
+\question{
+  %Une voiture à essence ou diesel émet en moyenne $0,\!1$ \COeq par km.
+  %D'après le ministère de la transition écologique, une voiture parcoure en moyenne $12\, 200 \unit{km}$ par an.
+  %Calculer l'ordre de grandeur des émissions de \COeq par an pour un-e français-e roulant en voiture.\competence{APP, REA, ANA/RAI}
+  En moyenne, une personne qui possède une voiture en France émet $10^3$ \COeq en roulant \textbf{par an}.
+  Comparer avec les émissions annuelle dues à l'alimentation.\competence{VAL}
+}{
+  On voit qu'en ordre de grandeur, les émissions liées à la voiture et à une alimentation à base de viande sont identiques.
+}{2}
+
+\question{
+  En réalité, sur une année, le transport représente en moyenne $2,\!4 \times 10^3$ \COeq et l'alimentation $2,\!0 \times 10^3$ \COeq, sur un total annuel d'émission de $8,\!3 \times 10^3 $ \COeq pour une personne vivant en France.
+  
+  Le chiffre de l'alimentation est-il cohérent avec l'ordre de grandeur estimé question~\ref{exo:ordre_alimentation} ?\competence{APP, VAL}
+}{
+  En ordre de grandeur $2,\!0 \times 10^3 \unit{COeq} \sim 10^3 \unit{\COeq}$.
+  Les estimations réalisées sont donc cohérentes avec les données mesurées.
+}{2}
+
+\input{sommative/bilan_eleve}

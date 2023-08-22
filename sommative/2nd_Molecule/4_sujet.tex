@@ -1,0 +1,193 @@
+%%
+\input{sommative/2nd_Molecule/4_evaluation}
+
+%%%%
+\sousTitre{QCM - cocher \textit{la ou les} bonnes réponses.}
+\vspace*{-8pt}
+
+\separationDeuxBlocs{
+  \QCM{
+    L'atome de \variationSujet
+    {sodium \chemfig{Na} est devenu l'ion \chemfig{Na^+}}
+    {de fluor \chemfig{F} est devenu l'ion \chemfig{F^{-}}}
+    parce que
+  }{
+    \item\reponseQCM un électron lui a été arraché
+    \item un électron lui a été donné
+    \item il a gagné un proton
+  }
+  \QCM{
+    L'ion \variationSujet{\chemfig{Na^+}}{\chemfig{F^{-}}}
+  }{
+    \item est un anion
+    \item\reponseQCM est un cation
+    \item\reponseQCM a une charge positive
+    \item a une charge négative
+  }
+  \QCM{Le cortège électronique a une structure particulière}{
+    \item\reponseQCM avec des couches ($1, 2, 3, \ldots$) et des sous-couches ($s, p, \ldots$)
+    \item\reponseQCM les sous-couches $s$ peuvent contenir au plus 2 électrons
+    \item\reponseQCM les sous-couches $p$ peuvent contenir au plus 6 électrons
+  }
+}{
+  \QCM{La dernière colonne de la classification périodique s'appelle la famille }{
+    \item\reponseQCM des gaz nobles
+    \item des halogènes
+    \item des alcalins
+  }
+  \QCM{Les entités chimiques \isotope{63}{29}{Cu}, \chemfig{Cu^+}, \chemfig{Cu^{2+}} sont toutes du Cuivre car elles ont}{
+    \item le même nombre d'électrons
+    \item\reponseQCM le même nombre de protons $Z$
+    \item le même nombre de nucléons $A$
+  }
+  \QCM{Les atomes peuvent s'associer en molécule pour}{
+    \item\reponseQCM adopter la configuration électronique du gaz noble le plus proche
+    \item\reponseQCM respecter la règle de l'octet ou du duet
+    \item\reponseQCM avoir une charge électrique totale nulle
+  }
+}
+
+\newpage
+\vspace*{-24pt}
+\separationDeuxBlocs{
+  \QCM{
+Le gaz noble le plus proche \variationSujet{du Béryllium ($Z = 4$)}{de l'Oxygène ($Z = 8$)} est
+}{
+    \item\reponseQCM l'Hélium ($Z = 2$)
+    \item le Néon ($Z = 10$)
+    \item l'Argon ($Z = 18$)
+  }
+}{
+  \QCM{
+Pour gagner en stabilité, \variationSujet{le Béryllium}{l'Oxygène} pourra
+}{
+    \item\reponseQCM perdre 2 électrons
+    \item gagner 2 électrons
+    \item gagner 4 électrons
+  }
+}
+
+
+%%%
+\titreSection{Structure électronique d'un atome}
+\vspace*{-8pt}
+
+\begin{doc}{Tableau périodique}
+  \vspace*{-24pt}
+  \begin{center}
+    \tableauPeriodique
+  \end{center}
+\end{doc}
+
+\question{
+  Donner le nombre d'électrons de l'azote \chemfig{N}, du magnésium \chemfig{Mg} et de l'argon \chemfig{Ar}.\competence{APP, ANA/RAI}
+}{
+  Le numéro atomique de l'azote est 7, il possède donc 7 protons et 7 électrons par neutralité électrique de l'atome.
+  Le magnésium possède 12 électrons et l'argon possède 18 électrons.
+}{2}
+
+\question{
+  Donner la structure électronique de l'azote, du magnésium et de l'argon.\competence{REA}
+}{
+  $\chemfig{N} : 1s^2 \mathbf{2s^2 2p^3}$, $\chemfig{Mg} : 1s^2 2s^2 2p^6 \mathbf{3s^2}$, $\chemfig{Ar} : 1s^2 2s^2 2p^6 \mathbf{3s^2 3p^6}$
+}{3}
+
+\question{
+  Entourer la couche externe de chacune des structures électronique et indiquer le nombre d'électrons de valence de chaque atome.\competence{COM, ANA/RAI}
+}{
+  Couche externe de l'azote : 2 avec 5 électrons de valences.
+  Couche externe du magnésium : 3 avec 2 électrons de valences.
+  Couche externe de l'argon : 3 avec 8 électrons de valences.
+}{2}
+
+\question{
+  Parmi ces trois atomes, lequel est le plus stable ? Justifier.\competence{ANA/RAI}
+}{
+  L'argon, car sa couche externe est pleine : c'est un gaz noble.
+  \vspace*{20pt}
+}{2}
+
+
+\vspace*{-20pt}
+\question{
+  Rappeler la règle de l'octet avec vos mots.\competence{COM}
+}{
+  Pour gagner en stabilité, un atome de numéro atomique > 6, peut perdre ou gagner des électrons pour atteindre la structure électronique du gaz noble \textbf{le plus proche}, avec 8 électrons sur sa couche externe.
+}{3}
+
+\question{
+  D'après cette règles, quel ion pourra être formé à partir d'un atome de magnésium ? Expliquer.\competence{ANA/RAI, COM}
+}{
+  D'après la règle de l'octet, le magnésium va perdre 2 électrons pour atteindre la configuration électronique du néon. On aura donc l'ion $\chemfig{Mg^{2+}}$.
+}{2}
+
+
+%%%%
+\titreSection{Stabilité d'une molécule}
+
+\vspace*{-30pt}
+\variationSujet{
+\begin{doc}{L'ammoniac}
+  \label{doc:ammoniac}
+  L'ammoniac est un gaz irritant à température ambiante.
+  La molécule d'ammoniac est composé d'hydrogène \chemfig{H} ($Z = 1$) et d'azote \chemfig{N} ($Z = 7$).
+  Le schéma de Lewis de la molécule est le suivant :
+  \begin{center}
+    \chemfig[atom sep=30pt, atom style={scale=1.5}, line width=6pt]{
+      H - \charge{-90:4pt=\|}{N} (-[3] H) - H
+    }
+  \end{center}
+  
+  \phantom{bla}
+\end{doc}
+}{
+\begin{doc}{La phosphine}
+  \label{doc:phosphine}
+  La phosphine est un gaz incolore et mortellement toxique, utilisé comme pesticide. 
+  La molécule de phosphine est composée d'hydrogène \chemfig{H} ($Z = 1$) et de phosphore \chemfig{P} ($Z = 15$).
+  Le schéma de Lewis de la molécule est le suivant :
+  \begin{center}
+    \chemfig[atom sep=30pt, atom style={scale=1.5}, line width=6pt]{
+      H - \charge{-90:4pt=\|}{P} (-[3] H) - H
+    }
+  \end{center}
+  
+  \phantom{bla}
+\end{doc}
+}
+\vspace*{-12pt}
+
+\question{
+  Indiquer la formule de la molécule\variationSujet{d'ammoniac}{de phosphine}.\competence{APP}
+}{
+  La molécule est composée de 1 azote et de 3 hydrogène : \chemfig{NH_3}
+}{1}
+
+\question{
+  Quelle règle doit respecter l'atome d'hydrogène pour gagner en stabilité ?\competence{COM}
+}{
+  La règle du duet : il doit gagner un électron en formant une liaison covalente.
+}{2}
+
+\question{
+  Combien de liaisons covalentes a formé
+  \variationSujet{l'azote}{le phosphore}
+  dans la molécule
+  \variationSujet{d'ammoniac}{de phosphine}
+  ?
+  Est-ce cohérent avec la règle de l'octet ?\competence{APP, VAL}
+}{
+  L'azote a formé 3 liaisons covalentes, ce qui lui a permis d'ajouter 3 électrons sur sa couche externe pour la compléter et respecter la règle de l'octet.
+}{3}
+
+\question{
+  Légender le schéma de Lewis de la molécule
+  \variationSujet{d'ammoniac}{de phosphine}
+  du doc.~\ref{doc:ammoniac}.\competence{COM}
+}{
+  Il faut légender les doublets liants et le double non-liant en plus des éléments chimiques.
+}{0}
+
+
+%%
+\input{sommative/bilan_eleve}
