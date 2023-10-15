@@ -3,9 +3,8 @@
 
 %%%%
 \sousTitre{QCM - cocher \textit{la ou les} bonnes réponses.}
-\vspace*{-8pt}
 
-\separationDeuxBlocs{
+\separationBlocs{
   \QCM{
     L'atome de \variationSujet
     {sodium \chemfig{Na} est devenu l'ion \chemfig{Na^+}}
@@ -49,7 +48,7 @@
 
 \newpage
 \vspace*{-24pt}
-\separationDeuxBlocs{
+\separationBlocs{
   \QCM{
 Le gaz noble le plus proche \variationSujet{du Béryllium ($Z = 4$)}{de l'Oxygène ($Z = 8$)} est
 }{
@@ -72,11 +71,41 @@ Pour gagner en stabilité, \variationSujet{le Béryllium}{l'Oxygène} pourra
 \titreSection{Structure électronique d'un atome}
 \vspace*{-8pt}
 
-\begin{doc}{Tableau périodique}
-  \vspace*{-24pt}
-  \begin{center}
-    \tableauPeriodique
-  \end{center}
+\begin{doc}{Tableau périodique}{doc:tableau_periodique}
+  \hspace*{-16pt}
+  \tableauPeriodique{
+    %% Group 1 - IA
+    \node[name=H, Nonmetal]             {\elementH};
+    \node[name=Li, below of=H, Alkali]  {\elementLi};
+    \node[name=Na, below of=Li, Alkali] {\elementNa};
+    %% Group 2 - IIA
+    \node[name=Be, right of=Li, AlkaliEarth] {\elementBe};
+    \node[name=Mg, below of=Be, AlkaliEarth] {\elementMg};
+    %% Group 13 - IIIA
+    \node[name=B,  right of=Be, Metalloid] {\elementB};
+    \node[name=Al, below of=B,  Metal]     {\elementAl};
+    %% Group 14 - IVA
+    \node[name=C,  right of=B, Nonmetal]  {\elementC};
+    \node[name=Si, below of=C, Metalloid] {\elementSi};
+    %% Group 15 - VA
+    \node[name=N, right of=C, Nonmetal] {\elementN};
+    \node[name=P, below of=N, Nonmetal] {\elementP};
+    %% Group 16 - VIA
+    \node[name=O, right of=N, Nonmetal] {\elementO};
+    \node[name=S, below of=O, Nonmetal] {\elementS};
+    %% Group 17 - VIIA
+    \node[name=F,  right of=O, Halogen] {\elementF};
+    \node[name=Cl, below of=F, Halogen] {\elementCl};
+    %% Group 18 - VIIIA
+    \node[name=Ne, right of=F,  NobleGas] {\elementNe};
+    \node[name=Ar, below of=Ne, NobleGas] {\elementAr};
+    \node[name=He, above of=Ne, NobleGas] {\elementHe};
+  
+    %% Period
+    \node[name=Period1, left of=H,  PeriodLabel] {\normalsize{1}};
+    \node[name=Period2, left of=Li, PeriodLabel] {\normalsize{2}};
+    \node[name=Period3, left of=Na, PeriodLabel] {\normalsize{3}};
+  }
 \end{doc}
 
 \question{
@@ -127,8 +156,7 @@ Pour gagner en stabilité, \variationSujet{le Béryllium}{l'Oxygène} pourra
 
 \vspace*{-30pt}
 \variationSujet{
-\begin{doc}{L'ammoniac}
-  \label{doc:ammoniac}
+\begin{doc}{L'ammoniac}{doc:ammoniac}
   L'ammoniac est un gaz irritant à température ambiante.
   La molécule d'ammoniac est composé d'hydrogène \chemfig{H} ($Z = 1$) et d'azote \chemfig{N} ($Z = 7$).
   Le schéma de Lewis de la molécule est le suivant :
@@ -141,8 +169,7 @@ Pour gagner en stabilité, \variationSujet{le Béryllium}{l'Oxygène} pourra
   \phantom{bla}
 \end{doc}
 }{
-\begin{doc}{La phosphine}
-  \label{doc:phosphine}
+\begin{doc}{La phosphine}{doc:phosphine}
   La phosphine est un gaz incolore et mortellement toxique, utilisé comme pesticide. 
   La molécule de phosphine est composée d'hydrogène \chemfig{H} ($Z = 1$) et de phosphore \chemfig{P} ($Z = 15$).
   Le schéma de Lewis de la molécule est le suivant :

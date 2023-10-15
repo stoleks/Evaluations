@@ -1,19 +1,17 @@
 \documentclass[14pt]{extarticle}
 
-%%%% paramètres généraux
+%%%% paramètres généraux et commande prédéfinies
 \input{_parametres}
 
-%%%% quelques commandes
-\input{_commandes}
-\input{_chapitres}
-
-%%%% Paramètres réglable
-\colorlet{couleurPrincipale}{cyanSombre}
-\colorlet{couleurImportant}{vertSombre}
+%%%% Mode élève (commenté) ou prof (décommenté)
 % \modeCorrection
+%%%% pour l'en-tête
+\renewcommand{\annee}{2023-2024}
+\renewcommand{\etablissement}{Lycée Jean Moulin}
 
 %%%% TP
 \begin{document}
+  %%%%%%%% Secondes
   %%%% Sommative
   \input{sommative/_macros}
   \input{sommative/_competences}
@@ -39,8 +37,8 @@
   % \sujetB
   % \input{sommative/2nd_Atome/3_sujet}
   % sommative 5
-  \sujetA
-  \input{sommative/2nd_Molecule/4_sujet}
+  % \sujetA
+  % \input{sommative/2nd_Molecule/4_sujet}
   % \sujetB
   % \input{sommative/2nd_Molecule/4_sujet}
   % sommative 6
@@ -60,12 +58,19 @@
   % \input{formative/2nd/Mouv1_traj_vecteur}
   
   %%%% Fiche réussite
-  % \input{fiche_reussite/2nd/Mat1A_purs}
+  \input{fiche_reussite/2nd/C1_corps_melanges}
   % \input{fiche_reussite/2nd/Mat1B_solution}
   % \input{fiche_reussite/2nd/Mouv}
   % \input{fiche_reussite/2nd/Atome}
   % \input{fiche_reussite/2nd/Molecule}
   % \input{fiche_reussite/2nd/Lumiere}
+
+  %%%%%%%% Terminale
+  %%%% Formative
+  % \input{formative/termStss/alanine}
+  % \input{formative/termStss/aspartame}
+  % \input{formative/termStss/cholesterol}
+  % \input{formative/termStss/glucose}
   
   %%%% Compétences
   % \input{competences}
