@@ -253,7 +253,7 @@
   \teteDroite{\annee{}}{#2} % right header
 }
 %
-\newcommand{\enTeteFicheReussite}[1]{
+\newcommand{\enTeteFicheReussite}[2]{
   \newpage
   \setcounter{subsection}{0}
   \pasDePagination
@@ -261,10 +261,10 @@
   \phantom{b}
   \vspace*{-70pt}
   \titre{Fiche \og Réussir son évaluation \fg}
-  \titre{#1}
+  \titre{Chapitre #1 -- #2}
   
   \vspace*{-6pt}
-  % \titreSection{Ce que je dois savoir}
+  \titreSection{Ce que je dois savoir}
   
   Pour savoir quoi réviser, je lis les points clés du chapitre évalués :
   \begin{itemize}
@@ -273,6 +273,7 @@
   \end{itemize}
   
   Pour travailler les notions qui ne sont pas maîtrisées, je reprend les activités associés.
+  \vspace*{6pt}
 }
 \newcommand{\basDePageFicheReussite}{
   \titreSection{Ce qu'il me reste à faire}
