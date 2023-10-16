@@ -1,29 +1,23 @@
-\documentclass[14pt]{extarticle}
+\documentclass[12pt]{extarticle}
 
 %%%% paramètres généraux et commande prédéfinies
 \input{_parametres}
 
 %%%% Mode élève (commenté) ou prof (décommenté)
-% \modeCorrection
+%\modeCorrection
 %%%% pour l'en-tête
 \renewcommand{\annee}{2023-2024}
 \renewcommand{\etablissement}{Lycée Jean Moulin}
 
 %%%% TP
 \begin{document}
-  %%%%%%%% Secondes
+  \input{commun/_macros}
   %%%% Sommative
-  \input{sommative/_macros}
-  \input{sommative/_competences}
-  %% sommative 1
-  % \input{sommative/2nd_Mat/1A_evaluation}
-  % \input{sommative/2nd_Mat/1A_sujet_1}
-  % \input{sommative/2nd_Mat/1A_evaluation}
-  % \input{sommative/2nd_Mat/1A_sujet_2}
-  % \input{sommative/2nd_Mat/1A_evaluation}
-  % \input{sommative/2nd_Mat/1A_sujet_3}
-  % \input{sommative/2nd_Mat/1A_bilan_eleve}
-  % sommative 2
+  %% Seconde
+  \sujetA
+  \input{seconde/sommative/E1_corps_melanges}
+  \sujetB
+  \input{seconde/sommative/E1_corps_melanges}
   % \sujetA
   % \input{sommative/2nd_Mat/1B_sujet}
   % \sujetB
@@ -44,10 +38,6 @@
   % sommative 6
   %\input{sommative/2nd_Lum/sujetLum}
   
-  %%%% Correction
-  % \input{sommative/2nd_Mat/1A_correction}
-  % \input{sommative/2nd_Mat/1B_correction}
-  
   %%%% Diagnostiques
   % \input{diagnostique/2nd/Mat1A}
   % \input{diagnostique/2nd/Mouv1}
@@ -58,7 +48,7 @@
   % \input{formative/2nd/Mouv1_traj_vecteur}
   
   %%%% Fiche réussite
-  \input{fiche_reussite/2nd/C1_corps_melanges}
+  % \input{seconde/C1_corps_melanges}
   % \input{fiche_reussite/2nd/Mat1B_solution}
   % \input{fiche_reussite/2nd/Mouv}
   % \input{fiche_reussite/2nd/Atome}

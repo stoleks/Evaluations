@@ -156,7 +156,10 @@
   \titreActi{Activité}{#1}
 }
 \newcommand{\titreEvaluation}[1]{
-  \titreActi{Évaluation}{#1}
+  \titre{Évaluation \arabic{section} -- #1}
+  % reset du numéro de page et d'exercices
+  \setcounter{page}{1}
+  \numeroActivite{1}
 }
 
 
@@ -460,9 +463,9 @@
 
 %%%% Pour faire plusieurs sujets en parallèle
 \newcommand{\variationSujet}[2]{
-  \ifthenelse {\boolean{sujetA}}
-  {\hspace*{-2pt}#1\hspace*{-2pt}}
-  {\hspace*{-2pt}#2\hspace*{-2pt}}
+  \hspace*{-6pt}
+  \ifthenelse {\boolean{sujetA}}{#1}{#2}
+  \hspace*{-6pt}
 }
 
 
