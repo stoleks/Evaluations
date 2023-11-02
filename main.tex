@@ -3,11 +3,13 @@
 %%%% paramètres généraux et commande prédéfinies
 \input{_parametres}
 %% Format A5
-\geometry{a5paper}
+% \geometry{a5paper}
+%% Pour indiquer le barême dans une correction
+\geometry{right = 2.7cm}
 
 
 %%%% Mode élève (commenté) ou prof (décommenté)
-%\modeCorrection
+\modeCorrection
 %%%% pour l'en-tête
 \renewcommand{\annee}{2023-2024}
 \renewcommand{\etablissement}{Lycée Jean Moulin}
@@ -58,15 +60,17 @@
 
   %%%%%%%% Terminale ST2S
   %% Diagnostique
-  %%%% Formative
+  %% Formative
   % \input{stssTerminale/F1_alanine}
   % \input{stssTerminale/F2_cholesterol}
   % \input{stssTerminale/F3_glucose}
   % \input{stssTerminale/F4_aspartame}
   %% Fiche réussite
   %% Sommative
+  %% Devoir commun (correction)
+  \input{stssTerminale/bac/DC1_chimie_orga_secu_rout}
   
   %%%% Commun
-  \input{commun/competences}
+  % \input{commun/competences}
   % \input{classeur}
 \end{document}

@@ -1,0 +1,193 @@
+\vAligne{-50pt}
+\titre{Partie chimie}
+
+\textit{Les exercices sont indépendants.}
+\medskip
+
+\sousTitre{Exercice 1 : l'acide lactique (6 points)}
+\medskip
+
+\begin{wrapfigure}{r}{0.2\linewidth}
+  \vspace*{-20pt}
+  \centering
+  \chemfig{HO -[-2] CH (-[-4] H_3C) - C (-[-2] OH) =[2] O}
+\end{wrapfigure}
+Les maladies mitochondriales peuvent provoquer une acidose lactique qui est une surproduction d’acide lactique pouvant entraîner une acidification du sang et des tissus générant des troubles cardiaques.  
+
+La formule semi-développée de l’acide lactique est donnée ci-contre. 
+ 
+\numeroQuestion Écrire la formule brute de l'acide lactique et calculer la masse molaire $M_a$ de l'acide lactique.
+
+\begin{encart}
+  Formule brute de l'acide lactique : \bruteCHO{3}{6}{3} \points{1}
+  \begin{equation*}  
+    M_a = 3\times M_C + 6\times M_H + 3\times M_O
+    = (3\times 12 + 6\times 1,0 + 3\times 16)\unit{\g\per\mole}
+    = \qty{90}{\g\per\mole}
+    \points{2}
+  \end{equation*}
+\end{encart}
+
+%%
+\medskip
+\textbf{Données :} 
+
+Masses molaires atomiques 
+$M_C = \qty{12}{\g\per\mole}$ ;
+$M_O = \qty{16}{\g\per\mole}$ ;
+$M_H = \qty{1,0}{\g\per\mole}$.
+\medskip
+%%
+
+\numeroQuestion Recopier la formule semi-développée de l’acide lactique sur la copie.
+Entourer et nommer les groupes fonctionnels présents dans cette molécule.
+
+
+\begin{encart}
+  \begin{center}
+    \begin{tikzpicture}[help lines/.style={thin,draw=black!50}]
+      % chaine principale
+      \large
+      \node at (3,3) { \chemfig{HO -[-2] CH (-[-4] H_3C) - } };
+      % alcool
+      \node[draw] at (2.35, 3.77) { \chemfig{HO} };
+      \node[left] at (1.8, 3.8) {\textbf{1}};
+      % acide carboxylique
+      \node[draw] at (4.8,3) { \chemfig{C (-[-2] OH) =[2] O} };
+      \node[right] at (5.6,3) {\textbf{2}};
+    \end{tikzpicture}
+    \points{1}
+  \end{center}
+
+  1 : hydroxyle ;
+  2 : carboxyle.
+  \points{2}
+\end{encart}
+
+
+\bigskip
+\sousTitre{Exercice 2 : La chimie d’un airbag (12 points)}
+\medskip
+
+Appelés sur le lieu d’un accident de la route, des policiers constatent qu’une voiture a percuté frontalement un arbre et que le conducteur, qui était seul à bord, n’est blessé que légèrement. L’airbag qui s’est déclenché au moment du choc a très probablement sauvé la vie du chauffeur.
+
+L’airbag est un coussin gonflable de sécurité qui équipe toutes les automobiles. Suite à une collision, il se gonfle en quelques millisecondes grâce à du diazote produit lors de transformations chimiques. 
+
+Lors d’un choc violent, une étincelle déclenche la décomposition de l’azoture de sodium \azoture(s) présent dans l’airbag en sodium \chemfig{Na}(s) et en diazote \chemfig{N_2}(g) selon la réaction chimique d’équation : 
+
+\begin{equation}   
+  2\azoture(s)
+  \reaction 
+  2\chemfig{Na}(s) + 3\chemfig{N_2}(g)
+\end{equation}
+
+Le sodium produit par la réaction (1) réagit immédiatement et complètement avec du nitrate de potassium 
+\chemfig{KNO_3}(s) également présent dans l’airbag pour former à nouveau du diazote
+\chemfig{N_2}(g) ainsi que de l’oxyde de sodium \chemfig{Na_2O}(s) et de l’oxyde de potassium \chemfig{K_2O}(s). 
+
+La réaction chimique modélisant cette deuxième transformation est la suivante : 
+
+\begin{equation}
+  10 \chemfig{Na}(s) + 2 \chemfig{KNO_3}(s)
+  \reaction
+  \chemfig{N_2}(g) + 5 \chemfig{Na_2O}(s) + \chemfig{K_2O}(s)
+\end{equation}
+
+L’oxyde de sodium \chemfig{Na_2O}(s) et de l’oxyde de potassium \chemfig{K_2O}(s) réagissent à leur tour,
+selon l’équation (3), sur de la silice \chemfig{SiO_2}(s) pour former une poudre inoffensive,
+le silicate alcalin de sodium et de potassium \chemfig{K_2Na_2SiO_4}(s) : 
+
+\begin{equation}
+  \chemfig{Na_2O}(s) + \chemfig{K_2O}s + \chemfig{SiO_2}(s) 
+  \reaction
+  \chemfig{K_2Na_2SiO_4}(s)
+\end{equation}
+
+Pour des raisons de sécurité, toutes les espèces chimiques produites lors des transformations successives sont des solides, sauf le diazote. 
+
+%%
+\medskip
+\textbf{Données :}
+
+Masses molaires atomiques :
+$M_{Na} = \qty{23,0}{\g\per\mole}$ ;
+$M_{N}  = \qty{14,0}{\g\per\mole}$.
+
+Volume molaire gazeux dans les conditions de pression et de température considérées :
+$V_m = \qty{24,0}{\litre\per\mole}$.
+
+\qty{1}{\litre} = \qty{1000}{\cm\cubed}
+\medskip
+%% 
+
+\numeroQuestion En s’appuyant sur la description du fonctionnement de l’airbag, et en considérant que tous les réactifs mis en jeu sont totalement consommés, identifier les deux espèces chimiques restantes à l’issue de la succession des trois transformations et indiquer celle qui provoque le gonflement de l’airbag. 
+
+\begin{encart}
+  \azoture est consommé pendant la réaction (1), \chemfig{Na} et \chemfig{KNO_3} pendant la réaction (2), \chemfig{SiO_2}, \chemfig{K_2O} et \chemfig{Na_2O} pendant la réaction (3).
+  Il ne reste donc que du \chemfig{N_2} et du \chemfig{K_2Na_2SiO_4}.
+  \points{2}
+  
+  Le diazote \chemfig{N_2} est dans un état gazeux.
+  \points{0,5}
+  
+  C'est donc le diazote qui gonfle le ballon.
+  \points{1,5}
+\end{encart}
+
+\medskip
+ La quantité de matière totale de diazote formée 
+$n_T(\chemfig{N_2})$ après le choc est reliée à la quantité de matière d'azoture de sodium décomposée 
+$n_d(\azoture)$, telle que :  
+\begin{equation*}
+  n_T(\chemfig{N_2}) = \num{1,6} \times n_d(\azoture)
+\end{equation*}
+
+\numeroQuestion La masse d’azoture de sodium décomposée lors du déclenchement de l’airbag est égale à \qty{82,0}{\g}. Calculer la quantité de matière totale de diazote formée.
+
+\begin{encart}
+  \begin{equation*}
+    n_d(\azoture)
+    = \dfrac{m(\azoture)}{M(\azoture)}
+    = \dfrac{m(\azoture)}{M_{Na} + 3M_{N}}
+    = \dfrac{\qty{82,0}{\g}}{(\num{23,0} + 3\times\num{14,0})\unit{\g\per\mole}}
+    = \qty{1,3}{\mole}
+    \points{1,5}
+  \end{equation*}
+
+  \begin{equation*}
+    n_T (\chemfig{N_2})
+    = 1,6\times n_d(\azoture)
+    = 1,6 \times \qty{1,3}{\mole}
+    = \qty{2,1}{\mole}
+    \points{1,5}
+  \end{equation*}
+\end{encart}
+
+\numeroQuestion Calculer le volume de l’airbag lorsqu’il est gonflé par le diazote formé.
+
+\begin{encart}
+  Le volume de l'airbag correspond au volume de gaz produit au cours de la réaction.
+  \points{0,5}
+  
+  \begin{equation*}
+    V = n_T(\chemfig{N_2}) \times V_m = \qty{2,1}{\mole} \times \qty{24}{\litre\per\mole} = \qty{50}{\litre}
+    \points{1,5}
+  \end{equation*}  
+\end{encart}
+
+\numeroQuestion Comparer le résultat obtenu à la question 3 avec le volume approximatif de l’airbag dont les dimensions sont précisées dans le document. 
+
+\begin{encart}
+  Le volume de l'airbag est approximativement celui d'un pavé
+  \begin{equation*}  
+    V_\text{airbag} = 70\times 70\times \qty{10}{\cm\cubed} = \qty{49000}{\cm\cubed}
+    \points{1}
+  \end{equation*}
+  
+  Comme \qty{1000}{\cm\cubed} = \qty{1}{\litre}, $V_\text{airbag} = \qty{49}{\litre}$.
+  \points{1}
+  
+  Le volume approximatif de l'airbag est à peu près égal au volume calculé à partir de la réaction chimique $\qty{49}{\litre} \approx \qty{50}{\litre}$.
+  Les deux calculs sont donc cohérent.
+  \points{1}
+\end{encart}

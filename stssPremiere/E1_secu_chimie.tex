@@ -20,13 +20,13 @@
   Extraire des informations d'un document.
   & & & &  \\
   %
-  \centering VAL &
-  Comparer des valeurs calculées avec des valeurs de références pour valider un raisonnement.
+  \centering REA &
+  Réaliser un calcul en donnant le résultat en notation scientifique avec les bonnes unités.
+  Placer des solution sur une échelle pH.
   & & & & \\
   %
-  \centering REA &
-  Réaliser un calcul en donnant le résultat en notation scientifique avec les bonnes unités. Placer des solution sur une échelle pH.
-  & & & & \\
+  \centering COM & 
+  Communiquer clairement par écrit en faisant des phrases complète s.
 \end{tableauCompetences}
 
 \appreciation{4}
@@ -34,33 +34,143 @@
 
 %%%% Exercice I
 \vspace*{-20pt}
-\titrePartie{Déboucher des toilettes}
+\titrePartie{Détartrer une bouilloire}
 
-
-Les marais salants sont de grands bassin remplis par d'eau de mer, qui est riche en sel.
-Le sel est du chlorure de sodium de formule brute \chemfig{NaCl}.
-
-%
-\question{
-  Indiquer en justifiant si l'eau de mer est un corps pur ou un mélange.\competence{RCO, APP}
-}{
-  C'est un mélange, composé d'au moins deux espèces chimique : l'eau et le sel.
-}{1}
-
-Le soleil et le vent font s'évaporer l'eau de mer, mais le sel reste au fond des bassins. 
-Après plusieurs étapes d'évaporation et de remplissage, la quantité de sel contenue dans l'eau des bassins devient très importante.
-La masse volumique de l'eau salée augmente avec la quantité de sel.
+Pour détartrer une bouilloire, on prépare une solution d'acide éthanoïque de concentration massique $c_m = \qty{150}{\g/\litre}$
 
 \question{
-  Rappeler la relation mathématique entre la masse volumique de l'eau salée $\rho$, sa masse $m$ et le volume $V$ qu'elle occupe.\competence{RCO}
+  Donner la formule littérale de la relation qui donne la masse $m$ en soluté
+  en fonction de la concentration massique $c_m$ et du volume de la solution $V$
 }{
   \begin{equation*}
-    \rho = \frac{m}{V}
+    m = c_m \times V
   \end{equation*}
+}{1}
+
+\question{
+  Quelle est la masse de soluté présente dans une solution d'acide éthanoïque de volume $V = \qty{0,2}{\litre}$ ?
+}{
+  \begin{equation*}
+    m = c_m \times V
+    = \qty{150}{\g/\litre} \times \qty{0,2}{\litre}
+    = \qty{30,0}{\g}
+  \end{equation*}
+}{3}
+
+\question{
+  Calculer la masse molaire de l'acide éthanoïque, sa formule brute étant \bruteCHO{2}{4}{2}.
+  
+  \textbf{Données : }
+  M(H) = \qty{1,0}{\g/\mole}, M(C) = \qty{12}{\g/\mole}, M(O) = \qty{16}{\g/\mole}.
+}{
+  \begin{center}
+    M(\bruteCHO{2}{4}{2})
+    = $2\times$ M(C) + $4\times$ M(H) + $2\times$ M(O)
+    = $24 + 4,0 + 32$\unit{\g/\mole}
+    = \qty{60}{\g/\mole}
+  \end{center}
+}{3}
+
+\question{
+  Après calcul, on trouve qu'il y a \qty{30,0}{\g} d'acide éthanoïque dans la solution.
+  Calculer la quantité de matière $n$ d'acide éthanoïque dans la solution.
+}{
+  \begin{equation*}
+    n = \dfrac{m}{M}
+    = \dfrac{\qty{30,0}{\g}}{\qty{60}{\g/\mole}}
+    = \qty{0,5}{\mole}
+  \end{equation*}
+}{5}
+
+\question{
+  Rappeler la formule littérale de la relation qui donne la concentration \important{molaire} en fonction de la quantité de matière $n$ et du volume de la solution $V$.
+}{}{2}
+
+\question{
+  Calculer la concentration \important{molaire} d'acide éthanoïque dans la solution dont le volume est $V = \qty{0,2}{\litre}$.
+}{
+  \begin{equation*}
+    c = \dfrac{n}{V}
+    = \dfrac{\qty{0,5}{\mole}}{\qty{0,2}{\litre}}
+    = \qty{2,5}{\mole/\litre}
+  \end{equation*}
+}{6}
+
+
+\titrePartie{Déboucher des toilettes}
+
+\begin{wrapfigure}[3]{r}{0.1\linewidth}
+  \centering
+  \vspace*{-36pt}
+  \image{1}{images/picto_ronge}
+\end{wrapfigure}
+Pour déboucher des toilettes, Ahmed a lu qu'il fallait utiliser une solution \important{basique}.
+Il dispose d'une solution d'acide éthanoïque, d'une solution d'acide chlorhydrique, d'eau et d'une solution de soude.
+Un pictogramme est présent sur la bouteille de soude, il est présenté à droite.
+Il mesure le pH des solutions pour savoir laquelle utiliser et trouve les résultats suivants :
+
+\begin{tableau}{|c |c |c |c |c |}
+  Produit & Acide éthanoïque & Acide chlorhydrique & Soude & Eau \\
+  pH      & \num{2,4} & \num{1,0} & \num{13,9} & \num{7,0} 
+\end{tableau}
+
+\numeroQuestion
+Placer sur l'échelle de pH ci-dessous les produits utilisé par Ahmed, en indiquant où se trouve les solutions acides, basiques et neutres.
+\vspace*{50pt}
+
+\begin{center}
+  \begin{tikzpicture}
+    \tkzVecteur(-0.75)[15.5](0){pH}
+    \foreach \i in {0,1,...,14} \draw (\i,0.1)--(\i,-0.1) node[below]{\i};
+  \end{tikzpicture}
+\end{center}
+\vspace*{50pt}
+
+\question{
+  Rappeler la relation entre le pH et la concentration en ion oxonium \oxonium.
+}{}{2}
+
+\question{
+  Calculer la concentration en ion oxonium dans la soude et dans l'acide chlorhydrique.
+}{
+
+}{4}
+
+\question{
+  Rappeler la signification du pictogramme de sécurité présent sur la bouteille de soude.
+}{
+
+}{3}
+
+
+\question{
+  Donner la définition d’une espèce chimique acide selon Br\o{}nsted.
+}{
+
+}{4}
+
+\numeroQuestion
+Dans les couples acido-basiques ci-dessous, entourer d'une couleur l'espèce chimique acide du couple et d'une autre couleur la base.
+\begin{enumerate}[label = (\alph*)]
+  \item \chemfig{NH_4^+}   / \chemfig{NH_3}
+  \item \chemfig{HCl}      / \chemfig{Cl^{-}}
+  \item \chemfig{CH_3COOH} / \chemfig{CH_3COO^{-}}
+\end{enumerate}
+
+\question{
+  Établir la réaction acido-basique entre l'ammoniac de formule brute \chemfig{NH_3} et l'acide éthanoïque \chemfig{CH_3COOH}.
+}{
+
 }{2}
 
+\question{
+  Établir les réactions acido-basique avec l'eau \chemfig{H_2O} et les espèces chimiques suivantes : \chemfig{CH_3COOH}, \chemfig{HCl}, \chemfig{NH_3}.
 
-\titrePartie{}
+  \textbf{Données :} Les couples acide/base de l'eau sont
+  \chemfig{H_2O}/\hydroxyde et \oxonium/\chemfig{H_2O}
+}{
+
+}{6}
 
 
 \input{commun/bilan_eleve}
