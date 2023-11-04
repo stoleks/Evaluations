@@ -9,25 +9,27 @@
 \titreEvaluation{\sndCorp}
 
 %%%% Compétences évaluées
-\sousTitre{Compétences évaluées}
-
-\begin{tableauCompetences}
-  \centering RCO &
-  Connaître le vocabulaire du cours et les relations importantes.
-  & & & & \\
-  %
-  \centering APP &
-  Extraire des informations d'un document.
-  & & & &  \\
-  %
-  \centering VAL &
-  Comparer des valeurs calculées avec des valeurs de références pour valider un raisonnement.
-  & & & & \\
-  %
-  \centering REA &
-  Réaliser un calcul en donnant le résultat en notation scientifique avec les bonnes unités.
-  & & & & \\
-\end{tableauCompetences}
+\pasCorrection{
+  \sousTitre{Compétences évaluées}
+  
+  \begin{tableauCompetences}
+    \centering RCO &
+    Connaître le vocabulaire du cours et les relations importantes.
+    & & & & \\
+    %
+    \centering APP &
+    Extraire des informations d'un document.
+    & & & &  \\
+    %
+    \centering VAL &
+    Comparer des valeurs calculées avec des valeurs de références pour valider un raisonnement.
+    & & & & \\
+    %
+    \centering REA &
+    Réaliser un calcul en donnant le résultat en notation scientifique avec les bonnes unités.
+    & & & & \\
+  \end{tableauCompetences}
+}
 
 \appreciation{4}
 
@@ -44,6 +46,7 @@ Le sel est du chlorure de sodium de formule brute \chemfig{NaCl}.
   Indiquer en justifiant si l'eau de mer est un corps pur ou un mélange.\competence{RCO, APP}
 }{
   C'est un mélange, composé d'au moins deux espèces chimique : l'eau et le sel.
+  \points{2}
 }{1}
 
 Le soleil et le vent font s'évaporer l'eau de mer, mais le sel reste au fond des bassins. 
@@ -55,6 +58,7 @@ La masse volumique de l'eau salée augmente avec la quantité de sel.
 }{
   \begin{equation*}
     \rho = \frac{m}{V}
+    \points{1}
   \end{equation*}
 }{2}
 
@@ -67,6 +71,7 @@ Les productrices ou producteurs peuvent récolter le sel lorsque la masse volumi
   $m_\text{eau salée} = \qty{60}{\g}$ et $V_\text{eau salée} = \qty{50}{\ml}$. Donc 
   \begin{equation*}
     \rho_\text{eau salée} = \frac{\qty{60}{\g}}{\qty{50}{\ml}} = \qty{1,2}{\g/\ml}
+    \points{2}
   \end{equation*}
 }{2}
 
@@ -74,6 +79,7 @@ Les productrices ou producteurs peuvent récolter le sel lorsque la masse volumi
   Est-ce que la productrice peut récolter le sel dans ce bassin ? Justifier.\competence{VAL}
 }{
   La masse volumique de l'eau du bassin est \variationSujet{supérieure}{inférieure} à celle nécessaire pour récolter, donc la productrice \variationSujet{peut}{ne peut pas} récolter le sel.
+  \points{2}
 }{2}
 
 
@@ -98,6 +104,7 @@ Un tableau récapitulatif des tests qu'elle peut réaliser est présenté ci-des
   Indiquer quel ion pollue le bassin, en justifiant.\competence{APP}
 }{
    D'après le tableau, le \variationSujet{chlorure de baryum}{nitrate d'argent} a réagit avec les ions \variationSujet{sulfates}{chlorure} pour former un précipité blanc.
+   \points{2}
 }{2}
 
 \question{
@@ -108,6 +115,7 @@ Un tableau récapitulatif des tests qu'elle peut réaliser est présenté ci-des
   Si elle voit apparaître un précipité vert, alors le bassin contient des ions Fer II.
   Si elle voit apparaître un précipité rouille, alors le bassin contient des ions Fer III.
   Si aucun précipité n'apparaît, le bassin n'est pas pollué.
+  \points{2}
 }{4}
 
 
@@ -137,25 +145,31 @@ Le chromatogramme obtenue après la montée de l'éluant est présenté ci-desso
 
 \numeroQuestion
 Indiquer sur le chromatogramme où se trouvent la ligne de dépôt, la couche mince et le front de l'éluant.\competence{RCO}
+\correction{\points{3}}
 
 \question{
   Justifier que l'huile essentielle de \variationSujet{lavande}{menthe} est un mélange.\competence{RCO, APP}
 }{
   D'après le chromatogramme, le dépôt d'huile essentielle s'est divisé en trois tâches, c'est donc un mélange.
+  \points{2}
 }{2}
 
 \question{
   En comparant les hauteurs des tâches, indiquer quelles sont les espèces chimiques présentes dans l'huile essentielle de \variationSujet{lavande}{menthe}.\competence{RCO, APP, VAL}
 }{
   Sur un chromatogramme, deux composés sont identiques s'ils sont montés à la même hauteur. 
-  Sur le chromatogramme, on voit que la première tâche d'huile essentielle de \variationSujet{lavande}{menthe} est à la même hauteur que le \variationSujet{l'acétate de linalyle}{limonène} et que la seconde tâche est à la même hauteur que le \variationSujet{linalol}{menthol}.
-  L'huile essentielle de \variationSujet{lavande}{menthe} est donc composée de \variationSujet{l'acétate de linalyle}{limonène} et de \variationSujet{linalol}{menthol}.
+  
+  Sur le chromatogramme, on voit que la première tâche d'huile essentielle de \variationSujet{lavande}{menthe} est à la même hauteur que \variationSujet{l'acétate de linalyle}{le limonène} et que la seconde tâche est à la même hauteur que le \variationSujet{linalol}{menthol}.
+  
+  L'huile essentielle de \variationSujet{lavande}{menthe} est donc composée \variationSujet{d'acétate de linalyle}{de limonène} et de \variationSujet{linalol}{menthol}.
+  \points{3}
 }{3}
 
 \question{
   Peut-on identifier le troisième composé présent dans l'huile essentielle avec ce chromatogramme ?\competence{APP, VAL}
 }{
   Non, car on n'a pas d'espèce chimique de référence pour comparer.
+  \points{1}
 }{2}
 
 
@@ -177,6 +191,7 @@ Ce prototype est un cylindre constitué d'un alliage de platine et d'iridium, de
 }{
   L'étalon sert à définir le kilogramme.
   Sa masse est donc de \qty{1}{\kg} par définition.
+  \points{1}
 }{1}
 
 \question{
@@ -184,7 +199,8 @@ Ce prototype est un cylindre constitué d'un alliage de platine et d'iridium, de
   Calculer la fraction massique de platine et d'iridium.\competence{REA, APP}
 }{
   Pour le platine : $\qty{0,9}{\kg} / \qty{1}{\kg} = \qty{90}{\percent}$.
-  Pour l'iridium : $\qty{0,1}{\kg} / \qty{1}{\kg} = \qty{10}{\percent}$
+  Pour l'iridium : $\qty{0,1}{\kg} / \qty{1}{\kg} = \qty{10}{\percent}$.
+  \points{2}
 }{2}
 
 \textit{Rappel :} la fraction massique d'une espèce dans un échantillon est la masse de l'espèce divisée par la masse totale de l'échantillon.
@@ -200,7 +216,8 @@ Par exemple pour le platine :
   L'étalon actuel a précisément une masse de \qty{1}{\kg} avec \qty{10}{\percent} d'iridium.
   Le premier cylindre comportait $\qty{11,1}{\percent} > \qty{10}{\percent}$ d'iridium.
   Comme l'iridium a une masse volumique plus élevée, sa masse valait plus de \qty{1}{\kg}, d'où le rejet par le BIPM.
+  \points{2}
 }{2}
 
 
-\input{commun/bilan_eleve}
+\pasCorrection{\input{commun/bilan_eleve}}

@@ -6,28 +6,31 @@
 \nomPrenomClasse
 
 %%%%
+\correction{\vspace*{-40pt}}
 \titreEvaluation{Utiliser des produits ménagers en toute sécurité}
 
 %%%% Compétences évaluées
-\sousTitre{Compétences évaluées}
-
-\begin{tableauCompetences}
-  \centering RCO &
-  Connaître le vocabulaire du cours et les relations importantes.
-  & & & & \\
-  %
-  \centering APP &
-  Extraire des informations d'un document.
-  & & & &  \\
-  %
-  \centering REA &
-  Réaliser un calcul en donnant le résultat en notation scientifique avec les bonnes unités.
-  Placer des solution sur une échelle pH.
-  & & & & \\
-  %
-  \centering COM & 
-  Communiquer clairement par écrit en faisant des phrases complète s.
-\end{tableauCompetences}
+\pasCorrection{
+  \sousTitre{Compétences évaluées}
+  
+  \begin{tableauCompetences}
+    \centering RCO &
+    Connaître le vocabulaire du cours et les relations importantes.
+    & & & & \\
+    %
+    \centering APP &
+    Extraire des informations d'un document.
+    & & & &  \\
+    %
+    \centering REA &
+    Réaliser un calcul en donnant le résultat en notation scientifique avec les bonnes unités.
+    Placer des solution sur une échelle pH.
+    & & & & \\
+    %
+    \centering COM & 
+    Communiquer clairement par écrit en faisant des phrases complètes.
+  \end{tableauCompetences}
+}
 
 \appreciation{4}
 
@@ -44,6 +47,7 @@ Pour détartrer une bouilloire, on prépare une solution d'acide éthanoïque de
 }{
   \begin{equation*}
     m = c_m \times V
+    \points{1}
   \end{equation*}
 }{1}
 
@@ -54,6 +58,7 @@ Pour détartrer une bouilloire, on prépare une solution d'acide éthanoïque de
     m = c_m \times V
     = \qty{150}{\g/\litre} \times \qty{0,2}{\litre}
     = \qty{30,0}{\g}
+    \points{1,5}
   \end{equation*}
 }{3}
 
@@ -68,6 +73,7 @@ Pour détartrer une bouilloire, on prépare une solution d'acide éthanoïque de
     = $2\times$ M(C) + $4\times$ M(H) + $2\times$ M(O)
     = $24 + 4,0 + 32$\unit{\g/\mole}
     = \qty{60}{\g/\mole}
+    \points{1,5}
   \end{center}
 }{3}
 
@@ -79,12 +85,18 @@ Pour détartrer une bouilloire, on prépare une solution d'acide éthanoïque de
     n = \dfrac{m}{M}
     = \dfrac{\qty{30,0}{\g}}{\qty{60}{\g/\mole}}
     = \qty{0,5}{\mole}
+    \points{1,5}
   \end{equation*}
 }{5}
 
 \question{
   Rappeler la formule littérale de la relation qui donne la concentration \important{molaire} en fonction de la quantité de matière $n$ et du volume de la solution $V$.
-}{}{2}
+}{
+  \begin{equation*}
+    c = \dfrac{n}{V}
+    \points{1}
+  \end{equation*}
+}{2}
 
 \question{
   Calculer la concentration \important{molaire} d'acide éthanoïque dans la solution dont le volume est $V = \qty{0,2}{\litre}$.
@@ -93,6 +105,7 @@ Pour détartrer une bouilloire, on prépare une solution d'acide éthanoïque de
     c = \dfrac{n}{V}
     = \dfrac{\qty{0,5}{\mole}}{\qty{0,2}{\litre}}
     = \qty{2,5}{\mole/\litre}
+    \points{1,5}
   \end{equation*}
 }{6}
 
@@ -116,37 +129,50 @@ Il mesure le pH des solutions pour savoir laquelle utiliser et trouve les résul
 
 \numeroQuestion
 Placer sur l'échelle de pH ci-dessous les produits utilisé par Ahmed, en indiquant où se trouve les solutions acides, basiques et neutres.
-\vspace*{50pt}
+\correction{\points{2}}
 
-\begin{center}
-  \begin{tikzpicture}
-    \tkzVecteur(-0.75)[15.5](0){pH}
-    \foreach \i in {0,1,...,14} \draw (\i,0.1)--(\i,-0.1) node[below]{\i};
-  \end{tikzpicture}
-\end{center}
-\vspace*{50pt}
+\pasCorrection{
+  \vspace*{50pt}
+  \begin{center}
+    \begin{tikzpicture}
+      \tkzVecteur(-0.75)[15.5](0){pH}
+      \foreach \i in {0,1,...,14} \draw (\i,0.1)--(\i,-0.1) node[below]{\i};
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{50pt}
+}
 
 \question{
   Rappeler la relation entre le pH et la concentration en ion oxonium \oxonium.
-}{}{2}
+}{
+  \begin{equation*}
+    [\oxonium] = 10^{-pH}
+    \points{1}
+  \end{equation*}
+}{2}
 
 \question{
   Calculer la concentration en ion oxonium dans la soude et dans l'acide chlorhydrique.
 }{
-
+  \begin{align*}  
+    [\oxonium]_\text{soude} &= 10^{-13,9} = \qty{1,26e-14}{\mole/\litre} \\
+    [\oxonium]_\text{acide chrlorhydrique} &= 10^{-1,0} = \qty{1,0e-1}{\mole/\litre}
+    \points{2}
+  \end{align*}
 }{4}
 
 \question{
   Rappeler la signification du pictogramme de sécurité présent sur la bouteille de soude.
 }{
-
+  C'est le symbole qui désigne les produits corrosifs,
+  qui peuvent ronger la peau et/ou les yeux en cas de contact.\points{2}
 }{3}
 
 
 \question{
   Donner la définition d’une espèce chimique acide selon Br\o{}nsted.
 }{
-
+  C'est une espèce chimique susceptible de libérer un proton, c'est-à-dire un ion \chemfig{H^+}.\points{2}
 }{4}
 
 \numeroQuestion
@@ -155,12 +181,17 @@ Dans les couples acido-basiques ci-dessous, entourer d'une couleur l'espèce chi
   \item \chemfig{NH_4^+}   / \chemfig{NH_3}
   \item \chemfig{HCl}      / \chemfig{Cl^{-}}
   \item \chemfig{CH_3COOH} / \chemfig{CH_3COO^{-}}
+  \correction{\points{1,5}}
 \end{enumerate}
+
 
 \question{
   Établir la réaction acido-basique entre l'ammoniac de formule brute \chemfig{NH_3} et l'acide éthanoïque \chemfig{CH_3COOH}.
 }{
-
+  \begin{equation*}  
+    \chemfig{NH_3} + \chemfig{CH_3COOH} \reaction \chemfig{NH_4^+} + \chemfig{CH_3COO^{-}}
+    \points{1}
+  \end{equation*}
 }{2}
 
 \question{
@@ -169,8 +200,13 @@ Dans les couples acido-basiques ci-dessous, entourer d'une couleur l'espèce chi
   \textbf{Données :} Les couples acide/base de l'eau sont
   \chemfig{H_2O}/\hydroxyde et \oxonium/\chemfig{H_2O}
 }{
-
+  \begin{align*}
+    \chemfig{H_2O} + \chemfig{CH_3COOH} &\reaction \oxonium + \chemfig{CH_3COO^{-}} \\
+    \chemfig{H_2O} + \chemfig{NH_3} &\reaction \hydroxyde + \chemfig{NH_4^+} \\
+    \chemfig{H_2O} + \chemfig{HCl} &\reaction \oxonium + \chemfig{Cl^{-}}
+    \points{3}
+  \end{align*}
 }{6}
 
 
-\input{commun/bilan_eleve}
+\pasCorrection{\input{commun/bilan_eleve}}
