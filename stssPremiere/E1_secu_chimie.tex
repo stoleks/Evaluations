@@ -9,6 +9,7 @@
 \correction{\vspace*{-40pt}}
 \titreEvaluation{Utiliser des produits ménagers en toute sécurité}
 
+
 %%%% Compétences évaluées
 \pasCorrection{
   \sousTitre{Compétences évaluées}
@@ -37,7 +38,7 @@
 
 %%%% Exercice I
 \vspace*{-20pt}
-\titrePartie{Détartrer une bouilloire}
+\titrePartie{Détartrer une bouilloire}\correction{\points{8}}
 
 Pour détartrer une bouilloire, on prépare une solution d'acide éthanoïque de concentration massique $c_m = \qty{150}{\g/\litre}$
 
@@ -110,7 +111,7 @@ Pour détartrer une bouilloire, on prépare une solution d'acide éthanoïque de
 }{6}
 
 
-\titrePartie{Déboucher des toilettes}
+\titrePartie{Déboucher des toilettes}\correction{\points{14,5}}
 
 \begin{wrapfigure}[3]{r}{0.1\linewidth}
   \centering
@@ -122,6 +123,7 @@ Il dispose d'une solution d'acide éthanoïque, d'une solution d'acide chlorhydr
 Un pictogramme est présent sur la bouteille de soude, il est présenté à droite.
 Il mesure le pH des solutions pour savoir laquelle utiliser et trouve les résultats suivants :
 
+\correction{\vspace*{-8pt}}
 \begin{tableau}{|c |c |c |c |c |}
   Produit & Acide éthanoïque & Acide chlorhydrique & Soude & Eau \\
   pH      & \num{2,4} & \num{1,0} & \num{13,9} & \num{7,0} 
@@ -131,16 +133,14 @@ Il mesure le pH des solutions pour savoir laquelle utiliser et trouve les résul
 Placer sur l'échelle de pH ci-dessous les produits utilisé par Ahmed, en indiquant où se trouve les solutions acides, basiques et neutres.
 \correction{\points{2}}
 
-\pasCorrection{
-  \vspace*{50pt}
-  \begin{center}
-    \begin{tikzpicture}
-      \tkzVecteur(-0.75)[15.5](0){pH}
-      \foreach \i in {0,1,...,14} \draw (\i,0.1)--(\i,-0.1) node[below]{\i};
-    \end{tikzpicture}
-  \end{center}
-  \vspace*{50pt}
-}
+\pasCorrection{\vspace*{50pt}}
+\begin{center}
+  \begin{tikzpicture}
+    \tkzVecteur(-0.75)[15.5](0){pH}
+    \foreach \i in {0,1,...,14} \draw (\i,0.1)--(\i,-0.1) node[below]{\i};
+  \end{tikzpicture}
+\end{center}
+\pasCorrection{\vspace*{50pt}}
 
 \question{
   Rappeler la relation entre le pH et la concentration en ion oxonium \oxonium.
