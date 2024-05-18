@@ -33,6 +33,15 @@
   #1
 }
 
+%%%% boite colorée
+\newtcolorbox{boiteColoree}[1][]{
+  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  arc = 2mm, % les lignes de la boites sont droites
+  colback = couleurPrim, colframe = white, % fond et traits colorés
+  coltext = white,
+  #1
+}
+
 %%%% document
 \newcounter{documentNum}
 \newtcolorbox{doc}[3][]{
@@ -181,8 +190,12 @@
 \newcommand{\titreActivite}[1]{
   \titreActi{Activité}{#1}
 }
-\newcommand{\titreEvaluation}[1]{
-  \titre{Évaluation \arabic{section} -- #1}
+\NewDocumentCommand{\titreEvaluation}{o m}{
+  \IfNoValueTF {#1}{
+    \titre{Évaluation \arabic{section} -- #2}
+  }{
+    \titre{Évaluation #1 -- #2}
+  }
   % reset du numéro de page et d'exercices
   \setcounter{page}{1}
   \numeroActivite{1}
@@ -190,7 +203,7 @@
 \newcounter{exerciceNum}
 \newcommand{\exercice}[1]{
   \refstepcounter{exerciceNum}
-  \sousTitre{Exercice \arabic{exerciceNum} : #1}
+  \sousTitre{\large Exercice \arabic{exerciceNum} : #1}
   % reset des numéros de questions
   \setcounter{questionNum}{0}
   \setcounter{documentNum}{0}
@@ -204,9 +217,9 @@
 \newcommand{\titrePartie}[1]{
   \vspace*{24pt}
   \refstepcounter{subsection}
-  \rectangle{60pt}{1pt}
+  \rectangle{40pt}{1pt}
   \sousTitre{\Large \Roman{subsection} -- #1}
-  \rectangle{60pt}{1pt}
+  \rectangle{40pt}{1pt}
   \vspace*{10pt}
 }
 \newcounter{sousSectionNum}
@@ -321,6 +334,12 @@
 }
 \newcommand{\coursFicheReussite}{
   Je prépare une fiche au format A4 avec toutes les notions, définitions ou grandeurs dont je pense avoir besoin pendant l'évaluation.
+  \bigskip
+  
+  \begin{center}
+    \textcolor{couleurSec}{\faThumbsUp}
+    \important{La fiche préparée pourra être utilisée pendant l'évaluation pour s'aider !}
+  \end{center}
 }
 
 
@@ -365,7 +384,7 @@
 \NewDocumentCommand{\lignesDeReponse}{s m}{
   % Trace la fin de la ligne, ou pas
   \IfBooleanTF{#1}{ % Version *
-    \espaceReponse \dotfill
+    \espaceReponse \dotfill\phantom{bb}
     \ifnum #2 < 1
       \newline
     \fi
@@ -600,13 +619,24 @@
 %
 \NewDocumentCommand{\mesure}{O{couleurPrim}}{
   \hspace{15pt}
+  %\numeroQuestion
   \textcolor{couleurSec}{\faWrench\faFlask}
 }
 % pictogramme sécurité
 \newcommand{\picto}[2]{
   \image{#1}{images/pictogrammes/picto_#2}
 }
-
+% Nombre dans un cercle
+\newcommand*\nombreCercle[1]{
+  % \tikz[baseline=(char.base)]{
+  %   \node [shape=circle, draw filled, inner sep=1.2pt, color=couleurSec!20] (char) {\textcolor{black}{#1};
+  % }
+  \important[couleurSec]{#1}
+}
+% Pour légender une image
+\newcommand{\legende}[1]{
+  \textcolor{couleurPrim}{\faArrowUp} \; #1
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% emphase
@@ -632,10 +662,36 @@
   \textbf{Appel n$^\circ$ \arabic{compteAppelProf} :}
 }
 
+%
+\newcommand{\extrait}[2]{
+  « #1 »
+  
+  \vspace*{-12pt}
+  \begin{flushright}
+    \textit{#2}
+  \end{flushright}
+  \vspace*{-12pt}
+}
+
 
 %%%% image
 \newcommand{\image}[2]{
   \includegraphics[width=#1\linewidth]{#2}
+}
+
+%%%% qr code en insert sur la droite
+\NewDocumentCommand{\QRCode}{o m}{
+  \IfNoValueTF{#1} {
+    \begin{wrapfigure}{r}{0.1\linewidth}
+      \vspace*{-16pt}
+      \qrcode{#2}
+    \end{wrapfigure}
+  }{
+    \begin{wrapfigure}[#1]{r}{0.1\linewidth}
+      \vspace*{-16pt}
+      \qrcode{#2}
+    \end{wrapfigure}
+  }
 }
 
 
@@ -741,10 +797,14 @@
 
 
 %% Unités
+\DeclareSIUnit{\dioptre}{\text{$\delta$}}
 \DeclareSIUnit{\dornic}{\text{\textdegree D}}
+\DeclareSIUnit{\ppm}{\text{ppm}}
+\DeclareSIUnit{\COeq}{\text{kgCO$_{2}$e}}
+% \DeclareSIUnit{}{\text{}}
 
 
-%% atome ou isotope
+%% atome ou isotope #1: Z, #2: A, #3: X
 \makeatletter
 \newcommand{\isotope}[3]{%
    \settowidth\@tempdimb{\ensuremath{\scriptstyle#1}}%
