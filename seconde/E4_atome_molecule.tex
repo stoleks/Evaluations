@@ -1,0 +1,336 @@
+%%%% début de la page
+\teteSndAtom
+
+
+
+%%%%
+\nomPrenomClasse
+
+%%%%
+\titreEvaluation{Atomes et molécules}
+
+%%%% Compétences évaluées
+\pasCorrection{
+  \sousTitre{Compétences évaluées}
+  
+  \begin{tableauCompetences}
+    APP &
+    Savoir lire l'écriture symbolique d'un atome, la formule chimique d'un ion ou d'une molécule.
+    % Extraire l'information d'un tableau périodique.
+    & & & & \\
+    %
+    REA &
+    Donner la configuration électronique d'un atome à partir de son nombre d'électrons.
+    Calculer le nombre de nucléons d'un atome.
+    & & & & \\
+    %
+    ANA/RAI &
+    Mener un raisonnement.
+    & & & & \\
+    %
+    COM &
+    Communiquer clairement avec des phrases synthétiques.
+    Légender clairement tous les éléments d'un schéma.
+    & & & & \\
+  \end{tableauCompetences}
+}
+
+\appreciation{3}
+
+
+%%%%
+\titreSection{Atome et élément chimique}\correction{\points{8.5}}
+
+\question{
+  \variationSujet
+  {Dans les batteries on trouve du silicium \isotope{28}{14}{Si}.}
+  {Le magnésium \isotope{25}{12}{Mg} est un réactif très présent en chimie.}
+  Donner la composition du noyau de cet atome.\competence{APP, REA}
+}{
+  L'atome de
+  \variationSujet{
+     silicium \isotope{28}{14}{Si} possède 14 protons et $28 - 14 = 14$
+  }{
+    magnésium \isotope{25}{12}{Mg} possède 12 protons et $25- 12 = 13$
+  }
+  neutrons.
+  \points{1}
+}{2}
+
+\question{
+  Indiquer en justifiant le nombre d'électrons que possède l'atome
+  \variationSujet{de silicium.}{de magnésium.}\competence{APP}
+}{
+  L'atome est neutre électriquement, sa charge électrique totale est nulle.
+  Les protons ont une charge positive, les électrons une charge négative.
+  L'atome doit donc avoir autant de protons que d'électrons, soit 14 électrons.
+  \points{1}
+}{2}
+
+
+Certains élément chimiques peuvent exister sous plusieurs formes appelée isotope, comme par exemple
+\variationSujet
+{le carbone : \isotope{13}{6}{C}, \isotope{14}{6}{C}.}
+{l'oxygène : \isotope{17}{8}{O}, \isotope{18}{8}{O}.}
+
+
+\question{
+  Le troisième isotope stable
+  \variationSujet
+  {du carbone possède 6 protons et 6 neutrons.}
+  {de l'oxygène possède 8 protons et 8 neutrons.}
+  Calculer son nombre de nucléons et écrire sa représentation symbolique \isotope{A}{Z}{X}.\competence{REA}
+}{
+  \variationSujet{
+    L'atome de carbone a $6 + 6 = 12$ nucléons, on le note \isotope{12}{6}{C}.
+  }{
+    L'atome d'oxygène a $8 + 8 = 16$ nucléons, on le note \isotope{16}{8}{O}.
+  }
+  \points{1}
+}{2}
+
+% \question{
+%   Calculer la masse de l'atome
+%   \variationSujet
+%   {de carbone \isotope{13}{6}{C},}
+%   {d'oxygène \isotope{16}{8}{O},}
+%   en détaillant les calculs.\competence{APP, REA}
+  
+%   \textbf{Données :} $m_\text{nucléon} = 1,\!67 \times 10^{-27} \unit{kg}$, $m_\text{électron} = 9,\!11 \times 10^{-31} \unit{kg}$
+% }{
+%   Les électrons étant 1000 fois plus léger que les nucléons, leurs masses est négligeable et la masse de l'atome est simplement le nombre de nucléons multiplié par la masse d'un nucléon
+%   \begin{equation*}
+%     m_{\chemfig{C}} 
+%     = 13 \times m_\text{nucléon} 
+%     = 13 \times 1,\!67 \cdot 10^{-27} \unit{kg}
+%     = 21,\!7 \cdot 10^{-27} \unit{kg}
+%   \end{equation*}
+% }{2}
+
+\question{
+  Le cuivre \isotope{63}{29}{Cu} peut devenir l'ion \chemfig{Cu^{2+}}.
+  Donner le nombre de protons, neutrons et électrons de l'ion \chemfig{Cu^{2+}}. Justifier.\competence{APP, ANA/RAI}
+}{
+  L'ion \chemfig{Cu^{2+}} possède deux charges positives : 2 électrons ont donc été arrachés à l'atome de cuivre \isotope{63}{29}{Cu}.
+  Cet atome possède 29 proton, $63 - 29 = 34$ neutrons et comme l'atome est neutre, il possède 29 électrons.
+  L'ion \chemfig{Cu^{2+}} a donc 29 protons, 34 neutrons et $29 - 2 = 27$ électrons.
+  \points{2}
+}{3}
+
+
+%%%%
+% \medskip
+\pasCorrection{\newpage}
+\sousTitre{QCM - cocher \textit{la ou les} bonnes réponses.}\correction{\points{3.5}}
+
+\vspace*{-18pt}
+\begin{multicols}{2}
+  \QCM{
+    L'atome de \variationSujet
+    {sodium \chemfig{Na} est devenu l'ion \chemfig{Na^+}}
+    {de fluor \chemfig{F} est devenu l'ion \chemfig{F^{-}}}
+    parce que
+  }{
+    \item\reponseQCM un électron lui a été arraché
+    \item un électron lui a été donné
+    \item il a gagné un proton
+  }
+  \QCM{
+    L'ion \variationSujet{\chemfig{Na^+}}{\chemfig{F^{-}}}
+  }{
+    \item est un anion
+    \item\reponseQCM est un cation
+    \item\reponseQCM a une charge positive
+  }
+  \QCM{Le cortège électronique a une structure particulière}{
+    \item\reponseQCM avec des couches ($1, 2, 3, \ldots$) et des sous-couches ($s, p, \ldots$)
+    \item\reponseQCM les sous-couches $s$ peuvent contenir au plus 2 électrons
+    \item\reponseQCM les sous-couches $p$ peuvent contenir au plus 6 électrons
+  }
+  \QCM{La dernière colonne de la classification périodique s'appelle la famille }{
+    \item\reponseQCM des gaz nobles
+    \item des halogènes
+  }
+  \QCM{Les entités chimiques \isotope{63}{29}{Cu}, \chemfig{Cu^+}, \chemfig{Cu^{2+}} sont toutes du Cuivre car elles ont}{
+    \item le même nombre d'électrons
+    \item\reponseQCM le même nombre de protons $Z$
+    \item le même nombre de nucléons $A$
+  }
+  \QCM{
+    Le gaz noble le plus proche \variationSujet{du Béryllium ($Z = 4$)}{de l'Oxygène ($Z = 8$)} est
+  }{
+    \item\reponseQCM l'Hélium ($Z = 2$)
+    \item le Néon ($Z = 10$)
+    \item l'Argon ($Z = 18$)
+  }
+  \QCM{
+    Pour gagner en stabilité, \variationSujet{le Béryllium}{l'Oxygène} pourra
+  }{
+    \item\reponseQCM perdre 2 électrons
+    \item gagner 2 électrons
+    % \item gagner 4 électrons
+  }
+  % \QCM{
+  %   Combien de liaison covalentes peut former l'atome de carbone \isotope{12}{6}{C} pour former une molécule ?
+  %  }{
+  %    \item\reponseQCM 4, car il lui manque 4 électrons pour compléter sa couche externe
+  %    \item 2, pour avoir 8 électrons au total
+  %    \item aucune, il est déjà très stable
+  %  }
+\end{multicols}
+
+
+%%%
+\titreSection{Structure électronique d'un atome}\correction{\points{9}}
+\vspace*{-8pt}
+
+\begin{doc}{Tableau périodique}{doc:tableau_periodique}
+  \hspace*{-16pt}
+  \tableauPeriodique{
+    %% Group 1 - IA
+    \node[name=H, Nonmetal]             {\elementH};
+    \node[name=Li, below of=H, Alkali]  {\elementLi};
+    \node[name=Na, below of=Li, Alkali] {\elementNa};
+    %% Group 2 - IIA
+    \node[name=Be, right of=Li, AlkaliEarth] {\elementBe};
+    \node[name=Mg, below of=Be, AlkaliEarth] {\elementMg};
+    %% Group 13 - IIIA
+    \node[name=B,  right of=Be, Metalloid] {\elementB};
+    \node[name=Al, below of=B,  Metal]     {\elementAl};
+    %% Group 14 - IVA
+    \node[name=C,  right of=B, Nonmetal]  {\elementC};
+    \node[name=Si, below of=C, Metalloid] {\elementSi};
+    %% Group 15 - VA
+    \node[name=N, right of=C, Nonmetal] {\elementN};
+    \node[name=P, below of=N, Nonmetal] {\elementP};
+    %% Group 16 - VIA
+    \node[name=O, right of=N, Nonmetal] {\elementO};
+    \node[name=S, below of=O, Nonmetal] {\elementS};
+    %% Group 17 - VIIA
+    \node[name=F,  right of=O, Halogen] {\elementF};
+    \node[name=Cl, below of=F, Halogen] {\elementCl};
+    %% Group 18 - VIIIA
+    \node[name=Ne, right of=F,  NobleGas] {\elementNe};
+    \node[name=Ar, below of=Ne, NobleGas] {\elementAr};
+    \node[name=He, above of=Ne, NobleGas] {\elementHe};
+  
+    %% Period
+    \node[name=Period1, left of=H,  PeriodLabel] {\normalsize{1}};
+    \node[name=Period2, left of=Li, PeriodLabel] {\normalsize{2}};
+    \node[name=Period3, left of=Na, PeriodLabel] {\normalsize{3}};
+  }
+\end{doc}
+
+\question{
+  Donner le nombre d'électrons de l'azote \chemfig{N}, du magnésium \chemfig{Mg} et de l'argon \chemfig{Ar}.\competence{APP, ANA/RAI}
+}{
+  Le numéro atomique de l'azote est 7, il possède donc 7 protons et 7 électrons par neutralité électrique de l'atome.
+  Le magnésium possède 12 électrons et l'argon possède 18 électrons.
+  \points{1}
+}{2}
+
+
+\question{
+  Donner la structure électronique de l'azote, du magnésium et de l'argon.\competence{REA}
+}{
+  $\chemfig{N} : 1s^2 \mathbf{2s^2 2p^3}$, $\chemfig{Mg} : 1s^2 2s^2 2p^6 \mathbf{3s^2}$, $\chemfig{Ar} : 1s^2 2s^2 2p^6 \mathbf{3s^2 3p^6}$
+  \points{1.5}
+}{3}
+
+\question{
+  Entourer la couche externe de chacune des structures électronique et indiquer le nombre d'électrons de valence de chaque atome.\competence{COM, ANA/RAI}
+}{
+  Couche externe de l'azote : 2 avec 5 électrons de valences.
+  Couche externe du magnésium : 3 avec 2 électrons de valences.
+  Couche externe de l'argon : 3 avec 8 électrons de valences.
+  \points{1.5}
+}{2}
+
+\question{
+  Parmi ces trois atomes, lequel est le plus stable ? Justifier.\competence{ANA/RAI}
+}{
+  L'argon, car sa couche externe est pleine : c'est un gaz noble.
+  \points{1}
+}{2}
+
+
+\question{
+  Rappeler la règle de l'octet avec vos mots.\competence{COM}
+}{
+  Pour gagner en stabilité, un atome de numéro atomique > 6, peut perdre ou gagner des électrons pour atteindre la structure électronique du gaz noble \textbf{le plus proche}, avec 8 électrons sur sa couche externe.
+  \points{2}
+}{3}
+
+\question{
+  D'après la règle de l'octet, quel ion pourra être formé à partir d'un atome de magnésium ? Expliquer.\competence{ANA/RAI, COM}
+}{
+  D'après la règle de l'octet, le magnésium va perdre 2 électrons pour atteindre la configuration électronique du néon. On aura donc l'ion $\chemfig{Mg^{2+}}$.
+  \points{1}
+}{2}
+
+
+%%%%
+\titreSection{Stabilité d'une molécule}\correction{\points{4}}
+
+\vspace*{-8pt}
+\begin{doc}{\variationSujet{L'ammoniac}{La phosphine}}{doc:ammoniac}
+  \variationSujet{
+    L'ammoniac est un gaz irritant à température ambiante.
+    La molécule d'ammoniac est composé d'hydrogène \chemfig{H} ($Z = 1$) et d'azote \chemfig{N} ($Z = 7$).
+  }{
+    La phosphine est un gaz incolore et mortellement toxique, utilisé comme pesticide. 
+    La molécule de phosphine est composée d'hydrogène \chemfig{H} ($Z = 1$) et de phosphore \chemfig{P} ($Z = 15$).
+  }
+  Le schéma de Lewis de la molécule est le suivant :
+  \begin{center}
+    \variationSujet{
+      \chemfig[atom sep=30pt, atom style={scale=1.5}, line width=6pt]{
+        H - \charge{-90:4pt=\|}{N} (-[3] H) - H
+      }
+    }{
+      \chemfig[atom sep=30pt, atom style={scale=1.5}, line width=6pt]{
+        H - \charge{-90:4pt=\|}{P} (-[3] H) - H
+      }
+    }
+    \vAligne{16pt}
+  \end{center}
+\end{doc}
+\vspace*{-8pt}
+
+\question{
+  Indiquer la formule brute de la molécule\variationSujet{d'ammoniac}{de phosphine}.\competence{APP}
+}{
+  La molécule est composée de 1 \variationSujet{azote}{phosphore} et de 3 hydrogènes :
+  \variationSujet{\chemfig{NH_3}}{\chemfig{PH_3}}
+  \points{1}
+}{1}
+
+\question{
+  Quelle règle doit respecter l'atome d'hydrogène pour gagner en stabilité ?
+  Justifier que cette règle est respectée pour la molécule du document~\ref{doc:ammoniac}\competence{COM}
+}{
+  La règle du duet : il doit gagner un électron en formant une liaison covalente.
+  \points{1}
+}{3}
+
+% \question{
+%   Combien de liaisons covalentes a formé
+%   \variationSujet{l'azote}{le phosphore}
+%   dans la molécule
+%   \variationSujet{d'ammoniac}{de phosphine}
+%   ?
+%   Est-ce cohérent avec la règle de l'octet ?\competence{APP, VAL}
+% }{
+%   L'azote a formé 3 liaisons covalentes, ce qui lui a permis d'ajouter 3 électrons sur sa couche externe pour la compléter et respecter la règle de l'octet.
+% }{3}
+
+\question{
+  Légender chaque partie du schéma de Lewis de la molécule du document~\ref{doc:ammoniac}.\competence{COM}
+}{
+  Il faut légender les doublets liants et le double non-liant en plus des éléments chimiques.
+  \points{2}
+}{0}
+
+
+%%%%
+\pasCorrection{\input{commun/bilan_eleve}}
