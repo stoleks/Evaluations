@@ -1,0 +1,115 @@
+\newpage
+\vAligne{-50pt}
+\titre{Devoir maison de physique-chimie}
+
+\textit{Les exercices sont indépendants.}
+\medskip
+
+\exercice{l'acide lactique (8 points)}
+\medskip
+
+\begin{wrapfigure}{r}{0.2\linewidth}
+  \vspace*{-20pt}
+  \centering
+  \chemfig{HO -[-2] CH (-[-4] H_3C) - C (-[-2] OH) =[2] O}
+\end{wrapfigure}
+Les maladies mitochondriales peuvent provoquer une acidose lactique qui est une surproduction d’acide lactique pouvant entraîner une acidification du sang et des tissus générant des troubles cardiaques.  
+
+La formule semi-développée de l’acide lactique est donnée ci-contre. 
+ 
+\question{
+  Écrire la formule brute de l'acide lactique et calculer la masse molaire $M_a$ de l'acide lactique.
+}{
+  Formule brute de l'acide lactique : \bruteCHO{3}{6}{3} \points{1}
+  \begin{equation*}  
+    M_a = 3\times M_C + 6\times M_H + 3\times M_O
+    = (3\times 12 + 6\times 1,0 + 3\times 16)\unit{\g\per\mole}
+    = \qty{90}{\g\per\mole}
+    \points{2}
+  \end{equation*}
+}{0}
+
+%%
+\medskip
+\textbf{Données :} 
+
+Masses molaires atomiques 
+$M_C = \qty{12}{\g\per\mole}$ ;
+$M_O = \qty{16}{\g\per\mole}$ ;
+$M_H = \qty{1,0}{\g\per\mole}$.
+\medskip
+%%
+
+\question{
+  Recopier la formule semi-développée de l’acide lactique sur la copie.
+  Entourer et nommer les groupes fonctionnels présents dans cette molécule.
+}{
+  \begin{center}
+    \begin{tikzpicture}[help lines/.style={thin,draw=black!50}]
+      % chaine principale
+      \large
+      \node at (3,3) { \chemfig{HO -[-2] CH (-[-4] H_3C) - } };
+      % alcool
+      \node[draw] at (2.35, 3.77) { \chemfig{HO} };
+      \node[left] at (1.8, 3.8) {\textbf{1}};
+      % acide carboxylique
+      \node[draw] at (4.8,3) { \chemfig{C (-[-2] OH) =[2] O} };
+      \node[right] at (5.6,3) {\textbf{2}};
+    \end{tikzpicture}
+    \points{1}
+  \end{center}
+
+  1 : hydroxyle ;
+  2 : carboxyle.
+  (1/4 des points est attribué si le nom de la famille est donné à la place du nom du groupe)
+  \points{2}
+}{0}
+
+\question{
+  Donner la formule topologique de l'acide lactique.
+}{}{0}
+
+
+
+\bigskip
+\exercice{Accident de voiture (12 points)}
+\setcounter{questionNum}{0}
+\medskip
+
+\begin{wrapfigure}[12]{r}{0.5\linewidth}
+  \vspace*{-26pt}
+  \centering
+  \image{1}{stssPremiere/freinage}
+\end{wrapfigure}
+
+Appelés sur le lieu d’un accident de la route, des policiers constatent qu’une voiture a percuté frontalement un arbre et que le conducteur, qui était seul à bord, n’est blessé que légèrement.
+L’airbag qui s’est déclenché au moment du choc a très probablement sauvé la vie du chauffeur.
+
+Interrogé par les policiers, le conducteur explique qu'il a perdu le contrôle de son véhicule et qu'il a essayé de freiner avant de percuter l'arbre.
+
+Sa voiture a enregistré sa vitesse quelques secondes avant et après le choc.
+
+
+\question{
+  À quelle vitesse roulait le conducteur initialement ?
+}{}{0}
+
+\question{
+  Le temps de réaction d'un humain typique est de 1 seconde.
+  le conducteur a-t-il un temps de réaction normal ? 
+}{}{0}
+
+\question{
+  Quelle vitesse avait la voiture au moment du choc ? Donner la valeur en \unit{\m\per\s}.
+}{}{0}
+
+\question{
+  Calculer l'énergie cinétique au moment du choc.
+}{}{0}
+
+\textbf{Données :}
+Masse de la voiture : $m = \qty{1000}{\kg}$
+
+\question{
+  Sachant que les os du thorax peuvent se briser si l'énergie cinétique du véhicule est supérieure à \qty{60}{\kilo\joule}, commenter la phrase « l'airbag [...] a très probablement sauvé la vie du chauffeur. ».
+}{}{0}

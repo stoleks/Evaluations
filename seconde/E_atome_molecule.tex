@@ -186,39 +186,36 @@ Certains élément chimiques peuvent exister sous plusieurs formes appelée isot
 
 \begin{doc}{Tableau périodique}{doc:tableau_periodique}
   \hspace*{-16pt}
-  \tableauPeriodique{
+  \centering
+  \renewcommand{\largeurCaseTableauPeriodique}{2}
+  \tableauPeriodique[2.5][2.5]{
     %% Group 1 - IA
-    \node[name=H, Nonmetal]             {\elementH};
-    \node[name=Li, below of=H, Alkali]  {\elementLi};
-    \node[name=Na, below of=Li, Alkali] {\elementNa};
+    \node[name=H,  NoMeta]              {\elementH};
+    \node[name=Li, below of=H,  Alcali] {\elementLi};
+    \node[name=Na, below of=Li, Alcali] {\elementNa};
     %% Group 2 - IIA
-    \node[name=Be, right of=Li, AlkaliEarth] {\elementBe};
-    \node[name=Mg, below of=Be, AlkaliEarth] {\elementMg};
+    \node[name=Be, right of=Li, Alcalo] {\elementBe};
+    \node[name=Mg, below of=Be, Alcalo] {\elementMg};
     %% Group 13 - IIIA
-    \node[name=B,  right of=Be, Metalloid] {\elementB};
-    \node[name=Al, below of=B,  Metal]     {\elementAl};
+    \node[name=B,  right of=Be, Metoid] {\elementB};
+    \node[name=Al, below of=B,  Metaux] {\elementAl};
     %% Group 14 - IVA
-    \node[name=C,  right of=B, Nonmetal]  {\elementC};
-    \node[name=Si, below of=C, Metalloid] {\elementSi};
+    \node[name=C,  right of=B,  NoMeta]  {\elementC};
+    \node[name=Si, below of=C,  Metoid] {\elementSi};
     %% Group 15 - VA
-    \node[name=N, right of=C, Nonmetal] {\elementN};
-    \node[name=P, below of=N, Nonmetal] {\elementP};
+    \node[name=N,  right of=C,  NoMeta] {\elementN};
+    \node[name=P,  below of=N,  NoMeta] {\elementP};
     %% Group 16 - VIA
-    \node[name=O, right of=N, Nonmetal] {\elementO};
-    \node[name=S, below of=O, Nonmetal] {\elementS};
+    \node[name=O,  right of=N,  NoMeta] {\elementO};
+    \node[name=S,  below of=O,  NoMeta] {\elementS};
     %% Group 17 - VIIA
-    \node[name=F,  right of=O, Halogen] {\elementF};
-    \node[name=Cl, below of=F, Halogen] {\elementCl};
+    \node[name=F,  right of=O,  Haloge] {\elementF};
+    \node[name=Cl, below of=F,  Haloge] {\elementCl};
     %% Group 18 - VIIIA
-    \node[name=Ne, right of=F,  NobleGas] {\elementNe};
-    \node[name=Ar, below of=Ne, NobleGas] {\elementAr};
-    \node[name=He, above of=Ne, NobleGas] {\elementHe};
-  
-    %% Period
-    \node[name=Period1, left of=H,  PeriodLabel] {\normalsize{1}};
-    \node[name=Period2, left of=Li, PeriodLabel] {\normalsize{2}};
-    \node[name=Period3, left of=Na, PeriodLabel] {\normalsize{3}};
-  }
+    \node[name=Ne, right of=F,  GazRar] {\elementNe};
+    \node[name=Ar, below of=Ne, GazRar] {\elementAr};
+    \node[name=He, above of=Ne, GazRar] {\elementHe};
+}
 \end{doc}
 
 \question{

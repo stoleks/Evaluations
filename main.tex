@@ -3,37 +3,39 @@
 %%%% paramètres généraux et commande prédéfinies
 \input{_parametres}
 % \geometry{a5paper} % format A5
-\modeCorrection % correction si décommenté
+% \modeCorrection % correction si décommenté
 
 
 %%%% pour l'en-tête
 \renewcommand{\annee}{2023-2024}
 \renewcommand{\etablissement}{Lycée Jean Moulin}
 
+\input{commun/fiche_chapitre}
 
 %%%% TP
 \begin{document}
+  
   %%%% Seconde
   %% Fiche réussite
-  % \input{seconde/C1_corps_melanges}
-  % \input{seconde/C2_solution}
-  % \input{seconde/C3_mecanique}
-  % \input{seconde/C4_atome}
-  % \input{seconde/C5_molecule}
-  % \input{seconde/C6_lumiere}
-  % \input{seconde/C7_transformations}
-  % \input{seconde/C8_reaction_chimie}
-  % \input{seconde/C9_signaux_capteurs}
+  \input{seconde/FR_corps_melanges}
+  \input{seconde/FR_solution}
+  \input{seconde/FR_mecanique}
+  \input{seconde/FR_atome}
+  \input{seconde/FR_molecule}
+  \input{seconde/FR_lumiere}
+  \input{seconde/FR_transformations}
+  \input{seconde/FR_reactions_chimiques}
+  \input{seconde/FR_signaux_capteurs}
   %% Sommative
-  % \sujetA \input{seconde/E1_corps_melanges}
-  % \sujetB \input{seconde/E1_corps_melanges}
-  % \sujetA \input{seconde/E2_solutions}
-  % \sujetB \input{seconde/E2_solutions}
-  % \input{seconde/E3_mecanique}
-  % \sujetA \input{seconde/E4_atome_molecule}
-  \sujetB \input{seconde/E4_atome_molecule}
-  % \sujetA \input{seconde/sommative/E6_lumiere}
-  % \sujetB \input{seconde/sommative/E6_lumiere}
+  % \sujetA \input{seconde/E_corps_melanges}
+  % \sujetB \input{seconde/E_corps_melanges}
+  % \sujetA \input{seconde/E_solutions}
+  % \sujetB \input{seconde/E_solutions}
+  % \sujetA \input{seconde/E_mecanique}
+  % \sujetA \input{seconde/E_atome_molecule}
+  % \sujetB \input{seconde/E_atome_molecule}
+  % \sujetA \input{seconde/E_lumiere}
+  % \sujetB \input{seconde/sommative/E_lumiere}
   %% Bilan élève
   % \input{commun/bilan_eleve}
   
@@ -41,13 +43,15 @@
   %% Diagnostique
   %% Formative
   %% Fiche réussite
- % \input{stssPremiere/C1_acide_base}
+  % \input{stssPremiere/C1_acide_base}
   % \input{stssPremiere/C1-2_chim_elec}
- % \input{stssPremiere/C3-4_oxydo_IR}
+  % \input{stssPremiere/C3-4_oxydo_IR}
   %% Sommative
   % \input{stssPremiere/E1_secu_chimie}
   % \input{stssPremiere/DC1_chimie_elec}
   % \input{stssPremiere/E2_oxydo_IR}
+  %% A REFAIRE QUESTIONS PAS CLAIRES...
+  % \input{stssPremiere/DM1_routiere_molecule}
 
   %%%%%%%% Terminale ST2S
   %% Diagnostique
@@ -66,9 +70,10 @@
   %% Devoir commun (correction)
   % \input{stssTerminale/bac/DC1_chimie_orga_secu_rout}
   % \input{stssTerminale/bac/DC2_chimie_triglyceride_DJA}
-  %\input{stssTerminale/bac/DC3_echographie_radio}
+  % \input{stssTerminale/bac/DC3_echographie_radio}
   % \input{stssTerminale/bac/Bac_blanc_chimie}
-  %\input{stssTerminale/bac/Bac_blanc_chimie_2}
+  % \input{stssTerminale/bac/Bac_blanc_chimie_2}
+  % \input{stssTerminale/revision_bac}
   
   %%%% Commun
   % \input{commun/competences}
