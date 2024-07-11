@@ -1,0 +1,86 @@
+%%%% Ce fichier sert à déclarer les titres des chapitres des différents niveaux
+
+%% Commun
+\newcommand{\chapitre}[2]{Chapitre #1 -- #2}
+\newcommand{\methode} {\chapitre{0}{Outils pratiques}}
+
+%% Seconde
+%%%% Chapitre
+\newcommand{\snd}{Seconde}
+\newcommand{\sndCorp} {\chapitre{1}{Corps purs et mélanges}}
+\newcommand{\sndSolu} {\chapitre{2}{Solutions}}
+\newcommand{\sndMouv} {\chapitre{3}{Mouvement et interactions}}
+\newcommand{\sndAtom} {\chapitre{4}{Structure de l'atome}}
+\newcommand{\sndMole} {\chapitre{5}{Des atomes à la matière}}
+\newcommand{\sndLumi} {\chapitre{6}{Ondes lumineuses et optique}}
+\newcommand{\sndTran} {\chapitre{7}{Transformations de la matière}}
+\newcommand{\sndChim} {\chapitre{8}{Transformations chimiques}}
+\newcommand{\sndSign} {\chapitre{9}{Signaux et capteurs}}
+
+%%%% en-tête correspondant
+\newcommand{\teteSndMeth} {\enTete[\snd]{\methode}[0]}
+\newcommand{\teteSndCorp} {\enTete[\snd]{\sndCorp}[1]}
+\newcommand{\teteSndSolu} {\enTete[\snd]{\sndSolu}[2]}
+\newcommand{\teteSndMouv} {\enTete[\snd]{\sndMouv}[3]}
+\newcommand{\teteSndAtom} {\enTete[\snd]{\sndAtom}[4]}
+\newcommand{\teteSndMole} {\enTete[\snd]{\sndMole}[5]}
+\newcommand{\teteSndLumi} {\enTete[\snd]{\sndLumi}[6]}
+\newcommand{\teteSndTran} {\enTete[\snd]{\sndTran}[7]}
+\newcommand{\teteSndChim} {\enTete[\snd]{\sndChim}[8]}
+\newcommand{\teteSndSign} {\enTete[\snd]{\sndSign}[9]}
+
+
+%% Première ST2S
+%%%% Chapitres
+\newcommand{\premStss}{Première ST2S}
+\newcommand{\premStssChim} {\chapitre{1} {Sécurité chimique dans l'habitat}}
+\newcommand{\premStssVisi} {\chapitre{2} {Propagation de la lumière et vision}}
+\newcommand{\premStssRedo} {\chapitre{3} {Antiseptique et désinfectant, oxydoréduction}}
+\newcommand{\premStssLumi} {\chapitre{4} {Les infrarouges et leurs applications}}
+\newcommand{\premStssStru} {\chapitre{5} {Structure des molécules d'intérêt biologique}}
+\newcommand{\premStssBiom} {\chapitre{6} {Biomolécules dans l’organisme}}
+\newcommand{\premStssRout} {\chapitre{7} {Sécurité routière}}
+\newcommand{\premStssAlim} {\chapitre{8} {Gestion des ressources naturelles et alimentation}}
+\newcommand{\premStssElec} {\chapitre{9} {Sécurité électrique dans l'habitat}}
+\newcommand{\premStssPres} {\chapitre{10}{Propriétés des fluides et pression sanguine}}
+\newcommand{\premStssSono} {\chapitre{11}{Ondes sonores et audition}}
+
+%%%% en-tête
+\newcommand{\tetePremStssMeth} {\enTete[\premStss]{\methode}     [0]}
+\newcommand{\tetePremStssChim} {\enTete[\premStss]{\premStssChim}[1]}
+\newcommand{\tetePremStssVisi} {\enTete[\premStss]{\premStssVisi}[2]}
+\newcommand{\tetePremStssRedo} {\enTete[\premStss]{\premStssRedo}[3]}
+\newcommand{\tetePremStssLumi} {\enTete[\premStss]{\premStssLumi}[4]}
+\newcommand{\tetePremStssStru} {\enTete[\premStss]{\premStssStru}[5]}
+\newcommand{\tetePremStssBiom} {\enTete[\premStss]{\premStssBiom}[6]}
+\newcommand{\tetePremStssRout} {\enTete[\premStss]{\premStssRout}[7]}
+\newcommand{\tetePremStssAlim} {\enTete[\premStss]{\premStssAlim}[8]}
+\newcommand{\tetePremStssElec} {\enTete[\premStss]{\premStssElec}[9]}
+\newcommand{\tetePremStssPres} {\enTete[\premStss]{\premStssPres}[10]}
+\newcommand{\tetePremStssSono} {\enTete[\premStss]{\premStssSono}[11]}
+
+
+%% Terminale ST2S
+%%%% Chapitres
+\newcommand{\termStss}{Terminale ST2S}
+\newcommand{\termStssOrga} {\chapitre{1}{Représentation des molécules organiques}}
+\newcommand{\termStssAlim} {\chapitre{2}{Sécurité physico-chimique dans l'alimentation}}
+\newcommand{\termStssImag} {\chapitre{3}{La physique au service de la médecine}}
+\newcommand{\termStssBiom} {\chapitre{4}{Biomolécules et alimentation}}
+\newcommand{\termStssMedi} {\chapitre{5}{De la molécule au médicament}}
+\newcommand{\termStssEnvi} {\chapitre{6}{Sécurité chimique dans l'environnement}}
+\newcommand{\termStssDosa} {\chapitre{7}{Analyser la composition d'un milieu}}
+\newcommand{\termStssRout} {\chapitre{8}{Sécurité routière}}
+\newcommand{\termStssCosm} {\chapitre{9}{L'usage responsable des cosmétiques}}
+
+%%%% en-tête
+\newcommand{\teteTermStssMeth} {\enTete[\termStss]{\methode}     [0]}
+\newcommand{\teteTermStssOrga} {\enTete[\termStss]{\termStssOrga}[1]}
+\newcommand{\teteTermStssRout} {\enTete[\termStss]{\termStssRout}[2]}
+\newcommand{\teteTermStssAlim} {\enTete[\termStss]{\termStssAlim}[3]}
+\newcommand{\teteTermStssEnvi} {\enTete[\termStss]{\termStssEnvi}[4]}
+\newcommand{\teteTermStssImag} {\enTete[\termStss]{\termStssImag}[5]}
+\newcommand{\teteTermStssDosa} {\enTete[\termStss]{\termStssDosa}[6]}
+\newcommand{\teteTermStssBiom} {\enTete[\termStss]{\termStssBiom}[7]}
+\newcommand{\teteTermStssMedi} {\enTete[\termStss]{\termStssMedi}[8]}
+\newcommand{\teteTermStssCosm} {\enTete[\termStss]{\termStssCosm}[9]}
