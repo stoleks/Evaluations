@@ -1,18 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% quelque couleurs
-\definecolor{vertSombre}  {RGB} {  0,  95,  17}
-\definecolor{vertForet}   {RGB} {124, 179,  66}
-%
-\definecolor{jauneSombre} {RGB} {213, 145,   2}
-\definecolor{orangeSombre}{RGB} {174,  82,   0}
-\definecolor{cyanSombre}  {RGB} {  0, 140, 128}
-\definecolor{bleuPale}    {RGB} { 39,  76, 167}
-%
-\definecolor{jauneClair} {RGB} {218, 173,   0}
-\definecolor{rougeSombre}{RGB} {148,  31,   0}
-\definecolor{rougeClair} {RGB} {224,  39,  34}
-
-%%% quelques couleurs dérivées des couleurs choisie
+%%% couleurs dérivées des couleurs choisie
 \newcommand{\couleurPrimSombre}{couleurPrim!60!black}
 
 %%%% rectangle coloré
@@ -34,12 +21,11 @@
   #1
 }
 
-%%%% boite colorée
-\newtcolorbox{boiteColoree}[1][]{
+%%%% Boite de correction et pour les titres
+\newtcolorbox{boiteColoree}[2][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  arc = 2mm, % les lignes de la boites sont droites
-  colback = couleurPrim, colframe = white, % fond et traits colorés
-  coltext = white,
+  frame hidden, sharp corners, boxrule = 0mm, % pas de contours
+  colback = couleurPrim!#2, % fond
   #1
 }
 
@@ -59,6 +45,90 @@
   #1
 }
 
+
+%%%% Boîtes pour les activités et TP pour une séquence en plan de travail
+% Boite de durée
+\newtcbox{\dureeActivite}[1][]{
+  arc = 2mm, % courbes des bords
+  colback = couleurSec, colframe = white, % couleurs boite
+  coltext = white,
+}
+% Boite de base pour les activités ou TP
+\newtcolorbox{boiteActivite}[6][]{
+  before title = {\refstepcounter{#5}},
+  enhanced jigsaw, % pour un meilleur rendu
+  colback = white, % fond blanc
+  colframe = couleurPrim!25!black, % couleur de la boite
+  coltitle = black, % couleur du titre
+  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi de la boite
+  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
+  colbacktitle = white, % fond pour le titre blanc
+  fonttitle = \bfseries\sffamily,
+  title = {#6 \arabic{section}.\arabic{#5} -- #2\strut \label{#4}},
+  enlarge bottom by = 12pt,
+  overlay= {\node at ([xshift = -36pt, yshift = -5pt] frame.south east) {
+    \dureeActivite{{\small \important[white]{#3}}}
+  }; }, % affiche la durée de l'activité
+  remember as = #4,
+  #1
+}
+
+% Boite activité
+\NewDocumentEnvironment{activite}{m O{1 h} m}{%
+  \begin{boiteActivite}{#1}{#2}{#3}
+    {activiteNum}{\documentaire* \hspace{-4pt} Activité}
+}{
+  \end{boiteActivite}
+}
+% Compteur pour les TP
+\newcounter{TPNum}
+% Boite TP
+\NewDocumentEnvironment{TP}{m O{2 h} m}{%
+  \begin{boiteActivite}{#1}{#2}{#3}
+    {TPNum}{\mesure* \hspace{-4pt} TP}
+}{
+  \end{boiteActivite}
+}
+% Pour réferencer une activité
+\newcommand{\reference}[1]{\arabic{section}.\ref{#1}}
+
+% Boîte pour la tâche finale
+\newtcolorbox{tacheFinale}[1][]{
+  breakable, enhanced jigsaw, % boite coupable entre pages
+  colback = white, colframe = black, % couleur cadre
+  boxrule = 0.5mm, arc = 0.5mm, % forme du cadre
+  colbacktitle = white, coltitle = black, % couleur titre
+  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
+  fonttitle = \bfseries\sffamily, % type de titre
+  title = {Tâche finale}, % titre
+  #1
+}
+
+% Boîte pour l'organisation des séances
+\newcounter{seanceNum}
+\newtcbox{\seance}[2][]{
+  before title = {\refstepcounter{seanceNum}},
+  enhanced jigsaw, % pour un meilleur rendu
+  colback = white, colframe = black, % couleur cadre
+  boxrule = 0.5mm, arc = 0.5mm, % forme du cadre
+  height = 0.13\textheight, 
+  colbacktitle = white, coltitle = black, % couleur titre
+  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
+  fonttitle = \bfseries\sffamily, % type de titre
+  title = {Séance \arabic{seanceNum} \hfill (#2)}, % titre,
+  #1
+}
+% Pour afficher 3/2/1 séances dans la programmation
+\NewDocumentEnvironment{programmeSeance}{O{3}}{
+  \begin{tcbraster}[
+    raster columns = #1, 
+    raster width center = (\linewidth - 3cm - 5cm*(3 - #1))
+  ]
+}{
+  \end{tcbraster}
+}
+
+
 %%%% Passage important à connaître
 \newtcolorbox{importants}[1][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
@@ -68,17 +138,9 @@
   #1
 }
 
-%%%% Boite de correction
-\newtcolorbox{boiteCorrection}[1][]{
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  frame hidden, sharp corners, boxrule = 0mm, % pas de contours
-  colback = couleurPrim!10, % fond
-  #1
-}
-
-%%%% contexte
+%%%% Boîte pour le contexte
 \newtcolorbox{contexte}[1][]{
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  breakable, enhanced jigsaw, % boite coupable entre pages
   boxrule = 3pt, sharp corners, % contours droits
   colframe = couleurPrim, % couleur des contours
   colback = couleurPrim!5, % fond
@@ -86,34 +148,49 @@
   colbacktitle = couleurPrim!5, % couleur du fond du titre
   fonttitle = \bfseries\sffamily, coltitle = black, %
   titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
-  detach title, before upper={\vspace{2pt}\hspace{-8pt}\tcbtitle\;},
+  detach title,
+  before upper={\vspace{2pt}\hspace{-8pt}\tcbtitle\;},
   #1
 }
 
 %%%% Pour les objectifs
-\newtcolorbox{boiteObjectifs}[2][]{
+\newenvironment{objectifs}{%
+  \begin{listeObjectifs}} {\end{listeObjectifs}}
+%
+\tcolorboxenvironment{objectifs}{
   empty, % pas de boite automatique
   attach boxed title to top left = {yshift=-2.5mm}, % position
   boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
   frame code = { % tracé de la boite
-    \path (title.east |- frame.north) coordinate (aux);
     \path [draw=couleurPrim, line width = 3pt]
-    (frame.west) |- ([xshift=-4mm] title.north east)
-    to[out=0, in=180] ([xshift=10mm] aux) -| % définit la courbe
+    (frame.west) |- ([xshift=6mm] title.north east)
+    to[out=0, in=180] ([xshift=20mm] title.east) -| % définit la courbe
     (frame.east) |- (frame.south) -| cycle; % trace la boite
   },
   coltitle = black, % couleur du titre
   fonttitle = \bfseries\sffamily, % police du titre
-  title = {#2},
-  #1 
+  title = {Objectifs :}
 }
-\newenvironment{objectifs}{
-  \begin{boiteObjectifs}{Objectifs de la séance :}
-    \begin{listeObjectifs}
-}{
-    \end{listeObjectifs}
-  \end{boiteObjectifs}
+
+%% Pour les pré-requis
+\newenvironment{prerequis}{%
+  \begin{listeObjectifs}} {\end{listeObjectifs}}
+%
+\tcolorboxenvironment{prerequis}{
+  empty, % pas de boite automatique
+  attach boxed title to top left = {yshift=-2.5mm}, % position
+  boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
+  frame code = { % tracé de la boite
+    \path [draw=couleurPrim, line width = 3pt]
+    (frame.south east) |- ([xshift=-34mm, yshift=-4mm] frame.south east)
+    to[out=180, in=0] ([xshift=-47mm] frame.south east) -| % définit la courbe
+    (frame.west) |- (title.north) -| cycle; % trace la boite
+  },
+  coltitle = black, % couleur du titre
+  fonttitle = \bfseries\sffamily, % police du titre
+  title = {Prérequis :}
 }
+
 
 %%%% Espace pour un coup de pouce
 \newcounter{coupDePouceNum}
@@ -138,7 +215,7 @@
   \pasCorrection{
     \begin{boite}
       \vspace*{-4pt}
-      \sousTitre{Appréciation et remarques}
+      \important[black]{Appréciation et remarques}
       
       \vspace*{#1 cm}
       \phantom{b}
@@ -151,22 +228,19 @@
   colback = white, colframe = black, % fond blanc et traits noirs
   coltitle = white, % couleur du titre
   boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi des traits de la boite
-  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
+  titlerule = 0mm, top = 2mm, % pour ne pas avoir de séparation titre/boite
   colbacktitle = couleurPrim, % fond pour le titre blanc
   fonttitle = \bfseries\sffamily, % type de titre
-  title = {\centering \large #2}, % titre
+  title = {\centering \large \phantom{À} #2 \phantom{g}}, % titre
   #1
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% pagination et sections
-\newcommand{\titre}[1]{
+\NewDocumentCommand{\titre}{O{black} m}{
   \begin{center}
-    \textsf{\bfseries \Large #1}
+    \textcolor{#1} {\textsf{\bfseries \Large #2}}
   \end{center}
-}
-\newcommand{\sousTitre}[1]{
-  \textsf{\bfseries #1}
 }
 \newcommand{\pasDePagination}{
   \thispagestyle{empty}
@@ -184,27 +258,34 @@
   \refstepcounter{activiteNum}
   \titre{#1 \arabic{section}.\arabic{activiteNum} -- #2}
 }
-\newcommand{\titreTP}[1]{
-  \titreActi{TP}{#1}
-  % \titreActi{Activité expérimentale}{#1}
+\NewDocumentCommand{\titreTP}{s m}{
+  \IfBooleanTF{#1}{ % Version *
+    \titreActi{Activité expérimentale}{#2}
+  }{
+    \titreActi{TP}{#2}
+  }
 }
-\newcommand{\titreActivite}[1]{
-  \titreActi{Activité}{#1}
+\NewDocumentCommand{\titreActivite}{s m O{Activité}}{
+  \IfBooleanTF{#1}{ % Version * sans le numéro du chapitre
+    \refstepcounter{activiteNum}
+    \titre{#3 \arabic{activiteNum} -- #2}
+  }{
+    \titreActi{#3}{#2}
+  }
 }
 \NewDocumentCommand{\titreEvaluation}{o m}{
-  \IfNoValueTF {#1}{
+  \IfNoValueTF{#1}{
     \titre{Évaluation \arabic{section} -- #2}
   }{
     \titre{Évaluation #1 -- #2}
   }
   % reset du numéro de page et d'exercices
-  \setcounter{page}{1}
-  \numeroActivite{1}
+  \reinitialiseCompteur
 }
 \newcounter{exerciceNum}
 \newcommand{\exercice}[1]{
   \refstepcounter{exerciceNum}
-  \sousTitre{\large Exercice \arabic{exerciceNum} : #1}
+  \important[black]{\large Exercice \arabic{exerciceNum} : #1}
   % reset des numéros de questions
   \setcounter{questionNum}{0}
   \setcounter{documentNum}{0}
@@ -212,14 +293,18 @@
 
 
 %%%% chapitre, section et sous-section
-\newcommand{\titreChapitre}[1]{
+\newcommand{\chapitre}[2]{ % Réglage du titre du chapitre
+  Chapitre \arabic{section} -- #1
+  \setcounter{activiteNum}{0}
+}
+\newcommand{\titreChapitre}[1]{ % Affichage du titre du chapitre
   \titre{Chapitre \arabic{section} : #1}
 }
 \newcommand{\titrePartie}[1]{
   \vspace*{24pt}
   \refstepcounter{subsection}
   \rectangle{40pt}{1pt}
-  \sousTitre{\Large \Roman{subsection} -- #1}
+  \important[black]{\Large \Roman{subsection} -- #1}
   \rectangle{40pt}{1pt}
   \vspace*{10pt}
 }
@@ -229,29 +314,32 @@
   \refstepcounter{subsubsection}
   \setcounter{sousSectionNum}{0}
   \rectangle{30pt}{4pt}
-  \sousTitre{\large \arabic{subsubsection} -- #1}
+  \important[black]{\large \arabic{subsubsection} -- #1}
   \vspace*{10pt}
 }
 \newcommand{\titreSousSection}[1]{
   \vspace*{12pt}
   \refstepcounter{sousSectionNum}
-  \sousTitre{\Alph{sousSectionNum} -- #1}
+  \important[black]{\Alph{sousSectionNum} -- #1}
   \vspace*{8pt}
 }
 
 %%%% fixe le numéro de l'activité
-\newcommand{\numeroActivite}[1]{
-  % fixe les compteurs LaTeX
+\newcommand{\reinitialiseCompteur}{
+    % fixe les compteurs LaTeX
   \setcounter{page}{1}
   \setcounter{subsection}{0}
   \setcounter{subsubsection}{0}
   \setcounter{figure}{0}
   % fixe les compteurs internes
-  \setcounter{qcmNum}{0}
   \setcounter{documentNum}{0}
   \setcounter{questionNum}{0}
   \setcounter{coupDePouceNum}{0}
   \setcounter{sousSectionNum}{0}
+  \setcounter{seanceNum}{0}
+}
+\newcommand{\numeroActivite}[1]{
+  \reinitialiseCompteur
   \setcounter{activiteNum}{#1 - 1}
 }
 % fixe le numéro de partie (#1) et le numéro de la page (#2)
@@ -286,18 +374,16 @@
 }
 \newcommand{\teteDroite}[2]{
   \rhead{
-    \hfill \textbf{\footnotesize #1}
-    \newline \hfill
-    \footnotesize #2
+    % \hfill \textbf{\footnotesize #1}
+    % \newline 
+    \hfill \footnotesize #2
   }
 }
-\NewDocumentCommand{\enTete}{o m o s}{
+\NewDocumentCommand{\enTete}{o m O{0} s}{
   % reset des compteurs
   \newpage
+  \reinitialiseCompteur
   \setcounter{section}{#3}
-  \setcounter{subsection}{0}
-  \setcounter{subsubsection}{0}
-  \setcounter{sousSectionNum}{0}
   
   % affichage de l'entête version fiche réussite (*)
   \IfBooleanTF{#4}{
@@ -366,7 +452,7 @@
   \loop
     \stepcounter{ligneNum}
     \ifnum \value{ligneNum} < #2
-      \\[8pt] \lignePointillee{0.98}
+      \\[8pt] \lignePointillee{0.96}
   \repeat
   \vspace*{1pt}
 }
@@ -382,9 +468,9 @@
   \numeroQuestion \!#1
   % pointille ou correction
   \ifthenelse {\boolean{modeProf}} { % prof
-    \begin{boiteCorrection}
+    \begin{boiteColoree}{10}
       #2
-    \end{boiteCorrection}
+    \end{boiteColoree}
   }{ % eleve
     \lignesDeReponse{#3}
   }
@@ -419,19 +505,27 @@
   \reponse{#2}
 }
 
-% question QCM
-\newcommand{\QCM}[2]{
-  \numeroQuestion[qcmNum][0] #1
-  \begin{qcm}
+%%%% qcm
+\newlist{QCM}{itemize}{2}
+\setlist[QCM]{label = $\square$, leftmargin = 2cm}
+%% #1 : question, 
+%% #2 : réponses
+\NewDocumentEnvironment{qcm}{
+  +m +m 
+}{
+  \numeroQuestion #1
+  \begin{QCM}
     #2
-  \end{qcm}
+}{
+  \end{QCM}
 }
 
 % À ajouter devant la bonne réponse dans un qcm
-\newcounter{qcmNum}
 \newcommand{\reponseQCM}{
   \correction{
-    \hspace*{-15pt}$\checkmark$\hspace*{-12pt}
+    \hspace*{-21pt}
+    {\large\textcolor{couleurSec}{\faCheck}}
+    \hspace*{-12pt}
   } % Note : trace une croix à la bonne position
 }
 
@@ -526,7 +620,7 @@
 
 %%%% Tableau de competence
 \newenvironment{tableauCompetences}{
-  \centering
+  \begin{center}
   \begin{tblr}{
     colspec = {| c | Q[l, wd=0.6\linewidth] | c | c | c | c |},
     rows = {m}, hlines,
@@ -536,6 +630,7 @@
     & \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} \\
 }{
   \end{tblr}
+  \end{center}
 }
 
 %%%% Tableau de connaissances sans exercices
@@ -588,12 +683,27 @@
 \NewDocumentCommand{\pointCyan}{O{couleurPrim}}{
   \textcolor{#1}{\textbullet}
 }
-%
-\NewDocumentCommand{\mesure}{O{couleurPrim}}{
-  \hspace{15pt}
-  %\numeroQuestion
-  \textcolor{couleurSec}{\faWrench\faFlask}
+
+% Quelques questions spéciales
+\NewDocumentCommand{\questionSpeciale}{O{couleurSec} m}{
+  \textcolor{#1}{#2}
 }
+%
+\NewDocumentCommand{\mesure}{o s}{
+  \IfBooleanTF{#2}{}{ \hspace{7pt} }
+  \questionSpeciale[#1]{\faFlask\hspace{1pt} \faWrench\!}
+}
+%
+\NewDocumentCommand{\telechargement}{o s}{
+  \IfBooleanTF{#2}{}{ \hspace{7pt} }
+  \questionSpeciale[#1]{\faDownload\, \faMobile\;}
+}
+%
+\NewDocumentCommand{\documentaire}{o s}{
+  \IfBooleanTF{#2}{}{ \hspace{7pt} }
+  \questionSpeciale[#1]{\faFileText\hspace{1pt} \faBook}
+}
+
 % pictogramme sécurité
 \newcommand{\picto}[2]{
   \image{#1}{images/pictogrammes/picto_#2}
@@ -607,31 +717,23 @@
 }
 % Pour légender une image
 \newcommand{\legende}[1]{
+  \vspace*{2pt}
   \textcolor{couleurPrim}{\faArrowUp} \; #1
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% emphase
-\newcommand{\emphase}[1]{
-  \textcolor{couleurSec}{\textsf{\bfseries \large #1}}
-}
-%
+%%%% points importants
 \NewDocumentCommand{\important}{O{couleurSec!75!black} m}{
   \!\textcolor{#1}{\textsf{\bfseries #2}}\!\!
 }
 %
-\newcommand{\exemple}{
-  \flecheLongue \textit{Exemple :}
-}
-\newcommand{\exemples}{
-  \flecheLongue \textit{Exemples :}
-}
-%
-\newcounter{compteAppelProf}
-\newcommand{\appelProf}{
-  \refstepcounter{compteAppelProf}
-  \hspace{24pt} \faHandPaperO \hspace{2pt}
-  \textbf{Appel n$^\circ$ \arabic{compteAppelProf} :}
+\NewDocumentCommand{\exemple}{s}{
+  \flecheLongue
+  \IfValueTF{#1}{
+    \textit{Exemple :}
+  }{
+    \textit{Exemples :}
+  }
 }
 
 %
@@ -644,7 +746,6 @@
   \end{flushright}
   \vspace*{-12pt}
 }
-
 
 %%%% image
 \newcommand{\image}[2]{
@@ -668,13 +769,9 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% qcm
-\newlist{qcm}{itemize}{2}
-\setlist[qcm]{label=$\square$, leftmargin=2cm}
-
 %%%% liste d'objectif
 \newlist{listeObjectifs}{itemize}{2}
-\setlist[listeObjectifs]{label = \chevron}
+\setlist[listeObjectifs]{leftmargin=6pt, label=\fleche} %\chevron}
 
 %%%% protocole
 \newlist{protocole}{itemize}{2}
@@ -695,7 +792,7 @@
 %%%% jeu de données
 \newenvironment{donnees}{
   
-  \textbf{Données :}
+  \important{Données :}
   \vspace*{-8pt}
   \begin{multicols}{2}
     \begin{listeTirets}
@@ -706,9 +803,10 @@
 
 %%%% problematique
 \newcommand{\problematique}[1]{
-  \hspace{8pt}
-  \flecheLongue
-  \textbf{#1}
+  \hspace*{-12pt}
+  \flecheLongue[couleurTer]
+  \hspace*{-10pt}
+  \important[couleurTer]{#1}
 }
 
 %%%% liste avec chiffre
@@ -718,17 +816,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Séparation de la page en blocs
-\newcommand{\separationTroisBlocs}[3]{
-  \begin{minipage}[T]{0.3\linewidth}
+\NewDocumentCommand{\separationTroisBlocs}{+m O{0.3} +m O{0.3} +m O{0.3}}{
+  \begin{minipage}[T]{#2\linewidth}
     #1
   \end{minipage}
   ~
-  \begin{minipage}[T]{0.3\linewidth}
-    #2
+  \begin{minipage}[T]{#4\linewidth}
+    #3
   \end{minipage}
   ~
-  \begin{minipage}[T]{0.3\linewidth}
-    #3
+  \begin{minipage}[T]{#6\linewidth}
+    #5
   \end{minipage}
 }
 %%%% Separation en deux blocs
@@ -757,14 +855,20 @@
   \chemfig{C_{#1} H_{#2} O_{#3}}
 }
 
-%% pour les masse molaire et atomique
-\newcommand{\masseMol}[1]{
-  M(\chemfig{#1})
-  % M_{\chemfig{#1}}
+%% pour les masse molaire et atomique (* -> en indice)
+\NewDocumentCommand{\masseMol}{s m}{
+  \IfValueTF{#1}{
+    M_{\chemfig{#1}}
+  }{
+    M(\chemfig{#2})
+  }
 }
-\newcommand{\masseAtom}[1]{
-  m(\chemfig{#1})
-  % m_{\chemfig{#1}}
+\NewDocumentCommand{\masseAtom}{s m}{
+  \IfValueTF{#1}{
+    m_{\chemfig{#1}}
+  }{
+    m(\chemfig{#1})
+  }
 }
 
 

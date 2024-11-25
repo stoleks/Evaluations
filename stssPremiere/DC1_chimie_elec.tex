@@ -2,36 +2,34 @@
 
 \begin{flushright}
   \large 
-  Sujet 2023
+  Sujet 2024
 \end{flushright}
 
 \vspace{20pt}
 \titre{
-  BACCALAURÉAT TECHNOLOGIQUE \\
-  SCIENCES ET TECHNOLOGIES \\
-  DE LA SANTÉ ET DU SOCIAL \\
+  DEVOIR COMMUN N°1 bis
 }
 \bigskip
 
 \begin{boite}
   \titre{
-    ÉPREUVE DE SCIENCES \\ PHYSIQUES ET CHIMIQUES \\
+    ÉPREUVE DE PHYSIQUE-CHIMIE \\ POUR LA SANTE \\
   }
 \end{boite}
 \bigskip
 
 \begin{center}
   \Large 
-  Durée de l'épreuve : 2 heures
+  Durée de l'épreuve : 1 heure
 
   \bigskip
 
-  Mercredi 13 décembre 2023
+  Jeudi 21 novembre 2024
 \end{center}
 
 \vspace{20pt}
 {\large
-  Le sujet comporte 5 pages numérotées de 1 à 5.
+  Le sujet comporte 4 pages numérotées de 1 à 4.
   
   Dès que le sujet vous est remis, assurez-vous qu'il est complet.
   
@@ -45,11 +43,13 @@
     %row{1} = {couleurPrim!20}
   }
   Exercice 1 & 10 points \\
-  Exercice 2 & 6 points \\
-  Exercice 3 & 14 points \\
-  Exercice 4 & 12 points \\
-  Exercice 5 & 8 points \\
-\end{tblr}
+  % Exercice 2 & 6 points \\
+  Exercice 2 & 10 points \\
+ % Exercice 3 & 12 points \\
+  Exercice 3 & 7 points \\
+\end{tblr} \\[8pt]
+
+Présentation : 1 point
 \end{center}
   
 
@@ -67,7 +67,7 @@
 %%%%
 \newpage
 \vspace*{-50pt}
-\exercice{Automatismes (connaitre son cours) (24 minutes)}
+\exercice{Automatismes (connaître son cours) }
 \medskip
 
 \numeroQuestion
@@ -75,17 +75,18 @@ Relier chaque grandeur à son symbole et à l'unité associée. \points{3}
 
 \begin{center}    
   \begin{tblr}{
-    colspec = {l l X[c] X[c]},
+    width=\textwidth,
+    colspec = {Q[wd=0.25\linewidth, l] X[l] r Q[wd=0.1\linewidth, c] X[l] r Q[wd=0.1\linewidth, c]},
     row{1} = {couleurPrim!20, c}
   }
   %% ALIGNER PLUS DE GRANDEUR 
-    \textbf{Grandeur}      & & \textbf{Symbole} & \textbf{Unité} \\
-    Concentration massique & \pointCyan & $n$   & \unit{\mole\per\litre} \\
-    Masse                  & \pointCyan & $C$   & \unit{\litre} \\
-    Quantité de matière    & \pointCyan & $C_m$ & \unit{\kg} \\
-    Volume                 & \pointCyan & $V$   & \unit{\g\per\litre} \\
-    Concentration molaire  & \pointCyan & $M$   & \unit{\g\per\mole} \\
-    Masse molaire          & \pointCyan & $m$   & \unit{\mole} \\
+    \textbf{Grandeur}      & & & \textbf{Symbole} & & & \textbf{Unité} \\
+    Concentration massique & \pointCyan & \pointCyan & $n$   & \pointCyan & \pointCyan &  \unit{\mole\per\litre} \\
+    Masse                  & \pointCyan & \pointCyan & $C$   & \pointCyan & \pointCyan &  \unit{\litre} \\
+    Quantité de matière    & \pointCyan & \pointCyan & $C_m$ & \pointCyan & \pointCyan &  \unit{\kg} \\
+    Volume                 & \pointCyan & \pointCyan & $V$   & \pointCyan & \pointCyan &  \unit{\g\per\litre} \\
+    Concentration molaire  & \pointCyan & \pointCyan & $M$   & \pointCyan & \pointCyan &  \unit{\g\per\mole} \\
+    Masse molaire          & \pointCyan & \pointCyan & $m$   & \pointCyan & \pointCyan &  \unit{\mole} \\
   \end{tblr}
 \end{center}
 
@@ -120,14 +121,14 @@ Entourer la ou les relations permettant de calculer les grandeurs de la premièr
 \end{center}
 
 \question{
-  Définir un acide d'après Br\o{}nsted.
+  Définir un acide d'après Br\o{}nsted. \points{1}
 }{
   C'est une espèce chimique qui peut libérer des ions \chemfig{H^+}.
   \points{1}
 }{2}
 
 \question{
-  Rappeler le principe d'une dilution.
+  Rappeler le principe d'une dilution. \points{1}
 }{
   Une dilution sert à diminuer la concentration en soluté dans une solution.
   Pour réaliser une dilution, il faut rajouter du solvant dans la solution.
@@ -149,79 +150,79 @@ Puis placer sur cette échelle pH les solutions suivantes : \points{2}
     \foreach \i in {0,1,...,14} \draw (\i,0.1)--(\i,-0.1) node[below]{\i};
   \end{tikzpicture}
 \end{center}
+\newpage
 
 
 %%%%
 %\bigskip
-\newpage
-\exercice{Charger son téléphone au Canada (14 minutes)}
-\medskip
+% \exercice{Charger son téléphone au Canada (14 minutes)}
+% \medskip
 
-Asma est partie en vacances au Canada et veut charger son téléphone.
-Pour ça, Asma commence par mesurer les caractéristiques de la tension du secteur, et trouve l'oscillogramme suivant :
-\begin{center}
-  \def\ver{3.6} % longueur verticale
-  \def\hor{5.0} % longueur horizontale
-  \begin{tikzpicture}[
-    trace/.style={couleurPrim!75!black, ultra thick, samples = 100},
-    screen/.style={couleurPrim!10, thick},
-    axes/.style={couleurPrim, thick}
-  ]
-    % Fond de l'écran
-    \fill[screen] (-\hor, -\ver) rectangle (\hor, \ver);
-    % Grille et axes
-    \draw[thin, couleurPrim!30] (-\hor, -\ver) grid (\hor, \ver);
-    \draw[axes] (-\hor, 0) -- (\hor, 0); % temps
-    \draw[axes] (0, -\ver) -- (0, \ver); % 
-    % Graduation
-    \pgfmathparse{\hor-1}
-    % axe x
-    \foreach[parse = true] 
-      \i in {-\hor+0.2, -\hor+0.4,..., \hor-0.2} \draw[axes] (\i, -0.1) -- (\i, 0.1);
-    \foreach[parse = true] \i in {-\hor,...,\hor} \draw[axes] (\i,-0.2) -- (\i,0.2);
-    % axe y
-    \foreach[parse = true]
-      \i in {-\ver+0.20, -\ver+0.4,..., \ver-0.20} \draw[axes] (-0.1, \i) -- (0.1, \i);
-    \foreach[parse = true] \i in {-3,...,3} \draw[axes] (-0.2,\i) -- (0.2,\i);
-    % Tension sinusoïdale
-    \draw[trace] plot(\x, {1.60*sin((1.57*(1.21*\x + 1)) r)}); % r = radian
-    % Échelle
-    \tkzVecteur(-5) (-3)[1]  {\textbf{100 V}} [right]
-    \tkzVecteur(-5) [1] (-3)  {\textbf{5 ms}} [below right]
-  \end{tikzpicture}
-\end{center}
+% Asma est partie en vacances au Canada et veut charger son téléphone.
+% Pour ça, Asma commence par mesurer les caractéristiques de la tension du secteur, et trouve l'oscillogramme suivant :
+% \begin{center}
+%   \def\ver{3.6} % longueur verticale
+%   \def\hor{5.0} % longueur horizontale
+%   \begin{tikzpicture}[
+%     trace/.style={couleurPrim!75!black, ultra thick, samples = 100},
+%     screen/.style={couleurPrim!10, thick},
+%     axes/.style={couleurPrim, thick}
+%   ]
+%     % Fond de l'écran
+%     \fill[screen] (-\hor, -\ver) rectangle (\hor, \ver);
+%     % Grille et axes
+%     \draw[thin, couleurPrim!30] (-\hor, -\ver) grid (\hor, \ver);
+%     \draw[axes] (-\hor, 0) -- (\hor, 0); % temps
+%     \draw[axes] (0, -\ver) -- (0, \ver); % 
+%     % Graduation
+%     \pgfmathparse{\hor-1}
+%     % axe x
+%     \foreach[parse = true] 
+%       \i in {-\hor+0.2, -\hor+0.4,..., \hor-0.2} \draw[axes] (\i, -0.1) -- (\i, 0.1);
+%     \foreach[parse = true] \i in {-\hor,...,\hor} \draw[axes] (\i,-0.2) -- (\i,0.2);
+%     % axe y
+%     \foreach[parse = true]
+%       \i in {-\ver+0.20, -\ver+0.4,..., \ver-0.20} \draw[axes] (-0.1, \i) -- (0.1, \i);
+%     \foreach[parse = true] \i in {-3,...,3} \draw[axes] (-0.2,\i) -- (0.2,\i);
+%     % Tension sinusoïdale
+%     \draw[trace] plot(\x, {1.60*sin((1.57*(1.21*\x + 1)) r)}); % r = radian
+%     % Échelle
+%     \tkzVecteur(-5) (-3)[1]  {\textbf{100 V}} [right]
+%     \tkzVecteur(-5) [1] (-3)  {\textbf{5 ms}} [below right]
+%   \end{tikzpicture}
+% \end{center}
 
-\question{
-  Mesurer la tension maximale $U_\text{max}$ et en déduire la tension efficace du secteur $U$. 
-}{
-  $U_\text{max} = \qty{160}{\volt}$, donc $U = \dfrac{160}{\sqrt{2}} = \qty{113}{\volt}$.
-  \points{2}
-}{0}
+% \question{
+%   Mesurer la tension maximale $U_\text{max}$ et en déduire la tension efficace du secteur $U$. 
+% }{
+%   $U_\text{max} = \qty{160}{\volt}$, donc $U = \dfrac{160}{\sqrt{2}} = \qty{113}{\volt}$.
+%   \points{2}
+% }{0}
 
-\question{
-  Mesurer la période $T$ et en déduire la fréquence $f$ de la tension du secteur. 
-}{
-  $T = \qty{16,5}{\ms}$, donc $f = \dfrac{1}{T} = \qty{50}{\hertz}$.
-  \points{2}
-}{0}
+% \question{
+%   Mesurer la période $T$ et en déduire la fréquence $f$ de la tension du secteur. 
+% }{
+%   $T = \qty{16,5}{\ms}$, donc $f = \dfrac{1}{T} = \qty{50}{\hertz}$.
+%   \points{2}
+% }{0}
 
-\question{
-  Rappeler la fréquence et la tension efficace de la tension du secteur en France.
-}{
-  $U = \qty{230}{\volt}$ et $f = \qty{60}{\hertz}$.
-  \points{1}
-}{0}
+% \question{
+%   Rappeler la fréquence et la tension efficace de la tension du secteur en France.
+% }{
+%   $U = \qty{230}{\volt}$ et $f = \qty{60}{\hertz}$.
+%   \points{1}
+% }{0}
 
-\question{
-  Asma pourra-t-elle utiliser un chargeur conçu pour être utilisé sur la tension du secteur en France au Canada ? Justifier.
-}{
-  Oui, car la fréquence est identique et la tension du secteur au Canada est plus faible que la tension du secteur en France.  \points{1}
-}{0}
+% \question{
+%   Asma pourra-t-elle utiliser un chargeur conçu pour être utilisé sur la tension du secteur en France au Canada ? Justifier.
+% }{
+%   Oui, car la fréquence est identique et la tension du secteur au Canada est plus faible que la tension du secteur en France.  \points{1}
+% }{0}
 
 
 %%%%
 \vspace{24pt}
-\exercice{L'acide ascorbique (33 minutes)}
+\exercice{L'acide ascorbique }
 
 \medskip
 Les vivres embarquées sur les navires européens du XVe au XVIIIe siècle étaient essentiellement des salaisons, des légumes secs et des biscuits pour des raisons liées à la conservation des aliments. Or ceux-ci ne contenant pas de vitamine C (aussi appelée acide ascorbique), il en a résulté des cas de scorbut lors des expéditions de longues distance (plus de six semaines à plus de trois mois) en mer.
@@ -233,7 +234,7 @@ Les marins atteints du scorbut subissaient des gingivites hypertrophiques (entra
 En 2019, le scorbut est réapparu en France chez des personnes précaires ne se nourrissant pas suffisamment de légumes et fruits frais.
 
 \medskip
-On considère que le taux en vitamine C par litre de sang doit être compris entre \num{5}  et \num{17}  \unit{\mg\per\litre} pour être en bonne santé.
+%On considère que le taux en vitamine C par litre de sang doit être compris entre \num{5}  et \num{17}  \unit{\mg\per\litre} pour être en bonne santé.
 
 \medskip
 \textbf{Donnée : } 
@@ -245,7 +246,7 @@ On considère que le taux en vitamine C par litre de sang doit être compris ent
 
 \bigskip
 \question{
-  Quelle espèce chimique permet de lutter contre le scorbut ? Dans quels aliments la trouve-t-on ?
+  Quelle espèce chimique permet de lutter contre le scorbut ? Dans quels aliments la trouve-t-on ?               \points{2}
 }{
   C'est la vitamine C qui permet de lutter contre le scorbut, qu'on trouve dans les fruits et légumes frais. \points{2}
 }{0}
@@ -253,13 +254,13 @@ On considère que le taux en vitamine C par litre de sang doit être compris ent
 La concentration massique en vitamine C dissout dans un jus de pomme est $C_m = \qty{9,0e-3}{\g\per\litre}$.
 
 \question{
-  Quel est le soluté ? Quelle est la solution ?
+  Quel est le soluté ? Quelle est la solution ?    \points{2}
 }{
-  Le soluté est la vitamine C, la solution est le jus de pomme.\points{1,5}
+  Le soluté est la vitamine C, la solution est le jus de pomme.\points{2}
 }{0}
 
 \question{
-  Calculer la masse de vitamine C présente dans une bouteille de volume $V = \qty{1,5} {\litre}$ de jus de pomme.
+  Calculer la masse de vitamine C présente dans une bouteille de volume $V = \qty{1,5} {\litre}$ de jus de pomme. \points{1,5}
 }{
   \begin{equation*}
     m(\chemfig{C_6H_8O_6}) = C_m \times V = \qty{9,0e-3}{\g\per\litre} \times \qty{1,5}{\litre} = \qty{13,5e-3}{\g}
@@ -268,7 +269,7 @@ La concentration massique en vitamine C dissout dans un jus de pomme est $C_m = 
 }{0}
 
 \question{
-  La formule brute de la vitamine C est \chemfig{C_6H_8O_6}. Calculer la masse molaire moléculaire de la vitamine C.
+  La formule brute de la vitamine C est \chemfig{C_6H_8O_6}. Calculer la masse molaire moléculaire de la vitamine C.  \points{1,5}
 }{
   \begin{equation*}
     M(\chemfig{C_6H_8O_6}) = 6M(H) + 8M(C) + 6M(O) = \qty{176}{\g\per\mole}
@@ -277,7 +278,7 @@ La concentration massique en vitamine C dissout dans un jus de pomme est $C_m = 
 }{0}
 
 \question{
-  Déterminer la quantité de matière en vitamine C présent dans un volume de $\qty{1,5} {\litre}$ de jus de pomme.
+  Déterminer la quantité de matière en vitamine C présent dans un volume de $\qty{1,5} {\litre}$ de jus de pomme.  \points{1,5}
 }{
   \begin{equation*}
     n = \dfrac{m(\chemfig{C_6H_8O_6})} {M(\chemfig{C_6H_8O_6})}
@@ -288,7 +289,7 @@ La concentration massique en vitamine C dissout dans un jus de pomme est $C_m = 
 }{0}
 
 \question{
-  En déduire la concentration molaire en vitamine C dans le jus de pomme.
+  En déduire la concentration molaire en vitamine C dans le jus de pomme.                                \points{1,5}
 }{
   \begin{equation*}
     c = \dfrac{n}{V}
@@ -299,95 +300,96 @@ La concentration massique en vitamine C dissout dans un jus de pomme est $C_m = 
 }{0}
 
 \medskip
-Camélia se sent fatiguée et se voit prescrire de la vitamine C. Elle doit prendre chaque jour un comprimé contenant une masse $m = \qty{1000} {\mg}$ de vitamine C. 
-Un comprimé se dissout dans un verre d'eau de volume $V = \qty{200} {\ml}$.
+%Camélia se sent fatiguée et se voit prescrire de la vitamine C. Elle doit prendre chaque jour un comprimé contenant une masse $m = \qty{1000} {\mg}$ de vitamine C. 
+%Un comprimé se dissout dans un verre d'eau de volume $V = \qty{200} {\ml}$.
 
-\question{
-  On suppose que le comprimé se dissout entièrement. Déterminer la concentration massique de vitamine C dans son verre.
-}{
-  \begin{equation*}
-    C_m = \dfrac{m}{V}
-    = \dfrac{\qty{1000} {\mg}} {\qty{200} {\ml}}
-    = \dfrac{\qty{1} {\g}} {\qty{0,2} {\litre}}
-    = \qty{5,0} {\g\per\litre}
-  \points{1,5}
-  \end{equation*}
-}{0}
+%\question{
+ % On suppose que le comprimé se dissout entièrement. Déterminer la concentration massique de vitamine C dans son verre.                                          \points{1,5}
+%}{
+ % \begin{equation*}
+  %  C_m = \dfrac{m}{V}
+   % = \dfrac{\qty{1000} {\mg}} {\qty{200} {\ml}}
+    %= \dfrac{\qty{1} {\g}} {\qty{0,2} {\litre}}
+    %= \qty{5,0} {\g\per\litre}
+  %\points{1,5}
+  %\end{equation*}
+%}{0}
 
-\question{
-  Une fois ingérée et assimilée par l'organisme, la concentration molaire sanguine de vitamine C de Camélia atteint $\qty{3,6e-5} {\mol\per\litre}$.
-  A-t-elle un taux de vitamine C suffisant pour être en bonne santé ?b
-}{
-  Pour obtenir la concentration massique, on multiplie la concentration molaire par la masse molaire moléculaire de la vitamine C
-  \begin{equation*}
-    C_m = M(\chemfig{C_6H_8O_6}) \times c
-    = \qty{176} {\g\per\mole} \times \qty{3,6e-5} {\mol\per\litre}
-    = \qty{6,36e-3} {\g\per\litre}
-    = \qty{6,36} {\mg\per\litre}
-  \end{equation*}
-  Un taux normal se trouve entre 5 et \qty{17}{\mg\per\litre}, donc elle est en bonne santé.
-  \points{3}
-}{0}
+%\question{
+ % Une fois ingérée et assimilée par l'organisme, la concentration molaire sanguine de vitamine C de Camélia atteint $\qty{3,6e-5} {\mol\per\litre}$.
+  %A-t-elle un taux de vitamine C suffisant pour être en bonne santé ?                                       \points{3}
+%}{
+ % Pour obtenir la concentration massique, on multiplie la concentration molaire par la masse molaire moléculaire de la vitamine C
+ % \begin{equation*}
+  %  C_m = M(\chemfig{C_6H_8O_6}) \times c
+   % = \qty{176} {\g\per\mole} \times \qty{3,6e-5} {\mol\per\litre}
+    %= \qty{6,36e-3} {\g\per\litre}
+    %= \qty{6,36} {\mg\per\litre}
+  %\end{equation*}
+  %Un taux normal se trouve entre 5 et \qty{17}{\mg\per\litre}, donc elle est en bonne santé.
+  %\points{3}
+%}{0}
 
 
 %%%%
-\vspace{24pt}
-\exercice{L'acidification des océans (29 minutes)}
+%\newpage
+% \vspace{24pt}
+%\exercice{L'acidification des océans (31 minutes)}
 
 
-\titreSousSection{Acidification}
+%\titreSousSection{Acidification}
 
-\medskip
-Avant 1850, le pH des océans était autour de \num{8,2}.
-Maintenant il est autour de \num{8,1} et des projections estiment qu'il sera autour de \num{7,9} en 2100.
+%\medskip
+%Avant 1850, le pH des océans était autour de \num{8,2}.
+%Maintenant il est autour de \num{8,1} et des projections estiment qu'il sera autour de \num{7,9} en 2100.
 
-\question{
-  Expliquer pourquoi on parle « d'acidification des océans ».
-}{
-  Le pH diminue et passe d'une valeur basique à une valeur neutre, donc il l'eau de mer s'acidifie.
-  \points{2}
-}{0}
+%\question{
+%  Expliquer pourquoi on parle « d'acidification des océans ». \points{2}
+%}{
+ % Le pH diminue et passe d'une valeur basique à une valeur neutre, donc il l'eau de mer s'acidifie.
+  %\points{2}
+%}{0}
 
-On va chercher à comprendre pourquoi le pH des océans augmente et l'impact que cela aura sur la faune et la flore.
+%On va chercher à comprendre pourquoi le pH des océans diminue et l'impact que cela aura sur la faune et la flore.
 
 
-\medskip
-Les émissions de dioxyde de carbone \chemfig{CO_2} liée aux activités humaines sont en hausses, ce qui augmente la quantité de \chemfig{CO_2} dans l'atmosphère.
-Comme il y a plus de \chemfig{CO_2} dans l'atmosphère, la quantité de \chemfig{CO_2} qui est dissoute dans les océans augmente aussi.
+%\medskip
+%Les émissions de dioxyde de carbone \chemfig{CO_2} liée aux activités humaines sont en hausses, ce qui augmente la quantité de \chemfig{CO_2} dans l'atmosphère.
+%Comme il y a plus de \chemfig{CO_2} dans l'atmosphère, la quantité de \chemfig{CO_2} qui est dissoute dans les océans augmente aussi.
 
-Le dioxyde de carbone dissous dans l'eau, noté \chemfig{CO_2^{*}}, forme un couple acide/base avec l'ion hydrogénocarbonate : \chemfig{CO_2^{*}}/\chemfig{HCO_3^{-}}.
+%Le dioxyde de carbone dissous dans l'eau, noté \chemfig{CO_2^{*}}, forme un couple acide/base avec l'ion hydrogénocarbonate : \chemfig{CO_2^{*}}/\chemfig{HCO_3^{-}}.
 
-\question{
-  Rappeler les deux couples acide/base que forme l'eau \eau.
-}{
-  \oxonium/\eau et \eau/\hydroxyde.
-  \points{2}
-}{0}
+%\question{
+ % Rappeler les deux couples acide/base que forme l'eau \eau. \points{2}
+%}{
+ % \oxonium/\eau et \eau/\hydroxyde.
+  %\points{2}
+%}{0}
 
-\question{
-  Écrire la réaction acido-basique entre le dioxyde de carbone dissous \chemfig{CO_2^{*}} et l'eau \eau, en faisant attention à bien ajuster l'équation.
-}{
-  \begin{center}
-    \chemfig{CO_2^{*}} + \eau \reaction \chemfig{HCO_3^{-}} + \oxonium
-  \points{2}
-  \end{center}
-}{0}
+%\question{
+ % Écrire la réaction acido-basique entre le dioxyde de carbone dissous \chemfig{CO_2^{*}} et l'eau \eau, en faisant attention à bien ajuster l'équation.             \points{2}
+%}{
+ % \begin{center}
+  %  \chemfig{CO_2^{*}} + \eau \reaction \chemfig{HCO_3^{-}} + \oxonium
+  %\points{2}
+  %\end{center}
+%}{0}
 
-\question{
-  Rappeler la relation entre le pH et concentration en ion oxonium \oxonium.
-}{
-  \begin{equation*}    
-    10^{-\text{pH}} = [\oxonium]
-  \points{1}
-  \end{equation*}
-}{0}
+%\question{
+%  Rappeler la relation entre le pH et concentration en ion oxonium \oxonium.                              \points{1}
+%}{
+ % \begin{equation*}    
+  %  10^{-\text{pH}} = [\oxonium]
+  %\points{1}
+  %\end{equation*}
+%}{0}
 
-\question{
-  Expliquer pourquoi cette réaction chimique entraine une diminution du pH des océans.
-}{
-  Cette réaction produit des ions oxonium et augmente donc la concentration [\oxonium], ce qui diminue le pH.
-  \points{2}
-}{0}
+%\question{
+ % Expliquer pourquoi cette réaction chimique entraine une diminution du pH des océans.                 \points{2}
+%}{
+ % Cette réaction produit des ions oxonium et augmente donc la concentration [\oxonium], ce qui diminue le pH.
+  %\points{2}
+%}{0}
 
 
 % \titreSousSection{Émission de dioxyde de carbone}
@@ -423,38 +425,39 @@ Le dioxyde de carbone dissous dans l'eau, noté \chemfig{CO_2^{*}}, forme un cou
 % }{}{0}
 
 
-\titreSousSection{Conséquence sur la faune et la flore}
+%\titreSousSection{Conséquence sur la faune et la flore}
 
-\medskip
-Avec du calcaire, le carbonate de calcium \chemfig{CaCO_3}, dans une eau saturée en dioxyde de carbone dissous, on a la réaction chimique suivante :
-\begin{center}
-  \chemfig{CaCO_3}(s) + \chemfig{CO_2^{*}}(aq) + \eau(l)
-  \reaction
-  \chemfig{Ca^{2+}}(aq) + 2\chemfig{HCO_3^{2-}}(aq)
-\end{center}
-Cette réaction chimique modélise la dissolution du calcaire dans l'eau.
+%\medskip
+%Avec du calcaire, le carbonate de calcium \chemfig{CaCO_3}, dans une eau saturée en dioxyde de carbone dissous, on a la réaction chimique suivante :
+%\begin{center}
+ % \chemfig{CaCO_3}(s) + \chemfig{CO_2^{*}}(aq) + \eau(l)
+  %\reaction
+  %\chemfig{Ca^{2+}}(aq) + 2\chemfig{HCO_3^{2-}}(aq)
+%\end{center}
+%Cette réaction chimique modélise la dissolution du calcaire dans l'eau.
 
-Le calcaire est le matériau qui compose le squelette ou les coquilles de nombreuses espèces marines, comme les mollusques, les crustacés ou les coraux.
-Les mollusques, les crustacés et les coraux forment la base de la chaîne alimentaire dans les océans.
+%Le calcaire est le matériau qui compose le squelette ou les coquilles de nombreuses espèces marines, comme les mollusques, les crustacés ou les coraux.
+%Les mollusques, les crustacés et les coraux forment la base de la chaîne alimentaire dans les océans.
 
-\question{
-  Est-ce que cette réaction chimique facilite la formation de squelettes ou de coquilles ?
-}{
-  Elle ne facilite pas la formation de coquille ou de squelettes, car elle dissous leur principal composant (le calcaire).
-  \points{1}
-}{0}
+%\question{
+ % Est-ce que cette réaction chimique facilite la formation de squelettes ou de coquilles ?                  \points{1}
+%}{
+ % Elle ne facilite pas la formation de coquille ou de squelettes, car elle dissous leur principal composant (le calcaire).
+  %\points{1}
+%}{0}
 
-\question{
-  Expliquer pourquoi l'augmentation du dioxyde de carbone dissous dans l'océan entraine la mort de certaines espèces marines.
-}{
-  L'augmentation du dioxyde de carbone rend plus difficile la formation de squelettes ou de coquilles, ce qui peut tuer les espèces quand elles grandissent.
-  \points{2}
-}{0}
+%\question{
+ % Expliquer pourquoi l'augmentation du dioxyde de carbone dissous dans l'océan entraine la mort de certaines espèces marines.                                        \points{2}
+%}{
+ % L'augmentation du dioxyde de carbone rend plus difficile la formation de squelettes ou de coquilles, ce qui peut tuer les espèces quand elles grandissent.
+ % \points{2}
+%}{0}
 
 
 %%%%
-\bigskip
-\exercice{Traitement des eaux (19 minutes)}
+% \bigskip
+%\newpage
+\exercice{Traitement des eaux }
 
 \medskip
 L'un des enjeux primordiaux du développement durable est la préservation des ressources en eau de la planète.
@@ -472,17 +475,17 @@ La pâte de savon est alors coulée dans des moules, puis séchée pendant 48 h 
 Les dangers des solutions aqueuses acides sont bien connus, les substances basiques peuvent être tout aussi corrosives et, si elles ne sont pas traitées, peuvent endommager la faune, la flore et l'écosystème environnants.
 Les normes de rejets dans les eaux contrôlées, tels que les cours d'eau de surface et les eaux souterraines, exigent un pH compris entre 5,5 et 8,5.
 
-\question{
-  Préciser le caractère (neutre, acide ou basique) des eaux de lavage d'une savonnerie.
-  Citer une méthode rapide permettant de le vérifier expérimentalement.
-}{
-  À 5,5 l'eau est légèrement acide, à 8,5 elle est légèrement basique, entre les deux elle est neutre. 
-  On peut le vérifier avec un papier pH.
-  \points{1}
-}{0}
+%\question{
+ % Préciser le caractère (neutre, acide ou basique) des eaux de lavage d'une savonnerie.
+  %Citer une méthode rapide permettant de le vérifier expérimentalement.                            \points{1}
+%}{
+ % À 5,5 l'eau est légèrement acide, à 8,5 elle est légèrement basique, entre les deux elle est neutre. 
+  %On peut le vérifier avec un papier pH.
+  %\points{1}
+%}{0}
 
 \question{
-  Expliquer pourquoi il est nécessaire de traiter ces eaux avant leur rejet dans le milieu naturel.
+  Expliquer pourquoi il est nécessaire de traiter ces eaux avant leur rejet dans le milieu naturel.        \points{2}
 }{
   Pour ne pas polluer les milieux naturel en y déversant des solutions basiques, qui vont attaquer la faune et la flore de ces milieux naturels.
   \points{2}
@@ -499,8 +502,8 @@ Les normes de rejets dans les eaux contrôlées, tels que les cours d'eau de sur
     Acide chlorhydrique concentré (\oxonium, \chemfig{Cl^{-}}).
     
     \centering
-    \image{0.3}{images/picto_nocif}
-    \image{0.3}{images/picto_corrosif}
+    \image{0.3}{images/pictogrammes/picto_nocif}
+    \image{0.3}{images/pictogrammes/picto_corrosif}
   }{
     H331 -- Toxique par inhalation
     
@@ -513,7 +516,7 @@ Les normes de rejets dans les eaux contrôlées, tels que les cours d'eau de sur
 \end{boite}
 
 \question{
-  Rappeler la signification des pictogrammes de sécurités présent sur l'étiquette de l'acide chlorhydrique.
+  Rappeler la signification des pictogrammes de sécurités présent sur l'étiquette de l'acide chlorhydrique. \points{1}
 }{
   Le pictogramme de gauche indique des solutions nocives pour la santé.
   Le pictogramme de droite indique que les solutions sont corrosives.
@@ -545,7 +548,7 @@ La neutralisation au dioxyde de carbone provenant des gaz de fumées industriell
 Les couples acide/base mis en jeu dans la réaction de neutralisation de l'eau de lavage par la solution d'acide chlorhydrique sont \oxonium/\eau{} et \eau/\hydroxyde.
 
 \question{
-  Écrire l'équation acido-basique ajustée de la réaction de neutralisation de l'eau de lavage. 
+  Écrire l'équation acido-basique ajustée de la réaction de neutralisation de l'eau de lavage.            \points{2}
 }{
   \begin{equation*}
     \oxonium + \hydroxyde \reaction 2\eau    
@@ -554,7 +557,7 @@ Les couples acide/base mis en jeu dans la réaction de neutralisation de l'eau d
 }{0} 
 
 \question{
-  Expliquer pourquoi les industriels préfèrent neutraliser les eaux usagées à l'aide de dioxyde de carbone plutôt qu'à l'aide d'acide chlorhydrique.
+  Expliquer pourquoi les industriels préfèrent neutraliser les eaux usagées à l'aide de dioxyde de carbone plutôt qu'à l'aide d'acide chlorhydrique.               \points{2}
 }{
   Les industriels utilisent le dioxyde de carbone, car c'est un procédé écologique et pas cher.
   Le dioxyde de carbone est aussi moins dangereux que l'acide chlorydrique.
