@@ -1,0 +1,178 @@
+% \teteTermStssAlim
+\newpage
+\vAligne{-50pt}
+\titre{Partie chimie}
+
+
+%%%%
+\vspace*{-4pt}
+\exercice{Une ganache à base de pâte à tartiner (20 points)}
+\vspace*{-8pt}
+\medskip
+
+\begin{doc}{Les oméga 3 et 6}{doc:DC1_oméga_3_6}
+  Les oméga-3 et oméga-6 constituent une famille d'acides gras essentielle au bon fonctionnement du corps humain.
+  Dans le cadre d'une alimentation équilibrée, l'agence française de sécurité sanitaire des aliments (Afssa)
+  recommande un apport, en masse, au maximum cinq fois plus élevé d'oméga-6 que d'oméga-3.
+  Un ratio plus élevé pourrait favoriser l'obésité.
+  Les régimes occidentaux favorisent une surconsommation d'oméga-6 au détriment des oméga-3.
+  Ainsi, en France, le ratio moyen est de 18 et aux États-Unis il peut monter jusqu'à 40.
+
+  \begin{flushright}
+    futurasciences.com 
+  \end{flushright}
+\end{doc}
+
+\begin{doc}{Accumulation de graisse dans le corps humain}{doc:DC1_accumulation_graisse}
+  Le surpoids et l'obésité sont dus à une accumulation excessive de graisse dans le corps.
+  Cette accumulation de graisse peut résulter d'un excès d'acides gras provenant de la digestion
+  des triglycérides.
+  L'huile de palme, en particulier, est riche en triglycérides. Le tableau suivant rassemble
+  quelques acides gras constitutifs des triglycérides de l'huile de palme.
+
+  \begin{tableau}{|c |c |c |}
+    Noms des acides gras & Famille d'acide gras & Masse pour \qty{100}{\g} \\
+    Acide laurique          &        & \qty{0,1}{\g}  \\
+    Acide myristique        &        & \qty{1}{\g}    \\
+    Acide palmitique        &        & \qty{43,5}{\g} \\
+    Acide stéarique         &        & \qty{4,3}{\g}  \\
+    Acide érucastique       &oméga-9 & \qty{0,1}{\g}  \\
+    Acide oléique           &oméga-9 & \qty{36,6}{\g} \\
+    Acide palmitoléique     &oméga-7 & \qty{0,3}{\g}  \\
+    Acide linoléique        &oméga-6 & \qty{9,3}{\g}  \\
+    Acide alpha-linolénique &oméga-3 & \qty{0,2}{\g}
+  \end{tableau}
+  
+  \begin{flushright}
+    wikipedia.org
+  \end{flushright}
+\end{doc}
+
+% \begin{doc}{Dose journalière de manganèse}{doc:DC1_DJA}
+%   « À faible dose, le manganèse est un bioélément reconnu du monde végétal et animal.
+%   Cet oligoélément, à des doses de l'ordre du milligramme par jour, est essentiel pour les enzymes du corps.
+%   Les dérivés du manganèse sont toxiques à fortes doses. »
+
+%   \begin{flushright}
+%     wikipedia.org
+%   \end{flushright}
+
+%   La DJA du manganèse a été fixé à \qty{0,06}{\mg\per\kg} par l'OMS en 2006.
+% \end{doc}
+
+\begin{donnees}
+  \item M$_\text{C}$ = \qty{12}{\g\per\mole}.
+  \item M$_\text{H}$ = \qty{1}{\g\per\mole}.
+  \item M$_\text{O}$ = \qty{16}{\g\per\mole}.
+\end{donnees}
+
+
+
+%%
+% \newpage
+L'oléine est un triglycéride.
+Par hydrolyse, on obtient entre autres un acide gras : l'acide oléique.
+L'équation de la réaction d'hydrolyse est présentée ci-dessous, A et B désignent deux molécules.
+\begin{center}  
+  \chemfig{
+    H C (!\teteAcideDev C_{17} H_{33}) 
+    (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{17} H_{33}))
+    -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
+  }
+  + 3\chemfig{A} \reaction \chemfig{B} 
+  + 3 \chemname{\chemfig{H_{33} C_{17} - C!\carboxyle}}{Acide oléique}
+\end{center}
+  
+\question{
+  Rappeler la définition d'un acide gras.
+}{
+  Un acide gras est une molécule composée d'un groupe carboxyle \chemfig{COOH}, avec une longue chaîne carbonée.\points{1}
+
+}{0}
+
+%%
+\medskip
+L'acide oléique a pour formule topologique :
+\begin{center}
+  \chemfig{H !\oleique}
+\end{center}
+
+
+\question{
+  Citer et entourer le groupe caractéristique présent dans cette molécule.
+}{
+  C'est un groupe carboxyle. \points{1}
+}{0}
+
+%%
+\medskip
+\question{
+  Justifier que l'acide oléique est un acide gras insaturé.
+}{
+  Il y a une double liaison carbone-carbone dans la chaîne carbonée de l'acide gras, donc il est insaturé en hydrogène. \points{1}
+}{0}
+
+%%
+\medskip
+\question{
+  Écrire la formule brute de l'acide oléique.
+}{ 
+  \bruteCHO{18}{34}{2}
+}{0}
+
+%%
+\medskip
+\question{
+  Montrer que la masse molaire de la molécule $M_\text{acide oléique}$ d'acide oléique est  M$_\text{acide oléique}$ = \qty{282}{\g\per\mole}.
+}{
+  \begin{align*}
+    M_\text{acide oléique}
+    &= 18\times M_C + 34\times M_H + 2\times M_O \\
+    &= (18\times 12 + 34 \times 1 + 2 \times 16) \unit{\g\per\mole} \\
+    &= \qty{282}{\g\per\mole}
+  \end{align*}
+}{0}
+
+%%
+\medskip 
+\question{
+  Rappeler la définition d'un triglycéride.
+}{
+  C'est une molécule composée de trois acides gras et de un glycérol estérifié. 
+}{0}
+
+%%
+\medskip
+L'oléine a pour formule semi-développée :
+\begin{center}  
+  \chemfig{
+    H C (!\teteAcideDev C_{17} H_{33}) 
+    (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{17} H_{33}))
+    -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
+  }
+\end{center}
+
+\question{
+  Citer et entourer les groupes caractéristiques présents dans cette molécule.
+}{
+  On a trois groupes esters \chemfig{O-C=O}. \points{1}
+}{0}
+
+%\question{
+%  Donner le nom de la molécule B dans la réaction d'hydrolyse.
+%}{
+
+%}{0}
+
+%%
+\medskip
+
+\question{
+  Une célèbre marque de pâte à tartiner est composée majoritairement d'huile de palme. 
+  Indiquer si sa consommation permet d'avoir une alimentation équilibrée en oméga-3 et oméga-6.
+}{
+  Pour une alimentation équilibrée, il faut avoir au plus 5 fois plus d'oméga-6 que d'oméga-3, d'après le premier document.
+  Or dans l'huile de palme, il y a \qty{9.3}{\g} d'oméga-6 pour \qty{0.2}{\g} d'oméga-3, soit 1 pour 47.
+  Il n'y a donc pas assez d'oméga-3 pour que cela soit équilibrée.
+}{0}
+
