@@ -1,0 +1,83 @@
+\titreSection{Ordre de grandeur et écologie}
+
+\begin{doc}{Activités humaines et émission de gaz à effet de serre}{doc:E3_effet_serre}
+  On va chercher à estimer l'impact de notre alimentation sur le climat, en comparant avec l'impact du secteur automobile.
+  Pour cela on va estimer l'ordre de grandeur des émissions de gaz à effet de serre rejetés lors de la production de nos aliments.
+  
+  Pour mesurer l'impact sur le climat d'un produit, on utilise le kilogramme de dioxyde de carbone équivalent, noté \unit{\COeq}.
+  \important{Plus ce nombre est élevé et plus un produit a un impact important sur le dérèglement climatique.}
+  
+  Par exemple, produire 1 kg de viande de mouton équivaut à l'émission de 39,72 kg de \chemfig{CO_2}, soit 39,72 \unit{\COeq} (voir tableau).
+  Cette émission correspond à l'émission d'une voiture qui parcours 400 km.
+  
+  \begin{importants}
+    \important{Rappel :} l'ordre de grandeur d'un nombre est la puissance de 10 la plus proche de ce nombre. 
+    Par exemple l'ordre de grandeur de 70 est 100.
+    L'ordre de grandeur de 4 est 1.
+  \end{importants}
+\end{doc}
+
+\question{
+  Donner un ordre de grandeur du nombre de repas (déjeuner et dîner) par an.
+  \textbf{Rappel :} 1 an = 365 jours\competence{REA}
+}{
+  Avec 2 repas par jour en moyenne, on a $2 \times 365 = 730 \sim 1000$ repas par an en ordre de grandeur.
+  \points{1,5}
+}{0}
+
+\question{
+  \label{exo:ordre_alimentation}
+  À l'aide du graphique ci-dessous, calculer en ordre de grandeur le \unit{\COeq} annuel d'un régime à base de viande.
+  On considère qu'un-e français-e mange en moyenne \qty{0,1}{kg} de viande par repas.\competence{APP, REA, ANA/RAI}
+}{
+  \begin{wrapfigure}{r}{0.5\linewidth}
+    \centering
+    \vspace*{-16pt}
+    \image{1}{images/emission_CO2_alimentation}
+  \end{wrapfigure}
+  En ordre de grandeur, la production de $\qty{1}{\kg}$ de mouton ou de poulet émet $\qty{10}{\COeq}$.
+  Par an, un-e français-e mange en moyenne $\qty{0,1}{\kg} \times 1000 = \qty{100}{\kg}$ de viande par an.
+  Les émissions par an seront donc
+  \begin{equation*}
+    \qty{100}{\kg} \times \qty{10}{\COeq/\kg} = \qty{e3}{\COeq}
+  \end{equation*}
+  On notera qu'un régime végétarien permet de diviser par 10 ses émissions liées à l'alimentation en ordre de grandeur !
+  \points{2}
+}{0}
+
+\pasCorrection{
+  \begin{center}
+    \vspace{-12pt}
+    \image{0.6}{images/emission_CO2_alimentation}
+  \end{center}
+  \vspace{-12pt}
+}
+
+
+\question{
+  En moyenne, une personne qui possède une voiture en France émet en ordre de grandeur \qty{e3}{\COeq} en roulant \textbf{par an}.
+  Comparer avec l'ordre de grandeur des émissions annuelle dues à l'alimentation.\competence{VAL}
+}{
+  On voit qu'en ordre de grandeur, les émissions liées à la voiture et à une alimentation à base de viande sont identiques.
+  \points{1}
+}{0}
+
+\question{
+  En réalité, sur une année le transport représente en moyenne \qty{2,4e3}{\COeq} et l'alimentation \qty{2,0e3}{\COeq}, sur un total annuel d'émission de \qty{8,0e3}{\COeq} pour une personne vivant en France.
+  
+  Est-ce que le chiffre de l'alimentation est cohérent avec l'ordre de grandeur estimé question~\ref{exo:ordre_alimentation} ?\competence{APP, VAL}
+}{
+  En ordre de grandeur $\qty{2,0e3}{\COeq} \sim \qty{e3}{\COeq}$.
+  Les estimations réalisées sont donc cohérentes avec les données mesurées.
+  \points{1}
+}{0}
+
+\question{
+  Calculer le pourcentage des \unit{\COeq} émis annuellement par un-e français-e moyen-ne pour se nourrir.
+  \competence{APP, REA}
+}{
+  \begin{equation*}
+    p = \dfrac{\qty{2,4e3}{\COeq}}{\qty{8,0e3}{\COeq}} = \qty{30}{\percent}
+    \points{1,5}
+  \end{equation*}
+}{0}

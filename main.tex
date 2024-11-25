@@ -2,7 +2,8 @@
 
 %%%% paramètres généraux et commande prédéfinies
 \input{_parametres}
-% \geometry{a5paper} % format A5
+% \geometry{a5paper, left=1cm, right=1cm, top=0.8cm, bottom=2cm} % format A5
+% \geometry{a4paper, landscape} % Pour les fiches mémorisation
 % \modeCorrection % correction si décommenté
 
 
@@ -10,31 +11,37 @@
 \renewcommand{\annee}{2023-2024}
 \renewcommand{\etablissement}{Lycée Jean Moulin}
 
-\input{commun/fiche_chapitre}
+\input{commun/fiche_revision_memorisation}
 
 %%%% TP
 \begin{document}
   %%%% Seconde
   %% Fiche réussite
-  % \input{seconde/FR_corps_melanges}
-  % \input{seconde/FR_solution}
-  % \input{seconde/FR_mecanique}
-  % \input{seconde/FR_atome}
-  % \input{seconde/FR_molecule}
-  % \input{seconde/FR_lumiere}
-  % \input{seconde/FR_transformations} % à faire
-  % \input{seconde/FR_reactions_chimiques} % à faire
-  % \input{seconde/FR_signaux_capteurs} % à faire
+  % \input{seconde/fiches_revision/FR_corps_melanges}
+  % \input{seconde/fiches_revision/FR_solution}
+  % \input{seconde/fiches_revision/FR_mecanique}
+  % \input{seconde/fiches_revision/FR_atome}
+  % \input{seconde/fiches_revision/FR_molecule}
+  % \input{seconde/fiches_revision/FR_lumiere}
+  % \input{seconde/fiches_revision/FR_transformations} % à faire
+  % \input{seconde/fiches_revision/FR_reactions_chimiques} % à faire
+  % \input{seconde/fiches_revision/FR_signaux_capteurs} % à faire
+  %% Fiche mémorisation
+  % \input{seconde/fiches_memorisation/FM_corps_melanges}
+  %% Formative
+  % \input{seconde/interrogations_formatives/F_melanges}
+  % \input{seconde/interrogations_formatives/F_mouvement}
+  % \input{seconde/interrogations_formatives/F_solution}
   %% Sommative
-  % \sujetA \input{seconde/E_corps_melanges}
+  \sujetA \input{seconde/E_corps_melanges}
   % \sujetB \input{seconde/E_corps_melanges}
-  % \sujetA \input{seconde/E_solutions}
+  \sujetA \input{seconde/E_solutions}
   % \sujetB \input{seconde/E_solutions}
-  % \sujetA \input{seconde/E_mecanique}
-  % \sujetA \input{seconde/E_atome_molecule}
+  \sujetA \input{seconde/E_mecanique}
+  \sujetA \input{seconde/E_atome_molecule}
   % \sujetB \input{seconde/E_atome_molecule}
-  % \sujetA \input{seconde/E_lumiere}
-  % \sujetB \input{seconde/sommative/E_lumiere}
+  \sujetA \input{seconde/E_lumiere}
+  % \sujetB \input{seconde/E_lumiere}
   %% Bilan élève
   % \input{commun/bilan_eleve}
   
@@ -52,7 +59,7 @@
   %% Sommative
   % \input{stssPremiere/E1_secu_chimie}
   
-  \input{stssPremiere/DC1_chimie_elec}
+  % \input{stssPremiere/DC1_chimie_elec}
   % \input{stssPremiere/E2_oxydo_IR}
   %% A REFAIRE QUESTIONS PAS CLAIRES...
   % \input{stssPremiere/DM1_routiere_molecule}

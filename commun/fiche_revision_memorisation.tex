@@ -1,0 +1,61 @@
+%
+\newcommand{\travailExerciceCorrige}{
+  Pour être sûr-e d'obtenir une bonne note, je m'entraîne avec les exercices corrigés du manuel indiqués dans la colonne de droite.
+}
+\newcommand{\questionsFicheRevision}[1]{
+  Je note ici les questions qu'il me reste pour les poser au début de l'évaluation :
+  \lignesDeReponse{#1}
+}
+\newcommand{\preparationFicheRevision}{
+  Je prépare une fiche au format A4 avec toutes les notions, définitions ou grandeurs dont je pense avoir besoin pendant l'évaluation.
+  \bigskip
+  
+  \begin{center}
+    \textcolor{couleurSec}{\faThumbsUp}
+    \important{La fiche préparée pourra être utilisée pendant l'évaluation pour s'aider !}
+  \end{center}
+}
+
+\newcommand{\ficheRevision}[2]{
+  \enTete{Fiche de révision -- #1}[0]*
+  \vspace*{-6pt}
+
+  %% Corps de la fiche
+  \titreSection{Ce que je dois savoir}
+  
+  Pour savoir quoi réviser, je lis les points clés du chapitre évalués :
+  \begin{listePoints}
+    \item Si je pense maîtriser une notion, je coche la case \ok
+    \item Si je pense que je dois la retravailler, je coche la case \pasOk
+  \end{listePoints}
+  \vspace*{4pt}
+  
+  \begin{tableauConnaissances}
+    #2
+  \end{tableauConnaissances}
+
+  %% Bas de la fiche
+  \titreSection{Ce qu'il me reste à faire}
+}
+
+
+\newcommand{\ficheMemorisation}[2]{
+  \enTete{Fiche de mémorisation -- #1}[0]*
+  \vspace*{-6pt}
+
+  %% Corps de la fiche
+  \titreSection{Les notions à connaître}
+  
+  Pour réviser, j'essaye de répondre aux question du tableau.
+  Si j'ai répondu comme la réponse corrigée, je coche la case \ok.
+  Sinon je coche la case \pasOk.
+
+  Je reprends les notions que je pense maîtriser au bout de 1 semaine (J-7), 1 mois (J-30) et 6 mois (J-180).
+  Si je ne les maîtrise pas, je ressors mes activités pour les retravailler !
+  \vspace*{4pt}
+  
+  \begin{tableauMemorisation}
+    #2
+  \end{tableauMemorisation}
+
+}

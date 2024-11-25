@@ -9,7 +9,7 @@
 
 %%%% Compétences évaluées
 \pasCorrection{
-  \sousTitre{Compétences évaluées}
+  \important{Compétences évaluées}
   
   \begin{tableauCompetences}
     APP &
@@ -34,163 +34,43 @@
 \appreciation{3}
 
 
-
 %%%%
-\vspace*{-0pt}
-\sousTitre{QCM - cocher \textit{la ou les} bonnes réponses.}
-\vspace*{-0pt}
+\important{QCM - cocher \textit{la ou les} bonnes réponses.}
 
-\QCM{La lumière est une onde électromagnétique}{
+\begin{qcm}{La lumière est une onde électromagnétique}
   \item\reponseQCM qui se propage en ligne droite dans un même milieu.
-  \item\reponseQCM qui se propage avec une vitesse $c = 3,\!00 \times 10^8 \unit{m\cdot s}^{-1}$.
+  \item\reponseQCM qui se propage avec une vitesse $c = \qty{3,00e8}{\m\per\s}$.
   \item qui est forcément monochromatique.
-}
-\QCM{Le domaine visible du spectre électromagnétique se trouve}{
-  \item entre $380 \unit{m}$ et $700 \unit{m}$.
-  \item entre $500 \unit{\mu m}$ et $600 \unit{\mu m}$.
-  \item\reponseQCM entre $380 \unit{nm}$ et $700 \unit{nm}$.
-}
-\QCM{Le spectre d'émission d'un corps chaud est}{
+\end{qcm}
+%
+\begin{qcm}{Le domaine visible du spectre électromagnétique se trouve}
+  \item entre \qty{380}{\m} et \qty{700}{\m}.
+  \item entre \qty{500}{\micro\m} et \qty{600}{\micro\m}.
+  \item\reponseQCM entre \qty{400}{\nano\m} et \qty{700}{\nano\m}.
+\end{qcm}
+%
+\begin{qcm}{Le spectre d'émission d'un corps chaud est}
   \item un spectre de raies.
   \item\reponseQCM un spectre continu.
-}
-\QCM{Plus un corps chaud a une température élevée, plus son spectre d'émission}{
+\end{qcm}
+%
+\begin{qcm}{Plus un corps chaud a une température élevée, plus son spectre d'émission}
   \item contient des grandes longueurs d'onde.
   \item\reponseQCM contient des petites longueurs d'onde.
   \item s'élargit en petite et grande longueurs d'onde.
-}
+\end{qcm}
+%
+\begin{qcm}{Quand la lumière passe d'un milieu transparent à un autre}
+  \item\reponseQCM sa trajectoire change, c'est le phénomène de réfraction.
+  \item sa trajectoire ne change pas.
+  \item elle est réfléchie.
+\end{qcm}
 
 
 %%%
 \newpage
 \vspace*{-36pt}
-\titreSection{Étude du Soleil}
-
-On va voir différentes façon d'étudier le Soleil.
-Chaque partie est indépendante.
-
-
-%%
-\titreSousSection{Aller observer le Soleil}
-
-\begin{doc}{La sonde Parker}{doc:E_parker}
-  La sonde solaire Parker a été lancé par l'agence spatiale américaine, la NASA, le 12 août 2018.
-  Cette sonde doit aller observer la couronne solaire du Soleil. 
-  La communication entre la sonde et la Terre se font par émission d'ondes électromagnétiques.
-  
-  La vitesse de la sonde était de $v = 1,\!1 \times 10^5 \unit{m\cdot s}^{-1}$ lors de son envoi dans l'espace.
-  Le Soleil se trouve à une distance $d = 1,\!50 \times 10^{11} \unit{m}$ de la Terre.
-\end{doc}
-
-\question{
-  Calculer le temps en seconde que mettrait la sonde pour atteindre le Soleil, si elle allait en ligne droite.\competence{APP, REA}
-}{
-  Le temps mis par la sonde est la distance parcourue divisée par la vitesse de la sonde :
-  \begin{equation*}
-    t = \frac{d}{v} = 1,\!6 \times 10^6 \unit{s}
-  \end{equation*}
-  \vspace*{-12pt}
-}{1}
-
-\question{
-  Calculer le temps en seconde que met la lumière émise par le Soleil pour atteindre la Terre.\competence{RCO, REA}
-}{
-  La distance est la même, mais cette fois la vitesse est celle de la lumière $c$, soit un temps $t = d / c = 500 \unit{s}$
-}{1}
-
-\question{
-  Si la sonde se trouvait à la surface du Soleil, au bout de combien de temps recevrait-on l'onde électromagnétique émise par la sonde ?\competence{RCO, APP, ANA/RAI}
-}{
-  La lumière étant une onde électromagnétique, l'onde se déplace à la vitesse de la lumière et mettra donc $500 \unit{s}$ pour arriver sur Terre, soit $\sim 8$ minutes.
-}{2}
-
-
-
-%%
-\titreSousSection{Analyse de la lumière venant du Soleil}
-
-\begin{doc}{Réfraction de la lumière}{doc:E_refraction_sirius}
-  \begin{wrapfigure}[7]{r}{0.35\linewidth}
-    \centering
-    \vspace*{-22pt}
-    \image{0.9}{images/experience_sirius}
-  \end{wrapfigure}
-  Pour analyser le spectre d'émission du Soleil, on utilise un spectroscope.
-  Le spectroscope contient un prisme en plexiglas qui permet de disperser la lumière.
-
-  On cherche à mesurer l'indice de réfraction du plexiglas. Pour ça on réalise l'expérience schématisée à droite.
-  
-  \important{Rappels :}
-  \begin{listePoints}
-    \item L'indice de réfraction de l'air vaut $n_\text{air} = 1,\!0$
-    \item La loi de Snell-Descartes nous dit que : $n_2 \times \sin(i_2) = n_1 \times \sin(i_1)$
-  \end{listePoints}
-\end{doc}
-
-\question{
-  Dans l'expérience du document~\ref{doc:E_refraction_sirius}, l'indice de réfraction du plexiglas est-il $n_1$ ou $n_2$ ?
-  Donner la valeur de l'autre indice de réfraction.\competence{APP}
-}{
-  L'indice de réfraction du plexiglas est $n_2$. $n_1 = n_\text{air} = 1$.
-}{1}
-
-\question{
-  En vous aidant du schéma, donner la valeur des angles $i_1$ et $i_2$.\competence{APP}
-}{
-  $i_1 = 50\degree$ et $i_2 = 30\degree$.
-}{1}
-
-\question{
-  En utilisant les valeurs de $i_1$ et de $i_2$, calculer la valeur de l'indice de réfraction du plexiglas.\competence{ANA/RAI, REA}
-}{
-  D'après la loi de Snell-Descartes
-  \begin{equation*}
-    n_2 = n_1 \times \frac{\sin(i_1)}{\sin(i_2)} = 1,\!5
-  \end{equation*}
-}{2}
-
-\question{
-  La vitesse de la lumière est plus élevée dans le plexiglas ou dans l'air ?\competence{RCO}
-}{
-  $n_\text{plexiglas} > n_\text{air}$, donc $c_\text{plexiglas} < c_\text{air}$ par définition de l'indice de réfraction.
-  \vspace*{18pt}
-}{1}
-
-
-
-%%%%
-\titreSousSection{Spectre d'émission du Soleil}
-
-\begin{doc}{Spectre d'émission et d'absorption}{doc:E_spectre_emission}
-  \begin{wrapfigure}{r}{0.55\linewidth}
-    \vspace*{-24pt}
-    \begin{center}
-      \hspace{4pt}\image{1.05}{images/spectre_soleil} \\[-4pt]
-      Spectres d'émission d'atomes et du Soleil
-    \end{center}
-  \end{wrapfigure}
-  Même si le Soleil est un corps chaud, la lumière qu'il émet n'est pas tout à fait continue.
-  Son spectre comporte des \important{raies d'absorption}.
-  
-  Ces raies correspondent à de la lumière qui a été absorbée par des atomes présent dans l'atmosphère du Soleil.
-  \important{Un atome absorbe les longueurs d'onde correspondant à ces raies d'émissions.}
-  
-  Si une série de raies d'absorption dans le spectre d'émission du Soleil correspond exactement au raies d'émission d'un atome, alors ça veut dire que cet atome se trouve dans l'atmosphère du Soleil.
-\end{doc}
-
-\question{
-  Pour chacun des trois éléments chimique, indiquer s'il se trouve dans l'atmosphère du Soleil ou non. Justifier.\competence{APP, ANA/RAI, COM}
-  
-  \textit{
-    Prendre des initiatives et les écrire, même si le raisonnement n'est pas complet.
-    Tout début de réflexion sera valorisé.
-  }
-}{
-  Si un élément chimique se trouve dans l'atmosphère du Soleil, il va absorber la lumière correspondant à \important{toutes} ses raies d'émissions. \\
-  Toutes les raies d'émission du carbone ne correspondent pas à des raies d'absorption dans le spectre du Soleil, le carbone ne se trouve donc pas dans l'atmosphère du Soleil.
-  Par contre, toutes les raies d'émission de l'hydrogène et du sodium correspondent à des raies d'absorption dans le spectre du Soleil : ces deux éléments se trouvent donc dans l'atmosphère du Soleil.
-}{5}
-
+\input{seconde/exercices/etudier_lumiere_soleil}
 
 %%%%
 \input{commun/bilan_eleve}

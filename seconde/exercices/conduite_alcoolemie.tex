@@ -1,0 +1,81 @@
+\titrePartie{Conduite et alcoolémie}\pasCorrection{\points{11,5}}
+
+\variationSujet{Mélanie et sa femme Sihame}{Maxime et son mari Nassim} sortent en voiture pour aller manger dehors.
+Au restaurant \variationSujet{Sihame}{Nassim} boit un verre de \variationSujet{\qty{500}{\ml}}{\qty{250}{\ml}}
+d'alcool à \qty{10}{\degree} : c'est-à-dire que \qty{10}{\percent} du volume de la boisson est de l'éthanol.
+
+On va chercher à déterminer si \variationSujet{Sihame}{Nassim} pourra de nouveau conduire après le repas.
+
+\question{
+  Calculer le volume d'éthanol dans le verre.\competence{APP, REA}
+}{
+  On multiplie le volume du verre par la proportion d'éthanol :
+  $\qty{250}{\ml} \times 10/100 = \qty{25}{\ml}$.
+  \points{1,5}
+}{0}
+
+%
+L'éthanol a une masse volumique qui vaut $\rho_\text{éth} = \qty{0,8}{\g\per\ml}$.
+Pour un volume $V_\text{éth}$ d'éthanol, on peut calculer d'éthanol avec cette relation
+$m_\text{éth} = \rho_\text{éth} \times V_\text{éth}$.
+
+\question{
+  Calculer la masse d'éthanol bue par \variationSujet{Sihame}{Nassim}.\competence{APP, REA}
+}{
+  On utilise la relation fournie :
+  $m_\text{éth} = \qty{0,8}{\g\per\ml} \times \qty{25}{\ml} = \qty{20}{\g}$
+  \points{1,5}
+}{0}
+
+%
+Le corps \variationSujet{d'une femme}{d'un homme} adulte contient en moyenne \variationSujet{\qty{4,5}{\litre}}{\qty{5,5}{\litre}} de sang.
+En France, \og \textit{il est interdit de conduire avec un taux d'alcool dans le sang supérieur ou égal
+à \qty{0,5}{\g\per\litre} de sang} \fg.
+
+\question{
+  En physique-chimie on parle de concentration massique plutôt que de taux d'alcool.
+  Expliquer avec vos mots la différence entre cette grandeur et la masse volumique.\competence{RCO, COM}
+}{
+  La concentration massique mesure la quantité de soluté dans une solution,
+  alors que la masse volumique mesure à quelle point un échantillon est dense.
+  \points{2}
+}{0}
+
+%
+\question{
+  Rappeler la formule mathématique de la concentration massique.\competence{RCO}
+}{
+  $c_m = \dfrac{m}{V}$
+  \points{1}
+}{0}
+
+\question{
+  Calculer la concentration massique d'éthanol dans le sang de \variationSujet{Sihame}{Nassim}.\competence{APP, REA}
+}{
+  $c_m = \dfrac{\qty{20}{\g}}{\qty{4,5}{\litre}} = \qty{4,4}{\g\per\litre}$.
+  \points{1,5}
+}{0}
+
+\question{
+  Indiquer, en justifiant, si \variationSujet{Sihame}{Nassim} pourra conduire en sortant du restaurant.\competence{APP, VAl}
+}{
+  Non, car la concentration massique d'alcool est supérieure à \qty{0.5}{\g\per\litre}, il est donc interdit de conduire.
+  \points{1}
+}{0}
+
+%
+En fait, quand une personne boit une boisson alcoolisée,
+seule une petite partie de l'éthanol et absorbé par l'organisme.
+En moyenne seulement $12\%$ de l'éthanol passe dans le sang.
+Si on a bu \qty{10}{\g} d'éthanol, \qty{1,2}{\g} passe dans le sang.
+
+\question{
+  Calculer de nouveau la concentration massique dans le sang de \variationSujet{Sihame}{Nassim} en tenant compte de cette information. Indiquer, en justifiant, si \variationSujet{Sihame}{Nassim} pourra conduire en sortant du restaurant.\competence{APP, REA, VAL}
+}{
+  La masse d'éthanol qui passe dans le sang est
+  $m = \qty{20}{\g} \times \dfrac{12}{100} = \qty{2,4}{\g}$.
+
+  Et donc la concentration massique d'alcool dans le sang vaut $c_m = \qty{2,4}{\g} / \qty{4,5}{\litre} = \qty{0,53}{\g\per\litre}$.
+  Il est donc toujours interdit de conduire.
+  \points{3}
+}{0}

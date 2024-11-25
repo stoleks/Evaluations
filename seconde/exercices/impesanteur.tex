@@ -1,0 +1,143 @@
+\titreSection{Impesanteur}
+
+%%
+\vspace*{-10pt}
+\begin{doc}{Station spatiale internationale (ISS)}{doc:E3_station_ISS}
+  On lit parfois que les spationautes flottent dans les stations spatiales, car la gravité terrestre n'agit plus sur les spationautes.
+  
+  \begin{wrapfigure}{r}{0.4\linewidth}
+    \vspace*{-30pt}
+    \centering
+    \image{0.8}{images/spationaute_ISS}
+  \end{wrapfigure}
+  
+  On s'intéresse à la station spatiale internationale, notée ISS, en orbite circulaire autour de la Terre à une hauteur $h$.
+  L'ISS a une vitesse constante $v$.
+
+  \important{Données :}
+  \begin{listePoints}
+    \item $G = \qty{6,67e-11}{\newton\m\squared \per\kg\squared}$
+    \item $\MTerre = \qty{5,97e24}{\kg}$
+    \item $\RTerre = \qty{6,37e6}{\m}$
+    \item $h = \qty{3,70e5}{\m}$
+    \item $v = \qty{7,66e3}{\m\per\s}$
+  \end{listePoints}
+\end{doc}
+
+%%
+\numeroQuestion
+  \label{exo:schema_ISS}
+  Quel est le mouvement décrit par l'ISS dans le référentiel lié au centre de la Terre ?
+  Faire un schéma faisant figurer l'ISS, la Terre et la trajectoire qu'elle décrit.\competence{APP}\correction{\points{3}}
+
+\question{
+  Dans la station les spationautes ont un poids $P = m \times \gISS$.
+  Calculer la valeur de $\gISS$ sachant que
+  \begin{equation*}
+    \gISS =  G \times \dfrac{\MTerre}{(\RTerre + h)^2}
+  \end{equation*}\competence{APP, REA}
+}{
+  \begin{equation*}
+    \gISS
+    = \qty{6,67e-11}{\newton\m\squared \per\kg\squared}
+    \dfrac{\qty{5,97e24}{\kg}} {(\num{6,37e6} + \qty{3,70e5}{\m})^2}
+    %
+    = \qty{8,77}{\newton}
+    \points{1,5}
+  \end{equation*}
+}{0}
+
+
+\pasCorrection{\newpage}
+\question{
+  Comparer avec l'accélération de pesanteur terrestre $g = \qty{9,81}{\newton\per\kg}$.
+  Peut-on vraiment dire que la gravité terrestre n'agit plus sur les spationautes au sein de l'ISS ?\competence{VAL, ANA/RAI}
+}{
+  $\gISS$ est presque égal à $g$, donc la gravité agit toujours fortement.
+  \points{1}
+}{0}
+
+\question{
+  \label{exo:calcul_poids_ISS}
+  En sachant que $\gISS = \qty{8,77}{\newton\per\kg}$, calculer le poids d'une spationaute de masse $m = \qty{65}{\kg}$ dans l'ISS.\competence{REA}
+}{
+  \begin{equation*}  
+    P = \qty{65}{\kg} \times \qty{8,77}{\newton\per\kg} = \qty{570}{\newton}
+    \points{1,5}
+  \end{equation*}
+}{0}
+
+
+%%
+\begin{doc}{Force d'inertie d'entraînement}{doc:E3_force_inertie}
+  Un système dans un référentiel en rotation est soumis à une force \important{relative} qui dépend du référentiel, qu'on appelle \important{force d'inertie d'entraînement} $\vv{F}_\inertie$ ou encore « force centrifuge ».
+
+  Cette force a pour direction la \important{droite reliant le centre du cercle et le centre du système.}
+  Son sens est dirigé \important{vers l'extérieur du cercle.}
+  C'est cette force qui explique pourquoi les passagers d'une voiture dans un rond-point sentent leur corps attiré vers l'extérieur du rond-point.
+
+  \begin{importants}
+    \important{Rappel :} le principe d'inertie dit que tout objet immobile est soumis à des forces dont la somme est nulle.
+  \end{importants}
+\end{doc}
+
+\question{
+  Expliquer avec vos mot le principe d'inertie.\competence{COM}
+}{
+  Il faut exercer une force sur un objet pour changer son mouvement, par défaut les objets se déplacent en ligne droite.
+  \points{3}
+}{0}
+
+\question{
+  Dans le référentiel lié à l'ISS, la spationaute est immobile.
+  En utilisant le principe d'inertie et en justifiant clairement, donner la norme de la force d'inertie d'entraînement $F_\inertie$ qui s'exerce sur la spationaute.\competence{APP, ANA/RAI}
+}{
+  Comme la spationaute est immobile, la somme des forces qui s'exercent sur elle est nulle et $F_\inertie = P = \qty{8,77}{\newton}$
+  \points{2}
+}{0}
+
+\numeroQuestion
+  Compléter le schéma de la question~\ref{exo:schema_ISS} en représentant les forces s'exerçant sur la spationaute dans le référentiel lié à l'ISS.\competence{APP, REA}\correction{\points{1}}
+
+
+\question{
+  La norme de la force d'inertie d'entraînement exercée sur la spationaute est
+  \begin{equation*}
+    F_\inertie = m \times \dfrac{v^2}{R}
+    \label{eq:force_inertie}
+  \end{equation*}
+  où $v$ est la vitesse du référentiel et $R$ est la distance entre le centre de rotation du référentiel et le centre du système (donc $R = \RTerre + h$ ici). 
+  Cette relation est-elle cohérente avec le principe d'inertie ?
+  
+  \textit{
+    Prendre des initiatives et les écrire, même si le raisonnement n'est pas complet.
+    Tout début de réflexion sera valorisé.
+  }
+  \competence{APP, REA, VAL, ANA/RAI}
+}{
+  On calcule la valeur de $F_\inertie$ :
+  \begin{equation*}
+    F_\inertie
+    = \qty{65}{\kg} \times \dfrac{(\qty{7,66}{\m\per\s})^2}{\num{6,37e6} + \qty{3,70e5}{\m}}
+    = \qty{565}{\newton}
+  \end{equation*}
+  On retrouve presque la même valeur qu'à la question 4, cette norme est donc cohérente avec le principe d'inertie.
+  \points{3}
+}{0}
+
+%% Formulation officielle du BAC
+% Le candidat est invité à prendre des initiatives et à présenter la démarche suivie, même si elle n'a pas abouti. La démarche est évaluée et nécessite d'être correctement présentée.
+\pasCorrection{
+  \begin{coupDePouce}
+    Utiliser les données de l'énoncé pour calculer $F_\inertie$. 
+    Comparer cette valeur avec celle obtenue à la question~\ref{exo:calcul_poids_ISS}.
+  \end{coupDePouce}
+
+  \begin{coupDePouce}
+    D'après le principe d'inertie, si les spationautes flottent, c'est parce que les forces qui s'exercent sur elles et eux se compensent.
+  \end{coupDePouce}
+
+  \begin{coupDePouce}
+    Si les forces se compensent, leurs normes doivent être égales. Donc si $F_\inertie = P$, le principe d'inertie est bien vérifié.
+  \end{coupDePouce}
+}

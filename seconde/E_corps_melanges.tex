@@ -13,20 +13,16 @@
   
   \begin{tableauCompetences}
     RCO &
-    Connaître le vocabulaire du cours et les relations importantes.
-    & & & & \\
+    Connaître le vocabulaire du cours et les relations importantes. \\
     %
     APP &
-    Extraire des informations d'un document.
-    & & & &  \\
+    Extraire des informations d'un document. \\
     %
     VAL &
-    Comparer des valeurs calculées avec des valeurs de références pour valider un raisonnement.
-    & & & & \\
+    Comparer des valeurs calculées avec des valeurs de références pour valider un raisonnement. \\
     %
     REA &
-    Réaliser un calcul en donnant le résultat en notation scientifique avec les bonnes unités.
-    & & & & \\
+    Réaliser un calcul en donnant le résultat en notation scientifique avec les bonnes unités. \\
   \end{tableauCompetences}
 }
 
@@ -35,191 +31,14 @@
 
 %%%% Exercice I
 \vspace*{-20pt}
-\titrePartie{Marais salant et pollution}\correction{\points{11}}
-
-Les marais salants sont de grands bassin remplis par d'eau de mer, qui est riche en sel.
-Le sel est du chlorure de sodium de formule brute \chemfig{NaCl}.
-
-%
-\question{
-  Indiquer en justifiant si l'eau de mer est un corps pur ou un mélange.\competence{RCO, APP}
-}{
-  C'est un mélange, composé d'au moins deux espèces chimique : l'eau et le sel.
-  \points{2}
-}{1}
-
-Le soleil et le vent font s'évaporer l'eau de mer, mais le sel reste au fond des bassins. 
-Après plusieurs étapes d'évaporation et de remplissage, la quantité de sel contenue dans l'eau des bassins devient très importante.
-La masse volumique de l'eau salée augmente avec la quantité de sel.
-
-\question{
-  Rappeler la relation mathématique entre la masse volumique de l'eau salée $\rho$, sa masse $m$ et le volume $V$ qu'elle occupe.\competence{RCO}
-}{
-  \begin{equation*}
-    \rho = \frac{m}{V}
-    \points{1}
-  \end{equation*}
-}{2}
-
-Les productrices ou producteurs peuvent récolter le sel lorsque la masse volumique de l'eau salée dans un bassin est \important{supérieure} à $\rho_\text{récolte} = \qty{1,15}{\g/\ml}$.
-
-\question{
-  Une productrice de sel pèse \qty{50}{\ml} d'eau salée provenant d'un bassin et mesure une masse de \variationSujet{\qty{60}{\g}}{\qty{55}{\g}}.
-  Calculer la masse volumique de l'eau salée dans ce bassin.\competence{REA}
-}{
-  $m_\text{eau salée} =$ \variationSujet{\qty{60}{\g}}{\qty{55}{\g}} et $V_\text{eau salée} = \qty{50}{\ml}$. Donc 
-  \begin{equation*}
-    \rho_\text{eau salée}
-    = \frac{\variationSujet {\qty{60}{\g}} {\qty{55}{\g}}}{\qty{50}{\ml}} 
-    =\; \variationSujet {\qty{1,2}{\g/\ml}} {\qty{1,1}{\g/\ml}}
-    \points{2}
-  \end{equation*}
-}{2}
-
-\question{
-  Est-ce que la productrice peut récolter le sel dans ce bassin ? Justifier.\competence{VAL}
-}{
-  La masse volumique de l'eau du bassin est \variationSujet{supérieure}{inférieure} à celle nécessaire pour récolter, donc la productrice \variationSujet{peut}{ne peut pas} récolter le sel.
-  \points{2}
-}{2}
-
-
-Une ingénieure agronome réalise une inspection des marais salants en baie de somme.
-Pour vérifier que des ions ne pollue pas les marais, elle prélève puis teste l'eau des bassins avec différentes espèces chimiques.
-Un tableau récapitulatif des tests qu'elle peut réaliser est présenté ci-dessous
-
-\begin{center}
-  \begin{tableau}{| c | c | c |}
-    Espèce utilisée & Ion recherché & Résultat d'un test positif \\
-    Nitrate d'argent & \ionChlorure & Précipité blanc \\
-    \SetCell[r = 3]{c} Hydroxyde de sodium & \ionCuivreII & Précipité bleu \\
-    & \ionFerII & Précipité vert \\
-    & \ionFerIII & Précipité rouille \\
-    Chlorure de baryum & \ionSulfate & Précipité blanc \\
-  \end{tableau}
-\end{center}
-
-\question{
-  L'ingénieure commence par verser quelques gouttes de \variationSujet{chlorure de Baryum}{nitrate d'argent} dans un tube à essai contenant l'eau prélevée.
-  Elle observe la formation d'un précipité blanc.
-  Indiquer quel ion pollue le bassin, en justifiant.\competence{APP}
-}{
-   D'après le tableau, le \variationSujet{chlorure de baryum}{nitrate d'argent} a réagit avec les ions \variationSujet{sulfates}{chlorure} pour former un précipité blanc.
-   \points{2}
-}{2}
-
-\question{
-  L'ingénieure veut réaliser des tests supplémentaires pour savoir si le bassin est aussi pollué par des ions Fer.
-  Indiquer quel(s) réactif(s) elle doit utiliser et quel résultat permettrait de conclure à la présence d'ions Fer.\competence{APP}
-}{
-  Pour identifier la présence d'ions fer, l'ingénieure devra réaliser un test avec l'hydroxyde de sodium.
-  Si elle voit apparaître un précipité vert, alors le bassin contient des ions Fer II.
-  Si elle voit apparaître un précipité rouille, alors le bassin contient des ions Fer III.
-  Si aucun précipité n'apparaît, le bassin n'est pas pollué.
-  \points{2}
-}{4}
-
+\input{seconde/exercices/marais_salant_pollution}
 
 %%%% Exercice II
 \vspace*{-20pt}
-\titrePartie{Huile essentielle de \variationSujet{lavande}{menthe}}\correction{\points{9}}
-
-Les huiles essentielles de \variationSujet{lavande}{menthe} sont obtenues par distillation des fleurs de \variationSujet{lavandes}{menthe}.
-Les huiles essentielles sont riches en molécules odorantes.
-On réalise une Chromatographie sur Couche Mince (CCM) afin d'identifier quelques espèces chimiques présentes dans cette huile essentielle.
-Le chromatogramme obtenue après la montée de l'éluant est présenté ci-dessous.
-
-\begin{figure}[!ht]
-  % NOTE : AJOUTER UN COMPOSE D PAS PRESENT DANS A
-  \centering
-  Chromatogramme.
-  
-  \variationSujet{
-    \image{0.21}{images/chromato_lavande}
-  }{
-    \image{0.2}{images/chromato_menthe}
-  }
-  
-  A : huile essentielle de \variationSujet{lavande}{menthe},
-  B : \variationSujet{linalol}{menthol},
-  C : \variationSujet{acétate de linalyle}{limonène}.
-\end{figure}
-
-\numeroQuestion
-Indiquer sur le chromatogramme où se trouvent la ligne de dépôt, la couche mince et le front de l'éluant.\competence{RCO}
-\correction{\points{3}}
-
-\question{
-  Avec le chromatogramme, justifier que l'huile essentielle de \variationSujet{lavande}{menthe} est un mélange.\competence{RCO, APP}
-}{
-  D'après le chromatogramme, le dépôt d'huile essentielle s'est divisé en trois tâches. L'huile essentielle est donc composée d'au moins trois espèces chimiques, c'est donc un mélange.
-  \points{2}
-}{2}
-
-\question{
-  En comparant les hauteurs des tâches, indiquer quelles sont les espèces chimiques présentes dans l'huile essentielle de \variationSujet{lavande}{menthe}.\competence{RCO, APP, VAL}
-}{
-  Sur un chromatogramme, deux composés sont identiques s'ils sont montés à la même hauteur. 
-  
-  Sur le chromatogramme, on voit que la première tâche d'huile essentielle de \variationSujet{lavande}{menthe} est à la même hauteur que \variationSujet{l'acétate de linalyle}{le limonène} et que la seconde tâche est à la même hauteur que le \variationSujet{linalol}{menthol}.
-  
-  L'huile essentielle de \variationSujet{lavande}{menthe} est donc composée \variationSujet{d'acétate de linalyle}{de limonène} et de \variationSujet{linalol}{menthol}.
-  \points{3}
-}{3}
-
-\question{
-  Peut-on identifier le troisième composé présent dans l'huile essentielle avec ce chromatogramme ?\competence{APP, VAL}
-}{
-  Non, car on n'a pas d'espèce chimique de référence pour comparer.
-  \points{1}
-}{2}
-
+\input{seconde/exercices/huile_essentiel_CCM}
 
 %%%% Exercice III
-\titrePartie{Étalon du kilogramme}\correction{\points{5}}
+\input{seconde/exercices/etalon_kilogramme}
 
-\begin{wrapfigure}[6]{r}{0.2\linewidth}
-  \centering
-  \vspace*{-40pt}
-  \image{0.9}{images/standard_kilogram.jpg}
-\end{wrapfigure}
-
-Le kilogramme est l'unité de base de la masse dans le système international.
-L'étalon qui \important{a servi à définir le kilogramme} jusqu'en mai 2019 est conservé par le Bureau International des Poids et Mesures (BIPM).
-Ce prototype est un cylindre constitué d'un alliage de platine et d'iridium, de volume $V_\text{étalon} = \qty{47,191}{\cm\cubed}$ et de masse volumique $\rho_\text{étalon} = \qty{21,191}{\g/\cm\cubed}$.
-
-\question{
-  Sans calcul, indiquer la masse de l'étalon.\competence{APP}
-}{
-  L'étalon sert à définir le kilogramme.
-  Sa masse est donc de \qty{1}{\kg} par définition.
-  \points{1}
-}{1}
-
-\question{
-  Le prototype est composé de \qty{0,9}{\kg} de platine et de \qty{0,1}{\kg} d'iridium.
-  Calculer la fraction massique de platine et d'iridium.\competence{REA, APP}
-}{
-  Pour le platine : $\qty{0,9}{\kg} / \qty{1}{\kg} = \qty{90}{\percent}$.
-  Pour l'iridium : $\qty{0,1}{\kg} / \qty{1}{\kg} = \qty{10}{\percent}$.
-  \points{2}
-}{2}
-
-\textit{Rappel :} la fraction massique d'une espèce dans un échantillon est la masse de l'espèce divisée par la masse totale de l'échantillon.
-Par exemple pour le platine :
-\begin{equation*}
-  p_m(\text{platine}) = \frac{m_\text{platine}}{m_\text{étalon}}
-\end{equation*}
-
-\question{
-  Historiquement, un premier cylindre avait été réalisé avec \qty{11,1}{\percent} d'iridium, qui a une masse volumique plus élevée que le platine.
-  Sachant que son volume était identique à l'étalon actuel, indiquer si la masse de ce cylindre valait 1 kg et expliquer pourquoi il avait été rejeté par le BIPM.\competence{APP}
-}{
-  L'étalon actuel a précisément une masse de \qty{1}{\kg} avec \qty{10}{\percent} d'iridium.
-  Le premier cylindre comportait $\qty{11,1}{\percent} > \qty{10}{\percent}$ d'iridium.
-  Comme l'iridium a une masse volumique plus élevée, sa masse valait plus de \qty{1}{\kg}, d'où le rejet par le BIPM.
-  \points{2}
-}{2}
-
-
+%%%%
 \pasCorrection{\input{commun/bilan_eleve}}
