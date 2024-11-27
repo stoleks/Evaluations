@@ -16,8 +16,11 @@
   \end{center}
 }
 
-\newcommand{\ficheRevision}[2]{
-  \enTete{Fiche de révision -- #1}[0]*
+
+%%%% Commande pour afficher une fiche de révision avec 
+%%%% | connaissances | ok | pas ok | activités en classe |
+\NewDocumentCommand{\ficheRevision}{s m +m}{
+  \enTete{Fiche de révision -- #2}[0]*
   \vspace*{-6pt}
 
   %% Corps de la fiche
@@ -31,14 +34,17 @@
   \vspace*{4pt}
   
   \begin{tableauConnaissances}
-    #2
+    #3
   \end{tableauConnaissances}
 
   %% Bas de la fiche
-  \titreSection{Ce qu'il me reste à faire}
+  \IfBooleanTF{#1}{}{
+    \titreSection{Ce qu'il me reste à faire}
+  }
 }
 
-
+%%%% Commande pour afficher une fiche de mémorisation avec 
+%%%% | questions | ok | pas ok | réponses | répétition 1 semaine | 1 mois | 6 mois |
 \newcommand{\ficheMemorisation}[2]{
   \enTete{Fiche de mémorisation -- #1}[0]*
   \vspace*{-6pt}
@@ -57,5 +63,4 @@
   \begin{tableauMemorisation}
     #2
   \end{tableauMemorisation}
-
 }
