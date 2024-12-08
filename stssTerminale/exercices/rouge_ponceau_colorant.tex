@@ -1,0 +1,117 @@
+\exercice{Le rouge Ponceau, un colorant alimentaire (10 points)}
+
+\textbf{Mots-clés :} Dose journalière admissible, dosage par étalonnage, concentration en masse.
+\medskip
+
+\begin{doc}{La couleur des macarons}{doc:BAC_macaron}
+  Les macarons sont des gâteaux individuels à l’amande dont les goûts peuvent être différents.
+  Les macarons sont souvent colorés.
+  Pour cela, certains professionnels n’hésitent pas à jouer la surenchère en ayant recours à un surdosage des colorants.
+  Cependant, l’utilisation de ces substances dans les denrées alimentaires est rigoureusement encadrée par la réglementation sur les additifs. 
+  
+  \begin{flushright}
+    \textit{Macarons, la ronde des couleurs | economie.gouv.fr }
+  \end{flushright}
+\end{doc}
+
+\begin{doc}{Le colorant E124}{doc:BAC_colorant_E124}
+  Le rouge Ponceau AR (E124) est un colorant azoïque de synthèse.
+  C’est un additif alimentaire qui peut remplacer le rouge de cochenille (E120) car il est moins cher.
+  En Europe, la dose journalière admissible (DJA) est de 0,7 milligramme par kilogramme de masse corporelle.
+  En France, son usage doit s’accompagner de la mention « Peut avoir des effets indésirables sur l’activité et l’attention chez les enfants ». 
+
+  \begin{flushright}
+    \textit{Colorant-alimentaire.fr}
+  \end{flushright}
+\end{doc}
+
+ 
+On souhaite déterminer la quantité en colorant E124 présente dans un macaron à l’aide d’un dosage par étalonnage avec un spectrophotomètre.  
+
+Pour cela, on sèche puis on réduit en poudre un macaron de couleur rouge. On dissout cette poudre dans de l’eau.
+Après filtration, on obtient une solution S de volume V = \qty{25}{\ml}.On considère que la totalité du rouge Ponceau AR (E124) contenu dans le macaron a été récupérée dans cette solution. 
+
+\important{I \faMinus}
+On réalise une courbe d’étalonnage représentée sur
+\textbf{l’ANNEXE DE LA DERNIÈRE PAGE (À RENDRE AVEC LA COPIE DE CHIMIE)}
+à partir de solutions étalons de concentrations connues en rouge Ponceau AR (E124).
+Ces solutions sont obtenues par dilution d’une solution mère $S_0$
+de concentration en masse \qty{100}{\mg\per\litre} en colorant E124.
+
+\begin{doc}{}{doc:BAC_absorbance}
+  On mesure l’absorbance des solutions
+  \medskip
+  
+  \centering
+  \begin{tblr}{
+    colspec = {|c |c |c |c |c |}, hlines,
+    row{1} = {couleurPrim!20}
+  }
+    Solutions étalons & $S_1$ & $S_2$ & $S_3$ & $S_4$ \\
+    Concentration massique en \unit{\g\per\litre} & 50,0 & 25,0 & 12,5 & 5,0 \\
+    Absorbance A sans unité & 1,56 & 0,82 & 0,37 & 0,16 \\
+    Volume de la solution en \unit{\ml} & 20 & 20 & 20 & 20 \\
+  \end{tblr}
+\end{doc}
+ 
+\question{
+  Calculer le volume de solution mère $S_0$ à prélever pour réaliser la solution $S_2$.
+}{
+  On veut diviser la concentration par un facteur de dilution $F = \dfrac{\qty{100}{\mg\per\litre}}{\qty{25}{\mg\per\litre}} = 4$.
+  Comme le volume de la solution $S_2$ final est $V_2 = \qty{20}{\ml}$, il faut prélever un volume $V_0 = \dfrac{V_2}{F} = \qty{5}{\ml}$.
+  \points{1,5}
+}{0}
+
+\question{
+  Indiquer le volume d’eau à rajouter au prélèvement pour réaliser la solution $S_2$.
+}{
+  Comme on a prélevé \qty{5}{\ml}, il faut rajouter \qty{15}{\ml} pour réaliser la solution $S_2$.
+  \points{1}
+}{0}
+
+\question{
+  Sur \textbf{l’ANNEXE (À RENDRE AVEC LA COPIE DE CHIMIE)}, compléter la deuxième ligne du tableau par les numéros (1 à 7) de façon à rendre compte de la chronologie des étapes à suivre pour réaliser la dilution.  
+}{
+  \points{1}
+}{0}
+
+\medskip
+\important{II \faMinus} La mesure de l’absorbance A de la solution $S$ est de 0,94. 
+
+\question{
+  En utilisant la droite d’étalonnage de \textbf{l’ANNEXE (À RENDRE AVEC LA COPIE DE CHIMIE)}, déterminer la concentration en masse en colorant E124 de la solution $S$ et indiquer les traits de construction nécessaires sur l’annexe. 
+}{
+  Sur la courbe d'étalonnage, on peut lire qu'une absorbance de 0,94 correspond à une concentration en colorant $c = \qty{30}{\mg\per\litre}$.
+  \points{1}
+}{0}
+
+\question{
+  Montrer que la masse du colorant E124 contenu dans le macaron est d’environ 0,75 mg. 
+}{
+  Comme la totalité du colorant du macaron est passé dans la solution, il suffit de calculer la masse de colorant dans la solution
+  $m = c \times V = \qty{30}{\mg\per\litre} \times \qty{25e-3}{\litre} = \qty{0,75}{\mg}$.
+  \points{1,5}
+}{0}
+
+\question{
+  Définir la dose journalière admissible (DJA). 
+}{
+  C'est la quantité maximale d'un produit que l'on peut avaler tous les jours sans conséquences négatives sur la santé.
+  \points{1}
+}{0}
+
+\question{
+  Indiquer si un enfant de 40 kg pourrait manger le contenu d’une boîte de 12 macarons rouges dans la journée sans dépasser la DJA du colorant E124. 
+}{
+  On multiplie la DJA et la masse de l'enfant pour déterminer la dose maximale à ne pas dépasser $\qty{40}{\kg} \times DJA = \qty{40}{\kg} \times \qty{0,7}{\mg\per\kg} = \qty{28}{\mg}$.
+
+  Dans 12 macaron on a une masse de $12\times \qty{0,75}{\mg} = \qty{9}{\mg}$ de colorant, donc l'enfant peut manger 12 macarons sans danger.
+  \points{2}
+}{0}
+
+\question{
+  Indiquer si cela présente un autre risque pour sa santé. 
+}{
+  En mangeant 12 macarons, l'enfant a certainement eu un apport en sucre trop élevé.
+  \points{1}
+}{0}

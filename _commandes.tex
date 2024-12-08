@@ -753,7 +753,7 @@
 }
 %
 \NewDocumentCommand{\exemple}{s}{
-  \flecheLongue
+  \fleche
   \IfValueTF{#1}{
     \textit{Exemple :}
   }{
@@ -838,7 +838,7 @@
 
 %%%% liste avec chiffre
 \newlist{enumeration}{enumerate}{2}
-\setlist[enumeration]{label = \textcolor{\couleurPrimSombre}{\textbf{\arabic*.}} }
+\setlist[enumeration]{label = \textcolor{couleurSec}{\textbf{\arabic*.}} }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -874,7 +874,7 @@
   \overline{\mathrm{#1}}
 }
 \newcommand{\reaction}{
-  \!\!\schemestart \arrow(.mid east--.mid west){->}[, 0.9, ultra thick] \schemestop\!\!
+  \;\text{\faLongArrowRight}\; % flèche courte et jolie
 }
 
 %% Pour simplifier l'écriture des formules brutes

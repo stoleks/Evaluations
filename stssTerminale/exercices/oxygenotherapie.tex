@@ -1,0 +1,149 @@
+\exercice{Oxygénothérapie}
+
+\textbf{Mots-clés :} Loi des gaz parfaits, bilan de matière, débit.
+\medskip
+
+
+La drépanocytose entraîne des crises douloureuses qui peuvent être atténuées par des médicaments antalgiques et une hydratation par voie intraveineuse, mais si la douleur persiste, la médicamentation peut être complétée par une oxygénothérapie.
+L'oxygénothérapie consiste en un apport supplémentaire de dioxygène à l'organisme.
+
+\begin{doc}{Utilisation des bouteilles de dioxygène}{doc:BAC_bouteille_dioxygene}
+  Le dioxygène est stocké à l'état gazeux comprimé à une pression initiale de \qty{200}{\bar}, dans
+  des bouteilles spécialement conçues et de différents volumes selon leur utilisation. À la
+  sortie des bouteilles, la pression du gaz est réduite par un manodétendeur pour la rendre
+  acceptable par le patient. Au fur et à mesure que la bouteille se vide, la pression du gaz à
+  l'intérieur diminue.
+  Un débitmètre permet de régler le débit de dioxygène suivant la prescription médicale.
+  D'après l'Association Nationale pour les Traitements à Domicile
+\end{doc}
+
+\begin{doc}{Durée d'autonomie d'une bouteille de dioxygène B2}{doc:BAC_autonomie}
+  Les bouteilles B2 de volume 2,0 litres sont utilisées pour l'oxygénothérapie de déambulation.
+  La masse totale moyenne de la bouteille pleine de dioxygène comprimé à \qty{200}{\bar} est de \qty{5,8}{\kg}.
+  La durée d'autonomie d'une bouteille B2 est donnée dans le tableau ci-dessous, pour différentes valeurs de la pression initiale de la bouteille et du débit de dioxygène délivré par le manodétendeur.
+
+  \centering
+  \smallskip
+  \begin{tblr}{
+    colspec = {|c |c |c |c |c |}, hlines,
+    row{1,2} = {couleurPrim!20}
+  }
+    \SetCell[r=2]{c} { Pression dans la \\ bouteille en bar } &
+    \SetCell[c=4]{c} Débit de \chemfig{O_2} à la sortie du manodétendeur & & & \\
+    & \qty{3}{\litre\per\minute}
+    & \qty{6}{\litre\per\minute}
+    & \qty{9}{\litre\per\minute}
+    & \qty{15}{\litre\per\minute} \\
+    200 & 2 h 15 min & 1 h 05 min & 0 h 45 min & 0 h 25 min \\
+    150 & 1 h 40 min & 0 h 50 min & 0 h 30 min & 0 h 20 min \\
+    100 & 1 h 05 min & 0 h 30 min & 0 h 20 min & 0 h 10 min \\
+    50  & 0 h 30 min & 0 h 15 min & 0 h 10 min & < 10 min
+  \end{tblr}
+
+  \begin{flushright}
+    \textit{D'après ansm.sante.fr pour les bouteilles d'Air liquide.}
+  \end{flushright}
+\end{doc}
+
+\begin{doc}{La loi des gaz parfaits}{doc:BAC_gaz_parfait}
+  \begin{equation*}
+    \Large
+    P \times V = n \times R \times T
+  \end{equation*}
+      
+  P : pression du gaz (\unit{\pascal}) \\
+  V : volume occupé par le gaz (\unit{\m\cubed}) \\
+  n : quantité de matière du gaz (\unit{\mole}) \\
+  R : constante des gaz parfaits où R = \qty{8,31}{\pascal\m\cubed \per\mol\per\kelvin} \\
+  T : température du gaz (\unit{\kelvin}).
+  On rappelle que $T(\unit{\kelvin}) = T(\unit{\degreeCelsius}) + 273$
+\end{doc}
+
+\textbf{Données :}
+\begin{itemize}
+  \item \qty{1}{\litre} = \qty{e-3}{\m\cubed} et \qty{1}{\m\cubed} = \qty{e3}{\litre}.
+  \item \qty{1}{\bar} = \qty{e5}{\pascal}.
+  \item Pression atmosphérique normale : $P_{atm} = \qty{1,01e5}{\pascal}$.
+  \item Masse molaire moléculaire du dioxygène \chemfig{O_2} : $M_{\chemfig{O_2}} = \qty{32,0}{\g\per\mole}$.
+\end{itemize}
+
+\question{
+  La pression du dioxygène à l'intérieur d'une bouteille B2 neuve est égale à \qty{200}{\bar}.
+  Convertir cette valeur en pascal.
+}{
+  $\qty{200}{\bar} = \qty{200e5}{\pascal}$
+  \points{1}
+}{0}
+
+\question{
+  Montrer alors qu'à \qty{20}{\degreeCelsius}, la quantité de matière de dioxygène contenue dans la bouteille B2 neuve est voisine de $n_{\chemfig{O_2}} = \qty{16,4}{\mol}$.
+}{
+  On utilise la loi des gaz parfaits : 
+  $n 
+  = \dfrac{P\times V}{R \times T}
+  = \dfrac{\qty{200e5}{\pascal} \times \qty{2e-3}{\m\cubed}} {\qty{8,31}{\pascal\m\cubed\per\mole\per\kelvin} \times \qty{293}{\kelvin}}
+  = \qty{16,4}{\mole}$
+  \points{1}
+}{0}
+
+\question{
+  Calculer la masse $m_{\chemfig{O_2}}$ du dioxygène contenu à une pression de \qty{200}{\bar} dans la bouteille B2 neuve.
+}{
+  $m_{\chemfig{O_2}} 
+  = M_{\chemfig{O_2}} \times n_{\chemfig{O_2}}
+  = \qty{32,0}{\g\per\mole} \times \qty{16,4}{\mole}
+  = \qty{526}{\g}$
+  \points{1,5}
+}{0}
+
+\question{
+  Montrer que la masse du gaz représente moins de \qty{10}{\percent} de la masse totale de la bouteille pleine.
+}{
+  \qty{5,8}{\kg} = \qty{5800}{\g}, donc la masse de dioxygène représente 
+  $\dfrac{526}{5800} = \qty{9}{\percent} < \qty{10}{\percent}$ de la masse totale de la bouteille.
+  \points{1}
+}{0}
+
+\question{
+  Vérifier que le volume de dioxygène à la pression atmosphérique,
+  libérable par la bouteille B2 neuve à la température de \qty{20}{\degreeCelsius} est d'environ \qty{0,4}{\m\cubed}.
+}{
+  Pour calculer le volume de dioxygène à pression atmosphérique, on utilise la loi des gaz parfaits 
+  $V = \dfrac{n\times R\times T}{P} 
+  = \dfrac{\qty{16,4}{\mole} \times \qty{8,31}{\pascal\m\cubed\per\mole\per\kelvin} \times \qty{293}{\kelvin}} {\qty{1,01e5}{\pascal}}
+  = \qty{0,40}{\m\cubed}$
+  \points{1,5}
+}{0}
+
+\question{
+  La bouteille B2 est initialement à la pression de \qty{200}{\bar} et le manodétendeur est réglé pour
+  délivrer un débit $D = \qty{3}{\litre\per\minute}$ de gaz à la pression atmosphérique.
+  Vérifier que la durée d'autonomie est bien en accord avec celle indiquée dans le \textbf{document 2}.
+  
+  On rappelle que le débit $D$ d'écoulement d'un gaz ou d'un liquide est défini par :
+  \begin{equation*}
+    D = \dfrac{\text{volume écoulée}}{\text{durée de l'écoulement}} = \dfrac{V}{\Delta t}
+  \end{equation*}
+}{
+  On peut calculer le temps que met la bouteille met à se vider à partir de la relation du débit
+  \begin{equation*}
+    \text{Durée} = \Delta t = \dfrac{V}{D} = \dfrac{\qty{400}{\litre}} {\qty{3}{\litre\per\minute}} = \qty{133}{\minute} = \text{2 h 13 min}
+  \end{equation*}
+  On trouve une durée cohérente.
+  \points{2}
+}{0}
+
+\question{
+  Justifier qualitativement l'évolution de la durée d'autonomie en fonction du débit du gaz.
+}{
+  Quand le débit augmente, la bouteille se vide plus rapidement et donc l'autonomie baisse.
+  \points{1}
+}{0}
+
+\question{
+  En exploitant la relation du \textbf{document 3},
+  expliquer pourquoi la pression dans la bouteille diminue au fil de l'utilisation à température constante.
+}{
+  Le volume occupé et la température reste constante, mais la quantité de matière diminue, donc la pression diminue.
+  \points{1}
+}{0}

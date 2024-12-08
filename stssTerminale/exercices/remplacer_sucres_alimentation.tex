@@ -1,0 +1,107 @@
+\exercice{Remplacer les sucres dans l'alimentation}
+
+\textbf{Mots-clés :} Concentrations en masse et en quantité de matière, dose journalière
+admissible (DJA).
+\medskip
+
+Les aliments riches en sucres favorisent l'apparition du diabète. Le diabète est déclaré si la
+concentration en masse $C_m$ de sucres dans le sang à jeun est supérieure à \qty{1,26}{\g\per\litre}.
+L'organisation mondiale de la santé (OMS) préconise de limiter l'apport en sucres à \qty{10}{\percent} de la ration énergétique totale qui s'élève en moyenne à \qty{104}{\kilo\joule} par jour pour l'adulte.
+Certaines personnes choisissent de remplacer le sucre de leur alimentation par un édulcorant.
+
+\begin{doc}{Le glucose}{doc:BAC_glucose}
+  Une des molécules issue de la dégradation partielle du saccharose (sucre de table)
+  dans l'organisme est le glucose dont la forme linéaire a pour formule partiellement développée :
+  \begin{center}
+    \chemfig{
+      HO -CH_2 
+      -C(-[-3] H) (-[3] OH)
+      -C(-[-3] H) (-[3] OH)
+      -C(-[-3] OH) (-[3] H)
+      -C(-[-3] OH) (-[3] H)
+      -C(-[-2] H) =[2] O
+    }
+  \end{center}
+\end{doc}
+
+\begin{doc}{La stévia}{doc:BAC_stevia}
+  Le Rebaudioside A, extrait de la stévia, plante originaire du Paraguay, a un pouvoir sucrant tel
+  qu'une sucrette contenant 20 mg de Rebaudioside A produit le même goût sucré qu'un morceau
+  de sucre contenant l'équivalent de 5,0 g de glucose.
+  Cependant l'agence européenne de sécurité des aliments (EFSA)
+  a fixé la dose journalière admissible (DJA)
+  pour le Rebaudioside A à 4,0 milligrammes par kilogramme de masse corporelle
+  (DJA = \qty{4,0}{\milli\g\per\kg}).
+
+  \begin{flushright}
+    \textit{D'après www.efsa.europea.eu/}
+  \end{flushright}
+\end{doc}
+
+\textbf{Données :}
+\begin{itemize}
+  \item Masse molaire moléculaire du glucose $M_\text{glucose} = \qty{180,0}{\g\per\mol}$.
+  \item Le glucose a une valeur énergétique par unité de masse de \qty{15,6}{\kilo\joule\per\g}.
+\end{itemize}
+
+\question{
+  Recopier la formule chimique du glucose.
+  Entourer et nommer deux groupes fonctionnels différents de la molécule de glucose.
+}{
+  On a des groupes hydroxyle (alcool) tous le long de la chaîne et un groupe carbonyle (aldéhyde) en bout de chaîne à droite.
+  \points{2}
+}{0}
+
+\question{
+  Donner la formule brute du glucose.
+}{
+  \chemfig{C_{6} H_{12} O_{6}}
+  \points{1}
+}{0}
+
+\question{
+  Expliquer qualitativement pourquoi le glucose est soluble dans le sang considéré comme une
+solution aqueuse.
+}{
+  \points{1}
+}{0}
+
+\question{
+  L'analyse sanguine d'un patient à jeun indique une concentration en quantité de matière de glucose égale à \qty{7,8}{\milli\mole\per\litre}.
+  Montrer que ce résultat confirme que ce patient souffre du diabète.
+}{
+  Pour avoir la concentration massique en glucose, on multiplie la concentration molaire par la masse molaire moléculaire du glucose $c_m = \qty{180,0}{\g\per\mole} \times \qty{7,8e-3}{\mol\per\litre} = \qty{1,40}{\g\per\litre}$.
+  Comme $C_m$ est supérieur à \qty{1,26}{\g\per\litre}, le patient souffre de diabète.
+  \points{2}
+}{0}
+
+\question{
+  La consommation quotidienne en sucre de ce patient est équivalente à 75 g de glucose.
+  Indiquer si cette consommation est conforme à celle préconisée par l'OMS.
+}{
+  L'énergie produite par le glucose ingéré est $E = \qty{75}{\g} \times \qty{15,6}{\kilo\joule\per\g} = \qty{1170}{\kilo\joule}$, ce qui est largement supérieur à la valeur préconisé par l'OMS (\qty{104}{\kilo\joule}) !
+  \points{1}
+}{0}
+
+\question{
+  Ce patient, qui pèse 68 kg, envisage de remplacer sa consommation de sucre par du Rebaudioside A.
+  Calculer, à l'aide du document 2, la masse maximale de cet édulcorant qu'il peut consommer par jour.
+}{
+  Il peut ingérer au maximum $\qty{4,0}{\mg\per\kg} \times \qty{68}{\kg} = \qty{272}{\mg}$ par jour.
+  \points{1}
+}{0}
+
+\question{
+  En déduire le nombre de sucrettes qu'il peut consommer par jour.
+}{
+  Il peut consommer $\dfrac{272}{20} = 14$ sucrette par jour.
+  \points{1}
+}{0}
+
+\question{
+  Indiquer s'il peut substituer sa consommation quotidienne de sucre,
+  équivalente à 75 g de glucose, par la consommation de Rebaudioside A.
+}{
+  Comme une sucrette équivaut à \qty{5}{g} de sucre, il peut consommer l'équivalent de $14\times \qty{5}{\g} = \qty{70}{\g}$ par jour, ce qui ne remplace pas sa consommation quotidienne.
+  \points{2}
+}{0}
