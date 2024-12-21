@@ -2,7 +2,7 @@
 \newcommand{\travailExerciceCorrige}{
   Pour être sûr-e d'obtenir une bonne note, je m'entraîne avec les exercices corrigés du manuel indiqués dans la colonne de droite.
 }
-\newcommand{\questionsFicheRevision}[1]{
+\newcommand{\questionFicheRevision}[1]{
   Je note ici les questions qu'il me reste pour les poser au début de l'évaluation :
   \lignesDeReponse{#1}
 }
@@ -20,7 +20,7 @@
 %%%% Commande pour afficher une fiche de révision avec 
 %%%% | connaissances | ok | pas ok | activités en classe |
 \NewDocumentCommand{\ficheRevision}{s m +m}{
-  \enTete{Fiche de révision -- #2}[0]*
+  \enTete*{Fiche de révision -- #2}[0]
   \vspace*{-6pt}
 
   %% Corps de la fiche
@@ -46,7 +46,7 @@
 %%%% Commande pour afficher une fiche de mémorisation avec 
 %%%% | questions | ok | pas ok | réponses | répétition 1 semaine | 1 mois | 6 mois |
 \newcommand{\ficheMemorisation}[2]{
-  \enTete{Fiche de mémorisation -- #1}[0]*
+  \enTete*{Fiche de mémorisation -- #1}[0]
   \vspace*{-6pt}
 
   %% Corps de la fiche
