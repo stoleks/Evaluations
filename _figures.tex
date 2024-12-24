@@ -7,15 +7,135 @@
   \fill[color=#1] (0,#3) ellipse (#2 and #4);
 }
 
-% \tkzCercle {x}{y} {couleur} {rayon}
-\newcommand{\tkzCercle}[4]{
-  \filldraw [#3] (#1, #2) circle (#4pt);
+%%%% Point et vecteurs
+% \tikzCercle [couleur fond] (x, y) {rayon} [couleur ligne]
+\NewDocumentCommand{\tikzCercle}{O{black} r() m o}{
+  \IfValueTF{#4}{
+    \filldraw [color = #4, fill = #1, very thick] (#2) circle (#3 pt);
+  }{
+    \filldraw [#1] (#2) circle (#3 pt);
+  }
 }
-% \tkzCercleLigne {x}{y} {couleurFond}{couleurTrait} {rayon}
-\newcommand{\tkzCercleLigne}[5]{
-  \filldraw [color = #4, fill = #3, very thick] (#1, #2) circle (#5pt);
+% \tikzPointLabel (x, y) [texte] (xtexte, ytexte), trace un point avec un label; * = pas de point
+\NewDocumentCommand{\tikzLabel}{s r() m d()}{
+  \IfBooleanTF{#1}{
+    \node at (#2) {#3};
+  }{
+    \IfValueTF{#4}{
+      \filldraw (#2) circle (2pt);
+      \node at (#4) {#3};
+    }{
+     \filldraw (#2) circle (2pt) node[above] {#3};
+    }
+  }
+}
+% \tikzVecteur [couleur] (x, y) (lx, ly) {legende} [position legende];  * = <->
+\NewDocumentCommand{\tikzVecteur}{s O{black} r() r() m O{right}}{
+  \coordinate (A) at (#3);
+  \coordinate (B) at (#4);
+  \coordinate (AB) at ($(A)+(B)$);
+  \IfBooleanTF{#1}{
+    \draw[#2, <->, very thick] (A) -- (AB) node[#6] {#5};
+  }{
+    \draw[#2, ->, very thick] (A) -- (AB) node[#6] {#5};
+  }
 }
 
+% \tikzLegende [couleur] (x, y) (lx, ly) {légende}; * = <-
+% ajouter une * passe de la version gauche -> à la version droite <-
+\NewDocumentCommand{\tikzLegende}{s O{black} r() r() m}{
+  \coordinate (A) at (#3);
+  \coordinate (B) at (#4);
+  \coordinate (AB) at ($(A)+(B)$);
+  \IfBooleanTF{#1}{
+    \draw[#2, ->, very thick] (AB) node[right] {#5} -- (A);
+  }{
+    \draw[#2, ->, very thick] (A) node[left] {#5} -- (AB);
+  }
+}
+
+%% Trace une petite barre de pourcentage partiellement remplie sur la ligne
+\newcommand{\barrePourcentage}[1]{%
+  \begin{tikzpicture}
+    \fill[color=couleurSec]    (0.0,    0.0) rectangle (#1*8ex, 1.5ex);
+    \fill[color=couleurSec!20] (#1*8ex, 0.0) rectangle (8.0ex,  1.5ex);
+  \end{tikzpicture}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Trace une flèche de progression pour les plans de travail
+% \flecheProgression {<nombre de boucles>} [<largeur>] [<espacement vertical>]
+\NewDocumentCommand{\flecheProgression}{m O{17} O{2.4}}{%
+  \strut\vspace*{8pt}
+  \def\nombreBoucle{\numexpr((#1 - 1)*2)}
+  \begin{center}
+    \begin{tikzpicture}
+      \tikzset{bluestyle/.style={line width = 20pt, rounded corners = 10mm, color = couleurSec}}
+      % Premier bout pour l'alignement, les parenthèses sont nécessaires
+      \draw[bluestyle] (0, {(\nombreBoucle)*#3}) -- (1, {(\nombreBoucle)*#3}); 
+      % Partie centrale répétée
+      \draw[bluestyle]
+        \foreach \x in {0,2,...,\nombreBoucle}  {
+          \ifnum \x < \nombreBoucle
+            ( 1, {(\nombreBoucle - \x)  *#3}) -- (#2,  {(\nombreBoucle - \x)  *#3}) --
+            (#2, {(\nombreBoucle - \x - 1)*#3}) -- ( 0,  {(\nombreBoucle - \x - 1)*#3}) --
+            ( 0, {(\nombreBoucle - \x - 2)*#3}) -- (1.1, {(\nombreBoucle - \x - 2)*#3})
+          \fi
+        };
+      % Flèche finale
+      \draw[-{Triangle [width = 36pt, length = 16pt]}, bluestyle] (0.8, 0) -- (#2, 0);
+    \end{tikzpicture}
+  \end{center}
+  %\vspace*{-{#1*118}pt} %% Trouver comment faire le calcul automatiquement...
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% plan de classe
+%% Trace un texte centré dans un cadre (x, x+l) -- (y, y+h)
+% #1 couleur cadre ; #2 Positionition x ;
+% #3 largeur l ;     #4 Positionition y ;
+% #5 hauteur h ;     #6 texte.
+\NewDocumentCommand{\texteCadre}{O{black} r() O{2} r() O{2} m}{
+  \filldraw [fill=white, draw=#1, ultra thick] (#2, #4) rectangle (#2 + #3, #4 + #5);
+  \node at (#2 + #3/2, #4 + #5/2) [font=\sffamily] {\textbf{#6}};
+}
+%% place dans la classe
+\NewDocumentCommand{\place}{r() m}{
+  \texteCadre(#1)[3](0)[2] {#2}
+}
+
+%% Pour tracer une rangée d'élève avec 2 ou 3 colonnes
+% \rang {<numero rangee>} {<eleves>} {<eleves>} [<eleves>]
+\ExplSyntaxOn
+% Position de la place horizontale
+\int_new:N \l_rangPositionX_int
+\NewDocumentCommand{\rang}{m >{\SplitList{,}} m >{\SplitList{,}} m >{\SplitList{,}} d[]}{
+  \begin{tikzpicture}
+    % Initialisation de la position horizontale
+    \int_set:Nn \l_rangPositionX_int {0}
+    % Première rangée
+    \ProcessList{#2}{\rangImpl}
+    \int_add:Nn \l_rangPositionX_int { 1 }
+    % Deuxième rangée
+    \ProcessList{#3}{\rangImpl}
+    % Troisième rangée
+    \IfValueT{#4}{
+      \int_add:Nn \l_rangPositionX_int { 1 }
+      \ProcessList{#4}{\rangImpl}
+    }
+  \end{tikzpicture}
+  \bigskip
+}
+\NewDocumentCommand{\rangImpl}{m}{
+  \int_add:Nn \l_rangPositionX_int { 3 }
+  \place(\l_rangPositionX_int){#1} %
+}
+\ExplSyntaxOff
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% tube à essais
 \newcommand{\tkzTubeEssais}[3]{
   \draw[thick] (#1,#2) -- (#1,0) arc (0:-180:#1) -- (-#1,#2);
@@ -31,115 +151,6 @@
   \tkzEllipse{#1}{#2}{#3}{#5}
   \tkzEllipse{#1!85!black}{#2}{#4}{#5}
 }
-
-%%%% Point et vecteurs
-\newcommand{\tkzLabel}[3]{
-  \node at (#1, #2) {#3};
-}
-\newcommand{\tkzPointLabel}[3]{
-  \filldraw (#1, #2) circle (2pt) node[above] {#3};
-}
-% \tkzVecteur [couleur] (x) [longueur x] (y) [longueur y] {legende} [position legende] 
-% ajouter une * à la fin transforme la flèche en double flèche <->
-\NewDocumentCommand{\tkzVecteur}{O{black} r() O{0} r() O{0} m O{right} s}{
-  \IfBooleanTF{#8}{
-    \draw[#1, <->, very thick] (#2, #4) -- (#2 + #3, #4 + #5) node[#7] {#6};
-  }{
-    \draw[#1, ->, very thick] (#2, #4) -- (#2 + #3, #4 + #5) node[#7] {#6};
-  }
-}
-% \tkzLegende (x) (y) [longueur fleche] {légende} 
-% ajouter une * passe de la version gauche -> à la version droite <-
-\NewDocumentCommand{\tkzLegende}{O{black} r() r() O{1.25} m s}{
-  \IfBooleanTF{#6}{
-    \draw[#1, ->, very thick] (#2 + #4, #3) node[right] {#5} -- (#2, #3);
-  }{
-    \draw[#1, ->, very thick] (#2, #3) node[left] {#5} -- (#2 + #4, #3);
-  }
-}
-
-\newcommand{\barrePourcentage}[1]{%
-  \begin{tikzpicture}
-    \fill[color=couleurSec]    (0.0,    0.0) rectangle (#1*8ex, 1.5ex);
-    \fill[color=couleurSec!20] (#1*8ex, 0.0) rectangle (8.0ex,  1.5ex);
-  \end{tikzpicture}
-}
-
-\NewDocumentCommand{\flecheProgression}{m O{17}}{%
-  \strut\vspace*{8pt}
-  \begin{center}
-    \begin{tikzpicture}
-      \def\max{\numexpr((#1-1)*2)}
-      % Premier bout pour l'alignement
-      \draw[
-        line width = 20pt,
-        rounded corners = 10mm,
-        color = couleurSec,
-      ]
-        (0, {(\max-0)*2.5}) -- (1, {(\max-0)*2.5});
-      % Partie centrale répétée
-      \draw[
-        line width = 20pt,
-        rounded corners = 10mm,
-        color = couleurSec,
-      ]
-        \foreach \x in {0,2,...,\max}  {
-          \ifnum \x < \max
-            ( 1, {(\max-\x)  *2.5}) -- (#2,  {(\max-\x)  *2.5}) --
-            (#2, {(\max-\x-1)*2.5}) -- ( 0,  {(\max-\x-1)*2.5}) --
-            ( 0, {(\max-\x-2)*2.5}) -- (1.1, {(\max-\x-2)*2.5})
-          \fi
-        };
-      % Flèche finale
-      \draw[
-        -{Triangle [width = 36pt, length = 16pt]}, 
-        line width = 20pt,
-        color = couleurSec
-      ]
-        (0.8, 0) -- (#2, 0);
-    \end{tikzpicture}
-  \end{center}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% plan de classe
-\NewDocumentCommand{\texteCadre}{O{black} r() O{2} r() O{2} m}{
-  \filldraw [fill=white, draw=#1, ultra thick] (#2, #4) rectangle (#2 + #3, #4 + #5);
-  \node at (#2 + #3/2, #4 + #5/2) [font=\sffamily] {\textbf{#6}};
-}
-
-%% place dans la classe
-\NewDocumentCommand{\place}{r() r() m}{
-  \texteCadre(#1)[3](#2)[2] {#3}
-}
-\NewDocumentCommand{\places}{r()r() r[] d[] d[] d[]}{
-  \place(#1)(#2) {#3}
-  \IfValueT{#4}{ \place(#1 + 1*3)(#2) {#4} }
-  \IfValueT{#5}{ \place(#1 + 2*3)(#2) {#5} }
-  \IfValueT{#6}{ \place(#1 + 3*3)(#2) {#6} }
-}
-
-%% rangée de classe ou de TP
-\NewDocumentCommand{\rangee}{m r()r() r()r()r()d[] r()r()}{
-  \places(0)(0 - 3*#1) [#2][#3]
-  \IfValueTF{#7}{
-    \places(7) (0 - 3*#1) [#4][#5][#6][#7]
-    \places(20)(0 - 3*#1) [#8][#9]
-  }{
-    \places(8.5)(0 - 3*#1) [#4][#5][#6]
-    \places(20) (0 - 3*#1) [#8][#9]
-  }
-}
-
-\NewDocumentCommand{\rangeeTP}{m r[]r[]r[] r()r()r()d()}{
-  \places(3)(0 - 3*#1) [#2][#3][#4]
-  \IfValueTF{#8}{
-    \places(14) (0 - 3*#1) [#5][#6][#7][#8]
-  }{
-    \places(14) (0 - 3*#1) [#5][#6][#7]
-  }
-}
-
 
 %%%% tube à essai de sang
 \newcommand{\tubeEssaisSolution}[1]{

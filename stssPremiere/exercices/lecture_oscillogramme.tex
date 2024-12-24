@@ -1,0 +1,63 @@
+\exercice{Charger son téléphone au Canada}
+\medskip
+
+Asma est partie en vacances au Canada et veut charger son téléphone.
+Pour ça, Asma commence par mesurer les caractéristiques de la tension du secteur, et trouve l'oscillogramme suivant :
+\begin{center}
+  \def\ver{3.6} % longueur verticale
+  \def\hor{5.0} % longueur horizontale
+  \begin{tikzpicture}[
+    trace/.style={couleurPrim!75!black, ultra thick, samples = 100},
+    screen/.style={couleurPrim!10, thick},
+    axes/.style={couleurPrim, thick}
+  ]
+    % Fond de l'écran
+    \fill[screen] (-\hor, -\ver) rectangle (\hor, \ver);
+    % Grille et axes
+    \draw[thin, couleurPrim!30] (-\hor, -\ver) grid (\hor, \ver);
+    \draw[axes] (-\hor, 0) -- (\hor, 0); % temps
+    \draw[axes] (0, -\ver) -- (0, \ver); % 
+    % Graduation
+    \pgfmathparse{\hor-1}
+    % axe x
+    \foreach[parse = true] 
+      \i in {-\hor+0.2, -\hor+0.4,..., \hor-0.2} \draw[axes] (\i, -0.1) -- (\i, 0.1);
+    \foreach[parse = true] \i in {-\hor,...,\hor} \draw[axes] (\i,-0.2) -- (\i,0.2);
+    % axe y
+    \foreach[parse = true]
+      \i in {-\ver+0.20, -\ver+0.4,..., \ver-0.20} \draw[axes] (-0.1, \i) -- (0.1, \i);
+    \foreach[parse = true] \i in {-3,...,3} \draw[axes] (-0.2,\i) -- (0.2,\i);
+    % Tension sinusoïdale
+    \draw[trace] plot(\x, {1.60*sin((1.57*(1.21*\x + 1)) r)}); % r = radian
+    % Échelle
+    \tikzVecteur(-5, -3) (0, 1) {\textbf{100 V}} [right]
+    \tikzVecteur(-5, -3) (1, 0) {\textbf{5 ms}} [below right]
+  \end{tikzpicture}
+\end{center}
+
+\question{
+  Mesurer la tension maximale $U_\text{max}$ et en déduire la tension efficace du secteur $U$. 
+}{
+  $U_\text{max} = \qty{160}{\volt}$, donc $U = \dfrac{160}{\sqrt{2}} = \qty{113}{\volt}$.
+  \points{2}
+}
+
+\question{
+  Mesurer la période $T$ et en déduire la fréquence $f$ de la tension du secteur. 
+}{
+  $T = \qty{16,5}{\ms}$, donc $f = \dfrac{1}{T} = \qty{50}{\hertz}$.
+  \points{2}
+}
+
+\question{
+  Rappeler la fréquence et la tension efficace de la tension du secteur en France.
+}{
+  $U = \qty{230}{\volt}$ et $f = \qty{60}{\hertz}$.
+  \points{1}
+}
+
+\question{
+  Asma pourra-t-elle utiliser un chargeur conçu pour être utilisé sur la tension du secteur en France au Canada ? Justifier.
+}{
+  Oui, car la fréquence est identique et la tension du secteur au Canada est plus faible que la tension du secteur en France.  \points{1}
+}

@@ -1,0 +1,83 @@
+\exercice{Automatismes (connaître son cours) }
+\medskip
+
+\numeroQuestion
+Relier chaque grandeur à son symbole et à l'unité associée. \points{3}
+
+\begin{center}    
+  \begin{tblr}{
+    width=\textwidth,
+    colspec = {Q[wd=0.25\linewidth, l] X[l] r Q[wd=0.1\linewidth, c] X[l] r Q[wd=0.1\linewidth, c]},
+    row{1} = {couleurPrim!20, c}
+  }
+  %% ALIGNER PLUS DE GRANDEUR 
+    \textbf{Grandeur}      & & & \textbf{Symbole} & & & \textbf{Unité} \\
+    Concentration massique & \pointCyan & \pointCyan & $n$   & \pointCyan & \pointCyan &  \unit{\mole\per\litre} \\
+    Masse                  & \pointCyan & \pointCyan & $C$   & \pointCyan & \pointCyan &  \unit{\litre} \\
+    Quantité de matière    & \pointCyan & \pointCyan & $C_m$ & \pointCyan & \pointCyan &  \unit{\kg} \\
+    Volume                 & \pointCyan & \pointCyan & $V$   & \pointCyan & \pointCyan &  \unit{\g\per\litre} \\
+    Concentration molaire  & \pointCyan & \pointCyan & $M$   & \pointCyan & \pointCyan &  \unit{\g\per\mole} \\
+    Masse molaire          & \pointCyan & \pointCyan & $m$   & \pointCyan & \pointCyan &  \unit{\mole} \\
+  \end{tblr}
+\end{center}
+
+\numeroQuestion
+Entourer la ou les relations permettant de calculer les grandeurs de la première colonne. \points{2}
+\vspace*{-12pt}
+
+\begin{center}
+  \begin{tblr}{
+    colspec = {|X[l,m]| X[c,m]| X[c,m]| X[c,m]| X[c,m]|}, hlines,
+    column{1} = {couleurPrim!20}
+  }
+    Pour calculer une quantité de matière &
+    $\dfrac{m}{M}$ & $m\times M$ & $C \times V$ & $\dfrac{V}{C}$ \\
+    %
+    Pour calculer une concentration molaire &
+    $\dfrac{m}{V}$ & $\dfrac{n}{V}$ & $m \times M$ & $\dfrac{M}{m}$ \\
+    %
+    Pour calculer la concentration en ion oxonium &
+    $10^{-\text{pH}}$ & $10^{\text{pH}}$ & $10 - \text{pH}$ & $\text{pH}^{10}$ \\
+    %
+    Pour calculer une masse &
+    $M \times n$ & $C_m \times V$ & $m \times M$ & $\dfrac{M}{m}$ \\
+    %
+  \end{tblr}
+\end{center}
+
+\numeroQuestion Donner le nom de ces deux ions \points{1}
+\begin{center}  
+  \oxonium : \texteTrou[0.1]{ion oxonium} \qq{}
+  et \hydroxyde : \texteTrou[0.1]{ion hydroxyde}
+\end{center}
+
+\question{
+  Définir un acide d'après Br\o{}nsted. \points{1}
+}{
+  C'est une espèce chimique qui peut libérer des ions \chemfig{H^+}.
+  \points{1}
+}[2]
+
+\question{
+  Rappeler le principe d'une dilution. \points{1}
+}{
+  Une dilution sert à diminuer la concentration en soluté dans une solution.
+  Pour réaliser une dilution, il faut rajouter du solvant dans la solution.
+  \points{1}
+}[3]
+
+\numeroQuestion
+Indiquer sur l'échelle pH ci-dessous où se trouve les solutions acides, les solution basiques et les solutions neutres.
+Puis placer sur cette échelle pH les solutions suivantes : \points{2}
+\begin{tableau}{|c |c |c |c |c |c |}
+  Solution & Acide éthanoïque & Acide chlorhydrique & Soude & Eau & Eau de mer \\
+  pH       & \num{2,4} & \num{1,0} & \num{13,9} & \num{7,0} & \num{8,1} 
+\end{tableau}
+
+\pasCorrection{\vspace*{30pt}}
+\begin{center}
+  \begin{tikzpicture}
+    \tikzVecteur (-0.75, 0) (15.5, 0) {pH}
+    \foreach \i in {0,1,...,14} \draw (\i,0.1)--(\i,-0.1) node[below]{\i};
+  \end{tikzpicture}
+\end{center}
