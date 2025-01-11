@@ -1,8 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% couleurs dérivées des couleurs choisie
+%% couleurs dérivées des couleurs choisie
 \newcommand{\couleurPrimSombre}{couleurPrim!60!black}
-
-%%%% rectangle coloré
+%% rectangle coloré
 \NewDocumentCommand{\rectangle}{O{couleurPrim} m m}{%
   \shorthandoff{;}
   \tikz \node (rect) [draw, fill, color=#1,
@@ -11,9 +10,8 @@
   \shorthandon{;}
 }
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% une simple boite vide
+%% une simple boite vide
 \newtcolorbox{boite}[1][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
   arc = 0mm, % les lignes de la boites sont droites
@@ -22,8 +20,7 @@
 }
 
 %%%% Boite colorée avec 
-% #1 : le contenu
-% #2 : la couleur
+% \begin{boiteColoree}{couleur} contenu \end{boiteColoree}
 \newtcolorbox{boiteColoree}[2][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
   frame hidden, sharp corners, boxrule = 0mm, % pas de contours
@@ -32,9 +29,7 @@
 }
 
 %%%% Boite pour les documents des activités, avec le format suivant
-% \begin{doc}{ TITRE }{ LABEL }
-%   CONTENU
-% \end{doc}
+% \begin{doc}{titre}{label} contenu \end{doc}
 \newcounter{documentNum}
 \newtcolorbox{doc}[3][]{
   before title = {\refstepcounter{documentNum}},
@@ -50,7 +45,6 @@
   #1
 }
 
-
 %%%% Boîtes pour les activités et TP pour une séquence en plan de travail
 % Boite pour afficher la durée recommandée en bas à gauche
 \newtcbox{\dureeActivite}[1][]{
@@ -59,8 +53,8 @@
   coltext = white,
 }
 % Boite de base pour les activités ou TP, avec le format suivant 
-% \begin{boiteActivite}{ TITRE ACTIVITÉ }{ DURÉE }{ LABEL }{ COMPTEUR }{ FORMAT TITRE }
-%   CONTENU
+% \begin{boiteActivite}{titre activité}{durée}{label}{compteur}{format titre}
+%   contenu
 % \end{boiteActivite}
 \newtcolorbox{boiteActivite}[6][]{
   before title = {\refstepcounter{#5}},
@@ -81,11 +75,10 @@
   #1
 }
 
-% Boite pour les activités en plan de travail
-% \begin{activite}{ TITRE ACTIVITÉ }[ DURÉE ]{ LABEL }
-%   CONTENU
-% \end{activite}
-% Par défaut DURÉE = 1 h
+% Boite pour les activités/TP en plan de travail.
+% \begin{activite ou TP}{titre activité}[durée]{label} ; durée = 1h activité, 2h TP par défaut
+%   contenu
+% \end{activite ou TP}
 \NewDocumentEnvironment{activite}{m O{1 h} m}{%
   \begin{boiteActivite}{#1}{#2}{#3}
     {activiteNum}{\documentaire* \hspace{-4pt} Activité}
@@ -93,12 +86,7 @@
   \end{boiteActivite}
 }
 % Compteur pour les TP
-\newcounter{TPNum}
-% Boite TP en plan de travail
-% \begin{TP}{ TITRE ACTIVITÉ }[ DURÉE ]{ LABEL }
-%   CONTENU
-% \end{TP}
-% Par défaut DURÉE = 1 h
+\newcounter{TPNum} 
 \NewDocumentEnvironment{TP}{m O{2 h} m}{%
   \begin{boiteActivite}{#1}{#2}{#3}
     {TPNum}{\mesure* \hspace{-4pt} TP}
@@ -164,7 +152,7 @@
   colback = couleurPrim!5, % fond
   title = {Contexte :}, % titre
   colbacktitle = couleurPrim!5, % couleur du fond du titre
-  fonttitle = \bfseries\sffamily, coltitle = black, %
+  fonttitle = \bfseries\sffamily, coltitle = black, % paramètre du titre
   titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
   detach title,
   before upper={\vspace{2pt}\hspace{-8pt}\tcbtitle\;},
@@ -185,8 +173,7 @@
     to[out=0, in=180] ([xshift=20mm] title.east) -| % définit la courbe
     (frame.east) |- (frame.south) -| cycle; % trace la boite
   },
-  coltitle = black, % couleur du titre
-  fonttitle = \bfseries\sffamily, % police du titre
+  fonttitle = \bfseries\sffamily, coltitle = black, % paramètre du titre
   title = {Objectifs :}
 }
 
@@ -208,7 +195,6 @@
   fonttitle = \bfseries\sffamily, % police du titre
   title = {Prérequis :}
 }
-
 
 %%%% Espace pour un coup de pouce
 \newcounter{coupDePouceNum}
@@ -297,7 +283,7 @@
   }{
     \titre{Évaluation #1 -- #2}
   }
-  % reset du numéro de page et d'exercices
+  % reinitialisation du numéro de page et d'exercices
   \reinitialiseCompteur
 }
 \newcounter{exerciceNum}
@@ -310,7 +296,7 @@
 }
 
 
-%%%% chapitre, section et sous-section
+%%%% chapitre, partie, section et sous-section
 \newcommand{\chapitre}[1]{ % Réglage du titre du chapitre
   Chapitre \arabic{section} -- #1
   \setcounter{activiteNum}{0}
@@ -371,8 +357,12 @@
 \newcommand{\ligne}{
   \par\noindent\rule{\textwidth}{0.4pt}
 }
-\newcommand{\lignePointillee}[1]{
-  \makebox[#1\linewidth]{\dotfill}
+\NewDocumentCommand{\lignePointillee}{o}{
+  \IfValueTF{#1}{
+    \makebox[#1\linewidth]{\dotfill}
+  }{
+    \phantom{b}\hspace*{-12pt} \dotfill
+  }
 }
 
 
@@ -390,13 +380,16 @@
     \footnotesize #2
   }
 }
-\newcommand{\teteDroite}[2]{
+\NewDocumentCommand{\teteDroite}{m o}{
   \rhead{
-    % \hfill \textbf{\footnotesize #1}
-    % \newline 
-    \hfill \footnotesize #2
+    \IfValueT{#2}{
+      \hfill \textbf{\footnotesize #2}
+    }
+    \newline 
+    \hfill \footnotesize #1
   }
 }
+%% \enTete [compteur] {titre} [numéro de section] ; * = version simplifié sans pagination
 \NewDocumentCommand{\enTete}{s o m O{0}}{
   % reset des compteurs
   \newpage
@@ -406,13 +399,12 @@
   \IfBooleanTF{#1}{ % affichage de l'entête version fiche réussite (*)
     \pasDePagination
     \phantom{b} \vspace*{-70pt}
-    % \titre{Connaissances et capacités à apprendre}
     \titre{#3}
   }{ % affichage de l'entête version activité
     \pagestyle{fancy}
     \teteGauche{\etablissement{}}{#3} % left header
     \chead{} % central header
-    \teteDroite{\annee{}}{#2} % right header
+    \teteDroite{#2} % right header
   }
 }
 
@@ -474,16 +466,14 @@
   \loop
     \stepcounter{ligneNum}
     \ifnum \value{ligneNum} < #2
-      \\[8pt] \lignePointillee{0.96}
+      \\[8pt] \lignePointillee
   \repeat
   \vspace*{1pt}
 }
 
 
-% définit une commande pour afficher une question 
-% #2 : question
-% #3 : réponse
-% #4 : nombres de lignes pour répondre
+%% définit une commande pour afficher une question 
+% \qestion {question} {réponse} [nombre de lignes] ; * = pas d'alinéa
 \newcounter{questionNum}
 \newcounter{sousQuestionNum}
 \NewDocumentCommand{\question}{s +m +m O{0}}{
@@ -562,33 +552,35 @@
 \newcommand{\nomPrenomClasse}{
   \pasCorrection{
     \vspace*{-24pt}
-    Nom : \lignePointillee{0.3}
-    Prénom : \lignePointillee{0.3}
+    Nom : \lignePointillee[0.3]
+    Prénom : \lignePointillee[0.3]
     Classe : \dotfill
   }
 }
 \newcommand{\nomPrenom}{
   \pasCorrection{
     \vspace*{-24pt}
-    Nom : \lignePointillee{0.3}
-    Prénom : \lignePointillee{0.3}
+    Nom : \lignePointillee[0.3]
+    Prénom : \lignePointillee[0.3]
   }
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % texte à trou avec option pour régler la largeur
-\NewDocumentCommand{\texteTrou}{o +m}{
+\NewDocumentCommand{\texteTrou}{s o +m}{
   \ifthenelse {\boolean{modeProf}}{ % prof
-    \important[black]{#2}
+    \IfBooleanTF{#1}
+    {#3}
+    {\important[black]{#3}}
   }{ % élève
-    \IfValueTF{#1}{ % Si la largeur est réglée, on utilise des lignes
+    \IfValueTF{#2}{ % Si la largeur est réglée, on utilise des lignes
       \espaceReponse
-      \lignePointillee{#1}
+      \lignePointillee[#2]
       \hspace*{-12pt}
     }{ % Sinon on utilise dash undergap pour la version automatique
       \espaceReponse \hspace*{0.1pt}
-      \gap{#2}
+      \gap{#3}
     }
   }
 }
@@ -623,7 +615,7 @@
 %%%% Pour faire plusieurs sujets en parallèle
 \newcommand{\variationSujet}[2]{
   \hspace*{-6pt}
-  \ifthenelse {\boolean{sujetA}}{#1}{#2}
+  \ifthenelse{\boolean{sujetA}}{#1}{#2}
   \hspace*{-6pt}
 }
 
@@ -645,15 +637,15 @@
 %%%% Tableau de competence
 \newenvironment{tableauCompetences}{
   \begin{center}
-  \begin{tblr}{
-    colspec = {| c | X[l] | c | c | c | c |},
-    rows = {m}, hlines,
-    row{1} = {couleurPrim!20}
-  }
-    \textbf{Comp.} & \centering \textbf{Items} 
-    & \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} \\
+    \begin{tblr}{
+      colspec = {c X[l] c c c c},
+      rows = {m}, hlines, vlines,
+      row{1} = {couleurPrim!20}
+    }
+      \textbf{Comp.} & \centering \textbf{Items} &
+      \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} \\
 }{
-  \end{tblr}
+    \end{tblr}
   \end{center}
 }
 
@@ -737,12 +729,12 @@
   \textcolor{#1}{\textbullet}
 }
 
-%% Commande général pour colorer un texte avec une couleur par défaut
+%% Commande générale pour colorer un texte avec une couleur par défaut
 % L'intérêt de cette commande est d'éviter des répétion de O{couleurSec}
 \NewDocumentCommand{\questionSpeciale}{O{couleurSec} m}{
   \textcolor{#1}{#2}
 }
-% Quelques questions spéciales avec couleur réglable
+% Quelques questions spéciales avec couleur réglable et un espace horizontal
 \NewDocumentCommand{\mesure}{s o}{
   \IfBooleanTF{#1}{}{ \hspace{7pt} }
   \questionSpeciale[#2]{\faFlask\hspace{1pt} \faWrench\!}
@@ -758,9 +750,7 @@
   \questionSpeciale[#2]{\faFileText\hspace{1pt} \faBook}
 }
 
-%% pictogramme sécurité
-% #1 largeur
-% #2 image
+%% pictogramme de sécurité \picto {largeur} {pictogramme}
 \newcommand{\picto}[2]{
   \image{#1}{images/pictogrammes/picto_#2}
 }
@@ -921,7 +911,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% nombre algébrique et réaction chimique
 \newcommand{\algebrique}[1]{
-  \overline{\mathrm{#1}}
+  \ensuremath{\overline{\mathrm{#1}}}
 }
 \newcommand{\reaction}{
   \;\text{\faLongArrowRight}\; % flèche courte et jolie
@@ -1002,7 +992,7 @@
 \NewDocumentCommand{\texteEncadre}{m O{black}}{
   \textcolor{#2}{
     \frame{
-      \vphantom{$\dfrac{1}{10}$} \textcolor{black}{\text{#1}}
+      \vphantom{$\dfrac{1}{1}$} \textcolor{black}{\text{#1}}
     }
   }
 }

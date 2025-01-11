@@ -26,7 +26,7 @@
 %% Tableau
 \usepackage{tabularray} % pour avoir de meilleurs tableaux
 %% QR code
-\usepackage{qrcode}
+\usepackage{qrcode} % Note : il faut que le qrcode soit sur une ligne séparé...
 %% Math
 \usepackage{amsmath} % symboles mathématiques
 \usepackage{amssymb} % symboles mathématiques en gras
@@ -34,7 +34,8 @@
 \usepackage{accents} % pour les notations mathématiques avec une barre
 \usepackage{physics} % pour les dérivées, les bra, les kets, etc.
 \usepackage{esvect} % pour faire de jolis vecteurs
-\usepackage{siunitx} % pour avoir de jolie grandeurs avec des unités 
+\usepackage{siunitx} % pour avoir de jolie grandeurs avec des unités
+\usetikzlibrary{calc} % pour faire des opérations dans tikz
 
 
 %%%% Commandes prédéfinies
@@ -44,29 +45,14 @@
 \input{_chapitres}
 \input{_molecules}
 \input{_tableau_periodique}
+\input{_couleurs}
 
-
-%%%% quelque couleurs
-\definecolor{vertHerbe}   {RGB} {124, 179,  66}
-\definecolor{vertSapin}   {RGB} {  0,  95,  17}
-\definecolor{vertSombre}  {RGB} { 14,  84,  60}
-%
-\definecolor{cyan}        {RGB} {  0, 140, 128}
-\definecolor{cyanSombre}  {RGB} {  0,  98, 116}
-\definecolor{bleuPale}    {RGB} { 39,  76, 167}
-%
-\definecolor{jauneClair}  {RGB} {218, 173,   0}
-\definecolor{jauneSombre} {RGB} {213, 145,   2}
-\definecolor{orangeSombre}{RGB} {174,  82,   0}
-%
-\definecolor{rougeClair}  {RGB} {224,  59,  54}
-\definecolor{rougeSombre} {RGB} {148,  31,   0}
 
 %%%% Couleurs réglables
-\colorlet{couleurPrim}{cyan}
-\colorlet{couleurSec}{bleuPale}
-\colorlet{couleurTer}{vertSombre}
-\colorlet{couleurQuat}{orangeSombre}
+\colorlet{couleurPrim}{cyan600}
+\colorlet{couleurSec} {blue600}
+\colorlet{couleurTer} {purple600}
+\colorlet{couleurQuat}{orange600}
 
 
 %%%% Réglages de la taille des indentations et des sauts de paragraphes
