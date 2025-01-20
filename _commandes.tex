@@ -1,6 +1,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% couleurs dérivées des couleurs choisie
-\newcommand{\couleurPrimSombre}{couleurPrim!60!black}
+\colorlet{couleurPrim}   {cyan600}
+\colorlet{couleurPrim800}{cyan800}
+\colorlet{couleurPrim300}{cyan300}
+\colorlet{couleurPrim100}{cyan100}
+\colorlet{couleurPrim50} {cyan50}
+
+\colorlet{couleurSec}    {blue600}
+\colorlet{couleurSec800} {blue800}
+\colorlet{couleurSec300} {blue300}
+\colorlet{couleurSec100} {blue100}
+\colorlet{couleurSec50}  {blue50}
+
+\colorlet{couleurTer}    {purple600}
+\colorlet{couleurTer800} {purple800}
+\colorlet{couleurTer300} {purple300}
+\colorlet{couleurTer100} {purple100}
+\colorlet{couleurTer50}  {purple50}
+
+\colorlet{couleurQuat}   {red600}
+\colorlet{couleurQuat800}{red800}
+\colorlet{couleurQuat300}{red300}
+\colorlet{couleurQuat100}{red100}
+\colorlet{couleurQuat50} {red50}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% rectangle coloré
 \NewDocumentCommand{\rectangle}{O{couleurPrim} m m}{%
   \shorthandoff{;}
@@ -11,20 +35,50 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+\tcbset{
+  boite cassable/.style = {
+    breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  },
+  %
+  couleur fond/.style = {
+    colback = #1, % fond blanc
+    colbacktitle = #1, % fond pour le titre blanc
+  },
+  %
+  titre sans separation/.style = {
+    couleur fond = white,
+    coltitle = black, % couleur du titre
+    colframe = couleurSec800, % couleur de la boite
+    boxrule = #1, arc = 0.5mm, % largeur et arrondi des traits de la boite
+    titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
+    fonttitle = \bfseries\sffamily, % titre en gras et sans serif
+  },
+  %
+  boite pleine/.style = {
+    frame hidden, sharp corners, boxrule = 0mm, % pas de contours
+    colback = #1, % fond
+  },
+  %
+  titre sans boite/.style = {
+    empty, % pas de boite automatique
+    fonttitle = \bfseries\sffamily, coltitle = black, % paramètre du titre
+    attach boxed title to top left = {yshift=-2.5mm}, % position
+    boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
+    title = #1,
+  },
+}
+
 %% une simple boite vide
 \newtcolorbox{boite}[1][]{
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  arc = 0mm, % les lignes de la boites sont droites
-  colback = white, colframe = black, % fond blanc et traits noirs
+  boite cassable, colback = white, top = 4pt,
   #1
 }
 
 %%%% Boite colorée avec 
 % \begin{boiteColoree}{couleur} contenu \end{boiteColoree}
 \newtcolorbox{boiteColoree}[2][]{
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  frame hidden, sharp corners, boxrule = 0mm, % pas de contours
-  colback = couleurPrim!#2, % fond
+  boite cassable, boite pleine = #2,
   #1
 }
 
@@ -32,15 +86,9 @@
 % \begin{doc}{titre}{label} contenu \end{doc}
 \newcounter{documentNum}
 \newtcolorbox{doc}[3][]{
+  boite cassable,
+  titre sans separation = 0.5mm,
   before title = {\refstepcounter{documentNum}},
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  colback = white, % fond blanc
-  colframe = couleurPrim!25!black, % couleur de la boite
-  coltitle = black, % couleur du titre
-  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi des traits de la boite
-  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
-  colbacktitle = white, % fond pour le titre blanc
-  fonttitle = \bfseries\sffamily,
   title = {Document \arabic{documentNum} -- #2\strut \label{#3}},
   #1
 }
@@ -49,7 +97,7 @@
 % Boite pour afficher la durée recommandée en bas à gauche
 \newtcbox{\dureeActivite}[1][]{
   arc = 2mm, % courbes des bords
-  colback = couleurSec, colframe = white, % couleurs boite
+  colback = couleurTer, colframe = white, % couleurs boite
   coltext = white,
 }
 % Boite de base pour les activités ou TP, avec le format suivant 
@@ -57,26 +105,24 @@
 %   contenu
 % \end{boiteActivite}
 \newtcolorbox{boiteActivite}[6][]{
+  boite cassable,
+  titre sans separation = 0.5mm,
   before title = {\refstepcounter{#5}},
-  enhanced jigsaw, % pour un meilleur rendu
-  colback = white, % fond blanc
-  colframe = couleurPrim!25!black, % couleur de la boite
-  coltitle = black, % couleur du titre
-  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi de la boite
-  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
-  colbacktitle = white, % fond pour le titre blanc
-  fonttitle = \bfseries\sffamily,
   title = {#6 \arabic{section}.\arabic{#5} -- #2\strut \label{#4}},
   enlarge bottom by = 12pt,
-  overlay= {\node at ([xshift = -36pt, yshift = -5pt] frame.south east) {
-    \dureeActivite{{\small \important[white]{#3}}}
-  }; }, % affiche la durée de l'activité
+  overlay= {
+    \node at ([xshift = -36pt, yshift = -6pt] frame.south east) {
+      \dureeActivite{
+        {\small \important[white]{#3}}
+      }
+    };
+  }, % affiche la durée de l'activité dans une petite boite
   remember as = #4,
   #1
 }
 
 % Boite pour les activités/TP en plan de travail.
-% \begin{activite ou TP}{titre activité}[durée]{label} ; durée = 1h activité, 2h TP par défaut
+% \begin{activite ou TP}{titre activité}[durée]{label} ; durée = 1h acti, 2h TP par défaut
 %   contenu
 % \end{activite ou TP}
 \NewDocumentEnvironment{activite}{m O{1 h} m}{%
@@ -98,12 +144,8 @@
 
 % Boîte pour la tâche finale
 \newtcolorbox{tacheFinale}[1][]{
-  breakable, enhanced jigsaw, % boite coupable entre pages
-  colback = white, colframe = black, % couleur cadre
-  boxrule = 0.5mm, arc = 0.5mm, % forme du cadre
-  colbacktitle = white, coltitle = black, % couleur titre
-  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
-  fonttitle = \bfseries\sffamily, % type de titre
+  boite cassable,
+  titre sans separation = 0.5mm,
   title = {Tâche finale}, % titre
   #1
 }
@@ -111,16 +153,12 @@
 % Boîte pour l'organisation des séances
 \newcounter{seanceNum}
 \newtcbox{\seance}[2][]{
+  boite cassable,
+  titre sans separation = 0.5mm,
   before title = {\refstepcounter{seanceNum}},
-  halign=center, valign=center, % pour centrer le contenu
-  enhanced jigsaw, % pour un meilleur rendu
-  colback = white, colframe = black, % couleur cadre
-  boxrule = 0.5mm, arc = 0.5mm, % forme du cadre
-  height = 0.13\textheight, 
-  colbacktitle = white, coltitle = black, % couleur titre
-  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
-  fonttitle = \bfseries\sffamily, % type de titre
   title = {Séance \arabic{seanceNum} \hfill (#2)}, % titre,
+  halign=center, valign=center, % pour centrer le contenu
+  height = 0.13\textheight, % hauteur de la boite
   #1
 }
 % Pour afficher 3/2/1 séances dans la programmation
@@ -137,79 +175,63 @@
 
 %%%% Passage important à connaître
 \newtcolorbox{importants}[1][]{
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  frame hidden, sharp corners, boxrule = 0mm, % pas de contours
-  colback = couleurPrim!10, % fond
-  borderline west={4pt}{0pt}{couleurPrim}, % barre gauche
+  boite cassable,
+  boite pleine = couleurPrim50, % fond
+  shadow = {-4pt}{0mm}{0mm}{couleurPrim}, % barre gauche
   #1
 }
 
 %%%% Boîte pour le contexte
 \newtcolorbox{contexte}[1][]{
-  breakable, enhanced jigsaw, % boite coupable entre pages
-  boxrule = 3pt, sharp corners, % contours droits
-  colframe = couleurPrim, % couleur des contours
-  colback = couleurPrim!5, % fond
+  boite cassable, 
+  titre sans separation = 3pt,
+  couleur fond = couleurPrim50!50, 
+  colframe = couleurPrim, sharp corners, %  contours
   title = {Contexte :}, % titre
-  colbacktitle = couleurPrim!5, % couleur du fond du titre
-  fonttitle = \bfseries\sffamily, coltitle = black, % paramètre du titre
-  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
-  detach title,
-  before upper={\vspace{2pt}\hspace{-8pt}\tcbtitle\;},
+  detach title, before upper={\vspace{2pt}\hspace{-8pt}\tcbtitle\;}, % titre "en ligne"
   #1
 }
 
 %%%% Pour les objectifs
-\newenvironment{objectifs}{%
-  \begin{listeObjectifs}} {\end{listeObjectifs}}
+\newenvironment{objectifs}{ %
+  \begin{listeObjectifs}
+} {\end{listeObjectifs}}
 %
 \tcolorboxenvironment{objectifs}{
-  empty, % pas de boite automatique
-  attach boxed title to top left = {yshift=-2.5mm}, % position
-  boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
+  titre sans boite = {Objectifs :},
   frame code = { % tracé de la boite
     \path [draw=couleurPrim, line width = 3pt]
     (frame.west) |- ([xshift=6mm] title.north east)
     to[out=0, in=180] ([xshift=20mm] title.east) -| % définit la courbe
     (frame.east) |- (frame.south) -| cycle; % trace la boite
   },
-  fonttitle = \bfseries\sffamily, coltitle = black, % paramètre du titre
-  title = {Objectifs :}
 }
 
 %% Pour les pré-requis
-\newenvironment{prerequis}{%
-  \begin{listeObjectifs}} {\end{listeObjectifs}}
+\newenvironment{prerequis}{ %
+  \begin{listeObjectifs}
+} {\end{listeObjectifs}}
 %
 \tcolorboxenvironment{prerequis}{
-  empty, % pas de boite automatique
-  attach boxed title to top left = {yshift=-2.5mm}, % position
-  boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
+  titre sans boite = {Prérequis :},
   frame code = { % tracé de la boite
     \path [draw=couleurPrim, line width = 3pt]
     (frame.south east) |- ([xshift=-34mm, yshift=-4mm] frame.south east)
     to[out=180, in=0] ([xshift=-47mm] frame.south east) -| % définit la courbe
     (frame.west) |- (title.north) -| cycle; % trace la boite
   },
-  coltitle = black, % couleur du titre
-  fonttitle = \bfseries\sffamily, % police du titre
-  title = {Prérequis :}
 }
 
 %%%% Espace pour un coup de pouce
 \newcounter{coupDePouceNum}
 \newtcolorbox{coupDePouce}[1][]{
+  boite cassable, 
+  titre sans separation = 0.5mm,
   before title = {\refstepcounter{coupDePouceNum}},
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  arc = 0mm, % les lignes de la boites sont droites
-  colback = white, colframe = black, % fond blanc et traits noirs
-  fonttitle = \bfseries, coltitle = black, % couleur et police du titre
-  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
-  colbacktitle = white, % fond pour le titre blanc
   title = {
     \textcolor{couleurPrim}{\faThumbsUp}
     Coup de pouce \arabic{coupDePouceNum} :
-    \flushright \vspace*{-26pt}\faSquareO
+    \flushright \vspace*{-24pt}\faSquareO
   },
   #1
 }
@@ -220,21 +242,15 @@
     \begin{boite}
       \vspace*{-4pt}
       \important[black]{Appréciation et remarques}
-      
-      \vspace*{#1 cm}
-      \phantom{b}
+      \vspace*{#1 cm} \phantom{b}
     \end{boite}
   }
 }
 
 %%%% Espace fiche TP
 \newtcolorbox{boiteMateriel}[2][]{
-  colback = white, colframe = black, % fond blanc et traits noirs
-  coltitle = white, % couleur du titre
-  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi des traits de la boite
-  titlerule = 0mm, top = 2mm, % pour ne pas avoir de séparation titre/boite
-  colbacktitle = couleurPrim, % fond pour le titre blanc
-  fonttitle = \bfseries\sffamily, % type de titre
+  titre sans separation = 0.5mm,
+  coltitle = white, colbacktitle = couleurPrim, % fond pour le titre blanc
   title = {\centering \large \phantom{À} #2 \phantom{g}}, % titre
   #1
 }
@@ -253,6 +269,10 @@
   \newpage
   \phantom{b}
   \pasDePagination
+}
+\NewDocumentCommand{\inclusActivite}{O{1} m}{
+  \numeroActivite{#1}
+  \input{#2}
 }
     
 
@@ -299,7 +319,6 @@
 %%%% chapitre, partie, section et sous-section
 \newcommand{\chapitre}[1]{ % Réglage du titre du chapitre
   Chapitre \arabic{section} -- #1
-  \setcounter{activiteNum}{0}
 }
 \newcommand{\titreChapitre}[1]{ % Affichage du titre du chapitre
   \titre{Chapitre \arabic{section} -- #1}
@@ -319,19 +338,18 @@
   \setcounter{sousSectionNum}{0}
   \rectangle{30pt}{4pt}
   \important[black]{\large \arabic{subsubsection} -- #1}
-  \vspace*{10pt}
+  \vspace*{4pt}
 }
 \newcommand{\titreSousSection}[1]{
   \vspace*{12pt}
   \refstepcounter{sousSectionNum}
   \important[black]{\Alph{sousSectionNum} -- #1}
-  \vspace*{8pt}
+  \vspace*{4pt}
 }
 
 %%%% fixe le numéro de l'activité
 \newcommand{\reinitialiseCompteur}{
     % fixe les compteurs LaTeX
-  \setcounter{page}{1}
   \setcounter{subsection}{0}
   \setcounter{subsubsection}{0}
   \setcounter{figure}{0}
@@ -368,7 +386,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Paramètre par défaut pour l'en-tête
-\newcommand{\annee}{Réglez avec \textbackslash renewcommand\{\textbackslash annee\}\{2023 -- 2024\}}
 \newcommand{\classe}{Réglez avec \textbackslash renewcommand\{\textbackslash classe\}\{Seconde\}}
 \newcommand{\etablissement}{Réglez avec \textbackslash renewcommand\{\textbackslash etablissement\}\{Lycée\}}
 
@@ -627,7 +644,7 @@
     \begin{tblr}{
       hlines,
       colspec = #1,
-      row{1} = {couleurPrim!20},
+      row{1} = {couleurSec100},
     }
 }{
     \end{tblr}
@@ -640,10 +657,9 @@
     \begin{tblr}{
       colspec = {c X[l] c c c c},
       rows = {m}, hlines, vlines,
-      row{1} = {couleurPrim!20}
+      row{1} = {c, couleurSec100, font = \bfseries}
     }
-      \textbf{Comp.} & \centering \textbf{Items} &
-      \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} \\
+      Comp. & Items & D & C & B & A \\
 }{
     \end{tblr}
   \end{center}
@@ -651,22 +667,23 @@
 
 %%%% Tableau de connaissances pour les fiches de révisions
 \newenvironment{tableauConnaissances}{
-  \centering
+  \begin{center}
   \begin{tblr}{
     colspec = {Q[t, wd=0.7\textwidth] c c c},
     rows = {m}, hlines, vlines,
     column{4} = {0.2},
-    row{1} = {couleurPrim!20, c}
+    row{1} = {couleurSec100, c}
   }
     \important{Connaissances et capacités exigibles} & \ok & \pasOk & \important{En classe} \\
 }{ 
   \end{tblr}
+  \end{center}
 }
 
 %%%% Tableau de mémorisation pour les fiches de mémorisation
 % Question | | | Réponse
 \newenvironment{tableauMemorisation}{
-  \centering
+  \begin{center}
  \begin{tblr}{
     colspec = {
       Q[l, wd=0.3\textwidth] % Question
@@ -674,7 +691,7 @@
       Q[l, wd=0.3\textwidth] % Réponse
       Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth] % Répétitions
     }, rows = {m}, hlines, vlines,
-    row{1,2} = {couleurPrim!20, c}
+    row{1,2} = {couleurSec100, c}
   }
     \SetCell[r=2]{c} \important{Questions} & 
     \SetCell[c=2]{c} \important{Auto-évaluation} & &
@@ -690,6 +707,7 @@
     %
 }{ 
   \end{tblr}
+  \end{center}
 }
 
 
@@ -757,7 +775,7 @@
 % Nombre dans un cercle A REVOIR
 \newcommand*\nombreCercle[1]{
   % \tikz[baseline=(char.base)]{
-  %   \node [shape=circle, draw filled, inner sep=1.2pt, color=couleurSec!20] (char) {\textcolor{black}{#1};
+  %   \node [shape=circle, draw filled, inner sep=1.2pt, color=couleurSec50] (char) {\textcolor{black}{#1};
   % }
   \important[couleurSec]{#1}
 }
@@ -769,7 +787,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% points importants
-\NewDocumentCommand{\important}{O{couleurSec!75!black} +m}{
+\NewDocumentCommand{\important}{O{couleurSec800} +m}{
   \!\textcolor{#1}{\textsf{\bfseries #2}}\!\!
 }
 %%%% Pour donner des exemples. 
@@ -985,7 +1003,7 @@
 
 %% siècle
 \newcommand{\siecle}[1]{
-  \textsc{\romannumeral #1}\textsuperscript{e}~siècle
+  \textsc{\romannumeral #1}\textsuperscript{e}~siècle%
 }
 
 %% texte avec une boite autour
@@ -1004,29 +1022,18 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Couleur pour le code
-\definecolor{vertCode}  {rgb}{0.2,0.6,0}
-\definecolor{grisCode}  {rgb}{0.5,0.5,0.5}
-\definecolor{violetCode}{rgb}{0.58,0,0.82}
-\definecolor{fondCode}  {rgb}{0.95,0.95,0.92}
 %%%% Style python
 \lstdefinestyle{codePython}{
-  backgroundcolor=\color{fondCode},
-  commentstyle=\color{magenta},
-  keywordstyle=\color{vertCode},
-  numberstyle=\tiny\color{grisCode},
-  stringstyle=\color{violetCode},
-  basicstyle=\ttfamily\footnotesize,
-  breakatwhitespace=false,
-  breaklines=true,
-  captionpos=b,
-  keepspaces=true,
-  numbers=left,
-  numbersep=5pt, 
-  showspaces=false,
-  showstringspaces=false,
-  showtabs=false, 
-  tabsize=2
+  commentstyle=\color{magenta500},
+  keywordstyle=\color{green500},
+  stringstyle =\color{purple500},
+  numberstyle =\tiny\color{black!50},
+  basicstyle  =\ttfamily\footnotesize,
+  breakatwhitespace=false, breaklines=true, keepspaces=true,
+  showspaces=false, showstringspaces=false, showtabs=false, tabsize=2,
+  captionpos=b, numbers=left, numbersep=5pt,
+  extendedchars=true,
+  literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\'a}}1 {°}{{\textdegree}}1 {²}{{$^2$}}1, 
 }
 \def\inline{\lstinline[style=codePython,language=python]}
 
