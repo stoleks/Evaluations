@@ -2,6 +2,21 @@
 \pasCorrection{\points{12}}
 \vspace*{-12pt}
 
+% #1 : hauteur globule rouge, # 2 : hauteur globule blanc, #3 : hauteur plasma
+\newcommand{\sangCentrifugeuse}[3]{
+  \begin{tikzpicture}
+    % phases dans le tube à essai
+    \tikzPhaseBasTubeEssais[red-400]    (0.35) (#1)
+    \tikzPhaseTubeEssais   [white]      (0.35) (#1)(#2)
+    \tikzPhaseTubeEssais   [yellow-300] (0.35) (#2)(#3)
+    \tikzTubeEssais (0.35)(#3 + 1)
+    % Légende
+    \tikzLegende*(0.4, #3 - 0.1)  (1, 0) {Plasma}
+    \tikzLegende*(0.4, #2 - 0.08) (1, 0) {Globules blancs}
+    \tikzLegende*(0.4, -0.1)      (1, 0) {Globules rouges}
+  \end{tikzpicture}
+}
+
 \begin{doc}{Composition du sang et anémie}{doc:E2_composition_sang}
   Le sang est un mélange liquide composé de \qty{54}{\percent} de plasma, \qty{45}{\percent} de globules rouges et \qty{1}{\percent} de globules blancs.
   
@@ -18,14 +33,14 @@
   \vspace*{4pt}
   \separationBlocs{
     \centering \hspace{40pt}
-    \tubeEssaisSangCentrifuge{0.8}{0.9}{1.75}
+    \sangCentrifugeuse{0.8}{0.9}{1.75}
     
-    Échantillon de sang d'une personne normale.
+    \legende{Échantillon de sang d'une personne normale.}
   }[0.48]{
     \centering \hspace{40pt}
-    \tubeEssaisSangCentrifuge{0.4}{0.5}{1.75}
+    \sangCentrifugeuse{0.4}{0.5}{1.75}
     
-    Échantillon d'une personne souffrant d'anémie.
+    \legende{Échantillon d'une personne souffrant d'anémie.}
   }[0.52]
 \end{doc}
 
@@ -70,26 +85,30 @@
     \begin{center}
       \begin{tblr}{c| c| c| c| c| c}
         Solution &
-        {\tubeEssaisSolution{rougeClair}          \\ 1} &
-        {\tubeEssaisSolution{rougeClair!70!white} \\ 2} &
-        {\tubeEssaisSolution{rougeClair!40!white} \\ 3} &
-        {\tubeEssaisSolution{rougeClair!15!white} \\ 4} &
-        {\tubeEssaisSolution{rougeClair!5!white}  \\ 5} \\ \hline
+        \tubeEssaisSolution{red-600} &
+        \tubeEssaisSolution{red-400} &
+        \tubeEssaisSolution{red-200} &
+        \tubeEssaisSolution{red-100} &
+        \tubeEssaisSolution{red-50}  \\
         %
-        Concentration \unit{\g\per\litre} & 1,4 & 1,3 & 1,2 & 1,1 & 1,0 \\ \hline
+        & 1 & 2 & 3 & 4 & 5 \\ \hline
+        %
+        Concentration \unit{\g/\litre} & \num{1,4} & \num{1,3} & \num{1,2} & \num{1,1} & \num{1,0} \\ \hline
       \end{tblr} \\[4pt]
-      
-      Schéma de l'échelle de teinte réalisée, avec les solutions étalons et leurs concentrations.
+
+      \legende{
+        Schéma de l'échelle de teinte réalisée, avec les solutions étalons et leurs concentrations.
+      }
     \end{center}
   }[0.6]{
     \begin{center}
       \variationSujet{
-        \tubeEssaisSolution{rougeClair!55!white}
+        \tubeEssaisSolution{red-300}
       }{
-        \tubeEssaisSolution{rougeClair!30!white}
+        \tubeEssaisSolution{red-150}
       }
-  
-      Échantillon de sang à doser.
+      
+      \legende{Échantillon de sang à doser.}
     \end{center}
   }[0.4]
 \end{doc}
