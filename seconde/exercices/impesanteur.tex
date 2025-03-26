@@ -1,7 +1,6 @@
-\titreSection{Impesanteur}
+\exercice{Impesanteur}
 
 %%
-\vspace*{-10pt}
 \begin{doc}{Station spatiale internationale (ISS)}{doc:E3_station_ISS}
   On lit parfois que les spationautes flottent dans les stations spatiales, car la gravité terrestre n'agit plus sur les spationautes.
   
@@ -19,26 +18,31 @@
     \item $G = \qty{6,67e-11}{\newton\m\squared \per\kg\squared}$
     \item $\MTerre = \qty{5,97e24}{\kg}$
     \item $\RTerre = \qty{6,37e6}{\m}$
-    \item $h = \qty{3,70e5}{\m}$
-    \item $v = \qty{7,66e3}{\m\per\s}$
+    \item $h = \qty{4,14e5}{\m}$
+    \item $v = \qty{8,17e3}{\m\per\s}$
   \end{listePoints}
 \end{doc}
 
 %%
+\question{
+  Quel est le mouvement de l'ISS dans le référentiel lié au centre de la Terre ?\competence{APP}
+}{
+  \points{1}
+}
+
 \numeroQuestion
   \label{exo:schema_ISS}
-  Quel est le mouvement décrit par l'ISS dans le référentiel lié au centre de la Terre ?
-  Faire un schéma faisant figurer l'ISS, la Terre et la trajectoire qu'elle décrit.\competence{APP}\correction{\points{3}}
+  Faire un schéma propre et lisible faisant figurer l'ISS, la Terre et la trajectoire décrite par l'ISS.\competence{REA}\correction{\points{2}}
 
 \question{
-  Dans la station les spationautes ont un poids $P = m \times \gISS$.
-  Calculer la valeur de $\gISS$ sachant que
+  Dans la station les spationautes ont un poids $P_\text{ISS} = m \times g_\text{ISS}$.
+  Calculer la valeur de $g_\text{ISS}$ sachant que
   \begin{equation*}
-    \gISS =  G \times \dfrac{\MTerre}{(\RTerre + h)^2}
+    g_\text{ISS} =  G \times \dfrac{\MTerre}{(\RTerre + h)^2}
   \end{equation*}\competence{APP, REA}
 }{
   \begin{equation*}
-    \gISS
+    g_\text{ISS}
     = \qty{6,67e-11}{\newton\m\squared \per\kg\squared}
     \dfrac{\qty{5,97e24}{\kg}} {(\num{6,37e6} + \qty{3,70e5}{\m})^2}
     %
@@ -47,26 +51,25 @@
   \end{equation*}
 }
 
-
-\pasCorrection{\newpage}
+% \pasCorrection{\newpage}
+\pasCorrection{\pagebreak}
 \question{
   Comparer avec l'accélération de pesanteur terrestre $g = \qty{9,81}{\newton\per\kg}$.
   Peut-on vraiment dire que la gravité terrestre n'agit plus sur les spationautes au sein de l'ISS ?\competence{VAL, ANA/RAI}
 }{
-  $\gISS$ est presque égal à $g$, donc la gravité agit toujours fortement.
+  $g_\text{ISS}$ est presque égal à $g$, donc la gravité agit toujours fortement.
   \points{1}
 }
 
 \question{
   \label{exo:calcul_poids_ISS}
-  En sachant que $\gISS = \qty{8,77}{\newton\per\kg}$, calculer le poids d'une spationaute de masse $m = \qty{65}{\kg}$ dans l'ISS.\competence{REA}
+  En sachant que $g_\text{ISS} = \qty{8,77}{\newton\per\kg}$, calculer le poids d'une spationaute de masse $m = \qty{65}{\kg}$ dans l'ISS.\competence{REA}
 }{
   \begin{equation*}  
-    P = \qty{65}{\kg} \times \qty{8,77}{\newton\per\kg} = \qty{570}{\newton}
+    P\text{ISS} = \qty{65}{\kg} \times \qty{8,77}{\newton\per\kg} = \qty{570}{\newton}
     \points{1,5}
   \end{equation*}
 }
-
 
 %%
 \begin{doc}{Force d'inertie d'entraînement}{doc:E3_force_inertie}
@@ -90,7 +93,7 @@
 
 \question{
   Dans le référentiel lié à l'ISS, la spationaute est immobile.
-  En utilisant le principe d'inertie et en justifiant clairement, donner la norme de la force d'inertie d'entraînement $F_\inertie$ qui s'exerce sur la spationaute.\competence{APP, ANA/RAI}
+  En utilisant le principe d'inertie et en justifiant clairement, donner la relation entre $\vv{F}_\inertie$ et $\vv{P}$.\competence{APP, ANA/RAI}
 }{
   Comme la spationaute est immobile, la somme des forces qui s'exercent sur elle est nulle et $F_\inertie = P = \qty{8,77}{\newton}$
   \points{2}
@@ -101,27 +104,29 @@
 
 
 \question{
-  La norme de la force d'inertie d'entraînement exercée sur la spationaute est
+  La valeur de la force d'inertie d'entraînement exercée sur la spationaute est
   \begin{equation*}
-    F_\inertie = m \times \dfrac{v^2}{R}
+    F_\inertie = m \times \dfrac{v^2}{\RTerre + h}
     \label{eq:force_inertie}
   \end{equation*}
-  où $v$ est la vitesse du référentiel et $R$ est la distance entre le centre de rotation du référentiel et le centre du système (donc $R = \RTerre + h$ ici). 
-  Cette relation est-elle cohérente avec le principe d'inertie ?
+  où $v$ est la vitesse du référentiel tournant.
+  Calculer la vitesse de l'ISS et comparer ce résultat avec les données de l'énoncé.  \competence{APP, REA, VAL, ANA/RAI}
   
   \textit{
     Prendre des initiatives et les écrire, même si le raisonnement n'est pas complet.
     Tout début de réflexion sera valorisé.
   }
-  \competence{APP, REA, VAL, ANA/RAI}
 }{
-  On calcule la valeur de $F_\inertie$ :
-  \begin{equation*}
-    F_\inertie
-    = \qty{65}{\kg} \times \dfrac{(\qty{7,66}{\m\per\s})^2}{\num{6,37e6} + \qty{3,70e5}{\m}}
-    = \qty{565}{\newton}
-  \end{equation*}
-  On retrouve presque la même valeur qu'à la question 4, cette norme est donc cohérente avec le principe d'inertie.
+  D'après le principe d'inertie, $P = F_\intertie$, donc
+  \begin{align*}
+    m \times g &= m \times \dfrac{v^2}{\RTerre + h} \\
+    m \times v^2 &= m \times g \times (\RTerre + h) \\
+    v^2 &= g \times (\RTerre + h) \\
+    v &= \sqrt{g \times (\RTerre + h)} \\
+    &= \sqrt{\qty{9.81}{\m\per\s\squared} \times (\num{6,37e6} + \qty{4,14e5}{\m})} \\
+    &= \qty{8.16}{\m\per\s}
+  \end{align*}
+  On retrouve presque la même valeur que celle fournie dans l'énoncé, cette valeur est donc cohérente.
   \points{3}
 }
 
@@ -129,15 +134,14 @@
 % Le candidat est invité à prendre des initiatives et à présenter la démarche suivie, même si elle n'a pas abouti. La démarche est évaluée et nécessite d'être correctement présentée.
 \pasCorrection{
   \begin{coupDePouce}
-    Utiliser les données de l'énoncé pour calculer $F_\inertie$. 
-    Comparer cette valeur avec celle obtenue à la question~\ref{exo:calcul_poids_ISS}.
+    Utiliser le principe d'inertie sur la spationaute pour en déduire une relation entre $P$ et $F_\inertie$.
   \end{coupDePouce}
 
   \begin{coupDePouce}
-    D'après le principe d'inertie, si les spationautes flottent, c'est parce que les forces qui s'exercent sur elles et eux se compensent.
+    Isoler la vitesse $v$ dans la relation obtenue. Rappel : si $v^2 = a$, alors $v = \sqrt{a}$.
   \end{coupDePouce}
 
   \begin{coupDePouce}
-    Si les forces se compensent, leurs normes doivent être égales. Donc si $F_\inertie = P$, le principe d'inertie est bien vérifié.
+    Comparer la valeur de la vitesse trouvée avec celle de l'énoncé et conclure.
   \end{coupDePouce}
 }
