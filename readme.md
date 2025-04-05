@@ -1,4 +1,4 @@
-# Cours 
+# Évaluations
 
 Dossier contenant toutes mes évaluations pour mes cours de physique-chimie au lycée.
 Actuellement trois niveaux existent : seconde générales et technologiques (GT), première sciences et technologies de la santé et du social (ST2S) et terminale ST2S.
