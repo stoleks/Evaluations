@@ -23,6 +23,15 @@ Les fichiers sont organisés par dossiers :
 - *stssTerminale* contient toutes les évaluations pour les terminales ST2S.
 
 
+## Génération des évaluations sur les molécules organiques
+
+Il suffit d'appeler le scrip generation_molecules.sh, en ayant commenté toutes les autres évaluations auparavant.
+
+    sh generation_molecules.sh
+
+Le script génère un fichier format A4 (pour la projection) et un fichier format A5 (pour l'impression), avec un nom basé sur le nom du fichier .tex de la molécule dans molecules/
+
+
 ## Contact
 
 Si vous avez des questions, vous pouvez me contacter à alexandre[point]jedrecy[at]ac-creteil.fr
