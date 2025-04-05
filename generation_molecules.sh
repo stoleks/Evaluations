@@ -41,8 +41,8 @@ function generate_molecule_pdf () {
 # generate pdf for all molecules
 echo "Generation des évaluations sur les molécules"
 start=`date +%s`
-sed -i "6 s|^% ||" "main.tex"
+sed -i "5 s|^% ||" "main.tex"
 generate_molecule_pdf "main.tex"
-sed -i "6 s|\\\\|% \\\\|" "main.tex"
+sed -i "5 s|\\\\|% \\\\|" "main.tex"
 end=`date +%s`
-echo "Il a fallu $((end - start)) secondes ($(((end - start)/60)) minutes) pour générer $file"
+echo "Il a fallu $((end - start)) secondes ($(((end - start)/60)) minutes) pour générer toutes les molécules."
