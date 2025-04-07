@@ -42,7 +42,9 @@
 \question{
   Lors d'une échographie Doppler mesurant la vitesse d'écoulement sanguin,
   préciser quels sont les composants du sang qui réfléchissent les ondes ultrasonores.
-}{}
+}{
+  Ce sont les globules rouges.
+}
 
 \question{
   Compléter la légende dans les cadres du schéma donné dans l'ANNEXE (à rendre avec la copie de chimie).
@@ -50,20 +52,36 @@
 
 \question{
   Exprimer la vitesse $v$ d'écoulement du sang en fonction de $\Delta f$ et des paramètres $c$ et $f_e$ à l'aide de la formule du document~\ref{doc:E3_decalage_doppler}.
-}{}
+}{
+  \begin{align*}
+    \Delta f &= \dfrac{2f_e v}{c} \\
+    v \dfrac{2f_e}{c} &= \Delta f \\
+    v &= \Delta f \dfrac{c}{2f_e}
+  \end{align*}
+}
 
 \question{
   En utilisant les données suivantes, montrer que la vitesse v d'écoulement du sang dans cette artère vaut environ
   \qty{0,36}{\m\per\s}.
   
   \important{Données :} $f_e = \qty{4,5e6}{\hertz}$ ; $\Delta f = \qty{2,1e3}{\hertz}$ ;  $c = \qty{1540}{\m\per\s}$.
-}{}
+}{
+  \begin{equation*}
+    v = \Delta f \dfrac{c}{2 f_e}
+    = \qty{2,1e3}{\hertz} \times \dfrac{\qty{1540}{\m\per\s}}{2 \times \qty{4,5e6}{\hertz}}
+    = \qty{0.36}{\m\per\s}
+  \end{equation*}
+}
 
 \question{
   La vitesse normale d'écoulement sanguin dans une artère est comprise entre 55 et \qty{90}{\cm\per\s}.
   Indiquer si l'écoulement dans l'artère considérée présente une athérosclérose.
-}{}
+}{
+  Dans l'artère $v = \qty{0.36}{\m\per\s} = \qty{36}{\cm\per\s}$, la vitesse d'écoulement est inférieure à la vitesse normale et on a un ralentissement de la circulation sanguine, ce qui est un symptôme de l'athérosclérose.
+}
 
 \question{
   Donner les conséquences d'une athérosclérose.
-}{}
+}{
+  Une athérosclérose peut entraîner un accident cardiovasculaire (infarctus du myocarde, accident vasculaire cérébral...).
+}

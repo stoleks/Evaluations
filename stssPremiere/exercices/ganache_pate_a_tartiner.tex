@@ -43,16 +43,12 @@
 %%
 L'oléine est un triglycéride.
 Par hydrolyse, on obtient entre autres un acide gras : l'acide oléique.
-L'équation de la réaction d'hydrolyse est présentée ci-dessous, A et B désignent deux molécules.
+L'équation de la réaction d'hydrolyse est présentée ci-dessous.
 \begin{center}  
-  \chemfig{
-    !\oleineSemiDev
-    % H C (!\teteAcideDev C_{17} H_{33}) 
-    % (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{17} H_{33}))
-    % -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
-  }
-  + 3\chemfig{A} \reaction \chemfig{B} 
-  + 3 \chemname{\chemfig{!\oleiqueSemiDev}}{Acide oléique}%H_{33} C_{17} - C!\carboxyle}}{Acide oléique}
+  \chemname{\chemfig{!\oleineSemiDev}}{Oléine}
+  + 3 \chemname{\eau}{A}
+  \reaction \chemname{\chemfig{!\glycerolSemiDev}}{B}
+  + 3 \chemname{\chemfig{!\oleiqueSemiDev}}{Acide oléique}
 \end{center}
   
 \question{
@@ -61,20 +57,22 @@ L'équation de la réaction d'hydrolyse est présentée ci-dessous, A et B dési
   Un acide gras est une molécule avec un groupe carboxyle \chemfig{COOH} lié à une longue chaîne carbonée.\points{1}
 
   Un triglycéride est une molécule de glycérol estérifié avec trois acide gras.\points{1}
-}
+}[3]
 
+\pagebreak
 \question{
-  Nommer les molécules désignées par A et B dans l'équation de la réaction d'hydrolyse de l'oléine et préciser leur formule chimique.
-  Écrire la formule semi-développée de la molécule B.
+  Nommer les molécules désignées par A et B dans l'équation de la réaction d'hydrolyse de l'oléine et donner leur formule brute.
 }{
   A : molécule d'eau \chemfig{H_2O}. \points{0,5}
   
   B : molécule de glycérol \bruteCHO{3}{8}{3} \points{0,5}
 
-  \begin{center}  
-    Glycérol : \chemfig{CH_2 (-[3] OH) - CH (-[3] OH) -CH_2 (-[3] OH)} \points{1}
+  \begin{center}
+    \chemfig{CH_2 (-[3] OH) - CH (-[3] OH) -CH_2 (-[3] OH)}
+
+    Glycérol \points{1}
   \end{center}
-}
+}[2]
 
 
 %%
@@ -88,13 +86,13 @@ L'acide oléique a pour formule topologique :
   Citer le groupe caractéristique présent dans cette molécule.
 }{
   C'est un groupe carboxyle. \points{1}
-}
+}[1]
 
 \question{
   Justifier que l'acide oléique est un acide gras insaturé.
 }{
   Il y a une double liaison carbone-carbone dans la chaîne carbonée de l'acide gras, donc il est insaturé en hydrogène. \points{1}
-}
+}[3]
 
 
 %%
@@ -115,12 +113,14 @@ M$_\text{acide oléique}$ = \qty{282,5}{\g\per\mole}.
     = \dfrac{\qty{38,2}{\g}}{\qty{885,4}{\g\per\mole}}
     = \qty{4,31e-2}{\mole} \points{1,5}
   \end{equation*}
-}
+}[3]
 
 \question{
-  À partir de l'équation de la réaction d'hydrolyse supposée totale, 
+  À partir de l'équation de la réaction d'hydrolyse supposée totale
+  (1 mole d'oléine $\reaction$ 3 moles d'acide oléique),
   calculer la masse d'acide oléique dans l'huile de palme.
   Comparer avec celle mentionnée dans le tableau du document 2.
+  \important{Rappel :} $m = n \times M$.
 }{
   Comme la réaction est totale, toute l'oléine s'est transformée en acide oléique, donc $n_\text{oléique} = 3\times n_\text{oléine}$. \points{1}
 
@@ -132,7 +132,7 @@ M$_\text{acide oléique}$ = \qty{282,5}{\g\per\mole}.
   \end{equation*}
 
   On trouve la même valeur que dans le tableau du document 2, les deux résultats sont cohérents. \points{1}
-}
+}[4]
 
 
 %%
@@ -150,4 +150,4 @@ Dans le cadre d'une alimentation équilibrée, il est conseillé de consommer qu
     \qty{500}{\mg} \times \dfrac{\qty{1}{\g}}{\qty{2}{\mg}} 
     = \qty{250}{\g} \points{2}
   \end{equation*}
-}
+}[4]

@@ -5,16 +5,20 @@
 % \geometry{a5paper, left = 1cm, right = 1cm} % format A5
 % \geometry{a5paper, left=1cm, right=1cm, top=0.85cm, bottom=2cm} % format A5 serré
 % \geometry{a4paper, landscape} % Pour les fiches de mémorisation
-% \modeCorrection % correction si décommenté
+\modeCorrection % correction si décommenté
 
 
 %%%% pour l'en-tête
 \renewcommand{\etablissement}{Lycée Jean Moulin}
 
 \input{commun/fiche_revision_memorisation}
+\input{stssTerminale/exercices/_annexes}
+\input{stssTerminale/exercices/_mots_clefs}
 
 %%%% TP
 \begin{document}
+  % Pour les sujets type bac
+  
   %%%% Seconde
   %% Fiche réussite
   % \input{seconde/fiches_revision/FR_corps_melanges}
@@ -65,6 +69,7 @@
   % \input{stssPremiere/E_vision_lumiere}
   %% A REFAIRE QUESTIONS PAS CLAIRES...
   % \input{stssPremiere/DM1_routiere_molecule}
+  % \input{stssPremiere/E_molecules_biologiques}
 
   %%%%%%%% Interro formative molécules organiques
   % \input{molecules/acide_ascorbique}
@@ -101,16 +106,17 @@
   %% Sommative
   % \input{stssTerminale/E1_triglyceride}
   %% Devoir commun (correction)
-  % \input{stssTerminale/exercices/_annexes}
-  % \input{stssTerminale/exercices/_mots_clefs}
+  \input{stssTerminale/exercices/_annexes}
+  \input{stssTerminale/exercices/_mots_clefs}
   % \input{stssTerminale/DC1_chimie_orga_secu_rout}
   % \input{stssTerminale/DC1_chimie_orga_acide_gras}
   % \input{stssTerminale/DC2_chimie_triglyceride_DJA}
   % \input{stssTerminale/DC3_echographie_radio}
+  % \input{stssTerminale/DC_dosage}
   % \input{stssTerminale//BacBlanc_chimie}
   % \input{stssTerminale/BacBlanc_chimie_2}
   % \input{stssTerminale/BacBlanc_chimie_3}
-  % \input{stssTerminale/revision_bac}
+  \input{stssTerminale/revision_bac}
   
   %%%% Commun
   % \input{commun/competences}
