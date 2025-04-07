@@ -16,10 +16,11 @@
   \important{Données :}
   \begin{listePoints}
     \item $G = \qty{6,67e-11}{\newton\m\squared \per\kg\squared}$
-    \item $\MTerre = \qty{5,97e24}{\kg}$
-    \item $\RTerre = \qty{6,37e6}{\m}$
+    \item $M_\Terre = \qty{5,97e24}{\kg}$
+    \item $R_\Terre = \qty{6,37e6}{\m}$
     \item $h = \qty{4,14e5}{\m}$
-    \item $v = \qty{8,17e3}{\m\per\s}$
+    \item $v = \qty{7,66e3}{\m\per\s}$
+    \item Masse d'une spationaute $m = \qty{65,0}{\kg}$
   \end{listePoints}
 \end{doc}
 
@@ -27,7 +28,7 @@
 \question{
   Quel est le mouvement de l'ISS dans le référentiel lié au centre de la Terre ?\competence{APP}
 }{
-  \points{1}
+  L'ISS a une trajectoire circulaire avec une vitesse constante, c'est donc un mouvement circulaire uniforme. \points{1}
 }
 
 \numeroQuestion
@@ -35,18 +36,18 @@
   Faire un schéma propre et lisible faisant figurer l'ISS, la Terre et la trajectoire décrite par l'ISS.\competence{REA}\correction{\points{2}}
 
 \question{
-  Dans la station les spationautes ont un poids $P_\text{ISS} = m \times g_\text{ISS}$.
-  Calculer la valeur de $g_\text{ISS}$ sachant que
+  Dans la station les spationautes ont un poids $P_\ISS = m \times g_\ISS$.
+  Calculer la valeur de $g_\ISS$ sachant que
   \begin{equation*}
-    g_\text{ISS} =  G \times \dfrac{\MTerre}{(\RTerre + h)^2}
+    g_\ISS =  G \times \dfrac{M_\Terre}{(R_\Terre + h)^2}
   \end{equation*}\competence{APP, REA}
 }{
   \begin{equation*}
-    g_\text{ISS}
+    g_\ISS
     = \qty{6,67e-11}{\newton\m\squared \per\kg\squared}
     \dfrac{\qty{5,97e24}{\kg}} {(\num{6,37e6} + \qty{3,70e5}{\m})^2}
     %
-    = \qty{8,77}{\newton}
+    = \qty{8,65}{\newton}
     \points{1,5}
   \end{equation*}
 }
@@ -54,19 +55,19 @@
 % \pasCorrection{\newpage}
 \pasCorrection{\pagebreak}
 \question{
-  Comparer avec l'accélération de pesanteur terrestre $g = \qty{9,81}{\newton\per\kg}$.
+  Comparer $g_\ISS$ avec l'accélération de pesanteur terrestre $g = \qty{9,81}{\newton\per\kg}$.
   Peut-on vraiment dire que la gravité terrestre n'agit plus sur les spationautes au sein de l'ISS ?\competence{VAL, ANA/RAI}
 }{
-  $g_\text{ISS}$ est presque égal à $g$, donc la gravité agit toujours fortement.
+  $g_\ISS$ est presque égal à $g$, donc la gravité agit toujours fortement.
   \points{1}
 }
 
 \question{
   \label{exo:calcul_poids_ISS}
-  En sachant que $g_\text{ISS} = \qty{8,77}{\newton\per\kg}$, calculer le poids d'une spationaute de masse $m = \qty{65}{\kg}$ dans l'ISS.\competence{REA}
+  Calculer le poids d'une spationaute dans l'ISS, sachant que $g_\ISS = \qty{8,65}{\newton\per\kg}$.\competence{REA}
 }{
   \begin{equation*}  
-    P\text{ISS} = \qty{65}{\kg} \times \qty{8,77}{\newton\per\kg} = \qty{570}{\newton}
+    P_\ISS = \qty{65}{\kg} \times \qty{8,65}{\newton\per\kg} = \qty{570}{\newton}
     \points{1,5}
   \end{equation*}
 }
@@ -93,9 +94,9 @@
 
 \question{
   Dans le référentiel lié à l'ISS, la spationaute est immobile.
-  En utilisant le principe d'inertie et en justifiant clairement, donner la relation entre $\vv{F}_\inertie$ et $\vv{P}$.\competence{APP, ANA/RAI}
+  En utilisant le principe d'inertie et en justifiant clairement, donner la relation entre $\vv{F}_\inertie$ et $\vv{P}_\ISS$.\competence{APP, ANA/RAI}
 }{
-  Comme la spationaute est immobile, la somme des forces qui s'exercent sur elle est nulle et $F_\inertie = P = \qty{8,77}{\newton}$
+  Comme la spationaute est immobile, la somme des forces qui s'exercent sur elle est nulle et $F_\inertie = P_\ISS = \qty{8,65}{\newton}$
   \points{2}
 }
 
@@ -106,7 +107,7 @@
 \question{
   La valeur de la force d'inertie d'entraînement exercée sur la spationaute est
   \begin{equation*}
-    F_\inertie = m \times \dfrac{v^2}{\RTerre + h}
+    F_\inertie = m \times \dfrac{v^2}{R_\Terre + h}
     \label{eq:force_inertie}
   \end{equation*}
   où $v$ est la vitesse du référentiel tournant.
@@ -117,16 +118,19 @@
     Tout début de réflexion sera valorisé.
   }
 }{
-  D'après le principe d'inertie, $P = F_\intertie$, donc
+  D'après le principe d'inertie, $F_\inertie = P_\ISS$, donc
   \begin{align*}
-    m \times g &= m \times \dfrac{v^2}{\RTerre + h} \\
-    m \times v^2 &= m \times g \times (\RTerre + h) \\
-    v^2 &= g \times (\RTerre + h) \\
-    v &= \sqrt{g \times (\RTerre + h)} \\
-    &= \sqrt{\qty{9.81}{\m\per\s\squared} \times (\num{6,37e6} + \qty{4,14e5}{\m})} \\
-    &= \qty{8.16}{\m\per\s}
+    \dfrac{m\times v^2}{R_\Terre + h} &= m \times g_\ISS \\
+    m \times v^2 &= m \times g_\ISS \times (R_\Terre + h) \\
+    v^2 &= g_\ISS \times (R_\Terre + h)
   \end{align*}
-  On retrouve presque la même valeur que celle fournie dans l'énoncé, cette valeur est donc cohérente.
+  Finalement
+  \begin{align*}
+    v &= \sqrt{g_\ISS \times (R_\Terre + h)} \\
+    &= \sqrt{\qty{9.65}{\m\per\s\squared} \times (\num{6,37e6} + \num{4,14e5})\unit{\m}} \\
+    &= \qty{7.66}{\m\per\s}
+  \end{align*}
+  On retrouve la même valeur que celle fournie dans l'énoncé, cette valeur est donc cohérente.
   \points{3}
 }
 

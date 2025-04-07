@@ -65,33 +65,36 @@ d'étalonnage, il est ici nécessaire de la diluer dix fois.
   Déterminer graphiquement, à l'aide de l'ANNEXE (à rendre avec la copie de chimie), la concentration en quantité de matière de diiode de la solution.
   On fera apparaître la construction sur le graphique.
 }{
-  Avec le graphique, on trouve une concentration de \qty{0.0045}{\mol\per\litre}.
+  Avec le graphique, on trouve une concentration de \qty{0.0043}{\mol\per\litre}.
 }
 
 \question{
   En déduire que la concentration en quantité de matière de diiode dans la solution de Bétadine® à \qty{10}{\percent} est voisine de \qty{0,043}{\mol\per\litre}.
 }{
-  Pour convertir, on multiplie la concentration molaire par la masse molaire
-  \begin{equation*}
-    c_m(I_2) = C(I_2) M_{I_2} 
-    = \qty{0,004}{\mol\per\litre} \times \qty{253,8}{\g\per\mole} 
-    = \qty{1,02}{\g\per\litre}
-  \end{equation*}
+  Comme on a dilué dix fois, il faut multiplier par dix la concentration, donc \qty{0,043}{\g\per\litre}.
 }
 
 \question{
   En déduire la concentration en masse de la polyvidone iodée dans la Bétadine® à
 \qty{10}{\percent}.
 }{
-  Comme on a dilué dix fois, il faut multiplier par dix la concentration, donc \qty{10,2}{\g\per\litre}.
+  Comme une mole de polyvidone contient une mole de diiode, leurs concentrations molaires sont égales $c(I_2) = c(polyvidone)$
+  Pour convertir la concentration molaire en concentration massique, on multiplie la concentration molaire par la masse molaire
+  \begin{equation*}
+    c_m(polyvidone) = C(I_2) M_\text{polyvidone} 
+    = \qty{0,043}{\mol\per\litre} \times \qty{2363}{\g\per\mole} 
+    = \qty{101,6}{\g\per\litre}
+  \end{equation*}
 }
 
 \question{
   Vérifier la cohérence de l'indication de la notice : « La Bétadine® à \qty{10}{\percent} contient 10 g de polyvidone iodée dans 100 mL ».
 }{
-  
+  On a trouvé une concentration de $\qty{101,6}{\g\per\litre}$, or la notice annonce une concentration de $\dfrac{\qty{10}{\g}}{\qty{100}{\mL}} = \dfrac{10}{0,1}\unit{\g\per\litre} = \qty{100}{\g\per\litre}$, donc la notice est cohérente avec la mesure réalisé avec un écart de \qty{1}{\percent}.
 }
 
 \question{
   Identifier une cause possible de l'écart constaté. 
-}{}
+}{
+  Ça peut être lié à la lecture graphique.
+}

@@ -6,7 +6,7 @@
   
   Pour un objet en mouvement dans l'air, on peut calculer la valeur des frottements de l'air sur l'objet, en Newton, à l'aide de la relation suivante : 
   \begin{equation*}
-    f = \dfrac{1}{2} \times \rho \times C_x \times v^2 
+    f = \dfrac{1}{2} \times \rho \times C_x \times S \times v^2
   \end{equation*}
   Avec :
   \begin{listePoints}[2]
@@ -32,28 +32,47 @@
 
 \question{
   Indiquer quel est le système étudié et donner un référentiel approprié pour étudier son mouvement.\competence{APP}
-}{}
+}{
+  On étudie le mouvement du ballon de football, dans le référentiel terrestre.
+}
 
 \question{
   Citer la ou les forces qui s’exercent sur le ballon puis calculer leurs valeurs.\competence{APP, REA}
-}{}
+}{
+  On a le poids $\vv{P}$ et la réaction du support $\vv{R}$ qui s'exerce sur le ballon.
+  Pour le poids on a 
+  \begin{equation*}
+    P = m\times g = \qty{0,450}{\kg} \times \qty{9,81}{\newton\per\kg} = \qty{4,41}{\newton}.
+  \end{equation*}
+  Par définition de la réaction du support $R = P = \qty{4,41}{\newton}$.
+}
 
 \question{
-  Représenter cette ou ces forces sur un schéma propre et lisible.\competence{REA}
+  Représenter ces forces sur un schéma propre et lisible.\competence{REA}
 }{}
 
 \question{
   Les forces se compensent-elles ? Justifier à l'aide du principe d'inertie.\competence{ANA/RAI, VAL}
-}{}
+}{
+  Oui, car le ballon est immobile, donc les forces doivent se compenser.
+}
 
 \question{
   Pour tirer un penalty, un joueur frappe dans le ballon posé au sol.
   Décrire les forces s'exerçant sur le ballon lorsque celui-ci est en l’air.\competence{APP}
-}{}
+}{
+  Il y a toujours le poids et il y a les frottements de l'air.
+}
 
 \question{
   Représenter ces forces sur un autre schéma.\competence{REA}
 }{}
+
+\question{
+  Peut-on utiliser le principe d’inertie pour décrire le mouvement du ballon de football lorsqu’il est en l’air ?\competence{VAL, ANA/RAI}
+}{
+  Non, car les forces ne se compensent pas, donc le ballon n'a pas un mouvement rectiligne uniforme.
+}
 
 \question{
   Calculer la valeur des forces de frottements s’exerçant sur le ballon.
@@ -63,9 +82,27 @@
     Prendre des initiatives et les écrire, même si le raisonnement n'est pas complet.
     Tout début de réflexion sera valorisé.
   }
-}{}
-
-
-\question{
-  Peut-on utiliser le principe d’inertie pour décrire le mouvement du ballon de football lorsqu’il est en l’air ?\competence{VAL, ANA/RAI}
-}{}
+}{
+  Pour calculer l'intensité des forces de frottements, il faut calculer la surface du ballon, et donc connaître le rayon du ballon. Le rayon se calcule à partir de la circonférence $c$ :
+  \begin{align*}
+    2\pi r &= c \\
+    r &= \dfrac{c}{2 \pi}
+  \end{align*}
+  et donc 
+  \begin{equation*}
+    S = 4\pi r^2 
+    = 4\pi \left(\dfrac{c}{2\pi}\right)^2
+    = \dfrac{c^2}{\pi}
+    = \dfrac{(\qty{0,7}{\m})^2}{3.1415}
+    = \qty{0.16}{\m\squared}
+  \end{equation*}
+  Finalement on peut calculer la valeur de $f$ :
+  \begin{equation*}
+    f = \dfrac{1}{2}\rho C_x S v^2
+    = \dfrac{1}{2} \times \qty{1,23}{\kg\per\cubic\m}
+    \times \;\; \variationSujet{\num{0,20}}{\num{0,15}}
+    \;\; \times \qty{0.16}{\m\squared}
+    \times \left(\;\;\variationSujet{50}{45}\;\; \unit{\m\per\s}\right)^2
+    = \;\;\variationSujet{\num{49,2}}{\num{33,2}}\;\; \unit{\newton}
+  \end{equation*}
+}
