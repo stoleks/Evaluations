@@ -3,7 +3,7 @@
 # generate all molecules pdf
 function generate_molecule_pdf () {
   lines=$(wc -l < $1)
-  for i in $(seq 1 $lines); # $lines);
+  for i in $(seq 20 $lines); # $lines);
   do
     # skip lines that don't include a molecule file
     local start=`date +%s`
