@@ -1,2 +1,5 @@
 main.*
+livret.*
+split.*
 !main.tex
+log.out
