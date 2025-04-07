@@ -35,33 +35,65 @@ Un patient fumeur peut aussi souffrir de liaisons aux poumons et présenter des 
 
 \question{
   Rappeler le principe de la radiographie en précisant la nature des ondes utilisées.
-}{}
+}{
+  Une radiographie consiste à irradier un objet avec de la lumière dans le domaine des rayons X pour former une image en négatif sur une plaque (comme un jeu d'ombre).
+}
 
 \question{
   Citer un point commun et une différence entre radiographie et radiothérapie.
-}{}
+}{
+  Les deux méthodes utilisent les rayons X.
+  La radiographie sert à faire de l'imagerie médicale (observation interne du corps),
+  la radiothérapie sert à soigner du cancer en détruisant des cellules cancéreuses à l'aide de rayons X ciblés.
+}
 
 \question{
   En utilisant l'échelle de longueurs d'ondes ci-dessous, indiquer à quel numéro correspond le domaine des rayons X, utilisés en radiographie.
   \begin{center}
     \image{1}{images/bacST2S/domaine_onde}
   \end{center}
-}{}
+}{
+  Le domaine des rayons X correspond au numéro 1.
+  2 : ultraviolet.
+  3 : infrarouge.
+}
 
 \question{
   Après avoir rappelé la relation entre fréquence et longueur d'onde ainsi que les unités associées, déterminer l'intervalle de fréquences correspondant aux rayons X en utilisant l'échelle présentée à la question 3.
-}{}
+}{
+  $f = \dfrac{c}{\lambda}$, avec $c$ la vitesse de la lumière en \unit{\m\per\s}, $f$ la fréquence en \unit{\per\s} et $\lambda$ la longueur d'onde en \unit{\m}.
+
+  La plus grande fréquence du domaine X sera donc 
+  \begin{equation*}
+    f_\text{max}
+    = \dfrac{\qty{3,00e8}{\m\per\s}}{\qty{e-11}{\m}}
+    \simeq \qty{e19}{\s}
+  \end{equation*}
+  et la plus petite
+  \begin{equation*}
+    f_\text{min}
+    = \dfrac{\qty{3,00e8}{\m\per\s}}{\qty{e-8}{\m}}
+    \simeq \qty{e16}{\s}
+  \end{equation*}
+}
 
 \question{
   Les rayons X peuvent traverser certains des tissus corporels.
   En identifiant dans le document 2 les tissus corporels visualisés sur la radiographie, indiquer ceux qui ont tendance à absorber le plus fortement les rayons X et proposer une explication.
-}{}
+}{
+  La plaque est blanche initialement et noircit en présence de rayon X.
+  Donc les tissus osseux sont ceux qui absorbent le plus les rayons X, ce qui est lié à leur composition chimique :
+  principalement du phosphore et du calcium, qui absorbent plus fortement les rayons X.
+}
 
 La scintigraphie est parfois utilisée dans le diagnostic d'un lymphome.
 On utilise dans ce cas un marqueur radioactif contenant du molybdène-99, de symbole \isotope{99}{42}{Mo}.
 
 \question{
   Donner la composition d'un noyau atomique de molybdène-99.
+}{
+  Un noyau de molybdène-99 contient \num{99} nucléons, avec \num{42} protons et \num{57} neutrons.
+}
   
 L'équation de désintégration du molybdène-99 est partiellement donnée ci-dessous.
 Elle fait apparaître le rayonnement $\gamma$ utilisé en scintigraphie et une particule notée \isotope{...}{...}{A}, de nature à déterminer.
@@ -72,15 +104,18 @@ Elle fait apparaître le rayonnement $\gamma$ utilisé en scintigraphie et une p
     \isotope{99}{43}{Tc} 
     + \isotope{...}{...}{A} + $\gamma$
   \end{center}
-}{}
 
 \question{
   Compléter le symbole de la particule \isotope{...}{...}{A} en remplaçant les pointillés par les nombres appropriés.
-}{}
+}{
+  Le nombre de nucléons n'a pas changé au cours de la réaction ($99 \reaction 99$), par contre le nombre de charge a augmenté ($42 \reaction 43$), donc pour respecter les règles de conservations, on doit avoir \isotope{0}{-1}{A}.
+}
 
 \question{
   Identifier la particule \isotope{...}{...}{A},
   est-ce un positron \isotope{0}{+1}{e}
   ou un électron \isotope{0}{-1}{e} ?
   Nommer le type de désintégration subie par le molybdène-99.
-}{}
+}{
+  La particule est un électron \isotope{0}{-1}{e}, on a donc une désintégration $\beta-$
+}
