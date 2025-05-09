@@ -1,0 +1,163 @@
+\exercice{La vitamine C (10 points)} \label{exo:la_vitamine_C}
+
+\medskip
+\motsClesLaVitamineC
+\medskip
+
+Les personnes sujettes aux calculs urinaires et celles souffrant de maladies comme la drépanocytose, induisant une accumulation du fer dans l’organisme, doivent s’abstenir de prendre de la vitamine C en excès ou de manière prolongée.
+
+\begin{doc}{Le stockage des vitamines dans l’organisme}{doc:stockage_vitamine}
+  Les vitamines sont des molécules organiques indispensables au bon fonctionnement de l'organisme.
+  Dans la plupart des cas, notre organisme est incapable de les synthétiser et elles sont apportées par l'alimentation.
+  Au nombre de treize, elles se répartissent en deux catégories :
+  \begin{listePoints}
+    \item les vitamines liposolubles qui peuvent être stockées par l’organisme.
+    Ce sont les vitamines A, D, E et K.
+    \item les vitamines hydrosolubles qui ne sont pas stockées de manière prolongée et qui, en excès, sont rejetées dans les urines.
+    C’est le cas de la vitamine C et des vitamines du groupe B.
+  \end{listePoints}
+  
+  \sourceExtrait{D’après https://www.caducee.net/}
+\end{doc}
+
+\begin{doc}{L’apport de la vitamine C dans l’alimentation}{doc:apport_vitamine_C}
+  \begin{wrapfigure}{l}{0.4\linewidth}
+    \centering
+    \chemfig{!\acideAscorbique}
+  \end{wrapfigure}
+  
+  La vitamine C se trouve essentiellement dans les végétaux frais, les fruits frais, particulièrement
+  dans les agrumes et les légumes verts.
+  Un bon apport alimentaire doit suffire à couvrir les besoins quotidiens.
+  On peut les compléter soit avec des extraits de fruits (cynorhodon, acérola, kiwi), soit avec de la vitamine de synthèse de façon à atteindre un apport journalier moyen de 100 mg.
+  Cette vitamine très instable est détruite par la chaleur et par l'exposition à l'air.
+  
+  \sourceExtrait{D’après https://www.caducee.net/}
+\end{doc}
+
+%\begin{doc}{La liaison hydrogène}{doc:liaison_hydrogene}
+ % La liaison hydrogène pourrait être renommée la « liaison de la vie » tant elle joue un rôle fondamental dans les processus biologiques.
+  %C'est une liaison chimique inter ou intramoléculaire. Comme son nom l'indique, cette liaison implique forcément un atome d’hydrogène.
+  %Une liaison hydrogène peut s'établir entre un atome d'hydrogène lié par covalence à un atome très électronégatif (comme le fluor F, l'oxygène O ou l'azote N), et un atome aussi très électronégatif.
+  
+  %\sourceExtrait{D’après https://www.futura-sciences.com}
+%\end{doc}
+
+\titreSousSection{Solubilité de la vitamine C}
+
+Les vitamines hydrosolubles et liposolubles.
+
+\question{
+  Définir les termes « liposolubles » et « hydrosolubles ».
+}{
+  Une molécule liposoluble a peu de liaisons polaires et ne se mélangera pas avec de l'eau.
+  Une molécule hydrosoluble a plusieurs liaisons polaires qui pourront former des liaisons hydrogènes avec les molécules d'eau, ce qui assure un bon mélange.
+\points{1}
+}
+
+\question{
+  Préciser dans quel type de tissus sont stockées les vitamines liposolubles.
+}{
+  Les vitamines liposolubles sont stockées dans les graisses.
+\points{1}
+}
+
+% \question{
+%   À l'aide du document 3, schématiser par un trait pointillé la liaison hydrogène qui
+% peut s'établir entre deux molécules d'eau.
+% }{}
+
+\question{
+  À partir de sa formule topologique, déduire le caractère hydrosoluble de la vitamine C.
+}{
+  La molécule de vitamine C comporte plusieurs liaisons polaires, les groupes hydroxyles \chemfig{OH}, elle est donc hydrosoluble. 
+\points{1}
+}
+
+\titreSousSection{De la vitamine C dans un jus d'orange}
+
+Afin de comparer la concentration en vitamine C d’un jus d’orange fraîchement pressé (noté F) et d'un jus pasteurisé (noté P), on effectue le dosage par titrage d'un même volume $V_J$ de jus d’orange à l’aide de DCPIP (2,6-dichlorophénol-indophénol).
+Le DCPIP est un réactif de couleur rose qui réagit mole à mole avec la vitamine C.
+Lors de cette réaction, les produits obtenus sont incolores.
+À l'équivalence du titrage, on observe la persistance de la coloration rose dans la solution titrée.
+
+\pasCorrection{\pagebreak}
+\begin{donnees}
+  \item Volume de jus titré : $V_J = \qty{5,0}{\ml}$
+  \item Concentration en quantité de matière de DCPIP : $C_\text{DCPIP} = \qty{1,0e-3}{\mole\per\l}$
+  \item Masse molaire de la vitamine C : $\masseMol{Vit C} = \qty{176}{\g\per\mole}$
+  \item Volume de DCPIP versés à l’équivalence pour le jus frais F : $V_E = \qty{10,0}{\ml}$
+\end{donnees}
+
+\question{
+  Sur l'ANNEXE À RENDRE AVEC LA COPIE, légender le schéma à l'aide du vocabulaire suivant : agitateur magnétique, barreau aimanté, erlenmeyer, burette graduée, réactif titré, réactif titrant. 
+}{
+  Cf. annexe.
+\points{2}
+}
+  
+% \question{
+%   Justifier l'observation effectuée à l'équivalence du titrage.
+% }{}
+  
+\question{
+  Déterminer la concentration en quantité de matière de vitamine C notée $C_\text{Vit C, F}$, dans le jus frais F.
+  En sachant que la relation vérifiée à l’équivalence du titrage par les concentrations en quantité de matière est :
+  \begin{equation*}  
+    C_\text{DCPIP} \times V_E = C_\text{Vit C, F} \times V_J
+  \end{equation*}
+  où $V_E$ est le volume de DCPIP versé à l’équivalence. 
+}{
+  À partir de la relation fournie 
+  \begin{align*}
+    C_\text{Vit C, F} \times V_J &= C_\text{DCPIP} \times V_E \\
+    C_\text{Vit C, F} &= \dfrac{C_\text{DCPIP} \times V_E}{V_J} \\
+    &= \dfrac{ \qty{1,0e-3}{\mole\per\litre} \times \qty{10,0}{\ml} }{ \qty{5,0}{\ml} }
+    &= \qty{2,0e-3}{\mole\per\litre}
+  \end{align*}
+\points{1}
+}
+  
+\question{
+  Montrer que la concentration en masse $C_m(\text{Vit C, F})$ de vitamine C dans le jus frais est voisine de \qty{350}{\mg\per\l}.
+}{
+  Il faut multiplier la concentration molaire en vitamine C par la masse molaire de la vitamine C
+  \begin{align*}
+    c_m(\text{Vit C, F}) &= c_\text{Vit C, F} \times \masseMol{Vit C} \\
+    &= \qty{2,0e-3}{\mole\per\litre} \times \qty{176}{\g\per\mole} \\
+    &= \qty{352e-3}{\g\per\litre} 
+    = \qty{352}{\milli\g\per\litre}
+\points{1}
+  \end{align*}
+}
+\bigskip
+ 
+La pasteurisation est un procédé de conservation des aliments par chauffage, puis refroidissement.
+La concentration en masse de vitamine C dans le jus pasteurisé a pour valeur
+$C_m(\text{Vit C, P}) = \qty{56}{\mg\per\l}$. 
+
+\question{
+  Comparer cette valeur à celle calculée pour le jus frais et commenter l’effet de la pasteurisation sur le jus.
+}{
+  Pour un jus frais, on a $\approx 7$ fois plus de vitamine C que dans un jus pasteurisé.
+  La pasteurisation détruit la vitamine C.
+\points{1}
+}
+  
+\question{
+  Calculer le volume de jus d'orange pasteurisé nécessaire pour couvrir les besoins journaliers en vitamine C indiqués dans le document 2.
+}{
+  Pour atteindre \qty{100}{\mg}, il faut boire un volume 
+  \begin{equation*}
+    V = \dfrac{ \qty{100}{\mg} }{ \qty{56}{\mg\per\litre} } = \qty{1.8}{\litre}
+\points{1}
+  \end{equation*}
+  de jus pasteurisé.
+}
+  
+\question{
+  Donner un argument en faveur de  la consommation de fruits frais pour l’apport de vitamine C.
+}{
+  Les fruits frais contiennent plus de vitamine C que les jus pasteurisés, qui permettent difficilement de respecter les apports journaliers sans dépasser ceux en sucre.
+\points{1}
+}
