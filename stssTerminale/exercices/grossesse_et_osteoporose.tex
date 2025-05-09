@@ -1,0 +1,140 @@
+\exercice{Grossesse et ostéoporose (10 points)}\label{exo:grossess_osteoporose}
+
+\medskip
+\motsClesGorssesseOsteoporose
+\medskip
+
+Pour prévenir l'ostéoporose, les apports en vitamine D et en ions calcium doivent être
+surveillés.
+On souhaite déterminer la concentration en ions calcium dans une eau minérale.
+
+\begin{doc}{Protocole d'un titrage colorimétrique en laboratoire des ions calcium présents dans une eau}{doc:protocole_titrage}
+  On donne l'équation de la réaction support du titrage :
+  \begin{equation*}
+    \chemfig{Ca^{2+}}\aq + \chemfig{Y^{4-}}\aq \reaction \chemfig{CaY^{2-}}\aq
+  \end{equation*}
+  \begin{protocole}
+    \item Dans un erlenmeyer, verser un volume d'eau minérale $V_1 = \qty{25,0}{\ml}$.
+    \item Ajouter une solution d'hydroxyde de sodium jusqu'à obtenir pH = 12
+    \item Ajouter un indicateur coloré permettant de repérer l'équivalence du titrage
+    \item Remplir une burette graduée avec une solution d'EDTA, notée \chemfig{Y^{4-}}, à la concentration en quantité de matière [\chemfig{Y^{4-}}] = \qty{2.00e-2}{\mol\per\l}
+    \item Procéder à l'ajout d'EDTA mL par mL jusqu'à l'observation d'un changement de couleur, témoin de l'équivalence du titrage.
+    \item La valeur du volume d'EDTA versé à l'équivalence est égal à $V_{2E} = \qty{14,6}{\ml}$.
+  \end{protocole}
+  \important{Donnée :} Masse molaire atomique du calcium : $\masseMol{Ca} = \qty{40,0}{\g\per\mol}$.
+\end{doc}
+
+\question{
+  À l'équivalence du titrage, écrire la relation entre la quantité de matière en ion calcium initialement présent dans l'eau minérale $n_1$ et la quantité de matière en EDTA versée $n_{2E}$.
+}{
+  À l'équivalence, $n_1 = n_{2E}$.
+\points{1}
+}
+
+\question{
+  Montrer que la concentration en quantité de matière du calcium [\chemfig{Ca^{2+}}] dans l'eau minérale est voisine de \qty{1,2e-2}{\mol\per\l}.
+}{
+  Comme $n_1 = [\chemfig{Ca^{2+}}] \times V_1$ et $n_{2E} = [\chemfig{Y^{4-}}] \times V_{2E}$,
+  \begin{align*}
+    [\chemfig{Ca^{2+}}] &= \dfrac{[\chemfig{Y^{4-}}]\times V_{2E}}{V_1} \\
+    &= \dfrac{ \qty{2,00e-2}{\mole\per\litre} \times \qty{14,6}{\ml} }{ \qty{14,6}{\ml} } \\
+    &= \qty{1.16e-2}{\mole\per\litre} 
+    \simeq \qty{1.2e-2}{\mole\per\litre}
+    \points{1,5}
+  \end{align*}
+}
+
+\question{
+  Calculer la concentration en masse d'ions calcium $C_m$.
+}{
+  \begin{equation*}  
+    C_m(\chemfig{Ca^{2+}}) = [\chemfig{Ca^{2+}}] \times \masseMol{Ca^{2+}}
+    = \qty{4.64e-1}{\g\per\litre}
+    \points{1,5}
+  \end{equation*}
+}
+
+\question{
+  L'apport journalier en calcium conseillé pour une femme enceinte est de \qty{1,2}{\g}. 
+  Déterminer le volume de cette eau minérale qu'une femme enceinte devrait consommer pour assurer cet apport.
+}{
+  Il suffit de diviser la masse conseillée par la concentration massique pour trouver le volume
+  \begin{equation*}
+    V =  \dfrac{ \qty{1,2}{\g} }{ C_m(\chemfig{Ca^{2+}}) }
+    = \dfrac{ \qty{1,2}{\g} }{ \qty{4.64e-1}{\g\per\litre} }
+    = \qty{2.59}{\litre}
+    \points{1}
+  \end{equation*}
+  Ça fait beaucoup d'eau par jour !
+}
+
+\medskip
+Pour prévenir une ostéoporose liée à la grossesse, le médecin prescrit de la vitamine D$_3$ à
+une femme enceinte.
+\begin{doc}{Formule topologique de la vitamine D$_\mathbf{3}$}{doc:vitamine_D3}
+  \begin{center}
+    \chemfig{!\cholecarciferol}
+  \end{center}
+\end{doc}
+
+\begin{doc}{Deux sources de vitamine D$_\mathbf{3}$}{doc:sources_vitamine_D3}
+  \begin{center}
+    \important{Huile de foie de morue}
+  \end{center}
+  \vspace*{-12pt}
+  Composition de 110 mL d'huile de foie de morue :
+  \begin{listePoints}
+    \item Eau : 0 g
+    \item Protéines : 0 g
+    \item Glucides : 0 g
+    \item Lipides : 100 g
+    \begin{itemize}
+      \item dont : cholestérol, acides gras saturés, acides gras monoinsaturés, acides gras polyinsaturés à oméga 3 (acide $\alpha$-linolénique)
+    \end{itemize}
+    \item Vitamines :
+    \begin{itemize}
+      \item vitamine A :  \num{100 000} UI
+      \item vitamine D$_3$ : \num{10 000 } UI
+    \end{itemize}
+  \end{listePoints}
+  
+  \begin{center}
+    \important{Solution buvable}
+  \end{center}
+  \vspace*{-12pt}
+  Contenu d'une ampoule de 2 mL de solution buvable (prescription pour 1 mois) :
+  \begin{listePoints}
+    \item Substance active : vitamine D$_3$ : \num{50 000} UI
+    \item Autres composants : Huile essentielle d'orange douce, glycérides polyglycolysés insaturés, huile d'olive raffinée
+  \end{listePoints}
+  L'UI est une unité de masse.
+\end{doc}
+
+\question{
+  Nommer un groupe caractéristique présent dans la molécule de vitamine D$_3$.
+}{
+  On trouve un groupe hydroxyle \chemfig{OH}.
+\points{1}
+}
+
+\question{
+  Justifier à l'aide du document 2 le caractère liposoluble de la vitamine D$_3$.
+}{
+  La vitamine D$_3$ n'a qu'une seule liaison polaire et possède une très longue chaine carbonée apolaire, elle est donc liposoluble.
+\points{2}
+}
+
+\question{
+  Une femme enceinte souhaite prendre de l'huile de foie de morue à la place d'une ampoule de vitamine D$_3$ prescrite pour 1 mois.
+  Calculer le nombre de cuillères à café d'huile de foie de morue qu'elle devra ingérer pour absorber la même masse de vitamine D$_3$ que celle contenue dans l'ampoule de solution buvable.
+  Commenter cette valeur.
+  
+  \important{Donnée :} 1 cuillère à café correspond à 2 mL.
+}{
+  On a \qty{10000}{UI} pour \qty{110}{\ml} dans l'huile de foie de morue, il faut donc \qty{550}{\ml} pour avoir \qty{50000}{UI}, soit 
+  \begin{equation*}
+    N = \dfrac{\qty{550}{\ml}}{\qty{2}{ml}} = \num{275} \text{cuillères à café.}
+  \end{equation*}
+   C'est un nombre énorme, absolument irréalisable en pratique.
+\points{2}
+}

@@ -1,0 +1,80 @@
+\exercice{Vitamine C et maladie cœliaque (10 points)} \label{exo:vitamine_C_maladie_coeliaque}
+
+\medskip
+
+Les patients atteints de maladie cœliaque présentent parfois des carences en vitamine C. Cette vitamine (ou acide ascorbique) est présente naturellement dans les fruits et agrumes.
+Parmi les agrumes, le citron est celui qui en contient le plus.
+La vitamine C est présente dans le jus de citron mais se dégrade rapidement à l’air libre.
+On souhaite vérifier, par titrage colorimétrique à l’aide du diiode (\chemfig{I_2}), la teneur en vitamine C (\chemfig{C_6 H_8 O_6}) dans un jus de citron.
+
+Lors de ce titrage, l’équation de la réaction support du dosage est :
+\begin{equation*}
+  \chemfig{C_6 H_8 O_6}\aq + \chemfig{I_2}\aq 
+  \reaction
+  \chemfig{C_6 H_6 O_6}\aq + 2 \chemfig{I^{-}}\aq + 2 \ionHydrogene\aq
+\end{equation*}
+
+\begin{donnees}
+  
+  \item Couples oxydant / réducteur : 
+  \begin{itemize}
+    \item \chemfig{I_2}\aq/\chemfig{I^{-}}\aq
+    \item \chemfig{C_6 H_6 O_6}\aq / \chemfig{C_6 H_8 O_6}\aq
+  \end{itemize}
+  \item Masse molaire de la vitamine C (\chemfig{C_6 H_8 O_6}) : $M = \qty{176}{\g\per\mol}$
+\end{donnees}
+
+\begin{doc}{Protocole du titrage colorimétrique}{doc:protocole_colorimetrique}
+  \begin{protocole}
+    \item Prélever un volume $V_0 = \qty{10,0}{\ml}$ de jus de citron filtré.
+    \item L’introduire dans un erlenmeyer et ajouter quelques gouttes d’un indicateur coloré, l’empois d’amidon, bleu foncé en présence de \chemfig{I_2} et incolore en son absence.
+    \item Introduire dans la burette graduée la solution aqueuse de diiode de concentration en quantité de matière $C_1 = \qty{2,5e-3}{\mol\per\l}$.
+    \item Verser progressivement la solution de diiode dans l’erlenmeyer jusqu’au changement de couleur de l’indicateur coloré.
+  \end{protocole}
+\end{doc}
+
+
+\question{
+  Préciser si la vitamine C ou acide ascorbique (\chemfig{C_6 H_8 O_6}) est un oxydant ou un réducteur dans le contexte du dosage.
+}{}
+
+\question{
+  Légender le schéma du montage sur l'ANNEXE À RENDRE AVEC LA COPIE du titrage décrit dans le document 1 en indiquant le nom de l’espèce titrante et de l’espèce titrée.
+}{}
+
+\question{
+  Définir l’équivalence d’un titrage.
+}{}
+
+\question{
+  Indiquer par quel changement de couleur est repérée l’équivalence lors du titrage décrit dans le document 1.
+}{}
+
+\question{
+  Le volume à l’équivalence est VE = 9,0 mL. Montrer que la quantité de matière n0 de vitamine C contenue dans 10,0 mL de jus de citron est de n0 = 2,3 × 10- 5 mol.
+}{}
+
+\question{
+  En déduire la masse de vitamine C m0 contenue dans 10,0 mL de jus de citron.
+}{}
+
+\begin{doc}{Masse de quelques oligo-éléments et vitamine dans 100 mL de jus de citron, immédiatement après l’avoir pressé}{doc:oligo-element}
+  \begin{tblr}{
+    colspec = {X[c] X[c] X[c] X[c]},
+    hlines, vlines, row{1} = {couleurSec-100},
+  }
+    Potassium & Calcium & Magnésium & Vitamine C \\
+    \qty{138}{\mg} & \qty{26}{\mg} & \qty{8}{\mg} & \qty{53}{\mg}
+  \end{tblr}
+\end{doc}
+
+\question{
+  Comparer le résultat du dosage précédent avec la valeur indiquée dans le document 2. À l’aide des connaissances et des documents à disposition, proposer une explication au résultat obtenu.
+}{}
+
+Une supplémentation en vitamine C peut être conseillée aux patients. Des comprimés de vitamine C vendus dans le commerce contiennent une masse m de vitamine C égale à \qty{500}{\mg}.
+
+
+\question{
+  Calculer le volume de jus de citron fraîchement pressé (document 2) qu’il faudrait boire pour absorber 500 mg de vitamine C. Commenter le résultat.
+}{}
