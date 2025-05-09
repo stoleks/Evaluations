@@ -17,7 +17,7 @@
 \usepackage{geometry} % définition des marges
 \usepackage{dashundergaps} % pour avoir générer des textes à compléter
 \usepackage{fancyhdr} % pour faire des en-tête
-\usepackage[many]{tcolorbox} % pour faire de jolie boîtes colorée
+\usepackage[most]{tcolorbox} % pour faire de jolie boîtes colorée
 \usepackage{enumitem} % pour pouvoir définir des listes personnalisées
 \usepackage{hyperref} % pour insérer des liens
 \usepackage{multicol} % pour avoir plusieurs colonnes côte-à-côte
@@ -36,6 +36,7 @@
 \usepackage{esvect} % pour faire de jolis vecteurs
 \usepackage{siunitx} % pour avoir de jolie grandeurs avec des unités
 \usetikzlibrary{calc} % pour faire des opérations dans tikz
+\usepackage{xspace}
 
 
 %%%% Commandes prédéfinies
@@ -108,3 +109,7 @@
   detect-weight, propagate-math-font = true, reset-math-version = false % pour avoir les versions grasse des typo
 }
 \AtBeginDocument{\RenewCommandCopy\qty\SI} % Pour "écraser" la commande \qty du package physics
+%% Pour rendre silencieux le warning précisant d'ajouter la commande au dessus
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
