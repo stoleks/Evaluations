@@ -1,21 +1,21 @@
 #!/bin/bash
 
-# generate all molecules pdf
-function generate_molecule_pdf () {
+# generate all fiches pdf
+function generate_fiches_revisions_pdf () {
   lines=$(wc -l < $1)
   for i in $(seq 1 $lines);
   do
     # skip lines that don't include a molecule file
     local start=`date +%s`
     line=`awk "NR==$i" $1`
-    if [[ $line != *"input{molecules"* ]]; then
+    if [[ $line != *"input{"*"fiches"* ]]; then
       continue
     fi
 
     # extract pdf names for A4 and A5
     filename=`awk "NR==$i" $1 | awk -F "[{}]" '{print $2}'`
-    A4File=`echo $filename | sed "s|molecules/|&A4/|"`
-    A5File=`echo $filename | sed "s|molecules/|&A5/|"`
+    A4File=`echo $filename | sed "s|revision/|&A4_|"`
+    A5File=`echo $filename | sed "s|revision/|&A5_|"`
 
     # Uncomment current line and generate pdf (two call for references)
     sed -i "$i s|% ||" $1
@@ -38,11 +38,11 @@ function generate_molecule_pdf () {
   done
 }
 
-# generate pdf for all molecules
-echo "Generation des évaluations sur les molécules"
+# generate pdf for all fiches
+echo "Generation des fiches de révisions"
 start=`date +%s`
-sed -i "5 s|^% ||" "main.tex"
-generate_molecule_pdf "molecules.tex"
-sed -i "5 s|\\\\|% \\\\|" "main.tex"
+#sed -i "5 s|^% ||" "main.tex"
+generate_fiches_revisions_pdf "fiches_revision.tex"
+#sed -i "5 s|\\\\|% \\\\|" "main.tex"
 end=`date +%s`
-echo "Il a fallu $((end - start)) secondes ($(((end - start)/60)) minutes) pour générer toutes les molécules."
+echo "Il a fallu $((end - start)) secondes ($(((end - start)/60)) minutes) pour générer toutes les fiches de révisions."
