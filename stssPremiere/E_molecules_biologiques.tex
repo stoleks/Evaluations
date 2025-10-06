@@ -7,22 +7,31 @@
 \exercice{Quelques molécules organiques}
 
 \begin{center}
-  \chemfig{!\valine}
+  \variationSujet {\chemfig{!\valine}} {\chemfig{!\isoleucine}}
 
-  \legende{Valine, un des 9 acides aminés essentiels pour les humains.}
+  \legende{\variationSujet{Valine,}{Isoleucine,} un des 9 acides aminés essentiels pour les humains.}
 \end{center}
 
 \question{
-  Donner la formule semi-développée de la valine.
-}{}[7]
+  Donner la formule semi-développée de \variationSujet{la valine.}{l'isoleucine.}
+}{
+  \variationSujet {\chemfig{!\valineSemiDev}} {\chemfig{!\isoleucineSemiDev}}
+  \points{2}
+}[7]
 
 \question{
-  Donner la formule brute de la valine.
-}{}[1]
+  Donner la formule brute de \variationSujet{la valine.}{l'isoleucine.}
+}{
+  \variationSujet{\chemfig{C_5 H_{11} O_2 N}} {\chemfig{C_6 H_{12} O_2 N}}
+  \points{1}
+}[1]
 
 \question{
   Entourer et nommer ses \important{groupes caractéristiques.}
-}{}[2]
+}{
+  Il y a un groupe carboxyle \chemfig{COOH} et un groupe amine \chemfig{NH_2}.
+  \points{2}
+}[2]
 
 \begin{center}
   \chemfig{!\prostaglandine}
@@ -32,7 +41,10 @@
 
 \question{
   Entourer et nommer les \important{familles organiques} de la prostaglandine
-}{}[3]
+}{
+  Il y a deux familles alcool \chemfig{HO}, une cétone \chemfig{O=} et un acide carboxylique \chemfig{COOH}.
+  \points{3}
+}[3]
 
-\newpage
+\pasCorrection{\newpage}
 \input{stssPremiere/exercices/ganache_pate_a_tartiner}
