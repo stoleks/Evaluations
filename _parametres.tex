@@ -3,57 +3,22 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-%%%% Paquets utilisé
-\usepackage{ifthen} % pour programmer avec des boucle et des conditions
-%% Images/dessin
+%%%% Paquets utilisés
+%\usepackage{ghsystem} % pictogramme de sécurité
 \usepackage{subcaption} % pour les légendes des figures
-\usepackage{graphicx} % pour insérer des images
 \usepackage[european, straightvoltages, RPvoltages]{circuitikz} % pour dessiner des circuits électrique
 \usepackage{pdfpages} % pour inclure des fichiers pdf
-\usepackage{wrapfig} % pour entourer les images par du texte 
-\usepackage{chemfig} % pour dessiner des formules chimiques
-\usepackage{fontawesome} % pour dessiner de jolies icônes
-%% Mise en page
 \usepackage{geometry} % définition des marges
-\usepackage{dashundergaps} % pour avoir générer des textes à compléter
-\usepackage{fancyhdr} % pour faire des en-tête
-\usepackage[most]{tcolorbox} % pour faire de jolie boîtes colorée
-\usepackage{enumitem} % pour pouvoir définir des listes personnalisées
-\usepackage{hyperref} % pour insérer des liens
-\usepackage{multicol} % pour avoir plusieurs colonnes côte-à-côte
-\usepackage{listings} % pour insérer du code
-\usepackage{marginnote} % pour insérer des notes sur le côté
-%% Tableau
-\usepackage{tabularray} % pour avoir de meilleurs tableaux
-%% QR code
-\usepackage{qrcode} % Note : il faut que le qrcode soit sur une ligne séparé...
-%% Math
-\usepackage{amsmath} % symboles mathématiques
-\usepackage{amssymb} % symboles mathématiques en gras
-\usepackage{wasysym} % pour avoir des symbole d'intégrale
-\usepackage{accents} % pour les notations mathématiques avec une barre
-\usepackage{physics} % pour les dérivées, les bra, les kets, etc.
-\usepackage{esvect} % pour faire de jolis vecteurs
-\usepackage{siunitx} % pour avoir de jolie grandeurs avec des unités
-\usetikzlibrary{calc} % pour faire des opérations dans tikz
-\usepackage{xspace}
+\usepackage[export]{adjustbox} % alignement vertical des images
+%% Paquets persos
+\usepackage{biomolecules} % pour dessiner des formules chimiques
+\usepackage{profSciences} % mise en page et autre
 
 
 %%%% Commandes prédéfinies
-\input{_couleurs}
-\input{_commandes}
 \input{_abbreviations}
-\input{_figures}
 \input{_chapitres}
-\input{_molecules}
 \input{_tableau_periodique}
-
-
-%%%% Palettes de couleur
-\palette{couleurPrim}{cyan}
-\palette{couleurSec} {blue}
-\palette{couleurTer} {purple}
-\palette{couleurQuat}{red}
 
 
 %%%% Réglages de la taille des indentations et des sauts de paragraphes
@@ -71,45 +36,6 @@
   top=2.2cm, bottom=2.1cm % marge verticale
 }
 
-
-%%% Apparence (couleur) des liens
-\hypersetup{
-  colorlinks=true,
-  linkcolor=black, % lien type table des matière
-  citecolor=black, % citation
-  filecolor=black, 
-  urlcolor=couleurPrim!10!black % lien internet
-}
-
-
-%%%% Réglage de tikz (flèche et caractères)
-\usetikzlibrary{babel}
-\tikzset{>=latex}
-
-
 %%%% Réglage des en-tête
 \renewcommand{\headrulewidth}{0.4pt}
 \setlength{\headheight}{22.50113pt}
-
-
-%%%% Réglage de dashundergaps pour avoir des points et pas de numération
-\dashundergapssetup{
-  gap-numbers = false,
-  gap-format = dot,
-  gap-widen,
-  gap-extend-percent
-}
-
-
-%%%% Réglage de siunit
-\sisetup{
-  locale = FR, % français
-	 group-minimum-digits = 4, % groupage des chiffres par millier
-  inter-unit-product = \ensuremath { { } \cdot { } }, % point médian entre les unités,
-  detect-weight, propagate-math-font = true, reset-math-version = false % pour avoir les versions grasse des typo
-}
-\AtBeginDocument{\RenewCommandCopy\qty\SI} % Pour "écraser" la commande \qty du package physics
-%% Pour rendre silencieux le warning précisant d'ajouter la commande au dessus
-\ExplSyntaxOn
-\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
-\ExplSyntaxOff
