@@ -14,8 +14,8 @@ function generate_fiches_revisions_pdf () {
 
     # extract pdf names for A4 and A5
     filename=`awk "NR==$i" $1 | awk -F "[{}]" '{print $2}'`
-    A4File=`echo $filename | sed "s|revision/|&A4_|"`
-    A5File=`echo $filename | sed "s|revision/|&A5_|"`
+    A4File=`echo $filename | sed "s|FR_|A4_|"`
+    A5File=`echo $filename | sed "s|FR_|A5_|"`
 
     # Uncomment current line and generate pdf (two call for references)
     sed -i "$i s|% ||" $1
