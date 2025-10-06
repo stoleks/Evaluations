@@ -1,0 +1,120 @@
+\exercice{Intoxication au monoxyde de carbone (10 points)}\label{exo:intoxication_CO}
+\medskip
+
+Le monoxyde de carbone est responsable de plus de la moitié des morts par intoxication dans le monde.
+Issu d'une combustion incomplète, le monoxyde de carbone peut avoir des sources variées : chaudières au gaz défectueuse, poëles ou cheminés qui ne tirent pas assez, moteur thermique utilisé avec un mauvais carburant, départ de feu dans une maison, etc.
+
+\begin{doc}{Détection du monoxyde de carbone}{doc:detection_monoxyde}
+    Pour détecter le monoxyde de carbone, on peut acheter un détecteur spécialisé qui utilise une réaction d'oxydo-réduction avec les deux couples suivants :
+    \begin{alignat*}{2}
+      \dioxydeDeCarbone/\chemfig{CO} : \quad
+      & 2\chemfig{CO} + 2\eau 
+      && \reaction 2\dioxydeDeCarbone + 4\ionHydrogene + 4\electron \\
+      %
+      \dioxygene/\eau : \quad
+      & \dioxygene + 4\ionHydrogene + 4\electron 
+      && \reaction 2\eau
+    \end{alignat*}
+  Les électrons échangés aux cours de la réaction d'oxydo-réduction entre le monoxyde de carbone et le dioxygène génèrent un courant électrique qui alimente une alarme sonore au delà d'un certain taux de monoxyde de carbone.
+
+  Il est vivement recommandé d'avoir un détecteur de monoxyde de carbone chez soit, ils sont peu couteux et peuvent éviter des tragédies.
+\end{doc}
+
+\question{
+  Expliquer pourquoi on ne peut pas se baser sur notre vue ou notre odorat pour détecter le monoxyde de carbone.
+}{}
+
+\question{
+  Écrire l'équation de réaction du monoxyde de carbone \chemfig{CO} avec le dioxygène \chemfig{O_2} en utilisant les deux demi-équations d'oxydo-réduction fournies.
+}{}
+
+\question{
+  Justifier que le monoxyde de carbone est un réducteur.
+}{}
+
+
+\begin{doc}{Effets physiologiques du \chemfig{CO}}{doc:effets_physiologiques}
+  \begin{wrapfigure}[16]{r}{0.35\linewidth}
+    \centering
+    \vspace*{-20pt}
+    \chemfig[atom sep = 20pt]{!\hemeB}
+    
+    \legende{Formule topologique de la molécule d'hème.}
+  \end{wrapfigure}
+  Quand nous respirons, le dioxygène est transporté des poumons aux tissus grâce à une protéine : l'hémoglobine notée Hb, ce qui permet la respiration cellulaire.
+  L'hémoglobine est composée de quatres sous-unités qui peuvent transporter chacune une molécule de dioxygène.
+  
+  Dans une sous-unité, la molécule de dioxygène est fixée sur un groupe prosthétique appelé hème (« \textit{le sang} » en grec), qui est une molécule avec un ion fer II \ionFerII, sur lequel une molécule de dioxygène \dioxygene peut se fixer.
+
+  Le monoxyde de carbone \chemfig{CO} se lie 250 fois plus facilement à l'hème que le dioxygène.
+  Quand le monoxyde de carbone se lie à un ou plusieurs hèmes d'une hémoglobine, on parle de carboxyhémoglobine notée COHb.
+
+  Chez une personne normale, le taux de COHb est inférieur à \qty{1}{\percent} et peut atteindre \num{3} à \qty{8}{\percent} chez une personne fumeuse, voire \qty{15}{\percent} pour les fumeurs compulsifs.
+
+  Si le taux de COHb est inférieur à \qty{10}{\percent}, il y a peu ou pas d'effets physiologiques observés.
+  À \qty{15}{\percent} de COHb, une personne va commencer à avoir des maux de têtes.
+  Entre \qty{20}{\percent} et \qty{30}{\percent}, les maux de têtes sont sévères et accompagnés de nausées, d'étourdissement, de confusion et de légères hallucinations visuelles.
+  Entre \qty{30}{\percent} et \qty{50}{\percent} les symptômes neurologiques deviennent plus graves.
+  Au delà de \qty{50}{\percent}, il y a perte de connaissance et un risque de tomber dans le coma, avec un risque d'insuffisance respiratoire.
+  La mort arrive quand le taux de COHb dépasse les \qty{60}{\percent}.
+\end{doc}
+
+\question{
+  Donner le nom d'un groupe fonctionnel présent dans la molécule d'hème.
+}{}
+
+\question{
+  En vous basant sur la formule topologique de la molécule d'hème, expliquer pourquoi elle ne peut pas se mélanger avec le sang et doit être transportée par une protéine.
+}{}
+
+\question{
+  Indiquer le nombre maximal de molécules de dioxygène transportables par une hémoglobine.
+}{}
+
+\begin{doc}{Traitement d'une intoxication au monoxyde de carbone}{doc:traitement_intoxication}
+  Quand on suppose qu'une personne est intoxiquée au monoxyde de carbone, il faut l'extraire rapidement de la source de \chemfig{CO}, mais ce n'est pas suffisant.
+  Dans une atmosphère normale, la demi-vie $t_{1/2}$ des carboxyhémoglobine COHb est en moyenne de 4 heures (il faut 4 heures pour diviser par 2 la population de COHb dans le sang), ce qui entraine une récupération parfois trop lente.
+  
+  Pour accélérer l'élimination du monoxyde de carbone, le traitement le plus efficace consiste à utiliser un masque respiratoire délivrant \qty{100}{\percent} de dioxygène à \qty{3}{\bar}, ce qui permet de redescendre à moins de \qty{1}{\percent} de COHb en quelques dizaines de minutes.
+\end{doc}
+
+\question{
+  Calculer le temps nécessaire pour passer de \qty{50}{\percent} à moins de \qty{1}{\percent} de COHb sous une atmosphère normale.
+  Conclure sur l'intérêt d'utiliser du dioxygène pur pressurisé.
+}{}
+
+
+\begin{doc}{Chaudière au gaz défectueuse}{doc:chaudiere_combustion}
+  Pour se chauffer ou pour cuisiner, il est très courant d'utiliser des chaudières au gaz qui réalisent une combustion du méthane de formule brute \chemfig{CH_4}.
+  Si la chaudière est défectueuse et que l'apport de dioxygène est insuffisant, la combustion peut être incomplète et produire du monoxyde de carbone \chemfig{CO}, en plus de la vapeur d'eau \chemfig{H_2O}.
+
+  Le monoxyde de carbone est un gaz inodore, incolore et mortel, même en très petite quantité.
+
+  \begin{donnees}[2]
+    \item $P_{atm} = \qty{1,01e5}{\pascal}$ ;
+    \item $T (\unit{\kelvin}) = T(\unit{\degreeCelsius}) + 273,15$ ;
+    \item $R = \qty{8.314}{\pascal\m\cubed\per\mol\per\kelvin}$ ;
+    \item $\qty{1}{\m\cubed} = \qty{1000}{\litre}$.
+  \end{donnees}
+\end{doc}
+
+\numeroQuestion
+Recopier et ajuster la réaction modélisant la combustion incomplète du méthane : 
+\begin{center}
+  2\chemfig{CH_4} + \texteTrou{3} \chemfig{O_2} \reaction \texteTrou{2}\chemfig{CO} + \texteTrou{4} \chemfig{H_2O} 
+\end{center}
+
+\question{
+  Dans un appartement fermé de \qty{125}{\m\cubed} (~\qty{50}{\m\squared}), il y a \qty{20}{\m\cubed} de dioxygène.
+  En utilisant la loi des gaz parfait
+  \begin{equation*}
+    P \times V = n \times R \times T
+  \end{equation*}
+  calculer la quantité de dioxygène présente initialement dans l'appartement à \qty{20}{\degreeCelsius}.
+}{}
+
+\question{
+  Une chaudière au gaz utilise \qty{1,8}{\m\cubed} de méthane pour chauffer un appartement pendant une heure.
+  En supposant que tous le méthane soit utilisé pour la combustion incomplète, calculer la quantité de matière de monoxyde de carbone produite au bout d'une heure.
+  Comparer avec la quantité de dioxygène.
+}{}

@@ -1,23 +1,23 @@
-\titrePartie{Sang et anémie}
-\pasCorrection{\points{12}}
-\vspace*{-12pt}
+\vspace*{-8pt}
+\titreSection{Sang et anémie}\points{12}
+\vspace*{-4pt}
 
 % #1 : hauteur globule rouge, # 2 : hauteur globule blanc, #3 : hauteur plasma
 \newcommand{\sangCentrifugeuse}[3]{
   \begin{tikzpicture}
     % phases dans le tube à essai
-    \tikzPhaseBasTubeEssais[red-400]    (0.35) (#1)
-    \tikzPhaseTubeEssais   [white]      (0.35) (#1)(#2)
-    \tikzPhaseTubeEssais   [yellow-300] (0.35) (#2)(#3)
-    \tikzTubeEssais (0.35)(#3 + 1)
+    \tikzPhaseBasTubeEssais[couleur= red-400,    largeur= 0.35cm, hauteur= #1cm]
+    \tikzPhaseTubeEssais   [couleur= white,      largeur= 0.35cm, hauteur= #1cm, phase= #2cm]
+    \tikzPhaseTubeEssais   [couleur= yellow-300, largeur= 0.35cm, hauteur= #2cm, phase= #3cm]
+    \tikzTubeEssais[hauteur = 2.75cm, largeur = 0.35cm]
     % Légende
-    \tikzLegende*(0.4, #3 - 0.1)  (1, 0) {Plasma}
-    \tikzLegende*(0.4, #2 - 0.08) (1, 0) {Globules blancs}
-    \tikzLegende*(0.4, -0.1)      (1, 0) {Globules rouges}
+    \tikzVecteur (0.45, #3 - 0.1)  (1.1, 0) {Plasma}[right]
+    \tikzVecteur (0.45, #2 - 0.08) (1.1, 0) {Globules blancs}[right]
+    \tikzVecteur (0.45, -0.1)      (1.1, 0) {Globules rouges}[right]
   \end{tikzpicture}
 }
 
-\begin{doc}{Composition du sang et anémie}{doc:E2_composition_sang}
+\begin{doc}{Composition du sang et anémie}[\label{doc:composition_sang}]
   Le sang est un mélange liquide composé de \qty{54}{\percent} de plasma, \qty{45}{\percent} de globules rouges et \qty{1}{\percent} de globules blancs.
   
   Le plasma est une solution aqueuse, qui contient des minéraux,
@@ -33,12 +33,12 @@
   \vspace*{4pt}
   \separationBlocs{
     \centering \hspace{40pt}
-    \sangCentrifugeuse{0.8}{0.9}{1.75}
+    \sangCentrifugeuse{0.8}{1}{1.75}
     
     \legende{Échantillon de sang d'une personne normale.}
   }[0.48]{
     \centering \hspace{40pt}
-    \sangCentrifugeuse{0.4}{0.5}{1.75}
+    \sangCentrifugeuse{0.3}{0.5}{1.75}
     
     \legende{Échantillon d'une personne souffrant d'anémie.}
   }[0.52]
@@ -46,7 +46,7 @@
 
 %
 \question{
-  Indiquer en justifiant si le contenu des tubes à essais du document~\ref{doc:E2_composition_sang} 
+  Indiquer en justifiant si le contenu des tubes à essais du document~\ref{doc:composition_sang} 
   est un mélange homogène ou un mélange hétérogènes.\competence{RCO, APP}
 }{
   C'est un mélange hétérogène, car on peut distinguer les constituants du mélange.
@@ -61,7 +61,7 @@
 }
 
 \question{
-  Déduire des deux échantillons de sang le composant du sang qui contient les molécules d'hémoglobines.\competence{APP}
+  En observant les échantillons de sang, déduire le constituant du sang qui contient l'hémoglobines.\competence{APP}
 }{
   Ce sont les globules rouges, car c'est le seul composant dont la quantité diminue pour une personne en situation d'anémie.
   \points{2}
@@ -69,14 +69,11 @@
 
 
 %
-\pasCorrection{
-  \newpage
-  \vspace*{-40pt}
-}
-\begin{doc}{Dosage de l'hémoglobine}{doc:E2_dosage_hemoglobine}
+\pasCorrection{ \newpage \vspace*{-40pt} }
+\begin{doc}{Dosage de l'hémoglobine}[\label{doc:dosage_hemoglobine}]
   Mesurer la concentration massique en hémoglobine dans le sang permet de détecter les cas d'anémies.
   On parle d'anémie si cette concentration massiques est inférieure a
-  \qty{1,2}{\g\per\litre} pour une femme et \qty{1,3}{\g\per\litre} pour un homme.
+  \qty{1.2}{\g\per\litre} pour une femme et \qty{1.3}{\g\per\litre} pour un homme.
   Pour mesurer cette concentration, on peut réaliser une échelle de teinte,
   car c'est l'hémoglobine qui donne sa teinte rouge au sang.
   
@@ -139,7 +136,7 @@
 }
 
 \question{
-  En utilisant le document~\ref{doc:E2_dosage_hemoglobine}, indiquer en justifiant la concentration en hémoglobine de l'échantillon de sang.\competence{APP, VAL}
+  En utilisant le document~\ref{doc:dosage_hemoglobine}, indiquer en justifiant la concentration en hémoglobine de l'échantillon de sang.\competence{APP, VAL}
 }{
   L'échantillon a une teinte plus foncé que la solution 3, mais plus claire que celle de la solution 2. Donc sa concentration se trouve entre \num{1,3} et \qty{1,2}{\g\per\litre}.
   \points{1}
