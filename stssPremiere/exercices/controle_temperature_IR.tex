@@ -1,0 +1,77 @@
+\exercice{Contrôler la température}\points{8}
+
+Isma s'est blessée au genou en tombant au cours d'une randonnée en montagne.
+Après plusieurs jours de marche, ses ami-es décide de mesurer sa température pour voir si la plaie s'est infectée
+
+
+\begin{doc}{Thermomètre sans contact}[\label{doc:E2_thermo_contact}]
+  Le thermomètre sans contact des ami-es d'Isma est disfonctionnel.
+  Au lieu d'afficher la température, il affiche la tension électrique mesurée par le capteur dans le thermomètre $U = \qty{100}{\milli\volt}$.
+  
+  Dans la notice, les ami-es lisent que la température est calculée avec la relation suivante : 
+  \begin{equation*}
+    T = (\num{0,1}\times U + \num{28,0}) \unit{\degreeCelsius}
+  \end{equation*}
+  et les caractéristiques techniques suivantes sont données :
+    \begin{listePoints}
+      \item plage de mesure : de \qty{32,0}{\degreeCelsius} à \qty{42,0}{\degreeCelsius} ;
+      \item précision : $\pm \qty{0,2}{\degreeCelsius}$ ;
+      \item sensibilité du capteur IR : de \qty{8}{\micro\m} à \qty{14}{\micro\m}.
+    \end{listePoints}
+\end{doc}
+
+\question{
+  Calculer la température corporelle d'Isma.
+}{
+  On utilise la relation fournie dans la notice :
+  $T = (0,1 \times 100 + 28,0)\unit{\degreeCelsius} = \qty{38,0}{\degreeCelsius}$.
+  \points{1,5}
+}[2]
+
+\question{
+  Une température corporelle normale est comprise entre \qty{36,1}{\degreeCelsius} et \qty{37,8}{\degreeCelsius}.
+  Peut-on dire avec certitude qu'Isma a de la fièvre ? Justifier.
+}{
+  Sans tenir compte de la précision du thermomètre, Isma a de la fièvre.
+  Si on en tient compte, la précision étant de $\pm \qty{0,2}{\degreeCelsius}$, c'est possible que la température d'Isma soit à la limite de de \qty{37,8}{\degreeCelsius} et qu'elle n'ait pas de fièvre.
+  \points{2}
+}[3]
+
+
+\begin{doc}{Loi de Wien}[\label{doc:E2_loi_wien}]
+  La notice, très détaillée, explique aussi que le thermomètre repose sur la loi de Wien :
+  \begin{equation*}
+    \lambda = \dfrac{\qty{2,9e-3}{\kelvin\m}}{T}
+  \end{equation*}
+  où $\lambda$ est la longueur d'onde de la lumière émise par un corps de température $T$, température exprimé en Kelvin noté \unit{\kelvin}.
+
+  \important{Données :}
+  \qty{1}{\micro\m} = \qty{e-6}{\m}. 
+  \qq{}
+  \qty{1}{\degreeCelsius} = (1 + 273)\unit{\kelvin}.
+\end{doc}
+
+\question{
+  Convertir la température d'Isma en Kelvin.
+}{
+  On utilise la définition des Kelvin : $T = 38,0 + \qty{273}{\kelvin} = \qty{311}{\kelvin}$.
+  \points{1}
+}[2]
+
+\question{
+  Calculer la longueur d'onde de la lumière émise par Isma.
+}{
+  On utilise la loi de Wien
+  \begin{equation*}
+    \lambda = \dfrac{\qty{2,9e-3}{\kelvin\m}}{\qty{311}{\kelvin}} = \qty{9,3e-6}{\m} 
+  \end{equation*}
+  Soit une longueur d'onde $\lambda = \qty{9,3}{\micro\m}$.
+  \points{1,5}
+}[2]
+
+\question{
+  Le capteur IR du thermomètre est-il sensible à ces longueurs d'onde ?
+}{
+  Oui, car le capteur est sensible à des longueurs d'onde comprises entre $\qty{8}{\micro\m}$ et $\qty{14}{\micro\m}$.
+  \points{2}
+}[2]
