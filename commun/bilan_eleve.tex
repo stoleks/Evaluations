@@ -5,15 +5,15 @@
 
 %%%% Tableau de correction élève
 \begin{tblr}{
-    rows = {60 pt},
-    row{1} = {12pt, couleurPrim!20}, 
-    vlines, hlines,
+    rows = {75 pt},
+    row{1} = {12pt, couleurSec-100}, 
     colspec = {X[-1, c] X[2, c] X[2, c] X[2, c]},
+    vlines, hlines,
   }
-  \textbf{Question} & 
-  \textbf{L'erreur} &
-  \textbf{Analyse de l'erreur} &
-  \textbf{La correction} \\
+  \important[black]{Question} & 
+  \important[black]{L'erreur} &
+  \important[black]{Analyse de l'erreur} &
+  \important[black]{La correction} \\
   %
   \\ \\ \\ \\
 \end{tblr}
@@ -23,14 +23,19 @@
 \titreSousSection{Mon bilan après mon travail de correction}
 
 %%%% Tableau bilan de la correction
-\begin{tableau}{| X[c] | X[c] |}
-  \textbf{Ce que je n'avais pas compris...} &
-  \textbf{Ce que maintenant j'ai compris...} \\
-  \phantom{b} \vspace{150 pt} & \\
-\end{tableau}
+\begin{tblr}{
+    rows = {150 pt},
+    row{1} = {12pt, couleurSec-100},
+    colspec = {| X[c] | X[c] |},
+    vlines, hlines,
+  }
+  \important[black]{Ce que je n'avais pas compris...} &
+  \important[black]{Ce que maintenant j'ai compris...} \\
+  \\
+\end{tblr}
 
 
 %%%% Acquis
 \titreSousSection{Mes acquis après mon travail de correction (à remplir par le professeur)}
 
-\appreciation{2cm}
+\appreciation{3cm}

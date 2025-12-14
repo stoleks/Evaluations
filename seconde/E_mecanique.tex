@@ -1,11 +1,6 @@
 %%%% début de la page
 \teteSndMouv
 
-%%%% TODO : 
-% Changer les questions sur le poids -> calcul poids sur Terre et sur ISS, comparaison des deux 
-% Deux forces qui s'exercent sur la spationaute : P et Finertie
-% Changer question inertie -> F = m * v * v / (RT + h) est-ce égal à P = m*g
-
 
 %%%%
 \nomPrenomClasse
@@ -33,16 +28,17 @@
   \end{tableauCompetences}
 }
 
-\appreciation{3}
+\appreciation{3cm}
 
 %%%%
-\input{seconde/exercices/impesanteur}
+\variationSujet
+{\input{seconde/exercices/impesanteur}}
+{\input{seconde/exercices/penalty}}
 
 %%%%
-\newpage
-\input{seconde/exercices/penalty}
-% \newpage
-% \input{seconde/exercices/ordre_grandeur_ecologie}
+\variationSujet
+{\pasCorrection{\newpage} \input{seconde/exercices/penalty}}
+{\medskip \input{seconde/exercices/impesanteur}}
 
 %%%%
 \pasCorrection{\input{commun/bilan_eleve}}
