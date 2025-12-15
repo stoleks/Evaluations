@@ -15,14 +15,14 @@ Pour nettoyer la plaie infectée qu'Isma s'est faite pendant une randonnée, ses
 \question{
   Indiquer en justifiant si \variationSujet{le diiode}{l'eau oxygénée} est un oxydant ou un réducteur.
 }{
-  C'est un oxydant, car le diiode peut gagner des électrons.
+  C'est un oxydant, car \variationSujet{le diiode}{l'eau oxygénée} peut gagner des électrons.
   \points{2}
 }[2]
 
 \question{
   Expliquer pourquoi \variationSujet{la bétadine}{l'eau oxygénée} est un antiseptique, et non un désinfectant.
 }{
-  C'est un antiseptique, car la bétadine sert à nettoyer des tissus vivant.
+  C'est un antiseptique, car \variationSujet{la bétadine}{l'eau oxygénée} sert à nettoyer des tissus vivant.
   Un désinfectant sert à tuer les micro-organismes sur des objets inertes.
   \points{2}
 }[3]
@@ -34,7 +34,7 @@ Pour nettoyer la plaie infectée qu'Isma s'est faite pendant une randonnée, ses
 
   Les protéines possèdent des groupes hydrogénosulfures \chemfig{SH}, dont la demi-équation d'oxydoréduction est la suivante :
   \begin{equation*}
-    2 \chemfig{SH} \reaction \chemfig{S_2} + 2\chemfig{H^+} + 2\electron
+    2 \chemfig{SH} \reaction \chemfig{S_2} + 2\ionHydrogene + 2\electron
   \end{equation*}
 
   \important{La formation de ponts disulfure} \chemfig{S_2} dénature les protéines et \important{entraine la mort des cellules} qui les contiennent.
@@ -48,14 +48,22 @@ Pour nettoyer la plaie infectée qu'Isma s'est faite pendant une randonnée, ses
 }[2]
 
 \question{
-  En sommant les demi-équations d'oxydoréduction \variationSujet{du diiode}{de l'eau oxygénée} et de la molécule \chemfig{SH}, écrire la réaction d'oxydoréduction entre \variationSujet{\diiode}{\eauOxygenee} et \chemfig{SH}.
+  En sommant les demi-équations d'oxydoréduction \variationSujet{du diiode}{de l'eau oxygénée} et du groupe hydrogénosulfure, écrire la réaction d'oxydoréduction entre \variationSujet{\diiode}{\eauOxygenee} et \chemfig{SH}.
 }{
   On somme terme à terme (côté gauche + côté gauche = côté droit + côté droit) :
-  \begin{align*}
-    & \chemfig{I_2} + 2\chemfig{e^{-}} + 2\chemfig{SH} =
-    2\chemfig{I^{-}} + \chemfig{S_2} + 2\chemfig{H^+} + 2\chemfig{e^{-}} \\
-    & \chemfig{I_2} + 2\chemfig{SH} =
-    2\chemfig{I^{-}} + \chemfig{S_2} + 2\chemfig{H^+}
+  \begin{align*}   
+    \variationSujet{%
+    \diiode + 2\electron + 2\chemfig{SH} &\reaction
+    2\iodure + \chemfig{S_2} + 2\ionHydrogene + 2\electron \\
+    \diiode + 2\chemfig{SH} &\reaction
+    2\iodure + \chemfig{S_2} + 2\ionHydrogene
+    }{%
+    \eauOxygenee + 2\ionHydrogene + 2\chemfig{SH} + 2\electron &\reaction
+    2\iodure + \chemfig{S_2} + 2\ionHydrogene + 2\electron \\
+    %
+    \eauOxygenee + 2\chemfig{SH} &\reaction
+    2\iodure + \chemfig{S_2} \\
+    }
   \points{4}
   \end{align*}
 }[6]
@@ -75,7 +83,23 @@ Pour nettoyer la plaie infectée qu'Isma s'est faite pendant une randonnée, ses
     {\diiode + 2\electron \reaction 2\iodure}
   \end{equation*}
   Donner la réaction d'oxydoréduction entre \variationSujet{\eauOxygenee}{\diiode} et \chemfig{SH}.
-}{}[6]
+}{
+  On somme les deux demi-équations :
+  \begin{align*}
+    \variationSujet{%
+    \eauOxygenee + 2\ionHydrogene + 2\chemfig{SH} &\reaction
+    2\iodure + \chemfig{S_2} + 2\ionHydrogene \\
+    %
+    \eauOxygenee + 2\chemfig{SH} &\reaction
+    2\iodure + \chemfig{S_2} \\
+    }{%
+    \diiode + 2\electron + 2\chemfig{SH} &\reaction
+    2\iodure + \chemfig{S_2} + 2\ionHydrogene + 2\electron \\
+    \diiode + 2\chemfig{SH} &\reaction
+    2\iodure + \chemfig{S_2} + 2\ionHydrogene
+    }
+  \end{align*}
+}[6]
 
 \question{
   Y-a-t'il une différence d'action entre les deux antiseptiques proposés ?

@@ -2,15 +2,15 @@
 
 %%
 \begin{doc}{Station spatiale internationale (ISS)}
-  On lit parfois que les spationautes flottent dans les stations spatiales, car la gravité terrestre n'agit plus sur les spationautes, ce qui est faux.
-  
   \begin{wrapfigure}{r}{0.4\linewidth}
-    \vspace*{-30pt}
+    \vspace*{-16pt}
     \centering
     \image{0.8}{images/spationaute_ISS}
+    
+    \legende{Deux spationautes dans l'ISS}
   \end{wrapfigure}
-  
-  On s'intéresse à la station spatiale internationale, notée ISS, en orbite circulaire autour de la Terre à une hauteur $h$ et une distance $d$ du centre de la Terre.
+  On lit parfois que les spationautes flottent dans les stations spatiales, car la gravité terrestre n'agit plus sur les spationautes, ce qui est faux.
+  On s'intéresse à la station spatiale internationale, notée ISS, en orbite circulaire autour de la Terre à une distance $d$ du centre de la Terre.
   L'ISS a une vitesse constante $v$.
 
   \important{Données :}
@@ -47,7 +47,7 @@
     = \qty{6,67e-11}{\newton\m\squared \per\kg\squared}
     \dfrac{\qty{5,97e24}{\kg}} {(\num{6,37e6} + \qty{4,14e5}{\m})^2}
     %
-    = \qty{8,65}{\newton§\kg}
+    = \qty{8,65}{\newton\per\kg}
     \points{1,5}
   \end{equation*}
 }
@@ -68,8 +68,11 @@
   Calculer le poids de la même spationaute sur Terre avec $g_{Terre} = \qty{9,81}{\newton\per\kg}$.
   En comparant ces deux forces, indiquer si on peut vraiment dire que la gravité terrestre n'agit plus sur les spationautes au sein de l'ISS.\competence{VAL, ANA/RAI}
 }{
-  $g_\ISS$ est presque égal à $g$, donc la gravité agit toujours fortement.
-  \points{1}
+  \begin{equation*}  
+    P_\Terre = \qty{65}{\kg} \times \qty{9.81}{\newton\per\kg} = \qty{638}{\newton}
+    \points{1,5}
+  \end{equation*}
+  On voit que $P_\ISS$ n'est pas beaucoup plus petit que $P_\Terre$ (\qty{10}{\percent} plus faible), donc la gravité terrestre attire toujours fortement les spationautes.
 }
 
 %%
@@ -117,14 +120,14 @@
 }{
   D'après le principe d'inertie, $F_{centrifuge} = P_\ISS$, donc
   \begin{align*}
-    \dfrac{m\times v^2}{R_\Terre + h} &= m \times g_\ISS \\
-    m \times v^2 &= m \times g_\ISS \times (R_\Terre + h) \\
-    v^2 &= g_\ISS \times (R_\Terre + h)
+    \dfrac{m\times v^2}{d} &= m \times g_\ISS \\
+    m \times v^2 &= m \times g_\ISS \times d \\
+    v^2 &= g_\ISS \times d
   \end{align*}
   Finalement
   \begin{align*}
-    v &= \sqrt{g_\ISS \times (R_\Terre + h)} \\
-    &= \sqrt{\qty{9.65}{\m\per\s\squared} \times (\num{6,37e6} + \num{4,14e5})\unit{\m}} \\
+    v &= \sqrt{g_\ISS \times d} \\
+    &= \sqrt{\qty{8.65}{\m\per\s\squared} \times \qty{6,784e6}{\m}} \\
     &= \qty{7.66}{\m\per\s}
   \end{align*}
   On retrouve la même valeur que celle fournie dans l'énoncé, cette valeur est donc cohérente.
