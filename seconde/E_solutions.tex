@@ -12,19 +12,27 @@
   \begin{tableauCompetences}
     RCO & Connaître le vocabulaire du cours et les relations importantes. \\
     %
-    VAL & Comparer des valeurs calculées avec des valeurs de références pour valider un raisonnement. \\
+    VAL & Comparer des grandeurs pour valider un raisonnement. \\
     %
-    REA & Réaliser un calcul en donnant le résultat en notation scientifique avec les bonnes unités. \\
+    REA & Réaliser un calcul en donnant le résultat en notation scientifique. \\
     %
-    COM & Répondre avec des phrases complètes et compréhensibles sans les questions. 
-    Rédiger de manière synthétique et argumentée.
+    COM & Faire des phrases complètes, compréhensibles sans les questions.
   \end{tableauCompetences}
 }
 
 \appreciation{3cm}
 
 %%%%
-\input{seconde/exercices/sang_anemie}
+\variationSujet{%
+  \input{seconde/exercices/sang_anemie}
+}{%
+  \input{seconde/exercices/conduite_alcoolemie}
+}
 
 %%%%
-\input{seconde/exercices/conduite_alcoolemie}
+\variationSujet{%
+  \input{seconde/exercices/conduite_alcoolemie}
+}{%
+  \pasCorrection{\newpage}
+  \input{seconde/exercices/sang_anemie}
+}

@@ -1,25 +1,22 @@
-\vspace*{-8pt}
-\titreSection{Sang et anémie}\points{12}
-\vspace*{-4pt}
+\exercice{Sang et anémie}\points{10}
 
 % #1 : hauteur globule rouge, # 2 : hauteur globule blanc, #3 : hauteur plasma
-\newcommand{\sangCentrifugeuse}[3]{
-  \begin{tikzpicture}
-    % phases dans le tube à essai
-    \tikzPhaseBasTubeEssais[couleur= red-400,    largeur= 0.35cm, hauteur= #1cm]
-    \tikzPhaseTubeEssais   [couleur= white,      largeur= 0.35cm, hauteur= #1cm, phase= #2cm]
-    \tikzPhaseTubeEssais   [couleur= yellow-300, largeur= 0.35cm, hauteur= #2cm, phase= #3cm]
-    \tikzTubeEssais[hauteur = 2.75cm, largeur = 0.35cm]
-    % Légende
-    \tikzVecteur (0.45, #3 - 0.1)  (1.1, 0) {Plasma}[right]
-    \tikzVecteur (0.45, #2 - 0.08) (1.1, 0) {Globules blancs}[right]
-    \tikzVecteur (0.45, -0.1)      (1.1, 0) {Globules rouges}[right]
-  \end{tikzpicture}
-}
+% \newcommand{\sangCentrifugeuse}[3]{
+%   \begin{tikzpicture}
+%     % phases dans le tube à essai
+%     \tikzPhaseBasTubeEssais[couleur= red-400,    largeur= 0.35cm, hauteur= #1cm]
+%     \tikzPhaseTubeEssais   [couleur= white,      largeur= 0.35cm, hauteur= #1cm, phase= #2cm]
+%     \tikzPhaseTubeEssais   [couleur= yellow-300, largeur= 0.35cm, hauteur= #2cm, phase= #3cm]
+%     \tikzTubeEssais[hauteur = 2.75cm, largeur = 0.35cm]
+%     % Légende
+%     \tikzVecteur (0.45, #3 - 0.1)  (1.1, 0) {Plasma}[right]
+%     \tikzVecteur (0.45, #2 - 0.08) (1.1, 0) {Globules blancs}[right]
+%     \tikzVecteur (0.45, -0.1)      (1.1, 0) {Globules rouges}[right]
+%   \end{tikzpicture}
+% }
 
-\begin{doc}{Composition du sang et anémie}[\label{doc:composition_sang}]
-  Le sang est un mélange liquide composé de \qty{54}{\percent} de plasma, \qty{45}{\percent} de globules rouges et \qty{1}{\percent} de globules blancs.
-  
+\begin{doc}{Composition du sang et anémie}%[\label{doc:composition_sang}]
+  Le sang est un mélange liquide composé de \qty{54}{\percent} de plasma, \qty{45}{\percent} de globules rouges et \qty{1}{\percent} de globules blancs. 
   Le plasma est une solution aqueuse, qui contient des minéraux,
   des nutriments et les gaz liés à la respiration :
   dioxygène \chemfig{O_2} et dioxyde de carbone \chemfig{CO_2}.
@@ -27,31 +24,28 @@
   Pour assurer son bon fonctionnement, l'organisme d'un être humain a besoin de fer \chemfig{Fe}.
   On dit qu'une personne souffre d'anémie si la concentration massique en fer dans le sang est trop faible.
   Le fer est transporté par une molécule dans le sang : l'hémoglobine.
-
-  On peut séparer les constituants du sang en utilisant une centrifugeuse, ce qui donne un mélange constitué de trois phases.
-  
-  \vspace*{4pt}
-  \separationBlocs{
-    \centering \hspace{40pt}
-    \sangCentrifugeuse{0.8}{1}{1.75}
+  % \vspace*{4pt}
+  % \separationBlocs{
+  %   \centering \hspace{40pt}
+  %   \sangCentrifugeuse{0.8}{1}{1.75}
     
-    \legende{Échantillon de sang d'une personne normale.}
-  }[0.48]{
-    \centering \hspace{40pt}
-    \sangCentrifugeuse{0.3}{0.5}{1.75}
+  %   \legende{Échantillon de sang d'une personne normale.}
+  % }[0.48]{
+  %   \centering \hspace{40pt}
+  %   \sangCentrifugeuse{0.3}{0.5}{1.75}
     
-    \legende{Échantillon d'une personne souffrant d'anémie.}
-  }[0.52]
+  %   \legende{Échantillon d'une personne souffrant d'anémie.}
+  % }[0.52]
 \end{doc}
 
 %
-\question{
-  Indiquer en justifiant si le contenu des tubes à essais du document~\ref{doc:composition_sang} 
-  est un mélange homogène ou un mélange hétérogènes.\competence{RCO, APP}
-}{
-  C'est un mélange hétérogène, car on peut distinguer les constituants du mélange.
-  \points{1}
-}
+% \question{
+%   Indiquer en justifiant si le contenu des tubes à essais du document~\ref{doc:composition_sang} 
+%   est un mélange homogène ou un mélange hétérogènes.\competence{RCO, APP}
+% }{
+%   C'est un mélange hétérogène, car on peut distinguer les constituants du mélange.
+%   \points{1}
+% }
 
 \question{
   Indiquer le solvant et les solutés qui constituent le plasma.\competence{RCO, APP}
@@ -60,16 +54,16 @@
   \points{2}
 }
 
-\question{
-  En observant les échantillons de sang, déduire le constituant du sang qui contient l'hémoglobines.\competence{APP}
-}{
-  Ce sont les globules rouges, car c'est le seul composant dont la quantité diminue pour une personne en situation d'anémie.
-  \points{2}
-}
+% \question{
+%   En observant les échantillons de sang, déduire le constituant du sang qui contient l’hémoglobine.\competence{APP}
+% }{
+%   Ce sont les globules rouges, car c'est le seul composant dont la quantité diminue pour une personne en situation d'anémie.
+%   \points{2}
+% }
 
 
 %
-\pasCorrection{ \newpage \vspace*{-40pt} }
+% \pasCorrection{ \newpage \vspace*{-40pt} }
 \begin{doc}{Dosage de l'hémoglobine}[\label{doc:dosage_hemoglobine}]
   Mesurer la concentration massique en hémoglobine dans le sang permet de détecter les cas d'anémies.
   On parle d'anémie si cette concentration massiques est inférieure a

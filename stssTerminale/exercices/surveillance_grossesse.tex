@@ -1,0 +1,80 @@
+\exercice{Surveillance de la grossesse par échographie}\label{exo:surveillance_grossesse}
+
+\textbf{Mots clés :} échographie, effet Doppler
+\medskip
+
+\begin{doc}{Décalage Doppler}
+  \begin{wrapfigure}[4]{r}{0.4\linewidth}
+    \vspace*{-32pt}
+    \includegraphics[width=\linewidth]{images/bacST2S/suivi_grossesse_LCC}
+    \legende{Cliché de l'échographie}
+  \end{wrapfigure}
+  Au cours de la grossesse, 3 échographies (aux $3^e$, $5^e$ et $8^e$) sont préconisées.
+  Lors de la première échographie, la longueur cranio-caudale LCC (flèche blanche sur le cliché ci-contre) permet d'estimer l'âge de la grossesse entre 7 et 13 semaines d'aménorrhée.
+
+  \smallskip
+  \begin{tblr}{colspec = {cc}, hlines, vlines}
+    Aménorrhée en semaines & LCC en mm \\
+    10 & entre 42 et 43 mm \\
+    11 & entre 44 et 56 mm \\
+    12 & entre 58 et 69 mm \\
+    13 & entre 70 et 84 mm
+  \end{tblr}
+
+  \smallskip
+  \textit{D'après la formule de Robinson et Fleming}
+\end{doc}
+
+\begin{doc}{Expression du décalage Doppler}
+  Le décalage $\Delta f$ entre la fréquence de l'onde ultrasonore émise par la sonde et la fréquence de l'onde réfléchie par le sang circulant dans un vaisseau sanguin est donnée par la relation suivante :
+  \begin{equation*}
+    \Delta f = \dfrac{2f_E \times v \times \cos(\theta)}{c}
+  \end{equation*}
+  \begin{listePoints}
+    \item $f_E$ fréquence de l'onde émise par la sonde
+    \item $v$ vitesse moyenne des globules rouges dans le vaisseau sanguin
+    \item $c$ valeur de la vitesse moyenne des ultrasons dans le corps humain
+    \item $\theta$ angle entre la direction de la vitesse d'écoulement du sang dans le vaisseau et la direction de propagation de l'onde émise par la sonde.
+  \end{listePoints}
+\end{doc}
+
+\question{
+  Expliquer le principe de l’échographie permettant d’obtenir un cliché tel que celui du 
+document 1, en précisant la nature des ondes et le phénomène physique mis en jeu.
+}{
+}
+
+\question{
+  À l’aide du document 1, estimer l’âge de la grossesse (en semaines d’aménorrhée)
+}{}
+
+\question{
+  La grossesse peut induire des problèmes circulatoires dans les membres inférieurs de la 
+femme enceinte. La vitesse de circulation du sang dans les veines peut être mesurée par 
+échographie Doppler. Avec l’appui d’un schéma, décrire le principe de l’échographie 
+Doppler.
+}{}
+
+\question{
+  À partir de l’expression donnée dans le document 2, déduire l’expression de la vitesse v
+d’écoulement du sang en fonction de $\Delta f$, $f_E$, $c$ et $\cos(\theta)$. On précisera les unités des grandeurs.
+}{}
+
+\question{
+  L’examen porte sur la petite veine saphène de la jambe où la formation d’une varice est 
+redoutée. À partir des données mesurées ci-dessous, montrer que la vitesse v d’écoulement 
+du sang dans la veine saphène de la patiente est voisine de \qty{0,15}{\m\per\s}.
+
+\important{Données :} 
+$f_E = \qty{1,0e7}{\hertz}$ ;
+$\theta = \qty{40}{\degree}$ ;
+$\cos(\qty{40}{\degree}) = \num{0.77}$ ;
+$\Delta f = \qty{1,5}{\kilo\hertz}$ ;
+$c = \qty{1540}{\m\per\s}.$
+}{}
+
+\question{
+  En situation normale, la vitesse moyenne du sang dans la veine saphène est comprise entre 
+10 et \qty{25}{\cm\per\s}.
+Déduire de la question 5 si l’examen réalisé révèle une anomalie.
+}{}

@@ -1,24 +1,5 @@
 \exercice{Penalty au footbal} \correction{\points{13}}
 
-\begin{doc}{Forces de frottements}
-  Un objet en mouvement dans un fluide comme l'air subit des forces de frottements.
-  Les forces de frottements $\vv{f}$ sont opposées au vecteur vitesse $\vv{v}$ de l'objet.
-  
-  Pour un objet en mouvement dans l'air, on peut calculer la valeur des frottements de l'air sur l'objet, en Newton, à l'aide de la relation suivante : 
-  \begin{equation*}
-    f = \dfrac{1}{2} \times k \times S \times v^2
-    % f = \dfrac{1}{2} \times \rho \times C_x \times S \times v^2
-  \end{equation*}
-  Avec :
-  \begin{listePoints}
-    \item $k = \variationSujet{\num{0.246}}{\num{0.185}}\;\unit{\newton\s\squared\per\m\tothe{4}}$ un coefficient de frottement ;
-    %\item $\rho = \qty{1,23}{\kg\per\cubic\m}$ la densité de l'air ;
-    % \item $C_x$ le coefficient de traînée, sans unité ;
-    \item $v$ la vitesse de l'objet en \unit{\m\per\s} ;
-    \item $S$ la surface de l'objet en \unit{\m\squared}.
-  \end{listePoints}
-\end{doc}
-
 \begin{doc}{Ballon de football}
   Un ballon de football est une sphère de \qty{70}{\cm} de circonférence et pesant \qty{450}{\g}, avec une pression interne de \qty{1,5}{\bar}.  
   On cherche à étudier les forces qui s'exercent sur un ballon de football pendant un penalty, d'abords quand il est posé au sol, puis quand le tir est effectué.
@@ -58,6 +39,25 @@
 }{
   Oui, car le ballon est immobile, donc les forces doivent se compenser.\points{1}
 }
+
+\begin{doc}{Forces de frottements}
+  Un objet en mouvement dans un fluide comme l'air subit des forces de frottements.
+  Les forces de frottements $\vv{f}$ sont opposées au vecteur vitesse $\vv{v}$ de l'objet.
+  
+  Pour un objet en mouvement dans l'air, on peut calculer la valeur des frottements de l'air sur l'objet, en Newton, à l'aide de la relation suivante : 
+  \begin{equation*}
+    f = \dfrac{1}{2} \times k \times S \times v^2
+    % f = \dfrac{1}{2} \times \rho \times C_x \times S \times v^2
+  \end{equation*}
+  Avec :
+  \begin{listePoints}
+    \item $k = \variationSujet{\num{0.246}}{\num{0.185}}\;\unit{\newton\s\squared\per\m\tothe{4}}$ un coefficient de frottement ;
+    %\item $\rho = \qty{1,23}{\kg\per\cubic\m}$ la densité de l'air ;
+    % \item $C_x$ le coefficient de traînée, sans unité ;
+    \item $v$ la vitesse de l'objet en \unit{\m\per\s} ;
+    \item $S$ la surface de l'objet en \unit{\m\squared}.
+  \end{listePoints}
+\end{doc}
 
 \question{
   Pour tirer un penalty, un joueur frappe dans le ballon posé au sol.

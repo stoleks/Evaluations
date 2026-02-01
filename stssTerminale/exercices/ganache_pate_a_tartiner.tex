@@ -4,7 +4,7 @@
 \motsClesGanache
 \medskip
 
-\begin{doc}{Les oméga 3 et 6}{doc:DC1_omega_3_6}
+\begin{doc}{Les oméga 3 et 6}[\label{doc:DC1_omega_3_6}]
   Les oméga-3 et oméga-6 constituent une famille d'acides gras essentielle au bon fonctionnement du corps humain.
   Dans le cadre d'une alimentation équilibrée, l'agence française de sécurité sanitaire des aliments (Afssa)
   recommande un apport, en masse, au maximum cinq fois plus élevé d'oméga-6 que d'oméga-3.
@@ -17,7 +17,7 @@
   \end{flushright}
 \end{doc}
 
-\begin{doc}{Accumulation de graisse dans le corps humain}{doc:DC1_accumulation_graisse}
+\begin{doc}{Accumulation de graisse dans le corps humain}[\label{doc:DC1_accumulation_graisse}]
   Le surpoids et l'obésité sont dus à une accumulation excessive de graisse dans le corps.
   Cette accumulation de graisse peut résulter d'un excès d'acides gras provenant de la digestion
   des triglycérides.
@@ -41,6 +41,7 @@
 
 
 %%
+\newpage
 L'oléine est un triglycéride.
 Par hydrolyse, on obtient entre autres un acide gras : l'acide oléique.
 L'équation de la réaction d'hydrolyse est présentée ci-dessous, A et B désignent deux molécules.
@@ -64,13 +65,16 @@ L'équation de la réaction d'hydrolyse est présentée ci-dessous, A et B dési
 }
 
 \question{
-  Nommer les molécules désignées par A et B dans l'équation de la réaction d'hydrolyse de l'oléine et préciser leur formule chimique.
-  Écrire la formule semi-développée de la molécule B.
+  Nommer les molécules désignées par A et B dans l'équation de la réaction d'hydrolyse de l'oléine.
 }{
   A : molécule d'eau \chemfig{H_2O}. \points{0,5}
   
   B : molécule de glycérol \bruteCHO{3}{8}{3} \points{0,5}
+}
 
+\question{
+  Écrire la formule semi-développée de la molécule B.
+}{
   \begin{center}  
     Glycérol : \chemfig{CH_2 (-[3] OH) - CH (-[3] OH) -CH_2 (-[3] OH)} \points{1}
   \end{center}
@@ -106,10 +110,16 @@ M$_\text{oléine}$ = \qty{885,4}{\g\per\mole} ;
 M$_\text{acide oléique}$ = \qty{282,5}{\g\per\mole}.
 
 \question{
-  Déterminer la quantité de matière $n_\text{oléine}$ d'oléine présente dans \qty{100}{\g} d'huile de palme.
+  Calculer la masse d'oléine $m_\text{oléine}$ présente dans \qty{100}{\g} d'huile de palme.
 }{
   On a une masse d'oléine $m_\text{oléine} = \qty{38,2}{\percent} \times \qty{100}{\g} = \qty{38,2}{\g}$, \points{1}
-  donc la quantité de matière vaut
+}
+
+\question{
+  En déduire la quantité de matière $n_\text{oléine}$ d'oléine.
+}{
+
+  La quantité de matière vaut donc
   \begin{equation*}
     n_\text{oléine} = \dfrac{m_\text{oléine}}{M_\text{oléine}}
     = \dfrac{\qty{38,2}{\g}}{\qty{885,4}{\g\per\mole}}
@@ -141,7 +151,7 @@ Dans le cadre d'une alimentation équilibrée, il est conseillé de consommer qu
 \qty{500}{\mg} d'oméga-3.
 
 \question{
-  Calculer la masse d'huile de palme qu'il faudrait manger pour respecter cet apport.
+  Calculer la masse d'huile de palme qu'il faudrait manger pour respecter cet apport. Est-ce une valeur raisonnable pour une alimentation saine ?
 }{
   On a \qty{200}{\mg} d'oméga-3 pour \qty{100}{\g} d'huile de palme, soit $\dfrac{\qty{100}{\g}}{\qty{200}{\mg}} = \dfrac{\qty{1}{\g}}{\qty{2}{\mg}}$.
 

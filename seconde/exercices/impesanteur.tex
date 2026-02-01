@@ -59,7 +59,7 @@
   Calculer le poids d'une spationaute dans l'ISS, sachant que $g_\ISS = \qty{8,65}{\newton\per\kg}$.\competence{REA}
 }{
   \begin{equation*}  
-    P_\ISS = \qty{65}{\kg} \times \qty{8,65}{\newton\per\kg} = \qty{562}{\newton}
+    P_\ISS = \variationSujet{\qty{65}{\kg}}{\qty{70}{\kg}} \times \qty{8,65}{\newton\per\kg} = \variationSujet{\qty{562}{\newton}}{\qty{606}{\newton}}
     \points{1,5}
   \end{equation*}
 }
@@ -69,14 +69,14 @@
   En comparant ces deux forces, indiquer si on peut vraiment dire que la gravité terrestre n'agit plus sur les spationautes au sein de l'ISS.\competence{VAL, ANA/RAI}
 }{
   \begin{equation*}  
-    P_\Terre = \qty{65}{\kg} \times \qty{9.81}{\newton\per\kg} = \qty{638}{\newton}
+    P_\Terre = \variationSujet{\qty{65}{\kg}}{\qty{70}{\kg}} \times \qty{9.81}{\newton\per\kg} = \variationSujet{\qty{638}{\newton}}{\qty{688}{\newton}}
     \points{1,5}
   \end{equation*}
   On voit que $P_\ISS$ n'est pas beaucoup plus petit que $P_\Terre$ (\qty{10}{\percent} plus faible), donc la gravité terrestre attire toujours fortement les spationautes.
 }
 
 %%
-\begin{doc}{Force centrigure}%d'inertie d'entraînement}
+\begin{doc}{Force centrifuge}%d'inertie d'entraînement}
   Un système dans un référentiel en rotation est soumis à une force \important{relative} qui dépend du référentiel, qu'on appelle \important{force centrifuge} $\vv{F}_{centrifuge}$
 
   Cette force a pour direction la \important{droite reliant le centre du cercle et le centre du système.}
