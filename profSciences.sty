@@ -135,6 +135,16 @@
   \input{schemas.tex}%
 \fi
 
+%%------------- Pour comparer deux grandeurs numériques
+\ExplSyntaxOn
+\NewDocumentCommand{\compare}{m +m +m}{
+  \fp_compare:nTF {#1}{#2}{#3}
+}
+\NewDocumentCommand{\compareT}{m +m}{
+  \fp_compare:nT {#1}{#2}
+}
+\ExplSyntaxOff
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%------------- Compteurs internes et commandes associées
@@ -517,6 +527,7 @@
   extendedchars=true,%
   literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\'a}}1 {°}{{\textdegree}}1 {²}{{$^2$}}1,%
 }
+%------ Style LaTeX
 \lstdefinestyle{codeLatex}{
   basicstyle = \footnotesize\ttfamily,%
   commentstyle = {\itshape\color{couleurSec-300}},%
@@ -743,12 +754,12 @@
 }
 
 % Affiche le contenu en mode correction
-\newcommand{\correction}[1]{%
+\NewDocumentCommand{\correction}{+m}{%
   \ifthenelse {\boolean{modeProf}} {#1} {}%
 }
 
 % Affiche le contenu si on est pas en mode correction
-\newcommand{\pasCorrection}[1]{%
+\NewDocumentCommand{\pasCorrection}{+m}{%
   \ifthenelse {\boolean{modeProf}} {} {#1}%
 }
 
@@ -759,21 +770,22 @@
   \ifthenelse {\boolean{modeProf}}{% prof
     \IfBooleanTF{#1}{\important[black]{#4}}{#4}%
   }{% élève, version avec plusieurs lignes
-    \IfValueTF{#3}{% Si le nombre de lignes est réglée, on insert des lignes
+    \IfValueTF{#3}{% Si le nombre de lignes est réglée, on insère des lignes
       \lignesDeReponse*{#3}%
     }{% élève, version sur une ligne
       \IfValueTF{#2}{% Si la largeur est réglée, on utilise des lignes
         \espaceReponse%
         \lignePointillee[#2\linewidth]%
-        \hspace*{-12pt}%
+        %\hspace*{-8pt}%
       }{% Sinon on calcule la largeur du texte, avec un peu d'espace supplémentaire
         \settowidth{\largeurTexte}{\enspace#4\enspace}%
         \espaceReponse%
         \lignePointillee[\largeurTexte]%
-        \hspace*{-12pt}%
+        %\hspace*{-8pt}%
       }% Largeur auto
     }% Largeur manuelle
   }% Plusieurs lignes
+  \xspace
 }
 
 % espace vertical pour la réponse
