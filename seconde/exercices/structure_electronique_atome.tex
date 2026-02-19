@@ -1,48 +1,50 @@
 %%%%
-\titreSection{Structure électronique d'un atome}\correction{\points{9}}
-\vspace*{-8pt}
+\exercice{Structure électronique d'un atome}\correction{\points{9}}
 
-\begin{doc}{Tableau périodique}{doc:tableau_periodique}
+\begin{doc}{Tableau périodique}
   \hspace*{-16pt}
   \centering
-  \renewcommand{\largeurCaseTableauPeriodique}{2}
-  \tableauPeriodique[2.5][2.5]{
-    %% Group 1 - IA
-    \node[name=H,  NoMeta]              {\elementH};
-    \node[name=Li, below of=H,  Alcali] {\elementLi};
-    \node[name=Na, below of=Li, Alcali] {\elementNa};
-    %% Group 2 - IIA
-    \node[name=Be, right of=Li, Alcalo] {\elementBe};
-    \node[name=Mg, below of=Be, Alcalo] {\elementMg};
-    %% Group 13 - IIIA
-    \node[name=B,  right of=Be, Metoid] {\elementB};
-    \node[name=Al, below of=B,  Metaux] {\elementAl};
-    %% Group 14 - IVA
-    \node[name=C,  right of=B,  NoMeta]  {\elementC};
-    \node[name=Si, below of=C,  Metoid] {\elementSi};
-    %% Group 15 - VA
-    \node[name=N,  right of=C,  NoMeta] {\elementN};
-    \node[name=P,  below of=N,  NoMeta] {\elementP};
-    %% Group 16 - VIA
-    \node[name=O,  right of=N,  NoMeta] {\elementO};
-    \node[name=S,  below of=O,  NoMeta] {\elementS};
-    %% Group 17 - VIIA
-    \node[name=F,  right of=O,  Haloge] {\elementF};
-    \node[name=Cl, below of=F,  Haloge] {\elementCl};
-    %% Group 18 - VIIIA
-    \node[name=Ne, right of=F,  GazRar] {\elementNe};
-    \node[name=Ar, below of=Ne, GazRar] {\elementAr};
-    \node[name=He, above of=Ne, GazRar] {\elementHe};
-  }
+  \begin{tableauPeriodique}[largeur case = 2 cm, hauteur case = 2cm, echelle = 1]
+    \elementH
+    \elementLi[couleur = red-200](below = of  H)
+    \elementNa[couleur = red-200](below = of Li)
+    %
+    \elementBe[couleur = red-150](right = of Li)
+    \elementMg[couleur = red-150](right = of Na)
+    %
+    \elementB [couleur = orange-100](right = of Be)
+    \elementAl[couleur = red-150]   (right = of Mg)
+    %
+    \elementC (right = of  B)
+    \elementSi[couleur = orange-100](right = of Al)
+    %
+    \elementN(right = of  C)
+    \elementP(right = of Si)
+    %
+    \elementO(right = of N)
+    \elementS(right = of P)
+    %
+    \elementF (right = of O)
+    \elementCl(right = of S)
+    %
+    \elementNe[couleur = blue-150](right = of  F)
+    \elementAr[couleur = blue-150](right = of Cl)
+    \elementHe[couleur = blue-150](above = of Ne)
+    %% Légende
+    \elementB [couleur = orange-100] (above = of O, yshift = .2cm)
+    \tikzVecteur(7.9, 0.75)  (1.6, 0) {Nom de l'élément chimique} [left, xshift = -1.6cm]
+    \tikzVecteur(7.9, 0.29)  (1.6, 0) {Numéro atomique $Z$} [left, xshift = -1.6cm]
+    \tikzVecteur(7.9, -0.28) (1.6, 0) {Symbole atomique $X$} [left, xshift = -1.6cm]
+  \end{tableauPeriodique}
 \end{doc}
 
 \question{
-  Donner le nombre d'électrons de l'azote \chemfig{N}, du magnésium \chemfig{Mg} et de l'argon \chemfig{Ar}.\competence{APP, ANA/RAI}
+  En vous aidant du tableau périodique, donner le nombre d'électrons de l'azote \chemfig{N}, du magnésium \chemfig{Mg} et de l'argon \chemfig{Ar}.\competence{APP, ANA/RAI}
 }{
   Le numéro atomique de l'azote est 7, il possède donc 7 protons et 7 électrons par neutralité électrique de l'atome.
   Le magnésium possède 12 électrons et l'argon possède 18 électrons.
   \points{1}
-}{2}
+}[2]
 
 
 \question{
@@ -50,7 +52,7 @@
 }{
   $\chemfig{N} : 1s^2 \mathbf{2s^2 2p^3}$, $\chemfig{Mg} : 1s^2 2s^2 2p^6 \mathbf{3s^2}$, $\chemfig{Ar} : 1s^2 2s^2 2p^6 \mathbf{3s^2 3p^6}$
   \points{1.5}
-}{3}
+}[3]
 
 \question{
   Entourer la couche externe de chacune des structures électronique et indiquer le nombre d'électrons de valence de chaque atome.\competence{COM, ANA/RAI}
@@ -59,14 +61,14 @@
   Couche externe du magnésium : 3 avec 2 électrons de valences.
   Couche externe de l'argon : 3 avec 8 électrons de valences.
   \points{1.5}
-}{2}
+}[2]
 
 \question{
   Parmi ces trois atomes, lequel est le plus stable ? Justifier.\competence{ANA/RAI}
 }{
   L'argon, car sa couche externe est pleine : c'est un gaz noble.
   \points{1}
-}{2}
+}[2]
 
 
 \question{
@@ -74,11 +76,11 @@
 }{
   Pour gagner en stabilité, un atome de numéro atomique > 6, peut perdre ou gagner des électrons pour atteindre la structure électronique du gaz noble \textbf{le plus proche}, avec 8 électrons sur sa couche externe.
   \points{2}
-}{3}
+}[3]
 
 \question{
   D'après la règle de l'octet, quel ion pourra être formé à partir d'un atome de magnésium ? Expliquer.\competence{ANA/RAI, COM}
 }{
   D'après la règle de l'octet, le magnésium va perdre 2 électrons pour atteindre la configuration électronique du néon. On aura donc l'ion $\chemfig{Mg^{2+}}$.
   \points{1}
-}{2}
+}[2]
