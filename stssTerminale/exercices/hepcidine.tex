@@ -37,7 +37,8 @@ semi-développée de la cystéine est donnée ci-contre.
   Donner la représentation de Fischer de l’énantiomère L de la cystéine qui est produit dans le corps humain naturellement.
 }{
   \begin{center}
-    \chemfig{COOH (-[-3] (-[-6] NH_2) (-[-3] (-[-6] H) (-[-3] SH) -H) -H)}\points{1}
+    %\chemfig{COOH (-[-3] (-[-6] NH_2) (-[-3] (-[-6] H) (-[-3] SH) -H) -H)}\points{1}
+    \chemfig{!\acideAmineFL CH_2 SH}
   \end{center}
 }
 
@@ -81,9 +82,25 @@ L’équation de la réaction conduisant à la séquence CG s’écrit :
   Recopier la forume semi-développée de Cys-Gly, puis écrire la formule semi-développée des dipeptides GC (Gly-Cys) et CC (Cys-Cys) aussi présents dans la séquence de l’hepcidine.
 }{
   \begin{center}
-    \chemfig{NH_2 !\cysteineSemiDevB NH ! \glycineSemiDevH OH}
-
-    \chemfig{NH_2 !\glycineSemiDevB NH !\cysteineSemiDevH OH}
+    \begin{tikzpicture}
+      \node (base) at (0, 0) {};
+      \chemAmideDevHB (0.6, 0.4);   % cys-gly
+      \chemAmideDevHB (0.6, -3.45); % gly-cys
+      \chemAmideDevHB (0.6, -7.0);  % cys-cys
+      \chemAmine (-2.6, 0.8);            % amine cys-gly
+      \chemCarboxyleSemiDev (3.5, -0.5); % carboxyle cys-gly
+      % cys-gly
+      \node at (0, 0) {
+        Cys-Gly : \chemfig{NH_2 !\cysteineSemiDevB N(-[::-90]H) !\glycineSemiDevH OH}
+      };
+      \node at (0, -3) {
+        Gly-Cys : \chemfig{NH_2 !\glycineSemiDevB N(-[::-90]H) !\cysteineSemiDevH OH} \points{0.5}
+      };
+      % cys-cys
+      \node at (0, -7) {
+        Cys-Cys : \chemfig{NH_2 !\cysteineSemiDevB N(-[::-90]H) !\cysteineSemiDevH OH} \points{0.5}
+      };
+    \end{tikzpicture}
   \end{center}
 }
 
@@ -91,11 +108,11 @@ L’équation de la réaction conduisant à la séquence CG s’écrit :
   Sur la formule du Cys-Gly recopiée à la question précédente, entourer la liaison peptidique.
   Quel est le nom de ce groupe caractéristique ?
 }{
-  C'est un groupe amide. 
+  C'est un groupe \important[purple-700]{amide.}\points{1.5}
 }
 
 \question{
   Entourer et nommer les autres groupes caractéristique de Cys-Gly.
 }{
-  C'est un groupe amide. 
+  Il y a un groupe \important[blue-700]{amine} et un groupe \important[red-700]{carboxyle.}\points{1}
 }
