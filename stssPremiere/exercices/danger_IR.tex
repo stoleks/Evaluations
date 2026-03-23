@@ -1,0 +1,55 @@
+\exercice{Danger des infrarouges (20 minutes)}\points{8}
+
+\begin{doc}{Les différents domaine d'infrarouge IR}
+  Les émissions infrarouges sont classées en 3 domaines : infrarouge proche (A), infrarouge moyen (B) et infrarouge lointain (C).
+  Ces domaines ont été établis à partir des propriétés d'absorption des tissus du corps humain.
+
+  \begin{tableau}{|c |c |c |c |}
+    Domaine & IR-A & IR-B & IR-C \\
+    %
+    Longueur d'onde &
+    \qty{800}{\nm} $< \lambda <$ \qty{1400}{\nm} & 
+    \qty{1400}{\nm} $< \lambda <$ \qty{3000}{\nm} & 
+    \qty{3000}{\nm} $< \lambda <$ \qty{e6}{\nm} \\
+    %
+  \end{tableau}  
+  
+  Les \important{infrarouge-A (IR-A)} endommagent surtout la rétine, les yeux étant transparent pour ces longueurs d'ondes. La peau être brûlée superficiellement suite à une exposition prolongée au IR-A.
+  Le cristallin peut être endommagé par des rayonnements \important{IR-A et IR-B} intenses.
+  La cornée peut être endommagée par des rayonnements \important{IR-B et IR-C} très intenses et prolongés.
+\end{doc}
+
+\begin{doc}{Les métiers à risque IR}[\label{doc:metier_IR}]
+  \begin{tableau}{|c|c|c|c|}
+    Métier    & Source & Température en \unit{\degreeCelsius} & Durée d'exposition \\
+    Boulanger & Four  & 250 & 5 h par jour \\
+    Soudeur   & Chalumeau & 3100 & 9 h par jour \\
+    Pompier   & Incendie & < 1500 & 10 h par semaine
+  \end{tableau}
+\end{doc}
+
+\begin{doc}{Loi de Wien et données}
+  \begin{equation*}
+    \lambda_{max} = \dfrac{\qty{2.9e-3}{\kelvin\m}}{T (\unit{\kelvin})}
+  \end{equation*}
+
+  \begin{listePoints}[2]
+    \item \qty{1e-9}{\m} = \qty{1}{\nm}
+  \end{listePoints}
+\end{doc}
+
+\question{
+  Convertir les trois températures du document~\ref{doc:metier_IR} en kelvin.\points{1,5}
+}{}
+
+\question{
+  Calculer la longueur d'onde maximale en utilisant le doc. 3 pour ces températures.\points{3}
+}{}
+
+\question{
+  Déduire pour chacun des métiers à quel type de rayonnement infrarouge ils sont exposés.\points{1,5}
+}{}
+
+\question{
+  Conclure sur les risques liés à ces trois métiers et sur le type de protections à porter pour chaque métier.\points{2}
+}{}

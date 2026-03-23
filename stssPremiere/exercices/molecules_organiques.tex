@@ -9,15 +9,25 @@
 
 \question{
   Écrire la formule développée de la valine.
-}{}[6]
+}{
+  \begin{center}
+    \chemfig{H- N (-[::-90] H) !\acideAmineDH{C (-[::0] H) (-[::60,1.5] C !\HHH) -[::-60,1.5] C !\HHH} O-H}
+    \points{1}
+  \end{center}
+}[6]
 
 \question{
   Donner la formule brute de la valine.
-}{}[1]
+}{
+  \chemfig{C_5 H_{11} O_2 N} \points{1}
+}[1]
 
 \question{
   Entourer et nommer les groupes fonctionnels de la valine.
-}{}[2]
+}{
+  Il y a un groupe amine \chemfig{NH_2 -[:180,0.75]} et un groupe carboxyle \chemfig{C (-[:-180,0.75]) !\carboxyle}.
+  \points{1}
+}[2]
 
 
 %%
@@ -29,15 +39,24 @@
 
 \question{
   Écrire la formule semi-développée du glycérol.
-}{}[6]
+}{
+  \begin{center}
+    \chemfig{!\glycerolSemiDev} \points{1}
+  \end{center}
+}[6]
 
 \question{
   Donner la formule brute du glycérol.
-}{}[1]
+}{
+  \chemfig{C_3 H_8 O_3} \points{1}
+}[1]
 
 \question{
   Entourer et nommer les groupes fonctionnels du glycérol.
-}{}[2]
+}{
+  Le glycérol contient trois groupes hydroxyle \chemfig{OH -[::180,0.75]}
+  \points{1}
+}[2]
 
 
 %%
@@ -49,15 +68,24 @@
 
 \question{
   Écrire la formule topologique de l'isoleucine.
-}{}[6]
+}{
+  \begin{center}
+    \chemfig{!\isoleucine} \points{1}
+  \end{center}
+}[6]
 
 \question{
   Donner la formule brute de l'isoleucine.
-}{}[1]
+}{
+  \chemfig{C_6 H_{13} O_2 N} \points{1}
+}[1]
 
 \question{
   Entourer et nommer les groupes fonctionnels de l'isoleucine.
-}{}[2]
+}{
+  Il y a un groupe amine \chemfig{NH_2 -[:180,0.75]} et un groupe carboxyle \chemfig{C (-[:-180,0.75]) !\carboxyle}.
+  \points{1}
+}[2]
 
 
 %%
@@ -69,15 +97,29 @@
 
 \question{
   Écrire la formule semi-développée de la vitamine B5.
-}{}[6]
+}{
+  \begin{center}
+    \chemfig{
+      HO -CH_2 -C !\branche{CH_3}{CH_3}
+      -[,1.2]CH (-[::90]OH)
+      -C (=[::-90] O) -NH
+      -CH_2 -CH_2
+      -C !\carboxyleDev
+    } \points{1}
+  \end{center}
+}[6]
 
 \question{
   Donner la formule brute de la vitamine B5.
-}{}[1]
+}{
+  \chemfig{C_{9} H_{17} O_5 N} \points{1}
+}[1]
 
 \question{
   Entourer et nommer les groupes fonctionnels de la vitamine B5.
-}{}[2]
+}{
+  Il y a deux groupes hydroxyle, un groupe amide et un groupe carboxyle. \points{1}
+}[2]
 
 
 \begin{center}
@@ -88,4 +130,6 @@
 
 \question{
 \textit{Question bonus:} entourer et nommer tous les groupes fonctionnels de l'aspartame.
-}{}[5]
+}{
+  Il y a un groupe carboxyle, un groupe amine, un groupe amide et un groupe ester. \points{2}
+}[5]
