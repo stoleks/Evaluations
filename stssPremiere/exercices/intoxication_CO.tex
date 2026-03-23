@@ -1,0 +1,63 @@
+\exercice{Intoxication au monoxyde de carbone (20 minutes)}\label{exo:intoxication_CO}
+\points{8}
+\medskip
+
+Le monoxyde de carbone est responsable de plus de la moitié des morts par intoxication dans le monde.
+Issu d'une combustion incomplète, le monoxyde de carbone peut avoir des sources variées : chaudières au gaz défectueuse, poêles ou cheminées qui ne tirent pas assez, moteur thermique utilisé avec un mauvais carburant, départ de feu dans une maison, etc.
+
+\begin{doc}{Détection du monoxyde de carbone}[\label{doc:detection_monoxyde}]
+    Pour détecter le monoxyde de carbone, on peut acheter un détecteur spécialisé qui utilise une réaction d'oxydo-réduction avec les deux couples suivants :
+    \begin{alignat*}{2}
+      \dioxydeDeCarbone/\chemfig{CO} : \quad
+      & 2\chemfig{CO} + 2\eau 
+      && \reaction 2\dioxydeDeCarbone + 4\ionHydrogene + 4\electron \\
+      %
+      \dioxygene/\eau : \quad
+      & 2\eau
+      && \reaction \dioxygene + 4\ionHydrogene + 4\electron
+    \end{alignat*}
+  Les électrons échangés aux cours de la réaction d'oxydo-réduction entre le monoxyde de carbone et le dioxygène génèrent un courant électrique qui alimente une alarme sonore au delà d'un certain taux de monoxyde de carbone.
+
+  Il est vivement recommandé d'avoir un détecteur de monoxyde de carbone chez soit, ils sont peu coûteux et peuvent éviter des tragédies.
+\end{doc}
+
+\question{
+  Expliquer pourquoi on ne peut pas se baser sur notre vue ou notre odorat pour détecter le monoxyde de carbone.
+  \points{1}
+}{}
+
+\question{
+  Justifier que le monoxyde de carbone est un réducteur.
+  \points{1}
+}{}
+
+\question{
+  Écrire l'équation de réaction du monoxyde de carbone \chemfig{CO} avec le dioxygène \chemfig{O_2} en utilisant les deux demi-équations d'oxydo-réduction fournies.
+  \points{3}
+}{}
+
+
+\begin{doc}{Effets physiologiques du \chemfig{CO}}[\label{doc:effets_physiologiques}]
+  Quand nous respirons, le dioxygène est transporté des poumons aux tissus grâce à une protéine : l'hémoglobine notée Hb, ce qui permet la respiration cellulaire.
+  Le monoxyde de carbone \chemfig{CO} se lie 250 fois plus facilement à l'hémoglobine que le dioxygène.
+  Quand le monoxyde de carbone se lie à une ou plusieurs hémoglobine, on parle de carboxyhémoglobine notée COHb.
+
+  \begin{listePoints}
+    \item Si le taux de COHb est inférieur à \qty{10}{\percent}, il y a peu ou pas d'effets physiologiques observés.
+    \item À \qty{15}{\percent} de COHb, une personne va commencer à avoir des maux de têtes.
+    \item Entre \qty{20}{\percent} et \qty{30}{\percent}, les maux de têtes sont sévères et accompagnés de nausées, d'étourdissement, de confusion et de légères hallucinations visuelles.
+    \item Entre \qty{30}{\percent} et \qty{50}{\percent} les symptômes neurologiques deviennent plus graves.
+    \item Au delà de \qty{50}{\percent}, il y a perte de connaissance et un risque de tomber dans le coma, avec un risque d'insuffisance respiratoire.
+  \end{listePoints}
+  La mort arrive quand le taux de COHb dépasse les \qty{60}{\percent}.
+\end{doc}
+
+\question{
+  Expliquer pourquoi le monoxyde de carbone est dangereux et pourquoi il faut rapidement évacuer un lieu si des symptômes apparaissent.
+  \points{1,5}
+}{}
+
+\question{
+  Pour traiter les intoxications, on fait respirer aux patient-es du dioxygène pur pressurisé pour faire redescendre rapidement le taux de COHb. Expliquer pourquoi il faut traiter rapidement les patient-es.
+  \points{1,5}
+}{}

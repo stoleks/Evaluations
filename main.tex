@@ -3,7 +3,7 @@
 % \geometry{a5paper, left = 1cm, right = 1cm} % format A5 pour les molécules
 % \geometry{a5paper, left=1cm, right=1cm, top=0.85cm, bottom=2cm} % format A5 serré
 % \geometry{a4paper, landscape} % Pour les fiches de mémorisation
-\modeCorrection % correction si décommenté
+% \modeCorrection % correction si décommenté
 
 %%%% pour l'en-tête
 \renewcommand{\etablissement}{Lycée Jean Moulin}
@@ -11,6 +11,61 @@
 \input{commun/fiche_revision_memorisation}
 \input{stssTerminale/exercices/_annexes}
 \input{stssTerminale/exercices/_mots_clefs}
+
+\usepackage{lastpage}
+\pgfkeys{% définition de la famille de clefs
+  /enTeteBac/.is family, /enTeteBac,
+  defaut/.style = {
+    epreuve = Devoir commun,
+    titre = ÉPREUVE DE PHYSIQUE-CHIMIE \\ POUR LA SANTÉ,
+    duree = 2 h
+  },% stockage des clefs
+  epreuve/.store in = \enTeteBacEpreuve,
+  titre/.store in = \enTeteBacTitre,
+  duree/.store in = \enTeteBacDuree
+}
+%
+\NewDocumentCommand{\pageGardeEpreuve}{O{} +m}{%
+  \pgfkeys{/enTeteBac, defaut, #1}
+  \newpage
+  \setcounter{page}{1}
+  \setcounter{exerciceNum}{0}
+  
+  \begin{flushright}
+    \large Sujet \the\year
+  \end{flushright}
+  \vspace{20pt}
+  
+  \titre{\enTeteBacEpreuve} \bigskip
+  
+  \begin{boite}
+    \titre{\enTeteBacTitre}
+  \end{boite}
+  \bigskip
+  
+  \begin{center}
+    \Large Durée de l'épreuve : \enTeteBacDuree
+  \end{center}
+  
+  \vspace{20pt}
+  {\large
+    Le sujet comporte \pageref{LastPage} pages numérotées de 1 à \pageref{LastPage}. \\
+    Dès que le sujet vous est remis, assurez-vous qu'il est complet.
+  
+    #2
+
+    \vfill\itshape
+    
+    Les exercices sont indépendants.
+    \bigskip
+    
+    L'usage de la calculatrice est autorisé.
+    \bigskip
+
+    La clarté des raisonnements et la qualité de la rédaction interviendront pour une part importante dans l'appréciation des copies.
+  }
+}
+
 
 %%%% TP
 \begin{document}
@@ -42,8 +97,9 @@
   %%%% Première ST2S
   % \input{stssPremiere/evaluation_orale_biomolecules}
   %% Sommative
- % \sujetA \input{stssPremiere/DC_chimie_vision}
- % \sujetB \input{stssPremiere/DC_chimie_vision}
+  % \input{stssPremiere/DC_chimie_elec}
+  % \sujetA \input{stssPremiere/DC_chimie_vision}
+  % \sujetB \input{stssPremiere/DC_chimie_vision}
   % \input{stssPremiere/E_secu_chimie}
   % \input{stssPremiere/E_oxydo_IR}
   % \sujetA \input{stssPremiere/E_vision_oxydoreduction}
@@ -52,6 +108,7 @@
   % \input{stssPremiere/E_IR_organique}
   % \sujetA \input{stssPremiere/E_molecules_biologiques}
   % \sujetB \input{stssPremiere/E_molecules_biologiques}
+  \input{stssPremiere/DC_oxydo_IR_orga}
   %% A REFAIRE QUESTIONS PAS CLAIRES...
   % \input{stssPremiere/DM_routiere_molecule}
   
@@ -65,10 +122,11 @@
   % \input{stssTerminale/DC_maladie_cardiovasculaire_osteoporose}
   % \input{stssTerminale/DC_IRM_grossesse_curietherapie}
   % \input{stssTerminale/DC_dosages_albuminurie_osteoporose}
+  % \input{stssTerminale/exercices/intoxication_CO}
   %% Bac blanc
   % \input{stssTerminale/BacBlanc_curietherapie_antiseptique_pulmonaire}
   % \input{stssTerminale/BacBlanc_oxygeno_ponceau_sucres}
-  \input{stssTerminale/BacBlanc_ganache_hepcidine}
+  % \input{stssTerminale/BacBlanc_ganache_hepcidine}
   % \input{stssTerminale/revision_bac}
   
   %%%% Commun
