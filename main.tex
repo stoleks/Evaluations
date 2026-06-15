@@ -6,7 +6,7 @@
 % \modeCorrection % correction si décommenté
 
 %%%% pour l'en-tête
-\renewcommand{\etablissement}{Lycée Jean Moulin}
+\renewcommand{\enTeteEtablissement}{Lycée Jean Moulin}
 
 \input{commun/fiche_revision_memorisation}
 \input{stssTerminale/exercices/_annexes}
@@ -14,53 +14,75 @@
 
 \usepackage{lastpage}
 \pgfkeys{% définition de la famille de clefs
-  /enTeteBac/.is family, /enTeteBac,
+  /pageGardeExam/.is family, /pageGardeExam,
   defaut/.style = {
-    epreuve = Devoir commun,
+    epreuve = DEVOIR COMMUN,
     titre = ÉPREUVE DE PHYSIQUE-CHIMIE \\ POUR LA SANTÉ,
-    duree = 2 h
+    series = Série ST2S,
+    duree = 2 h,
+    consigne = \calculetteOk,
   },% stockage des clefs
-  epreuve/.store in = \enTeteBacEpreuve,
-  titre/.store in = \enTeteBacTitre,
-  duree/.store in = \enTeteBacDuree
+  epreuve/.store in = \pageGardeExamEpreuve,
+  titre/.store in = \pageGardeExamTitre,
+  duree/.store in = \pageGardeExamDuree,
+  series/.store in = \pageGardeExamSerie,
+  consigne/.store in = \pageGardeConsigne
 }
+\newcommand{\calculetteDictionnairePasOk}{
+  L'usage de la calculatrice et du dictionnaire n'est pas autorisé.
+}
+\newcommand{\calculetteOk}{
+  L'usage de la calculatrice est autorisé.
+}
+
 %
 \NewDocumentCommand{\pageGardeEpreuve}{O{} +m}{%
-  \pgfkeys{/enTeteBac, defaut, #1}
+  %% Remise à zéro des pages
   \newpage
   \setcounter{page}{1}
   \setcounter{exerciceNum}{0}
-  
-  \begin{flushright}
-    \large Sujet \the\year
-  \end{flushright}
+  %% Décompte des pages
+  \pagestyle{fancy}
+  \fancyhf{} \renewcommand{\headrule}{} % supprime l'en-tête et le bas de pasge
+  \fancyfoot[R]{Page \thepage/\pageref{LastPage}} % affiche le numéro des pages
+
+  %% Affichage de l'épreuve
+  \pgfkeys{/pageGardeExam, defaut, #1}
+  \titre{\LARGE \pageGardeExamEpreuve}
   \vspace{20pt}
-  
-  \titre{\enTeteBacEpreuve} \bigskip
-  
+
+  %% Affichage de la session et de la série
+  \titre{\large Session \the\year}
+  \titre{\pageGardeExamSerie}
+  \bigskip
+
+  %% Épreuve et durée
   \begin{boite}
-    \titre{\enTeteBacTitre}
+    \titre{\pageGardeExamTitre}
   \end{boite}
   \bigskip
-  
   \begin{center}
-    \Large Durée de l'épreuve : \enTeteBacDuree
+    \Large Durée de l'épreuve : \textbf{\pageGardeExamDuree}
   \end{center}
-  
+
+  %% Consignes
   \vspace{20pt}
   {\large
-    Le sujet comporte \pageref{LastPage} pages numérotées de 1 à \pageref{LastPage}. \\
-    Dès que le sujet vous est remis, assurez-vous qu'il est complet.
+    Ce sujet comporte \pageref{LastPage} pages numérotées de 1 à \pageref{LastPage}. \\
+    Dès que ce sujet vous est remis, assurez-vous qu'il est complet.
   
     #2
+  }
 
-    \vfill\itshape
-    
-    Les exercices sont indépendants.
-    \bigskip
-    
-    L'usage de la calculatrice est autorisé.
-    \bigskip
+  \vfill
+  {
+    \large\itshape
+
+    \begin{center}
+      Les exercices sont indépendants.
+      
+      \pageGardeConsigne
+    \end{center}
 
     La clarté des raisonnements et la qualité de la rédaction interviendront pour une part importante dans l'appréciation des copies.
   }
@@ -70,7 +92,7 @@
 %%%% TP
 \begin{document}
   \input{molecules}
-  \input{fiches_revision}
+  % \input{fiches_revision}
   
   %%%% Seconde
   %% Formative
@@ -95,11 +117,11 @@
    % \input{seconde/grille_evaluation_TP}
   
   %%%% Première ST2S
-  % \input{stssPremiere/evaluation_orale_biomolecules}
+  % \input{stssPremiere/exercices/molecules_organiques}
   %% Sommative
   % \input{stssPremiere/DC_chimie_elec}
-  % \sujetA \input{stssPremiere/DC_chimie_vision}
-  % \sujetB \input{stssPremiere/DC_chimie_vision}
+  \sujetA \input{stssPremiere/DC_chimie_vision}
+  \sujetB \input{stssPremiere/DC_chimie_vision}
   % \input{stssPremiere/E_secu_chimie}
   % \input{stssPremiere/E_oxydo_IR}
   % \sujetA \input{stssPremiere/E_vision_oxydoreduction}
@@ -108,7 +130,8 @@
   % \input{stssPremiere/E_IR_organique}
   % \sujetA \input{stssPremiere/E_molecules_biologiques}
   % \sujetB \input{stssPremiere/E_molecules_biologiques}
-  \input{stssPremiere/DC_oxydo_IR_orga}
+  % \sujetA \input{stssPremiere/DC_oxydo_IR_orga}
+  % \sujetB \input{stssPremiere/DC_oxydo_IR_orga}
   %% A REFAIRE QUESTIONS PAS CLAIRES...
   % \input{stssPremiere/DM_routiere_molecule}
   

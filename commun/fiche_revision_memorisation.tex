@@ -20,7 +20,8 @@
 %%%% Commande pour afficher une fiche de révision avec
 %%%% | connaissances | ok | pas ok | activités en classe |
 \NewDocumentCommand{\ficheRevision}{s m +m}{
-  \enTete*{Fiche de révision -- #2}
+  \newpage
+  \enTete*[titre = Fiche de révision -- #2]
   \vspace*{-6pt}
 
   %% Corps de la fiche
@@ -28,8 +29,8 @@
   
   Pour savoir quoi réviser, je lis les points clés du chapitre évalués :
   \begin{listePoints}
-    \item Si je pense maîtriser une notion, je coche la case \ok
-    \item Si je pense que je dois la retravailler, je coche la case \pasOk
+    \item Si je pense maîtriser une notion, je note une date dans 1 mois pour la revoir dans la case \ok ;
+    \item Sinon, je ressors mes activités et je note la date dans \pasOk pour la revoir dans une 1 semaine.
   \end{listePoints}
   \vspace*{4pt}
   

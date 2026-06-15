@@ -41,19 +41,14 @@
 
 
 %%
-\pasCorrection{\newpage}
+% \pasCorrection{\newpage}
 L'oléine est un triglycéride.
 Par hydrolyse, on obtient entre autres un acide gras : l'acide oléique.
 L'équation de la réaction d'hydrolyse est présentée ci-dessous, A et B désignent deux molécules.
 \begin{center}  
-  \chemfig{
-    !\oleineSemiDev
-    % H C (!\teteAcideDev C_{17} H_{33}) 
-    % (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{17} H_{33}))
-    % -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
-  }
+  \chemfig{ !\oleineSemiDev  }
   + 3\chemfig{A} \reaction \chemfig{B} 
-  + 3 \chemname{\chemfig{!\oleiqueSemiDev}}{Acide oléique}%H_{33} C_{17} - C!\carboxyle}}{Acide oléique}
+  + 3 \chemname{\chemfig{!\oleiqueSemiDev}}{Acide oléique}
 \end{center}
   
 \question{
