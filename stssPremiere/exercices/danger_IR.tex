@@ -14,7 +14,7 @@
     %
   \end{tableau}  
   
-  Les \important{infrarouge-A (IR-A)} endommagent surtout la rétine, les yeux étant transparent pour ces longueurs d'ondes. La peau être brûlée superficiellement suite à une exposition prolongée au IR-A.
+  Les \important{infrarouge-A (IR-A)} endommagent surtout la rétine, les yeux étant transparent pour ces longueurs d'ondes. La peau peut être brûlée superficiellement suite à une exposition prolongée au IR-A.
   Le cristallin peut être endommagé par des rayonnements \important{IR-A et IR-B} intenses.
   La cornée peut être endommagée par des rayonnements \important{IR-B et IR-C} très intenses et prolongés.
 \end{doc}
@@ -23,8 +23,8 @@
   \begin{tableau}{|c|c|c|c|}
     Métier    & Source & Température en \unit{\degreeCelsius} & Durée d'exposition \\
     Boulanger & Four  & 250 & 5 h par jour \\
-    Soudeur   & Chalumeau & 3100 & 9 h par jour \\
-    Pompier   & Incendie & < 1500 & 10 h par semaine
+    \variationSujet{Soudeur}{Sidérurgiste}   & \variationSujet{Chalumeau}{Métal en fusion} & \variationSujet{3100}{2400} & 9 h par jour \\
+    \variationSujet{Pompier}{Souffleur de verre}   & \variationSujet{Incendie}{Verre fondu} & \variationSujet{< 1500}{1130} & \variationSujet{10 h par semaine}{8 h par jour}
   \end{tableau}
 \end{doc}
 
@@ -40,15 +40,45 @@
 
 \question{
   Convertir les trois températures du document~\ref{doc:metier_IR} en kelvin.\points{1,5}
-}{}
+}{
+  \begin{align*}
+    \item  250 + \qty{273}{\degreeCelsius} = \qty{525}{\kelvin}
+    \item \variationSujet
+    {3100 + \qty{273}{\degreeCelsius} = \qty{3373}{\kelvin}}
+    {2400 + \qty{273}{\degreeCelsius} = \qty{2673}{\kelvin}}
+    \item \variationSujet
+    {1500 + \qty{273}{\degreeCelsius} = \qty{1773}{\kelvin}}
+    {1130 + \qty{273}{\degreeCelsius} = \qty{1403}{\kelvin}}
+  \end{align*}
+}
 
 \question{
   Calculer la longueur d'onde maximale en utilisant le doc. 3 pour ces températures.\points{3}
-}{}
+}{
+  \begin{align*}
+    \item \lambda_\text{max}
+    = \dfrac{\qty{2.9e-3}{\kelvin\m}}{\qty{525}{\kelvin}}
+    = \qty{5.52e-6}{\m} = \qty{5520}{\nm}
+    \item \lambda_\text{max}
+    \variationSujet
+    {= \dfrac{\qty{2.9e-3}{\kelvin\m}}{\qty{3373}{\kelvin}}
+     = \qty{8.60e-7}{\m} = \qty{860}{\nm}}
+    {= \dfrac{\qty{2.9e-3}{\kelvin\m}}{\qty{2673}{\kelvin}}
+     = \qty{1.08e-6}{\m} = \qty{1080}{\nm}}
+    \item \lambda_\text{max}
+    \variationSujet
+    {= \dfrac{\qty{2.9e-3}{\kelvin\m}}{\qty{1773}{\kelvin}}
+     = \qty{1.63e-6}{\m} = \qty{1630}{\nm}}
+    {= \dfrac{\qty{2.9e-3}{\kelvin\m}}{\qty{1403}{\kelvin}}
+     = \qty{2.07e-6}{\m} = \qty{2070}{\nm}}
+  \end{align*}
+}
 
 \question{
   Déduire pour chacun des métiers à quel type de rayonnement infrarouge ils sont exposés.\points{1,5}
-}{}
+}{
+  IR-C pour le boulanger, IR-A pour le soudeur, IR-B pour le pompier.
+}
 
 \question{
   Conclure sur les risques liés à ces trois métiers et sur le type de protections à porter pour chaque métier.\points{2}

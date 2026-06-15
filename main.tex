@@ -6,71 +6,16 @@
 % \modeCorrection % correction si décommenté
 
 %%%% pour l'en-tête
-\renewcommand{\etablissement}{Lycée Jean Moulin}
+\renewcommand{\enTeteEtablissement}{Lycée Jean Moulin}
 
 \input{commun/fiche_revision_memorisation}
 \input{stssTerminale/exercices/_annexes}
 \input{stssTerminale/exercices/_mots_clefs}
 
-\usepackage{lastpage}
-\pgfkeys{% définition de la famille de clefs
-  /enTeteBac/.is family, /enTeteBac,
-  defaut/.style = {
-    epreuve = Devoir commun,
-    titre = ÉPREUVE DE PHYSIQUE-CHIMIE \\ POUR LA SANTÉ,
-    duree = 2 h
-  },% stockage des clefs
-  epreuve/.store in = \enTeteBacEpreuve,
-  titre/.store in = \enTeteBacTitre,
-  duree/.store in = \enTeteBacDuree
-}
-%
-\NewDocumentCommand{\pageGardeEpreuve}{O{} +m}{%
-  \pgfkeys{/enTeteBac, defaut, #1}
-  \newpage
-  \setcounter{page}{1}
-  \setcounter{exerciceNum}{0}
-  
-  \begin{flushright}
-    \large Sujet \the\year
-  \end{flushright}
-  \vspace{20pt}
-  
-  \titre{\enTeteBacEpreuve} \bigskip
-  
-  \begin{boite}
-    \titre{\enTeteBacTitre}
-  \end{boite}
-  \bigskip
-  
-  \begin{center}
-    \Large Durée de l'épreuve : \enTeteBacDuree
-  \end{center}
-  
-  \vspace{20pt}
-  {\large
-    Le sujet comporte \pageref{LastPage} pages numérotées de 1 à \pageref{LastPage}. \\
-    Dès que le sujet vous est remis, assurez-vous qu'il est complet.
-  
-    #2
-
-    \vfill\itshape
-    
-    Les exercices sont indépendants.
-    \bigskip
-    
-    L'usage de la calculatrice est autorisé.
-    \bigskip
-
-    La clarté des raisonnements et la qualité de la rédaction interviendront pour une part importante dans l'appréciation des copies.
-  }
-}
-
-
 %%%% TP
 \begin{document}
   \input{molecules}
-  \input{fiches_revision}
+  % \input{fiches_revision}
   
   %%%% Seconde
   %% Formative
@@ -95,11 +40,11 @@
    % \input{seconde/grille_evaluation_TP}
   
   %%%% Première ST2S
-  % \input{stssPremiere/evaluation_orale_biomolecules}
+  % \input{stssPremiere/exercices/molecules_organiques}
   %% Sommative
   % \input{stssPremiere/DC_chimie_elec}
-  % \sujetA \input{stssPremiere/DC_chimie_vision}
-  % \sujetB \input{stssPremiere/DC_chimie_vision}
+  \sujetA \input{stssPremiere/DC_chimie_vision}
+  \sujetB \input{stssPremiere/DC_chimie_vision}
   % \input{stssPremiere/E_secu_chimie}
   % \input{stssPremiere/E_oxydo_IR}
   % \sujetA \input{stssPremiere/E_vision_oxydoreduction}
@@ -108,7 +53,8 @@
   % \input{stssPremiere/E_IR_organique}
   % \sujetA \input{stssPremiere/E_molecules_biologiques}
   % \sujetB \input{stssPremiere/E_molecules_biologiques}
-  \input{stssPremiere/DC_oxydo_IR_orga}
+  % \sujetA \input{stssPremiere/DC_oxydo_IR_orga}
+  % \sujetB \input{stssPremiere/DC_oxydo_IR_orga}
   %% A REFAIRE QUESTIONS PAS CLAIRES...
   % \input{stssPremiere/DM_routiere_molecule}
   
